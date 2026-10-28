@@ -1,4 +1,692 @@
 {
-  "status": "pending",
-  "passed": false
+  "passed": true,
+  "checked_at_utc": "2026-10-28T17:34:24.902896+00:00",
+  "base_url": "https://az9713.github.io/nptel-continuum-mechanics-iitm-notes/",
+  "repository_url": "https://github.com/az9713/nptel-continuum-mechanics-iitm-notes",
+  "payload_commit": "03449211e00a53dba5455eb460f99ae30c53367a",
+  "served_file_count": 79,
+  "files": [
+    {
+      "path": ".gitattributes",
+      "sha256": "a3bc47d3004a897c6697133baa9da2cd353f227ed081db53f985dbb05c9a3abf",
+      "served_sha256": "a3bc47d3004a897c6697133baa9da2cd353f227ed081db53f985dbb05c9a3abf",
+      "passed": true,
+      "error": null
+    },
+    {
+      "path": ".gitignore",
+      "sha256": "1f9778cc43d4fe458f3c6e8483db6f022144e3d7880a9904f449576119b3aebb",
+      "served_sha256": "1f9778cc43d4fe458f3c6e8483db6f022144e3d7880a9904f449576119b3aebb",
+      "passed": true,
+      "error": null
+    },
+    {
+      "path": ".nojekyll",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "served_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "passed": true,
+      "error": null
+    },
+    {
+      "path": "assets/book.css",
+      "sha256": "0db5a603b9820800c9cbd02af1a332a3be2610201bb26625cac5786e212cb97a",
+      "served_sha256": "0db5a603b9820800c9cbd02af1a332a3be2610201bb26625cac5786e212cb97a",
+      "passed": true,
+      "error": null
+    },
+    {
+      "path": "assets/book.js",
+      "sha256": "e31d522b88712b15eddb3323de2c325a4e1ff1bf77bf0cde74f021809d2bae4f",
+      "served_sha256": "e31d522b88712b15eddb3323de2c325a4e1ff1bf77bf0cde74f021809d2bae4f",
+      "passed": true,
+      "error": null
+    },
+    {
+      "path": "assets/input/tex/extensions/boldsymbol.js",
+      "sha256": "d6771fee0772db2657796c8d0e20e1878bb3237f6d3ed1e828e1834a4ff743ca",
+      "served_sha256": "d6771fee0772db2657796c8d0e20e1878bb3237f6d3ed1e828e1834a4ff743ca",
+      "passed": true,
+      "error": null
+    },
+    {
+      "path": "assets/input/tex/extensions/cancel.js",
+      "sha256": "0d263ecf2671d1cc13135b8b4afcdca4d40151a9aea51b69402e68adde4cf8c9",
+      "served_sha256": "0d263ecf2671d1cc13135b8b4afcdca4d40151a9aea51b69402e68adde4cf8c9",
+      "passed": true,
+      "error": null
+    },
+    {
+      "path": "assets/input/tex/extensions/mathtools.js",
+      "sha256": "04272d69a0b64783cd5b66820d6f8220ee510409d0b12c38626404be9ed9689c",
+      "served_sha256": "04272d69a0b64783cd5b66820d6f8220ee510409d0b12c38626404be9ed9689c",
+      "passed": true,
+      "error": null
+    },
+    {
+      "path": "assets/lab.js",
+      "sha256": "be8d1c4d2946ff6e4ce55b1fcbbdc15da137fe7e9849a3db783d022c7b2a529d",
+      "served_sha256": "be8d1c4d2946ff6e4ce55b1fcbbdc15da137fe7e9849a3db783d022c7b2a529d",
+      "passed": true,
+      "error": null
+    },
+    {
+      "path": "assets/mathjax-LICENSE",
+      "sha256": "3ddf9be5c28fe27dad143a5dc76eea25222ad1dd68934a047064e56ed2fa40c5",
+      "served_sha256": "3ddf9be5c28fe27dad143a5dc76eea25222ad1dd68934a047064e56ed2fa40c5",
+      "passed": true,
+      "error": null
+    },
+    {
+      "path": "assets/mathjax-tex-svg.js",
+      "sha256": "d4295dc33744836935c1399feece5159577b34c5c8ffb9f1c6324cd82e03a882",
+      "served_sha256": "d4295dc33744836935c1399feece5159577b34c5c8ffb9f1c6324cd82e03a882",
+      "passed": true,
+      "error": null
+    },
+    {
+      "path": "assets/site-preview.png",
+      "sha256": "c50678c254e3c5d0a4dfe608a57dab9b97ee9f9508ead2919255fa6abf258996",
+      "served_sha256": "c50678c254e3c5d0a4dfe608a57dab9b97ee9f9508ead2919255fa6abf258996",
+      "passed": true,
+      "error": null
+    },
+    {
+      "path": "book-overview.html",
+      "sha256": "b6365eeb53eabc48d9093e704c92dff673a628feef907e702d3ba03cd13e8957",
+      "served_sha256": "b6365eeb53eabc48d9093e704c92dff673a628feef907e702d3ba03cd13e8957",
+      "passed": true,
+      "error": null
+    },
+    {
+      "path": "chapter-01-continuum-tensors-index-notation.html",
+      "sha256": "9d3748aa1a26ff6c732414f744fa3927c5c060aba11877e4cc8b282826da9612",
+      "served_sha256": "9d3748aa1a26ff6c732414f744fa3927c5c060aba11877e4cc8b282826da9612",
+      "passed": true,
+      "error": null
+    },
+    {
+      "path": "chapter-01-continuum-tensors-index-notation.meta.json",
+      "sha256": "0558e57c26fba6cfd0e3f53330557e648af973c2d9668b4edaddfe035c7886b5",
+      "served_sha256": "0558e57c26fba6cfd0e3f53330557e648af973c2d9668b4edaddfe035c7886b5",
+      "passed": true,
+      "error": null
+    },
+    {
+      "path": "chapter-02-alternating-tensors-and-algebra.html",
+      "sha256": "c4a90b11a4acedf9ef03d43e46146ddd598a5e4e23e006ccee5f8bf9adc158b2",
+      "served_sha256": "c4a90b11a4acedf9ef03d43e46146ddd598a5e4e23e006ccee5f8bf9adc158b2",
+      "passed": true,
+      "error": null
+    },
+    {
+      "path": "chapter-02-alternating-tensors-and-algebra.meta.json",
+      "sha256": "e4de4643858c59a31b89f3f4355d76f2498e844ba757614e2ff88515db14f412",
+      "served_sha256": "e4de4643858c59a31b89f3f4355d76f2498e844ba757614e2ff88515db14f412",
+      "passed": true,
+      "error": null
+    },
+    {
+      "path": "chapter-03-determinants-transformations-isotropy.html",
+      "sha256": "c6c2c1b6e0b010a18f1c6871352fc1dc2c54dc5ac66e86d6a5a0e44adea508be",
+      "served_sha256": "c6c2c1b6e0b010a18f1c6871352fc1dc2c54dc5ac66e86d6a5a0e44adea508be",
+      "passed": true,
+      "error": null
+    },
+    {
+      "path": "chapter-03-determinants-transformations-isotropy.meta.json",
+      "sha256": "d67c63b8b746f7e9c773b11cf9fa0ba7dc4a61ee13bba1173aaabc295f7a8442",
+      "served_sha256": "d67c63b8b746f7e9c773b11cf9fa0ba7dc4a61ee13bba1173aaabc295f7a8442",
+      "passed": true,
+      "error": null
+    },
+    {
+      "path": "chapter-04-principal-directions-tensor-calculus.html",
+      "sha256": "3b44b7775f14b355cd37c8516165f29f4d6e6dd809babaca7921e1af8ae92e6b",
+      "served_sha256": "3b44b7775f14b355cd37c8516165f29f4d6e6dd809babaca7921e1af8ae92e6b",
+      "passed": true,
+      "error": null
+    },
+    {
+      "path": "chapter-04-principal-directions-tensor-calculus.meta.json",
+      "sha256": "1dd4177884d54f4d9eccb18cf47114c2a147b1d5342f267967ebd37ff99ca5db",
+      "served_sha256": "1dd4177884d54f4d9eccb18cf47114c2a147b1d5342f267967ebd37ff99ca5db",
+      "passed": true,
+      "error": null
+    },
+    {
+      "path": "chapter-05-traction-cauchy-stress-equilibrium.html",
+      "sha256": "d8295b80985ab792a60ed96dced3fdc516cad3b75032e1f90a1669bc18ba2ddc",
+      "served_sha256": "d8295b80985ab792a60ed96dced3fdc516cad3b75032e1f90a1669bc18ba2ddc",
+      "passed": true,
+      "error": null
+    },
+    {
+      "path": "chapter-05-traction-cauchy-stress-equilibrium.meta.json",
+      "sha256": "36569c17c77007b20a52cb31157d1621311e3fa76b9dcc97650f763543d97722",
+      "served_sha256": "36569c17c77007b20a52cb31157d1621311e3fa76b9dcc97650f763543d97722",
+      "passed": true,
+      "error": null
+    },
+    {
+      "path": "chapter-06-principal-stresses-mohr-invariants.html",
+      "sha256": "69df6d8bc0e124422d8772487c2bd058a1b3e1179aa459ad377ffef693f68033",
+      "served_sha256": "69df6d8bc0e124422d8772487c2bd058a1b3e1179aa459ad377ffef693f68033",
+      "passed": true,
+      "error": null
+    },
+    {
+      "path": "chapter-06-principal-stresses-mohr-invariants.meta.json",
+      "sha256": "9228c206eab8fe1afae10089d44c29f12a713f5d8e115c0b9f2644a85ac0870c",
+      "served_sha256": "9228c206eab8fe1afae10089d44c29f12a713f5d8e115c0b9f2644a85ac0870c",
+      "passed": true,
+      "error": null
+    },
+    {
+      "path": "chapter-07-motion-material-derivative.html",
+      "sha256": "f41a54f32181a769fa1f61a688b1872fb5a2b9ac4712ad8c9e60fe6e1bc75a07",
+      "served_sha256": "f41a54f32181a769fa1f61a688b1872fb5a2b9ac4712ad8c9e60fe6e1bc75a07",
+      "passed": true,
+      "error": null
+    },
+    {
+      "path": "chapter-07-motion-material-derivative.meta.json",
+      "sha256": "3c6331e2641ae621d58f64f361c22c7f6e14bba1849724053cb1e9357fc787c0",
+      "served_sha256": "3c6331e2641ae621d58f64f361c22c7f6e14bba1849724053cb1e9357fc787c0",
+      "passed": true,
+      "error": null
+    },
+    {
+      "path": "chapter-08-deformation-and-strain.html",
+      "sha256": "f1519ff86fb2567b06ce1972f490c1a39fa90124a3afa918fd5b9344e52c885c",
+      "served_sha256": "f1519ff86fb2567b06ce1972f490c1a39fa90124a3afa918fd5b9344e52c885c",
+      "passed": true,
+      "error": null
+    },
+    {
+      "path": "chapter-08-deformation-and-strain.meta.json",
+      "sha256": "fb3a9febf9627cd718b8ffbca14d6489ce85fad73603fdc5ca9ef7104e942ea8",
+      "served_sha256": "fb3a9febf9627cd718b8ffbca14d6489ce85fad73603fdc5ca9ef7104e942ea8",
+      "passed": true,
+      "error": null
+    },
+    {
+      "path": "chapter-09-compatibility-and-velocity-gradients.html",
+      "sha256": "cdfeae22549057c4e8b384bc40001dcd7e05180036fdc6ab456f7c83216109d2",
+      "served_sha256": "cdfeae22549057c4e8b384bc40001dcd7e05180036fdc6ab456f7c83216109d2",
+      "passed": true,
+      "error": null
+    },
+    {
+      "path": "chapter-09-compatibility-and-velocity-gradients.meta.json",
+      "sha256": "89c982a8d76cf003adf7f7f0aec824f6513e97632561f0981bac3075f8737cdd",
+      "served_sha256": "89c982a8d76cf003adf7f7f0aec824f6513e97632561f0981bac3075f8737cdd",
+      "passed": true,
+      "error": null
+    },
+    {
+      "path": "chapter-10-transport-and-balance-laws.html",
+      "sha256": "e721429b306b3b3d6f173277bfcd7b3cedb5aa7b2a3e49a2afdef829f875a1c1",
+      "served_sha256": "e721429b306b3b3d6f173277bfcd7b3cedb5aa7b2a3e49a2afdef829f875a1c1",
+      "passed": true,
+      "error": null
+    },
+    {
+      "path": "chapter-10-transport-and-balance-laws.meta.json",
+      "sha256": "7877bfb452418d17d2a00dd1b78daabb0475bb6d7ca9b3cefdb1170807fb3e6b",
+      "served_sha256": "7877bfb452418d17d2a00dd1b78daabb0475bb6d7ca9b3cefdb1170807fb3e6b",
+      "passed": true,
+      "error": null
+    },
+    {
+      "path": "chapter-11-constitutive-closure-and-objectivity.html",
+      "sha256": "20bcd01b45e84b202c0c1407a1ec8ab844e255188e28cf27f389ce1c6f5c8823",
+      "served_sha256": "20bcd01b45e84b202c0c1407a1ec8ab844e255188e28cf27f389ce1c6f5c8823",
+      "passed": true,
+      "error": null
+    },
+    {
+      "path": "chapter-11-constitutive-closure-and-objectivity.meta.json",
+      "sha256": "53db6ae28dbd82b328b96dc63bef99cacd0a2d7ec6ef03ee2e33e3147f99eab7",
+      "served_sha256": "53db6ae28dbd82b328b96dc63bef99cacd0a2d7ec6ef03ee2e33e3147f99eab7",
+      "passed": true,
+      "error": null
+    },
+    {
+      "path": "chapter-12-linear-and-hyperelasticity.html",
+      "sha256": "4662ee71001e13ec92bdf42091fc8e46ca8bc0eb430286cfe48de4890caf9168",
+      "served_sha256": "4662ee71001e13ec92bdf42091fc8e46ca8bc0eb430286cfe48de4890caf9168",
+      "passed": true,
+      "error": null
+    },
+    {
+      "path": "chapter-12-linear-and-hyperelasticity.meta.json",
+      "sha256": "3052ad67bffa270f9eb3082038f374e2e3a5b29b0369bcdcdd615e0b86ac9a23",
+      "served_sha256": "3052ad67bffa270f9eb3082038f374e2e3a5b29b0369bcdcdd615e0b86ac9a23",
+      "passed": true,
+      "error": null
+    },
+    {
+      "path": "chapter-13-viscous-and-viscoelastic-materials.html",
+      "sha256": "4f6d342229fe27af85ca10345b62be44b7e4417c4fedd51a6962a77234ab252f",
+      "served_sha256": "4f6d342229fe27af85ca10345b62be44b7e4417c4fedd51a6962a77234ab252f",
+      "passed": true,
+      "error": null
+    },
+    {
+      "path": "chapter-13-viscous-and-viscoelastic-materials.meta.json",
+      "sha256": "055bd78a38cddaf7e92ac013223a40196c9f78cd4d3c521b88bdbd2451fd447f",
+      "served_sha256": "055bd78a38cddaf7e92ac013223a40196c9f78cd4d3c521b88bdbd2451fd447f",
+      "passed": true,
+      "error": null
+    },
+    {
+      "path": "chapter-14-plasticity-and-constitutive-problems.html",
+      "sha256": "a911fb29a9c74ab359e30ec4018ef60587b60c31c7ded6bcfd2ee027b44b99e8",
+      "served_sha256": "a911fb29a9c74ab359e30ec4018ef60587b60c31c7ded6bcfd2ee027b44b99e8",
+      "passed": true,
+      "error": null
+    },
+    {
+      "path": "chapter-14-plasticity-and-constitutive-problems.meta.json",
+      "sha256": "25140b87a57b1bb71a3196c7789de999505120790094cc7cf46c0b4412b76492",
+      "served_sha256": "25140b87a57b1bb71a3196c7789de999505120790094cc7cf46c0b4412b76492",
+      "passed": true,
+      "error": null
+    },
+    {
+      "path": "chapter-15-linear-fluids-and-navier-stokes.html",
+      "sha256": "556e07449f98419ed605b201ee68a2f6681efcfd7b79eaa8aae2001fbe93f47e",
+      "served_sha256": "556e07449f98419ed605b201ee68a2f6681efcfd7b79eaa8aae2001fbe93f47e",
+      "passed": true,
+      "error": null
+    },
+    {
+      "path": "chapter-15-linear-fluids-and-navier-stokes.meta.json",
+      "sha256": "27f3e94101691778007bdc71cfdea65ab0b2ab92f5b52668c454a0d143edb141",
+      "served_sha256": "27f3e94101691778007bdc71cfdea65ab0b2ab92f5b52668c454a0d143edb141",
+      "passed": true,
+      "error": null
+    },
+    {
+      "path": "chapter-16-course-synthesis.html",
+      "sha256": "20a015359c2c0909f0dd0e09db6ee0648cb6146f18654c2022fdf22e630b16be",
+      "served_sha256": "20a015359c2c0909f0dd0e09db6ee0648cb6146f18654c2022fdf22e630b16be",
+      "passed": true,
+      "error": null
+    },
+    {
+      "path": "chapter-16-course-synthesis.meta.json",
+      "sha256": "fa2b629da678b5b38a1f433b81c30bb169b8e174d9b59fdb05250762ebd08a40",
+      "served_sha256": "fa2b629da678b5b38a1f433b81c30bb169b8e174d9b59fdb05250762ebd08a40",
+      "passed": true,
+      "error": null
+    },
+    {
+      "path": "chapter-17-live-tensor-and-stress-foundations.html",
+      "sha256": "97b75b8adca2fbf759a8d54e0bd3a42b655514f651b905157c062934e8423046",
+      "served_sha256": "97b75b8adca2fbf759a8d54e0bd3a42b655514f651b905157c062934e8423046",
+      "passed": true,
+      "error": null
+    },
+    {
+      "path": "chapter-17-live-tensor-and-stress-foundations.meta.json",
+      "sha256": "45e7101d88730e2f71fb42df1ed8db11a9d902fb4b247222cba777cf368f57e7",
+      "served_sha256": "45e7101d88730e2f71fb42df1ed8db11a9d902fb4b247222cba777cf368f57e7",
+      "passed": true,
+      "error": null
+    },
+    {
+      "path": "chapter-18-live-configurations-motion-strain.html",
+      "sha256": "933b19745cb8713d3112eebc965deab10f6cf9043c9cb8ffd877da771ef92521",
+      "served_sha256": "933b19745cb8713d3112eebc965deab10f6cf9043c9cb8ffd877da771ef92521",
+      "passed": true,
+      "error": null
+    },
+    {
+      "path": "chapter-18-live-configurations-motion-strain.meta.json",
+      "sha256": "b6ecfa5601f64246d9c8e8ff19cbc4947a3c5009c4f6f19c0caf09e01b6696da",
+      "served_sha256": "b6ecfa5601f64246d9c8e8ff19cbc4947a3c5009c4f6f19c0caf09e01b6696da",
+      "passed": true,
+      "error": null
+    },
+    {
+      "path": "chapter-19-live-transport-balance-laws.html",
+      "sha256": "982afc218a05f5e8078f142c6ca53659eb948a68cba9dec0e949ba8cb878aec8",
+      "served_sha256": "982afc218a05f5e8078f142c6ca53659eb948a68cba9dec0e949ba8cb878aec8",
+      "passed": true,
+      "error": null
+    },
+    {
+      "path": "chapter-19-live-transport-balance-laws.meta.json",
+      "sha256": "e4fc748c4d20cbcd1ec3fc6d7bcad19dba5294aa55ce0fa2b1c2393e6d6f6d1e",
+      "served_sha256": "e4fc748c4d20cbcd1ec3fc6d7bcad19dba5294aa55ce0fa2b1c2393e6d6f6d1e",
+      "passed": true,
+      "error": null
+    },
+    {
+      "path": "chapter-20-live-constitutive-models-fluids.html",
+      "sha256": "0e0c37014f47a623d509a06fd182818c27b5714a07a83dd941824aa143701bfa",
+      "served_sha256": "0e0c37014f47a623d509a06fd182818c27b5714a07a83dd941824aa143701bfa",
+      "passed": true,
+      "error": null
+    },
+    {
+      "path": "chapter-20-live-constitutive-models-fluids.meta.json",
+      "sha256": "5aac37896add253c95fbbcbe7bb81d3845587576407ee760e157203934927160",
+      "served_sha256": "5aac37896add253c95fbbcbe7bb81d3845587576407ee760e157203934927160",
+      "passed": true,
+      "error": null
+    },
+    {
+      "path": "chapter-code-validation.json",
+      "sha256": "dd233e077f05b958dc8b32f8d1bcb46d340ff6b743552fe1c0b3886b4738113c",
+      "served_sha256": "dd233e077f05b958dc8b32f8d1bcb46d340ff6b743552fe1c0b3886b4738113c",
+      "passed": true,
+      "error": null
+    },
+    {
+      "path": "content-inventory.json",
+      "sha256": "c800e6f790ac03f0fc84e73eb4fee537649fa633eb5d1cac895253654ad3b245",
+      "served_sha256": "c800e6f790ac03f0fc84e73eb4fee537649fa633eb5d1cac895253654ad3b245",
+      "passed": true,
+      "error": null
+    },
+    {
+      "path": "course-review.json",
+      "sha256": "437b0285cd1ac220f1c00852dd39ff3590ba5ddfef17d48a4af4f76cc8920e56",
+      "served_sha256": "437b0285cd1ac220f1c00852dd39ff3590ba5ddfef17d48a4af4f76cc8920e56",
+      "passed": true,
+      "error": null
+    },
+    {
+      "path": "editorial-review-summary.json",
+      "sha256": "e7a58ef436d8f7280bccc2ebe312a65a03539c8fc802f8973d9a5486ae80456a",
+      "served_sha256": "e7a58ef436d8f7280bccc2ebe312a65a03539c8fc802f8973d9a5486ae80456a",
+      "passed": true,
+      "error": null
+    },
+    {
+      "path": "index.html",
+      "sha256": "4d656727346a5955059682216cc65fa924038997a84d6dc088bf2c6fc2b30f52",
+      "served_sha256": "4d656727346a5955059682216cc65fa924038997a84d6dc088bf2c6fc2b30f52",
+      "passed": true,
+      "error": null
+    },
+    {
+      "path": "numerical-lab.html",
+      "sha256": "82bb3559ed375d3915fd525012162933abc4e75fb7e27f0cd88fd7cc77d44864",
+      "served_sha256": "82bb3559ed375d3915fd525012162933abc4e75fb7e27f0cd88fd7cc77d44864",
+      "passed": true,
+      "error": null
+    },
+    {
+      "path": "numerical_lab.py",
+      "sha256": "24ad0c3de2513b0095bbcaeb01c92cf87d442732b996d8ff97c7d5d8c0b377ec",
+      "served_sha256": "24ad0c3de2513b0095bbcaeb01c92cf87d442732b996d8ff97c7d5d8c0b377ec",
+      "passed": true,
+      "error": null
+    },
+    {
+      "path": "package-validation.json",
+      "sha256": "0cc29475be4ef3efeb136eadb607bdccbce3e6388c33d4707b12dbba0a8570b3",
+      "served_sha256": "0cc29475be4ef3efeb136eadb607bdccbce3e6388c33d4707b12dbba0a8570b3",
+      "passed": true,
+      "error": null
+    },
+    {
+      "path": "public-package-validation.json",
+      "sha256": "ffc7d2db75151a3676e76127b613cc5e29c6c2088f08a3d4043120b8a059026e",
+      "served_sha256": "ffc7d2db75151a3676e76127b613cc5e29c6c2088f08a3d4043120b8a059026e",
+      "passed": true,
+      "error": null
+    },
+    {
+      "path": "reader-validation.json",
+      "sha256": "acf5406beaaad11c1a2d31bbd382f0ce544ad6eb37650dbf74954a1fc3679b2e",
+      "served_sha256": "acf5406beaaad11c1a2d31bbd382f0ce544ad6eb37650dbf74954a1fc3679b2e",
+      "passed": true,
+      "error": null
+    },
+    {
+      "path": "README.md",
+      "sha256": "af5f1b2d82a7895b8bb91c8168500e57cf068084e441c8016d19c9ee9097a36a",
+      "served_sha256": "af5f1b2d82a7895b8bb91c8168500e57cf068084e441c8016d19c9ee9097a36a",
+      "passed": true,
+      "error": null
+    },
+    {
+      "path": "references.html",
+      "sha256": "f24184fe1f7f98d8b2bcfbfe4c3d55973ee5a503b7f729537350524f4a75f685",
+      "served_sha256": "f24184fe1f7f98d8b2bcfbfe4c3d55973ee5a503b7f729537350524f4a75f685",
+      "passed": true,
+      "error": null
+    },
+    {
+      "path": "requirements.txt",
+      "sha256": "3ef839714b3b2c36a46935eef74c5d37fe2bdeddb2b00d1a94e69b2360daa731",
+      "served_sha256": "3ef839714b3b2c36a46935eef74c5d37fe2bdeddb2b00d1a94e69b2360daa731",
+      "passed": true,
+      "error": null
+    },
+    {
+      "path": "source-free-validation.json",
+      "sha256": "ddd6c558238bf5fb6faaffd2e1ed3ba9298128bf57039ea2b40257a587509fa6",
+      "served_sha256": "ddd6c558238bf5fb6faaffd2e1ed3ba9298128bf57039ea2b40257a587509fa6",
+      "passed": true,
+      "error": null
+    },
+    {
+      "path": "source-manifest.json",
+      "sha256": "0c215c0dba5fce226115a3f1641ce7ae31f2dc13c8b9e1d437662518ecf89e9e",
+      "served_sha256": "0c215c0dba5fce226115a3f1641ce7ae31f2dc13c8b9e1d437662518ecf89e9e",
+      "passed": true,
+      "error": null
+    },
+    {
+      "path": "source-map.html",
+      "sha256": "1d56c8cea844ac7f1e6f08932f74e2d1eb9fb036bd004b5ac35d06b45ee1d156",
+      "served_sha256": "1d56c8cea844ac7f1e6f08932f74e2d1eb9fb036bd004b5ac35d06b45ee1d156",
+      "passed": true,
+      "error": null
+    },
+    {
+      "path": "source-map.json",
+      "sha256": "c50d30df9945cd6e63787a9dfe039d4676f19b33b70330449ec5e5994a23c292",
+      "served_sha256": "c50d30df9945cd6e63787a9dfe039d4676f19b33b70330449ec5e5994a23c292",
+      "passed": true,
+      "error": null
+    },
+    {
+      "path": "source-validation-summary.json",
+      "sha256": "ef13c0ab31994f732360256a89565264228beda786d25ee1b2e3e1e7ff19499e",
+      "served_sha256": "ef13c0ab31994f732360256a89565264228beda786d25ee1b2e3e1e7ff19499e",
+      "passed": true,
+      "error": null
+    },
+    {
+      "path": "tools/audit_public.py",
+      "sha256": "d11465ccb9748192585356938ba2a8a5832b7a69076a0a371a2e8053ccdcd982",
+      "served_sha256": "d11465ccb9748192585356938ba2a8a5832b7a69076a0a371a2e8053ccdcd982",
+      "passed": true,
+      "error": null
+    },
+    {
+      "path": "tools/build_book.py",
+      "sha256": "690c5716b412cfb3d8384a2b21504ec283f17d0255c25736c31d241a6691641f",
+      "served_sha256": "690c5716b412cfb3d8384a2b21504ec283f17d0255c25736c31d241a6691641f",
+      "passed": true,
+      "error": null
+    },
+    {
+      "path": "tools/check_chapter_code.py",
+      "sha256": "7e62f7432ac749115c8557a9276ad00b0575cbc99b0de84aa8fe1dccf0c85aab",
+      "served_sha256": "7e62f7432ac749115c8557a9276ad00b0575cbc99b0de84aa8fe1dccf0c85aab",
+      "passed": true,
+      "error": null
+    },
+    {
+      "path": "tools/update_metadata.py",
+      "sha256": "03df7e98b091ee0e5e268a776e30930c00239918dffe4bdd8fe7617aed279712",
+      "served_sha256": "03df7e98b091ee0e5e268a776e30930c00239918dffe4bdd8fe7617aed279712",
+      "passed": true,
+      "error": null
+    },
+    {
+      "path": "tools/validate_books.py",
+      "sha256": "f8d945108115e5e18e00a778f4fc1d8768713f4041ac33dbe478d6d1306ef5c5",
+      "served_sha256": "f8d945108115e5e18e00a778f4fc1d8768713f4041ac33dbe478d6d1306ef5c5",
+      "passed": true,
+      "error": null
+    },
+    {
+      "path": "tools/verify_publication.py",
+      "sha256": "389476269f77025e3968c98dcf18753510e5546d3a6ac5770fda447ed0a8784c",
+      "served_sha256": "389476269f77025e3968c98dcf18753510e5546d3a6ac5770fda447ed0a8784c",
+      "passed": true,
+      "error": null
+    },
+    {
+      "path": "tools/verify_source_free.py",
+      "sha256": "858d6478790b5e1250f665db90c9234ac9293d3f5cc0754bda5d535ebdc75936",
+      "served_sha256": "858d6478790b5e1250f665db90c9234ac9293d3f5cc0754bda5d535ebdc75936",
+      "passed": true,
+      "error": null
+    },
+    {
+      "path": "WORKFLOW.md",
+      "sha256": "e16380098cd41685d5de9279b2458ab5e5a6d66dfc2f5bb1a8ce0bba5f3e7c48",
+      "served_sha256": "e16380098cd41685d5de9279b2458ab5e5a6d66dfc2f5bb1a8ce0bba5f3e7c48",
+      "passed": true,
+      "error": null
+    }
+  ],
+  "excluded_from_served_hashes": {
+    "publication-validation.json": "This report cannot contain a verifiable hash of itself.",
+    "completion.json": "Completion is finalized after the first successful publication probe."
+  },
+  "live_reader": [
+    {
+      "page": "index.html",
+      "width": 1440,
+      "passed": true,
+      "math_count": 0,
+      "math_errors": 0,
+      "horizontal_overflow": false,
+      "theme": true,
+      "text_size": true,
+      "solutions": true,
+      "page_specific_controls": true
+    },
+    {
+      "page": "chapter-01-continuum-tensors-index-notation.html",
+      "width": 1440,
+      "passed": true,
+      "math_count": 187,
+      "math_errors": 0,
+      "horizontal_overflow": false,
+      "theme": true,
+      "text_size": true,
+      "solutions": true,
+      "page_specific_controls": true
+    },
+    {
+      "page": "chapter-08-deformation-and-strain.html",
+      "width": 1440,
+      "passed": true,
+      "math_count": 260,
+      "math_errors": 0,
+      "horizontal_overflow": false,
+      "theme": true,
+      "text_size": true,
+      "solutions": true,
+      "page_specific_controls": true
+    },
+    {
+      "page": "chapter-15-linear-fluids-and-navier-stokes.html",
+      "width": 1440,
+      "passed": true,
+      "math_count": 4,
+      "math_errors": 0,
+      "horizontal_overflow": false,
+      "theme": true,
+      "text_size": true,
+      "solutions": true,
+      "page_specific_controls": true
+    },
+    {
+      "page": "numerical-lab.html",
+      "width": 1440,
+      "passed": true,
+      "math_count": 2,
+      "math_errors": 0,
+      "horizontal_overflow": false,
+      "theme": true,
+      "text_size": true,
+      "solutions": true,
+      "page_specific_controls": true
+    },
+    {
+      "page": "index.html",
+      "width": 390,
+      "passed": true,
+      "math_count": 0,
+      "math_errors": 0,
+      "horizontal_overflow": false,
+      "theme": true,
+      "text_size": true,
+      "solutions": true,
+      "page_specific_controls": true
+    },
+    {
+      "page": "chapter-01-continuum-tensors-index-notation.html",
+      "width": 390,
+      "passed": true,
+      "math_count": 187,
+      "math_errors": 0,
+      "horizontal_overflow": false,
+      "theme": true,
+      "text_size": true,
+      "solutions": true,
+      "page_specific_controls": true
+    },
+    {
+      "page": "chapter-08-deformation-and-strain.html",
+      "width": 390,
+      "passed": true,
+      "math_count": 260,
+      "math_errors": 0,
+      "horizontal_overflow": false,
+      "theme": true,
+      "text_size": true,
+      "solutions": true,
+      "page_specific_controls": true
+    },
+    {
+      "page": "chapter-15-linear-fluids-and-navier-stokes.html",
+      "width": 390,
+      "passed": true,
+      "math_count": 4,
+      "math_errors": 0,
+      "horizontal_overflow": false,
+      "theme": true,
+      "text_size": true,
+      "solutions": true,
+      "page_specific_controls": true
+    },
+    {
+      "page": "numerical-lab.html",
+      "width": 390,
+      "passed": true,
+      "math_count": 2,
+      "math_errors": 0,
+      "horizontal_overflow": false,
+      "theme": true,
+      "text_size": true,
+      "solutions": true,
+      "page_specific_controls": true
+    }
+  ],
+  "github_readme_preview_links_to_book": true,
+  "preview_error": null,
+  "scope": "Exact public payload bytes, representative desktop/mobile browser controls, and rendered GitHub README image/link. No new audiovisual or mathematical review."
 }

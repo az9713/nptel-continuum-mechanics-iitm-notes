@@ -1,5 +1,5 @@
 {
-  "status": "content complete; publication pending",
+  "status": "complete",
   "course": "Foundations of Continuum Mechanics",
   "instructor": "Prof. Gaurav Bhutani, IIT Mandi",
   "chapter_count": 20,
@@ -17,11 +17,14 @@
     "offline_page_viewport_checks": 48,
     "all_chapter_listings_match_actual_output": true,
     "numerical_lab_checks": "passed",
-    "source_free_git_export": "passed; all25 HTML pages byte-identical and all executable/offline reader checks passed"
+    "source_free_git_export": "passed; all25 HTML pages byte-identical and all executable/offline reader checks passed",
+    "github_push": "main pushed",
+    "github_pages_publication": "verified",
+    "served_payload_files": 79,
+    "live_page_viewport_checks": 10,
+    "github_readme_preview": "verified"
   },
-  "pending": [
-    "GitHub push and live publication verification"
-  ],
+  "pending": [],
   "scope_limits": [
     "Machine ASR is fallible; comprehensive audiovisual or board-equation transcription is not claimed.",
     "AI review is not external human peer review or formal proof verification.",
@@ -37,5 +40,9 @@
     "public-package-validation.json",
     "source-free-validation.json",
     "publication-validation.json"
-  ]
+  ],
+  "book_url": "https://az9713.github.io/nptel-continuum-mechanics-iitm-notes/",
+  "repository_url": "https://github.com/az9713/nptel-continuum-mechanics-iitm-notes",
+  "publication_payload_commit": "03449211e00a53dba5455eb460f99ae30c53367a",
+  "publication_evidence_note": "Publication probe excludes its own report and this completion receipt from stored served-file hashes; those receipts are finalized after the successful payload probe."
 }
