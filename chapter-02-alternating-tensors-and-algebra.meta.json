@@ -1,0 +1,243 @@
+{
+  "chapter": 2,
+  "title": "Alternating tensors, vector identities and tensor algebra",
+  "status": "reviewed — two independent AI reviews",
+  "authored_body_sha256": "6b3abe8a7298a815fe83e250faf397fb7c5351fced48ce6de0fe01628ce39c39",
+  "recordings": [
+    {
+      "video_id": "rYEOyZWV2GU",
+      "playlist_position": 7,
+      "lecture_label": "Lecture 6",
+      "duration_seconds": 1936,
+      "decoded_audio_duration_seconds": 1935.058125,
+      "complete_decoded_audio": true,
+      "media_sha256": "7aa9712bc392b112c641021b43ff418539f6168502e7f24aeb3dcbba20e7f8ca",
+      "transcript_first_start": 11.89,
+      "transcript_last_end": 1919.22,
+      "transcript_provenance": "Local faster-whisper small.en machine ASR; not publisher captions"
+    },
+    {
+      "video_id": "1LMs4IHeIRA",
+      "playlist_position": 8,
+      "lecture_label": "Lecture 6",
+      "duration_seconds": 1936,
+      "decoded_audio_duration_seconds": 1935.0535,
+      "complete_decoded_audio": true,
+      "media_sha256": "9be91ac3ddf3dc199308bcbc357158c34d0452fe120de9c0a390f37cf73ab7f8",
+      "transcript_first_start": 11.79,
+      "transcript_last_end": 1919.12,
+      "transcript_provenance": "Local faster-whisper small.en machine ASR; not publisher captions"
+    },
+    {
+      "video_id": "yUM2n7ExK4c",
+      "playlist_position": 9,
+      "lecture_label": "Lecture 7",
+      "duration_seconds": 2436,
+      "decoded_audio_duration_seconds": 2435.6535,
+      "complete_decoded_audio": true,
+      "media_sha256": "1e06e8b1be1f8a94ec18f8f4459bcef4b388ec7053ceba4304c737af0232d868",
+      "transcript_first_start": 11.92,
+      "transcript_last_end": 2427.02,
+      "transcript_provenance": "Local faster-whisper small.en machine ASR; not publisher captions"
+    },
+    {
+      "video_id": "Kv9Tq2U2sqE",
+      "playlist_position": 10,
+      "lecture_label": "Lecture 8",
+      "duration_seconds": 2406,
+      "decoded_audio_duration_seconds": 2405.6535,
+      "complete_decoded_audio": true,
+      "media_sha256": "d5f462a256c2dce2330604fb9f507d74012bee7670d56fda8b9571e659a70775",
+      "transcript_first_start": 11.89,
+      "transcript_last_end": 2397.17,
+      "transcript_provenance": "Local faster-whisper small.en machine ASR; not publisher captions"
+    },
+    {
+      "video_id": "VU9afXvCfcA",
+      "playlist_position": 11,
+      "lecture_label": "Lecture 9",
+      "duration_seconds": 2158,
+      "decoded_audio_duration_seconds": 2157.3335,
+      "complete_decoded_audio": true,
+      "media_sha256": "38e0a4f9e5edec70f1f4a47dcd8e6f3d6bfff8f6e5c0d59c45ff226ac7e83c70",
+      "transcript_first_start": 12.05,
+      "transcript_last_end": 2149.33,
+      "transcript_provenance": "Local faster-whisper small.en machine ASR; not publisher captions"
+    },
+    {
+      "video_id": "XyoxAM5Ikk8",
+      "playlist_position": 12,
+      "lecture_label": "Lecture 10",
+      "duration_seconds": 1931,
+      "decoded_audio_duration_seconds": 1930.8935,
+      "complete_decoded_audio": true,
+      "media_sha256": "2138e292620d1aa6ed9e8f37245c390af2e09ed23ba9fdf2fa87663ca65a306a",
+      "transcript_first_start": 11.79,
+      "transcript_last_end": 1922.58,
+      "transcript_provenance": "Local faster-whisper small.en machine ASR; not publisher captions"
+    }
+  ],
+  "sections": [
+    {
+      "section": "A prescribed shear and the questions it raises",
+      "anchor": "model",
+      "video_id": null,
+      "start": null,
+      "end": null,
+      "lecture_material": "",
+      "research_extension": "Inspected external support is cited locally in the exposition",
+      "teaching_construction": "Expanded exposition, derivations, numerical checks and exercises are independently authored; an anchor does not attribute every statement to the recording"
+    },
+    {
+      "section": "Orientation and the alternating symbol",
+      "anchor": "alternating",
+      "video_id": "1LMs4IHeIRA",
+      "start": 42,
+      "end": 1188,
+      "lecture_material": "Related lecture topic located by the stated span",
+      "research_extension": "Inspected external support is cited locally in the exposition",
+      "teaching_construction": "Expanded exposition, derivations, numerical checks and exercises are independently authored; an anchor does not attribute every statement to the recording"
+    },
+    {
+      "section": "Deriving and using the epsilon–delta identity",
+      "anchor": "epsilon-delta",
+      "video_id": "1LMs4IHeIRA",
+      "start": 1188,
+      "end": 1857,
+      "lecture_material": "Related lecture topic located by the stated span",
+      "research_extension": "Inspected external support is cited locally in the exposition",
+      "teaching_construction": "Expanded exposition, derivations, numerical checks and exercises are independently authored; an anchor does not attribute every statement to the recording"
+    },
+    {
+      "section": "Area, volume and products of three vectors",
+      "anchor": "vector-identities",
+      "video_id": "yUM2n7ExK4c",
+      "start": 42,
+      "end": 1610,
+      "lecture_material": "Related lecture topic located by the stated span",
+      "research_extension": "Inspected external support is cited locally in the exposition",
+      "teaching_construction": "Expanded exposition, derivations, numerical checks and exercises are independently authored; an anchor does not attribute every statement to the recording"
+    },
+    {
+      "section": "Resolving a vector along and across a direction",
+      "anchor": "projection",
+      "video_id": "yUM2n7ExK4c",
+      "start": 1610,
+      "end": 2362,
+      "lecture_material": "Related lecture topic located by the stated span",
+      "research_extension": "Inspected external support is cited locally in the exposition",
+      "teaching_construction": "Expanded exposition, derivations, numerical checks and exercises are independently authored; an anchor does not attribute every statement to the recording"
+    },
+    {
+      "section": "Dyads construct maps from directions",
+      "anchor": "dyads",
+      "video_id": "Kv9Tq2U2sqE",
+      "start": 47,
+      "end": 1060,
+      "lecture_material": "Related lecture topic located by the stated span",
+      "research_extension": "Inspected external support is cited locally in the exposition",
+      "teaching_construction": "Expanded exposition, derivations, numerical checks and exercises are independently authored; an anchor does not attribute every statement to the recording"
+    },
+    {
+      "section": "Which directions does a product contract?",
+      "anchor": "composition",
+      "video_id": "Kv9Tq2U2sqE",
+      "start": 1060,
+      "end": 1913,
+      "lecture_material": "Related lecture topic located by the stated span",
+      "research_extension": "Inspected external support is cited locally in the exposition",
+      "teaching_construction": "Expanded exposition, derivations, numerical checks and exercises are independently authored; an anchor does not attribute every statement to the recording"
+    },
+    {
+      "section": "Double contractions and higher-order expressions",
+      "anchor": "contractions",
+      "video_id": "VU9afXvCfcA",
+      "start": 94,
+      "end": 1680,
+      "lecture_material": "Related lecture topic located by the stated span",
+      "research_extension": "Inspected external support is cited locally in the exposition",
+      "teaching_construction": "Expanded exposition, derivations, numerical checks and exercises are independently authored; an anchor does not attribute every statement to the recording"
+    },
+    {
+      "section": "Symmetry, skew symmetry and what a scalar misses",
+      "anchor": "symmetry",
+      "video_id": "VU9afXvCfcA",
+      "start": 1680,
+      "end": 2071,
+      "lecture_material": "Related lecture topic located by the stated span",
+      "research_extension": "Inspected external support is cited locally in the exposition",
+      "teaching_construction": "Expanded exposition, derivations, numerical checks and exercises are independently authored; an anchor does not attribute every statement to the recording"
+    },
+    {
+      "section": "Contraction can solve a tensor equation",
+      "anchor": "tutorial",
+      "video_id": "XyoxAM5Ikk8",
+      "start": 40,
+      "end": 1923,
+      "lecture_material": "Related lecture topic located by the stated span",
+      "research_extension": "Inspected external support is cited locally in the exposition",
+      "teaching_construction": "Expanded exposition, derivations, numerical checks and exercises are independently authored; an anchor does not attribute every statement to the recording"
+    },
+    {
+      "section": "Executable checks of orientation, slots and symmetry",
+      "anchor": "implementation",
+      "video_id": null,
+      "start": null,
+      "end": null,
+      "lecture_material": "",
+      "research_extension": "Inspected external support is cited locally in the exposition",
+      "teaching_construction": "Expanded exposition, derivations, numerical checks and exercises are independently authored; an anchor does not attribute every statement to the recording"
+    },
+    {
+      "section": "What the algebra establishes",
+      "anchor": "limits",
+      "video_id": null,
+      "start": null,
+      "end": null,
+      "lecture_material": "",
+      "research_extension": "Inspected external support is cited locally in the exposition",
+      "teaching_construction": "Expanded exposition, derivations, numerical checks and exercises are independently authored; an anchor does not attribute every statement to the recording"
+    },
+    {
+      "section": "Exercises with worked solutions",
+      "anchor": "exercises",
+      "video_id": null,
+      "start": null,
+      "end": null,
+      "lecture_material": "",
+      "research_extension": "Inspected external support is cited locally in the exposition",
+      "teaching_construction": "Expanded exposition, derivations, numerical checks and exercises are independently authored; an anchor does not attribute every statement to the recording"
+    },
+    {
+      "section": "Sources and further development",
+      "anchor": "sources",
+      "video_id": null,
+      "start": null,
+      "end": null,
+      "lecture_material": "",
+      "research_extension": "Inspected external support is cited locally in the exposition",
+      "teaching_construction": "Expanded exposition, derivations, numerical checks and exercises are independently authored; an anchor does not attribute every statement to the recording"
+    }
+  ],
+  "references": [
+    {
+      "url": "https://solidmechanics.org/Text/AppendixC/AppendixC.php",
+      "title": "Appendix C, §§C.2–C.5",
+      "supports": "Specific claim and locator are given beside the citation in chapter-02-alternating-tensors-and-algebra.html"
+    },
+    {
+      "url": "https://solidmechanics.org/Text/AppendixB/AppendixB.php",
+      "title": "Appendix B, §B.1.5",
+      "supports": "Specific claim and locator are given beside the citation in chapter-02-alternating-tensors-and-algebra.html"
+    },
+    {
+      "url": "https://solidmechanics.org/Text/AppendixA/AppendixA.php",
+      "title": "Appendix A, §A.1.2",
+      "supports": "Specific claim and locator are given beside the citation in chapter-02-alternating-tensors-and-algebra.html"
+    }
+  ],
+  "prose_words_including_math": 4650,
+  "solution_count": 6,
+  "executable_listing_count": 1,
+  "visual_boundary": "No comprehensive visual transcription or full audiovisual review is claimed. ASR cannot recover every board input; uncertain inputs are qualified locally."
+}

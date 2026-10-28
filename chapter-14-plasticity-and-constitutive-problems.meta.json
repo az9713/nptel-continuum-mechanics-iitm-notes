@@ -1,0 +1,205 @@
+{
+  "chapter": 14,
+  "title": "Plasticity and constitutive problem solving",
+  "status": "reviewed — two independent AI reviews",
+  "authored_body_sha256": "ba507ca63132f1227c4eee2a2fe5b1b4bf35dcd387b3ec076527365e52605a8e",
+  "recordings": [
+    {
+      "video_id": "y34--zLl278",
+      "playlist_position": 57,
+      "lecture_label": "Lecture 55",
+      "duration_seconds": 2381,
+      "decoded_audio_duration_seconds": 2380.88125,
+      "complete_decoded_audio": true,
+      "media_sha256": "3db9814e8297ae7df25641dced84a8ca5894f95de4953234a0e85b864e624ac5",
+      "transcript_first_start": 12.24,
+      "transcript_last_end": 2371.7,
+      "transcript_provenance": "Local faster-whisper small.en machine ASR; not publisher captions"
+    },
+    {
+      "video_id": "rcHFRFZ7uSw",
+      "playlist_position": 58,
+      "lecture_label": "Lecture 56",
+      "duration_seconds": 1602,
+      "decoded_audio_duration_seconds": 1601.201625,
+      "complete_decoded_audio": true,
+      "media_sha256": "4257edc4a55b5fd21c1a4050673affda5d9f2e97a551fb5236add371d64b8d8c",
+      "transcript_first_start": 16.08,
+      "transcript_last_end": 1593.01,
+      "transcript_provenance": "Local faster-whisper small.en machine ASR; not publisher captions"
+    }
+  ],
+  "sections": [
+    {
+      "section": "Elastic strain, plastic strain and accumulated history",
+      "anchor": "split",
+      "video_id": "y34--zLl278",
+      "start": 12,
+      "end": 369,
+      "lecture_material": "Related lecture topic located by the stated span",
+      "research_extension": "Inspected external support is cited locally in the exposition",
+      "teaching_construction": "Expanded exposition, derivations, numerical checks and exercises are independently authored; an anchor does not attribute every statement to the recording"
+    },
+    {
+      "section": "Yield surfaces: stress magnitude is not enough",
+      "anchor": "multiaxial",
+      "video_id": "y34--zLl278",
+      "start": 369,
+      "end": 1546,
+      "lecture_material": "Related lecture topic located by the stated span",
+      "research_extension": "Inspected external support is cited locally in the exposition",
+      "teaching_construction": "Expanded exposition, derivations, numerical checks and exercises are independently authored; an anchor does not attribute every statement to the recording"
+    },
+    {
+      "section": "Flow, loading and consistency are separate rules",
+      "anchor": "flow",
+      "video_id": "y34--zLl278",
+      "start": 1546,
+      "end": 1699,
+      "lecture_material": "Related lecture topic located by the stated span",
+      "research_extension": "Inspected external support is cited locally in the exposition",
+      "teaching_construction": "Expanded exposition, derivations, numerical checks and exercises are independently authored; an anchor does not attribute every statement to the recording"
+    },
+    {
+      "section": "Expansion, translation and reverse yielding",
+      "anchor": "hardening",
+      "video_id": "y34--zLl278",
+      "start": 1699,
+      "end": 1821,
+      "lecture_material": "Related lecture topic located by the stated span",
+      "research_extension": "Inspected external support is cited locally in the exposition",
+      "teaching_construction": "Expanded exposition, derivations, numerical checks and exercises are independently authored; an anchor does not attribute every statement to the recording"
+    },
+    {
+      "section": "A complete load–unload calculation and a return update",
+      "anchor": "return",
+      "video_id": null,
+      "start": null,
+      "end": null,
+      "lecture_material": "",
+      "research_extension": "Inspected external support is cited locally in the exposition",
+      "teaching_construction": "Expanded exposition, derivations, numerical checks and exercises are independently authored; an anchor does not attribute every statement to the recording"
+    },
+    {
+      "section": "Plastic work, stored hardening and irreversible loss",
+      "anchor": "dissipation",
+      "video_id": null,
+      "start": null,
+      "end": null,
+      "lecture_material": "",
+      "research_extension": "Inspected external support is cited locally in the exposition",
+      "teaching_construction": "Expanded exposition, derivations, numerical checks and exercises are independently authored; an anchor does not attribute every statement to the recording"
+    },
+    {
+      "section": "Rate effects, damage and pressure-dependent granular flow",
+      "anchor": "extensions",
+      "video_id": "y34--zLl278",
+      "start": 1821,
+      "end": 2342,
+      "lecture_material": "Related lecture topic located by the stated span",
+      "research_extension": "Inspected external support is cited locally in the exposition",
+      "teaching_construction": "Expanded exposition, derivations, numerical checks and exercises are independently authored; an anchor does not attribute every statement to the recording"
+    },
+    {
+      "section": "Tutorial: an elastic stiffness is a map on symmetric strains",
+      "anchor": "tutorial-tensor",
+      "video_id": "rcHFRFZ7uSw",
+      "start": 16,
+      "end": 603,
+      "lecture_material": "Related lecture topic located by the stated span",
+      "research_extension": "Inspected external support is cited locally in the exposition",
+      "teaching_construction": "Expanded exposition, derivations, numerical checks and exercises are independently authored; an anchor does not attribute every statement to the recording"
+    },
+    {
+      "section": "Tutorial: the small-gradient limit of a finite elastic law",
+      "anchor": "tutorial-limit",
+      "video_id": "rcHFRFZ7uSw",
+      "start": 603,
+      "end": 1014,
+      "lecture_material": "Related lecture topic located by the stated span",
+      "research_extension": "Inspected external support is cited locally in the exposition",
+      "teaching_construction": "Expanded exposition, derivations, numerical checks and exercises are independently authored; an anchor does not attribute every statement to the recording"
+    },
+    {
+      "section": "Tutorial: deriving the standard-linear-solid equation",
+      "anchor": "tutorial-network",
+      "video_id": "rcHFRFZ7uSw",
+      "start": 1014,
+      "end": 1593,
+      "lecture_material": "Related lecture topic located by the stated span",
+      "research_extension": "Inspected external support is cited locally in the exposition",
+      "teaching_construction": "Expanded exposition, derivations, numerical checks and exercises are independently authored; an anchor does not attribute every statement to the recording"
+    },
+    {
+      "section": "Executable plastic loading and finite-law checks",
+      "anchor": "implementation",
+      "video_id": null,
+      "start": null,
+      "end": null,
+      "lecture_material": "",
+      "research_extension": "Inspected external support is cited locally in the exposition",
+      "teaching_construction": "Expanded exposition, derivations, numerical checks and exercises are independently authored; an anchor does not attribute every statement to the recording"
+    },
+    {
+      "section": "What a constitutive solution must contain",
+      "anchor": "limits",
+      "video_id": null,
+      "start": null,
+      "end": null,
+      "lecture_material": "",
+      "research_extension": "Inspected external support is cited locally in the exposition",
+      "teaching_construction": "Expanded exposition, derivations, numerical checks and exercises are independently authored; an anchor does not attribute every statement to the recording"
+    },
+    {
+      "section": "Exercises with worked solutions",
+      "anchor": "exercises",
+      "video_id": null,
+      "start": null,
+      "end": null,
+      "lecture_material": "",
+      "research_extension": "Inspected external support is cited locally in the exposition",
+      "teaching_construction": "Expanded exposition, derivations, numerical checks and exercises are independently authored; an anchor does not attribute every statement to the recording"
+    },
+    {
+      "section": "Sources and further development",
+      "anchor": "sources",
+      "video_id": null,
+      "start": null,
+      "end": null,
+      "lecture_material": "",
+      "research_extension": "Inspected external support is cited locally in the exposition",
+      "teaching_construction": "Expanded exposition, derivations, numerical checks and exercises are independently authored; an anchor does not attribute every statement to the recording"
+    }
+  ],
+  "references": [
+    {
+      "url": "https://solidmechanics.org/Text/Chapter3_7/Chapter3_7.php",
+      "title": "Applied Mechanics of Solids , §§3.7.2–3.7.6",
+      "supports": "Specific claim and locator are given beside the citation in chapter-14-plasticity-and-constitutive-problems.html"
+    },
+    {
+      "url": "https://arxiv.org/abs/cond-mat/0612110",
+      "title": "“A constitutive law for dense granular flows,” author preprint",
+      "supports": "Specific claim and locator are given beside the citation in chapter-14-plasticity-and-constitutive-problems.html"
+    },
+    {
+      "url": "https://solidmechanics.org/Text/Chapter3_5/Chapter3_5.php",
+      "title": "§3.5",
+      "supports": "Specific claim and locator are given beside the citation in chapter-14-plasticity-and-constitutive-problems.html"
+    },
+    {
+      "url": "https://solidmechanics.org/Text/Chapter3_6/Chapter3_6.php",
+      "title": "§3.6",
+      "supports": "Specific claim and locator are given beside the citation in chapter-14-plasticity-and-constitutive-problems.html"
+    },
+    {
+      "url": "https://doi.org/10.1038/nature04801",
+      "title": "Nature 441, 727–730 (2006)",
+      "supports": "Specific claim and locator are given beside the citation in chapter-14-plasticity-and-constitutive-problems.html"
+    }
+  ],
+  "prose_words_including_math": 4090,
+  "solution_count": 6,
+  "executable_listing_count": 1,
+  "visual_boundary": "No comprehensive visual transcription or full audiovisual review is claimed. ASR cannot recover every board input; uncertain inputs are qualified locally."
+}

@@ -1,0 +1,209 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="color-scheme" content="dark light"><meta name="book-content-sha256" content="e9616a7d79288a56b50e6ecf7aa05244b4f828179604886ecea4532110c5184c">
+<title>Principal stresses, Mohr circles and stress invariants · Foundations of Continuum Mechanics</title><link rel="stylesheet" href="assets/book.css">
+<script>window.MathJax={tex:{inlineMath:[['$','$'],['\\(','\\)']],displayMath:[['$$','$$'],['\\[','\\]']],processEscapes:true},svg:{fontCache:'local'},options:{skipHtmlTags:['script','noscript','style','textarea','pre','code']}};</script>
+<script defer src="assets/mathjax-tex-svg.js"></script><script defer src="assets/book.js"></script></head>
+<body><a class="skip" href="#main">Skip to content</a><header class="site-header"><a class="brand" href="index.html">Foundations of Continuum Mechanics · NPTEL IIT Mandi</a><nav class="course-nav" aria-label="Book"><a href="index.html">Chapters</a><a href="source-map.html">Source map</a><a href="references.html">References</a><a href="numerical-lab.html">Numerical lab</a></nav></header>
+<div class="layout"><aside class="toc" id="chapter-toc" aria-label="On this page"><h2>On this page</h2></aside><main id="main"><div class="reading-tools" aria-label="Reading controls"><button id="theme-toggle" aria-pressed="false">Light theme</button><button id="text-toggle" aria-pressed="false">Larger text</button><button id="solutions-toggle" aria-pressed="false">Expand solutions</button><button id="print-page">Print with solutions</button></div>
+<article id="chapter-content"><!-- BOOK-CONTENT-START --><h1>Principal stresses, Mohr circles and stress invariants</h1>
+<p class="lead">A stress tensor describes forces on infinitely many possible cuts through a material point. A failure calculation may need the largest tensile traction, the largest shear traction, or a scalar measure of distortion. Searching arbitrary plane orientations can conceal the structure of these questions. Principal directions reduce them to geometry involving three real numbers, while Mohr circles show which combinations of normal and shear traction are possible.</p>
+<p class="source-note">Lecture spine: NPTEL lessons 26–30. Complete repaired local machine transcripts for all five lessons were read sequentially. Board equations were not independently inspected. The running numerical stress, derivations and program are independent teaching constructions. The chapter uses the force-component-first convention \(t_i=\sigma_{ij}n_j\), including when comparing with references that transpose the index meanings. Stress algebra does not by itself establish a material failure criterion.</p>
+
+<h2 id="traction" data-video="NkpFHqMq6bQ" data-start="12" data-end="600">One stress tensor, many plane tractions <a class="timestamp" href="https://www.youtube.com/watch?v=NkpFHqMq6bQ&amp;t=12s">L26 0:12</a></h2>
+<p>At one fixed spatial point and time, let \(\boldsymbol\sigma\) be the Cauchy stress tensor, measured in pascals, or newtons per current square metre. We assume a classical continuum without couple stresses, for which angular momentum balance gives \(\boldsymbol\sigma^T=\boldsymbol\sigma\). Its components are real. Choose an oriented plane with dimensionless unit normal \(\mathbf n\), so \(\mathbf n\cdot\mathbf n=1\). Cauchy's relation is \(\mathbf t=\boldsymbol\sigma\mathbf n\). Its first index denotes force component and its second the normal direction.</p>
+<p>Define signed normal traction \(q=\mathbf n\cdot\mathbf t=\mathbf n\cdot\boldsymbol\sigma\mathbf n\), shear traction vector \(\boldsymbol\tau=\mathbf t-q\mathbf n\), and shear magnitude \(\tau=|\boldsymbol\tau|\geq0\). All are stresses except the unit normal. Positive \(q\) means tension on the chosen plane; negative \(q\) means compression. The shear vector is perpendicular to \(\mathbf n\), since \(\mathbf n\cdot\boldsymbol\tau=q-q=0\). Consequently</p>
+\[
+\tau^2=\mathbf t\cdot\mathbf t-q^2
+=\mathbf n\cdot\boldsymbol\sigma^2\mathbf n-q^2.
+\]
+<p>The last equality uses symmetry. Without it the product would be \(\boldsymbol\sigma^T\boldsymbol\sigma\), and the spectral conclusions below would need revision. Bower's <a href="https://solidmechanics.org/Text/Chapter2_3/Chapter2_3.php">§2.3.3</a> explicitly discusses the alternative normal-first convention. Here the component contract remains fixed before symmetry is used.</p>
+<p>Use the constructed running stress</p>
+\[
+\boldsymbol\sigma=\begin{pmatrix}6&2&0\\2&3&0\\0&0&1\end{pmatrix}\ \mathrm{MPa},
+\qquad \mathbf n=\tfrac15(3,4,0).
+\]
+<p>Multiplication gives \(\mathbf t=(5.2,3.6,0)\) MPa. Thus \(q=0.6(5.2)+0.8(3.6)=6\) MPa, \(\boldsymbol\tau=(1.6,-1.2,0)\) MPa, and \(\tau=2\) MPa. The traction magnitude is \(\sqrt{40}\) MPa, so it differs from both its normal component and its shear magnitude. This distinction becomes essential when optimizing a stress measure.</p>
+
+<h2 id="transformation" data-video="NkpFHqMq6bQ" data-start="12" data-end="1390">Stress transformation and principal planes <a class="timestamp" href="https://www.youtube.com/watch?v=NkpFHqMq6bQ&amp;t=12s">L26 0:12</a></h2>
+<p>Let \(A_{ij}=\mathbf e'_i\cdot\mathbf e_j\) relate two orthonormal Cartesian bases. Vector components transform as \(\mathbf t'=\mathbf A\mathbf t\) and \(\mathbf n'=\mathbf A\mathbf n\), with \(\mathbf A\mathbf A^T=\mathbf I\). Substitute these into the traction relation:</p>
+\[
+\mathbf t'=\mathbf A\boldsymbol\sigma\mathbf A^T\mathbf n',
+\qquad \boldsymbol\sigma'=\mathbf A\boldsymbol\sigma\mathbf A^T.
+\]
+<p>The map is unchanged; its matrix components change. A <dfn>principal plane</dfn> is a plane on which the shear vector vanishes. Then \(\boldsymbol\sigma\mathbf n=q\mathbf n\), so its normal is an eigenvector and its normal traction the corresponding eigenvalue. Real symmetric tensors admit an orthonormal eigenbasis. Order the principal stresses as \(\sigma_1\geq\sigma_2\geq\sigma_3\), and denote corresponding unit eigenvectors by \(\mathbf p_1,\mathbf p_2,\mathbf p_3\).</p>
+<p>For distinct eigenvalues, orthogonality can be checked directly. Symmetry gives \(\mathbf p_i\cdot\boldsymbol\sigma\mathbf p_j=\boldsymbol\sigma\mathbf p_i\cdot\mathbf p_j\), so \((\sigma_j-\sigma_i)\mathbf p_i\cdot\mathbf p_j=0\). Within a repeated-eigenvalue subspace, choose any orthonormal basis. Repetition makes individual principal directions nonunique, not nonexistent.</p>
+<p>The running matrix has characteristic factor \((1-\lambda)[(6-\lambda)(3-\lambda)-4]\). The quadratic factor is \((7-\lambda)(2-\lambda)\). Thus principal values are \((7,2,1)\) MPa. A corresponding basis is \(\mathbf p_1=(2,1,0)/\sqrt5\), \(\mathbf p_2=(-1,2,0)/\sqrt5\), \(\mathbf p_3=(0,0,1)\). For example, multiplying by \((2,1,0)\) gives \((14,7,0)=7(2,1,0)\). The principal basis converts the coupled in-plane stress into three purely normal principal tractions.</p>
+
+<h2 id="principal" data-video="dUm4eugKcQo" data-start="12" data-end="1700">Normal-stress extrema as a constrained problem <a class="timestamp" href="https://www.youtube.com/watch?v=dUm4eugKcQo&amp;t=12s">L27 0:12</a></h2>
+<p>A principal value is stationary normal traction, but stationarity alone does not distinguish a maximum, minimum or saddle. To derive its condition, introduce the Lagrange multiplier \(\lambda\), in stress units, and function \(\mathcal L(\mathbf n,\lambda)=\mathbf n\cdot\boldsymbol\sigma\mathbf n-\lambda(\mathbf n\cdot\mathbf n-1)\). Differentiating with respect to the three components of \(\mathbf n\) gives \(2\boldsymbol\sigma\mathbf n-2\lambda\mathbf n=0\). Taking the dot product with \(\mathbf n\) then gives \(\lambda=q\). Thus every stationary plane is principal.</p>
+<p>Expand an arbitrary normal as \(\mathbf n=n_i^*\mathbf p_i\) and let \(w_i=(n_i^*)^2\). The asterisk marks principal-basis components. The weights satisfy \(w_i\geq0\), \(\sum_iw_i=1\), and</p>
+\[
+q=\sum_{i=1}^3w_i\sigma_i.
+\]
+<p>This is a convex weighted average of the principal stresses. Therefore \(\sigma_3\leq q\leq\sigma_1\). Both endpoints are attained by choosing the corresponding principal normal. In a strictly ordered three-dimensional state, \(\sigma_2\) is a saddle value: rotating its normal toward \(\mathbf p_1\) increases normal traction, while rotating toward \(\mathbf p_3\) decreases it.</p>
+<p>For the running stress, the largest normal traction is 7 MPa and the smallest 1 MPa. The earlier plane has 6 MPa, within these limits. The largest traction magnitude is instead \(\max_i|\sigma_i|\), because \(|\mathbf t|^2=\sum_iw_i\sigma_i^2\). A compressive principal stress of large magnitude can dominate that measure even when the largest signed normal traction is tensile. “Maximum stress” is incomplete without the quantity being maximized.</p>
+
+<h2 id="maximum-shear" data-video="dUm4eugKcQo" data-start="1554" data-end="3507">The maximum shear and its planes <a class="timestamp" href="https://www.youtube.com/watch?v=dUm4eugKcQo&amp;t=1554s">L27 25:54</a></h2>
+<p>The shear magnitude in the principal basis satisfies \(\tau^2=\sum_iw_i\sigma_i^2-q^2\). Algebraically it is the weighted variance of the three principal stresses. This interpretation supplies a direct global bound. Put \(a=\sigma_3\) and \(b=\sigma_1\). Since every principal value lies in \([a,b]\), \((b-\sigma_i)(\sigma_i-a)\geq0\). Expanding and summing with the weights yields \(\sum_iw_i\sigma_i^2\leq(a+b)q-ab\). Therefore</p>
+\[
+\tau^2\leq(b-q)(q-a)
+=\frac{(b-a)^2}{4}-\left(q-\frac{a+b}{2}\right)^2
+\leq\frac{(b-a)^2}{4}.
+\]
+<p>Equality requires both the largest possible spread and a normal stress at the interval midpoint. For distinct principal values, choose \(w_1=w_3=1/2\), \(w_2=0\), giving \(\mathbf n=(\mathbf p_1\pm\mathbf p_3)/\sqrt2\). The two sign choices describe two distinct plane orientations; reversing the whole normal gives the same unoriented plane. Thus</p>
+\[
+\tau_{\max}=\frac{\sigma_1-\sigma_3}{2},
+\qquad q\big|_{\tau_{\max}}=\frac{\sigma_1+\sigma_3}{2}.
+\]
+<p>The maximum-shear planes bisect the extreme principal directions. In the running state, \(\tau_{\max}=3\) MPa and \(q=4\) MPa on those planes. They generally carry normal traction as well as shear. They are not “pure-shear planes” in the sense of zero normal traction.</p>
+<p>The same stationary condition can be obtained with a multiplier. Differentiating \(\tau^2=\mathbf n\cdot\boldsymbol\sigma^2\mathbf n-q^2\) gives \(2\boldsymbol\sigma^2\mathbf n-4q\boldsymbol\sigma\mathbf n-2\mu\mathbf n=0\). Every nonzero principal component therefore obeys \(\sigma_i^2-2q\sigma_i-\mu=0\). With three distinct principal stresses, at most two can satisfy this quadratic simultaneously. The variance bound above then identifies which pair gives the global maximum, avoiding the mistake of selecting an arbitrary stationary pair.</p>
+<p>For a hydrostatic state \(\boldsymbol\sigma=m\mathbf I\), all principal values equal \(m\). Every plane is principal and \(\tau=0\) for every normal. When only two values coincide, the extreme direction within a repeated eigenspace can be chosen freely, producing a family of maximum-shear planes. The extremal formula remains valid.</p>
+
+<h2 id="mohr" data-video="D2JWvOoeY7U" data-start="12" data-end="1000">Mohr's circle from a physical plane rotation <a class="timestamp" href="https://www.youtube.com/watch?v=D2JWvOoeY7U&amp;t=12s">L28 0:12</a></h2>
+<p>Restrict the normal to the plane spanned by two principal directions \(\mathbf p_i,\mathbf p_j\). Write \(\mathbf n=\cos\theta\,\mathbf p_i+\sin\theta\,\mathbf p_j\) and choose its in-plane tangent \(\mathbf m=-\sin\theta\,\mathbf p_i+\cos\theta\,\mathbf p_j\). The angle \(\theta\) rotates the physical normal. Define signed in-plane shear \(r=\mathbf m\cdot\boldsymbol\sigma\mathbf n\), which can be positive or negative. The shear magnitude is \(|r|\) for this restricted family.</p>
+<p>Direct multiplication and double-angle identities give</p>
+\[
+q=c_{ij}+R_{ij}\cos2\theta,\qquad
+r=-R_{ij}\sin2\theta,\qquad
+c_{ij}=\frac{\sigma_i+\sigma_j}{2},\quad
+R_{ij}=\frac{\sigma_i-\sigma_j}{2}.
+\]
+<p>Squaring and adding eliminates \(\theta\): \((q-c_{ij})^2+r^2=R_{ij}^2\). This is <dfn>Mohr's circle</dfn> for that principal pair. Its horizontal coordinate is normal traction and its vertical coordinate is a signed shear selected by the tangent convention. A positive physical rotation traverses the circle clockwise under the convention above, and the angular change on the circle is twice the physical angle.</p>
+<p>For the running 1–2 principal pair, the center is 4.5 MPa and radius 2.5 MPa. At \(\theta=45\) degrees, \(q=4.5\) MPa and \(r=-2.5\) MPa. This is the maximum shear among normals confined to that principal plane. It is smaller than the three-dimensional maximum of 3 MPa because the latter uses the 1–3 pair. A two-dimensional plot must specify which normals it represents.</p>
+<p>For an arbitrary planar block \(\left(\begin{smallmatrix}\sigma_{11}&\sigma_{12}\\\sigma_{12}&\sigma_{22}\end{smallmatrix}\right)\), the same multiplication before diagonalization gives \(q=c+d\cos2\theta+\sigma_{12}\sin2\theta\) and \(r=-d\sin2\theta+\sigma_{12}\cos2\theta\), with \(c=(\sigma_{11}+\sigma_{22})/2\), \(d=(\sigma_{11}-\sigma_{22})/2\). The radius is \(\sqrt{d^2+\sigma_{12}^2}\). For the running block, \(c=4.5\), \(d=1.5\), and the radius is 2.5 MPa, recovering principal values 7 and 2 MPa without solving a cubic.</p>
+
+<h2 id="feasible" data-video="D2JWvOoeY7U" data-start="1000" data-end="1932">The three-dimensional feasible stress region <a class="timestamp" href="https://www.youtube.com/watch?v=D2JWvOoeY7U&amp;t=1000s">L28 16:40</a></h2>
+<p>For a general three-dimensional normal, shear has two tangential components, so there is no unique signed scalar shear without choosing a tangent direction. Plot \((q,\tau)\) with \(\tau\geq0\). Three principal-pair circles bound the possible points, but general points need not lie on a circle. This distinction separates the two-dimensional circle locus from the three-dimensional feasible region.</p>
+<p>Assume first that \(\sigma_1&gt;\sigma_2&gt;\sigma_3\). Let \(M=q^2+\tau^2=\sum_iw_i\sigma_i^2\). For distinct indices \(i,j,k\), the identity</p>
+\[
+M-(\sigma_j+\sigma_k)q+\sigma_j\sigma_k
+=w_i(\sigma_i-\sigma_j)(\sigma_i-\sigma_k)
+\]
+<p>follows by expanding the weighted sum and using \(\sum_iw_i=1\). All terms except the \(i\)-term vanish. Consequently</p>
+\[
+w_i=\frac{\tau^2+(q-\sigma_j)(q-\sigma_k)}
+{(\sigma_i-\sigma_j)(\sigma_i-\sigma_k)}.
+\]
+<p>The three nonnegative-weight conditions describe the region. The \(i=2\) denominator is negative, so \(\tau^2\leq(\sigma_1-q)(q-\sigma_3)\): points lie inside the largest circle. The \(i=1\) and \(i=3\) denominators are positive, requiring points to lie outside or on the two smaller circles. A point satisfying these conditions and the reconstructed unit-sum weights is realized by \(n_i^*=\pm\sqrt{w_i}\). Signs alter the orientation while preserving \(q\) and \(\tau\).</p>
+<p>For the running state, a point with \(q=4\) MPa and \(\tau=0\) is impossible. It would require zero shear and hence a principal plane, but 4 MPa is not a principal value. On the other hand, \((q,\tau)=(4,3)\) MPa lies at the top of the largest circle and is attainable. Merely checking \(1\leq q\leq7\) and \(\tau\leq3\) would incorrectly admit many impossible combinations. Repeated eigenvalues must be handled by the original weighted equations rather than division by zero in the inverse formulas.</p>
+
+<h2 id="plane-stress" data-video="zVzPAaiXV2E" data-start="12" data-end="1100">Plane stress retains a third principal value <a class="timestamp" href="https://www.youtube.com/watch?v=zVzPAaiXV2E&amp;t=12s">L29 0:12</a></h2>
+<p>A <dfn>plane-stress state</dfn> in the 1–2 plane satisfies \(\sigma_{13}=\sigma_{23}=\sigma_{33}=0\). Symmetry supplies the other off-plane zeros. Thus \(\mathbf e_3\) is a zero-eigenvalue principal direction. The in-plane principal values are</p>
+\[
+\lambda_\pm=\frac{\sigma_{11}+\sigma_{22}}2
+\pm\sqrt{\left(\frac{\sigma_{11}-\sigma_{22}}2\right)^2+\sigma_{12}^2}.
+\]
+<p>These two numbers and zero must be sorted together to find the true three-dimensional maximum shear. For \(\operatorname{diag}(8,3,0)\) MPa, the in-plane circle has radius 2.5 MPa, whereas the global maximum shear is 4 MPa, using the 8 and 0 MPa directions. For an in-plane tensile-compressive pair 8 and -3 MPa, zero lies between them and the in-plane maximum is already the global maximum, 5.5 MPa.</p>
+<p>A traction-free surface with normal \(\mathbf e_3\) enforces this vanishing column of stress at the surface. Extending plane stress throughout a thin specimen is an approximation based on geometry and loading; traction-free faces alone do not prove every interior off-plane component vanishes. Plane stress permits additional zero principal values. It does not require exactly one nonzero pair.</p>
+<p>Plane strain instead restricts displacement gradients and strain components. It generally leaves a nonzero out-of-plane stress. Conversely, a plane-stress elastic specimen can contract through its thickness. A constitutive law is required to calculate that contraction. Removing a coordinate from a three-dimensional stress matrix does not establish any of these physical assumptions.</p>
+
+<p>A lecture example has planar stress block \(\left(\begin{smallmatrix}S&S\\S&S\end{smallmatrix}\right)\), with \(S&gt;0\), and zero out-of-plane stress. The eigenvectors \((1,1,0)/\sqrt2\) and \((-1,1,0)/\sqrt2\) have values \(2S\) and zero; the third axis also has value zero. It is uniaxial stress viewed in rotated axes. Two pair circles coincide and the zero–zero circle collapses to a point. The maximum shear is \(S\), attained on normals bisecting the tensile eigenvector and any chosen direction in its perpendicular zero-eigenvalue plane.</p>
+<h2 id="deviator" data-video="zVzPAaiXV2E" data-start="1955" data-end="2829">Spherical stress, deviatoric stress and invariants <a class="timestamp" href="https://www.youtube.com/watch?v=zVzPAaiXV2E&amp;t=1955s">L29 32:35</a></h2>
+<p>Define the mean tensile stress \(m=\operatorname{tr}\boldsymbol\sigma/3\), and write</p>
+\[
+\boldsymbol\sigma=m\mathbf I+\mathbf s,\qquad
+\mathbf s=\boldsymbol\sigma-m\mathbf I,\qquad \operatorname{tr}\mathbf s=0.
+\]
+<p>The spherical part \(m\mathbf I\) gives the same normal traction \(m\) on every plane and no shear. The <dfn>deviatoric stress</dfn> \(\mathbf s\) retains all shear tractions, since \(\mathbf s\mathbf n-(\mathbf n\cdot\mathbf s\mathbf n)\mathbf n=\boldsymbol\tau\). A common pressure convention is \(p=-m\), positive in compression. State the sign convention before identifying mean stress with pressure.</p>
+<p>The split is algebraic, not a universal decomposition of actual volume and shape changes. In a linear isotropic elastic model, spherical and deviatoric responses decouple. In an anisotropic or nonlinear material, that response needs its own constitutive analysis. Bower's <a href="https://solidmechanics.org/Text/Chapter2_3/Chapter2_3.php">§2.3.7</a> supplies the hydrostatic/deviatoric definitions; the kinematic interpretation requires the material assumptions just stated.</p>
+<p>The full stress invariants are \(I_1=\operatorname{tr}\boldsymbol\sigma\), \(I_2=[I_1^2-\operatorname{tr}(\boldsymbol\sigma^2)]/2\), and \(I_3=\det\boldsymbol\sigma\). They have units Pa, Pa² and Pa³. They are unchanged by orthogonal basis transformation because trace and determinant are unchanged by similarity. In the principal basis, \(I_2=\sigma_1\sigma_2+\sigma_2\sigma_3+\sigma_3\sigma_1\), and \(I_3=\sigma_1\sigma_2\sigma_3\). These are the coefficients in \(\det(\lambda\mathbf I-\boldsymbol\sigma)=\lambda^3-I_1\lambda^2+I_2\lambda-I_3\).</p>
+<p>For the deviator, define</p>
+\[
+J_2=\tfrac12\mathbf s:\mathbf s=\tfrac12s_{ij}s_{ij},\qquad
+J_3=\det\mathbf s.
+\]
+<p>The colon denotes double contraction in an orthonormal basis. Symmetry makes \(\mathbf s:\mathbf s\) its squared Frobenius norm, a sum of squares. Thus \(J_2\geq0\), with equality only for zero deviator. Since the trace vanishes, the second principal invariant of \(\mathbf s\) is \(-J_2\); the sign is easy to confuse with the positive convention used here. If \(s_i=\sigma_i-m\), then \(\sum_i s_i=0\) and</p>
+\[
+J_2=\frac16\left[(\sigma_1-\sigma_2)^2+(\sigma_2-\sigma_3)^2+(\sigma_3-\sigma_1)^2\right].
+\]
+<p>To verify this expression, expand the bracket as \(3\sum_i\sigma_i^2-(\sum_i\sigma_i)^2=3\sum_i(\sigma_i-m)^2\). Dividing by six gives the defined half-norm. Hydrostatic addition changes none of the pairwise differences, so it changes neither \(J_2\), \(J_3\) nor maximum shear.</p>
+<p>The running state has \(m=10/3\) MPa, principal deviator entries \((11,-4,-7)/3\) MPa, \(J_2=31/3\) MPa², and \(J_3=308/27\) MPa³. The von Mises equivalent stress is defined by \(\sigma_{\mathrm{eq}}=\sqrt{3J_2}=\sqrt{31}\) MPa. This equals the tensile magnitude in a uniaxial state, but treating it as a yield threshold is an additional material-model choice. Hydrostatic pressure can affect material failure even though this scalar omits it.</p>
+
+<h2 id="octahedral" data-video="zVzPAaiXV2E" data-start="2836" data-end="3423">Octahedral shear measures a particular family of planes <a class="timestamp" href="https://www.youtube.com/watch?v=zVzPAaiXV2E&amp;t=2836s">L29 47:16</a></h2>
+<p>An <dfn>octahedral plane</dfn> has equal squared normal components in the principal basis: \((n_1^*)^2=(n_2^*)^2=(n_3^*)^2=1/3\). The signs give eight directed normals, or four unoriented plane orientations. Their normal traction is \(q_{\mathrm{oct}}=m\). Substitution into the shear formula gives</p>
+\[
+\tau_{\mathrm{oct}}^2=\frac13\sum_i\sigma_i^2-m^2
+=\frac13\sum_i(\sigma_i-m)^2=\frac{2J_2}{3}.
+\]
+<p>Thus \(\tau_{\mathrm{oct}}=\sqrt{2J_2/3}\), and \(\sigma_{\mathrm{eq}}=(3/\sqrt2)\tau_{\mathrm{oct}}\). It is not the maximum shear over all planes. For the running state, \(\tau_{\mathrm{oct}}=\sqrt{62}/3\approx2.624669\) MPa, smaller than 3 MPa. Octahedral shear samples a geometrically specified family with equal principal-direction weights; maximum shear chooses only the two extreme principal values.</p>
+<p>A uniaxial stress \(\operatorname{diag}(S,0,0)\) gives \(J_2=S^2/3\), \(\sigma_{\mathrm{eq}}=|S|\), \(\tau_{\max}=|S|/2\), and \(\tau_{\mathrm{oct}}=\sqrt2|S|/3\). These different coefficients reflect different definitions. They should not be exchanged merely because each is used in a yield or damage model.</p>
+
+<h2 id="tutorial" data-video="oi3O0-4rn6Q" data-start="12" data-end="2667">A reproducible method for tutorial stress calculations <a class="timestamp" href="https://www.youtube.com/watch?v=oi3O0-4rn6Q&amp;t=12s">L30 0:12</a></h2>
+<p>The seven tutorial problems test specified-plane traction, rotated coordinate-plane traction, a repeated eigenvalue, inverse use of invariants, inverse plane orientation, deviatoric invariant identities and a complete cube-to-Mohr calculation. A reliable calculation first fixes the index and sign conventions, computes traction on a specified plane, and distinguishes its normal component from shear magnitude. If a coordinate rotation is prescribed, transform the tensor and the normal consistently. If the objective is an extremum, diagonalize once and sort all three principal values before selecting the relevant pair.</p>
+<p>For the running state and plane normal \((3,4,0)/5\), the principal normal components are \(n_1^*=2/\sqrt5\), \(n_2^*=1/\sqrt5\), and \(n_3^*=0\). Thus the weights are \((4/5,1/5,0)\). They give \(q=7(4/5)+2(1/5)=6\) MPa and \(\tau^2=49(4/5)+4(1/5)-36=4\) MPa². This independently reproduces direct Cartesian traction. The point lies on the 1–2 circle because its third principal component vanishes.</p>
+<p>Invariant checks provide another independent route. The running matrix has trace 10 MPa, determinant 14 MPa³ and second invariant 23 MPa². The principal values give \(7+2+1=10\), \(7\cdot2\cdot1=14\), and \(7\cdot2+2\cdot1+1\cdot7=23\). Matching the three values tests an eigensystem calculation without assuming the eigenvectors are correct. Eigenvector residuals and orthogonality must still be checked separately.</p>
+
+<p>In the rotated-traction tutorial, let \(\mathbf e'_j=A_{jk}\mathbf e_k\). The traction on that primed coordinate plane, still expressed in the original basis, has components \(t_i^{(j)}=\sigma_{ik}A_{jk}\). Converting its components to the primed basis gives \(t'_\ell{}^{(j)}=A_{\ell i}\sigma_{ik}A_{jk}=\sigma'_{\ell j}\). With the force-component-first convention these vectors populate columns, even though the lecture's transposed convention calls them rows. Symmetry must not be used to blur the meaning of the indices. The ASR identifies one original normal as \((2,3,6)/7\), of unit length, but does not identify the full board matrix; a complete numerical reconstruction of that problem is therefore not claimed.</p>
+<p>The repeated-eigenvalue tutorial gives principal values \((4,1,1)\). Once its distinct principal unit direction \(\mathbf p\) is known, every vector orthogonal to \(\mathbf p\) is an eigenvector with value 1. Choose one normalized perpendicular vector, then take its cross product with \(\mathbf p\) to complete a right-handed basis. For a fully specified representative, \(\boldsymbol\sigma=\mathbf I+3\mathbf p\otimes\mathbf p\) has exactly those values. This construction explains the degeneracy without guessing board entries.</p>
+<p>The inverse-invariant tutorial supplies trace \(4+7+4=15\) MPa, one principal value 3 MPa, and the relation \(\sigma_1=2\sigma_2\). Hence \(3\sigma_2+3=15\), giving \((8,4,3)\) MPa. The required determinant is then 96 MPa³. A board parameter can be determined by equating its matrix determinant to that value; the ASR states a zero parameter, but its full matrix is unavailable for an independent numerical check. The stated decoupled first column \((4,0,0)\) identifies \(\mathbf e_1\) as the 4 MPa principal direction.</p>
+<p>The inverse-plane tutorial has principal values \((18,12,6)\) in common stress units and requests \(q=12\), \(\tau=3\). The squared-traction moment is \(M=153\). The weight formula gives \(w_1=[153-18(12)+72]/72=1/8\), \(w_2=[153-24(12)+108]/(-36)=3/4\), and \(w_3=1/8\). Thus normals have principal components \((\pm1/(2\sqrt2),\pm\sqrt3/2,\pm1/(2\sqrt2))\). The independent signs show why the inverse problem does not have one unique oriented normal.</p>
+<p>The deviatoric-identity tutorial uses \(s_1+s_2+s_3=0\). Squaring it gives \(s_1s_2+s_2s_3+s_3s_1=-\tfrac12(s_1^2+s_2^2+s_3^2)=-J_2\), which reconciles the negative second principal invariant with the positive \(J_2\) convention. Finally, the cube-picture tutorial reconstructs \(\operatorname{diag}(S,0,-S)\). Its circles have centers \(S/2,-S/2,0\), radii \(S/2,S/2,S\), and maximum shear \(S\) on normals \((\mathbf e_1\pm\mathbf e_3)/\sqrt2\). This completes its traction-to-eigenvalue-to-plane-orientation sequence.</p>
+<h2 id="implementation">Executable stress-plane and invariant checks</h2>
+<p>The NumPy program uses MPa consistently, finds the eigensystem, checks the original plane by both representations, and constructs a maximum-shear plane. It independently checks octahedral shear and hydrostatic-shift invariance. Inputs are a fixed symmetric stress matrix and unit normals. It prints results and changes no external state. The symmetry and normalization assertions reject inputs outside this calculation's stated contract; numerical eigensolutions do not verify a physical stress field.</p>
+<pre data-run="ch06"><code class="language-python">import numpy as np
+
+stress = np.array([[6., 2., 0.], [2., 3., 0.], [0., 0., 1.]])
+assert np.allclose(stress, stress.T)
+values, axes = np.linalg.eigh(stress)
+order = np.argsort(values)[::-1]
+values, axes = values[order], axes[:, order]
+assert np.allclose(stress @ axes, axes*values)
+assert np.allclose(axes.T @ axes, np.eye(3))
+normal = np.array([3., 4., 0.])/5
+traction = stress @ normal
+q = float(normal @ traction)
+tau = float(np.linalg.norm(traction - q*normal))
+weights = (axes.T @ normal)**2
+assert np.isclose(q, weights @ values)
+assert np.isclose(tau*tau, weights @ (values*values) - q*q)
+critical = (axes[:, 0] + axes[:, 2])/np.sqrt(2)
+critical_traction = stress @ critical
+critical_q = float(critical @ critical_traction)
+critical_tau = np.linalg.norm(critical_traction - critical_q*critical)
+assert np.isclose(critical_tau, (values[0] - values[-1])/2)
+mean = np.trace(stress)/3
+deviator = stress - mean*np.eye(3)
+j2 = np.sum(deviator*deviator)/2
+oct_normal = axes @ (np.ones(3)/np.sqrt(3))
+oct_traction = stress @ oct_normal
+oct_tau = np.linalg.norm(oct_traction - mean*oct_normal)
+assert np.isclose(oct_tau*oct_tau, 2*j2/3)
+shifted = stress + 100*np.eye(3)
+assert np.allclose(shifted - np.trace(shifted)*np.eye(3)/3, deviator)
+print('principal MPa:', np.round(values, 6).tolist())
+print('plane [normal, shear] MPa:', [round(q, 6), round(tau, 6)])
+print('maximum shear MPa:', round(float(critical_tau), 6))
+print('J2 MPa2:', round(float(j2), 6))
+print('von Mises MPa:', round(float(np.sqrt(3*j2)), 6))
+print('octahedral shear MPa:', round(float(oct_tau), 6))
+</code></pre>
+<pre data-output="ch06">principal MPa: [7.0, 2.0, 1.0]
+plane [normal, shear] MPa: [6.0, 2.0]
+maximum shear MPa: 3.0
+J2 MPa2: 10.333333
+von Mises MPa: 5.567764
+octahedral shear MPa: 2.624669</pre>
+<p>Eigenvector signs returned by a library are arbitrary. Flipping a principal eigenvector changes a chosen directed normal but not the principal value or the computed maximum shear. Tests should compare invariant quantities and residuals instead of expecting one particular sign convention for every eigenvector.</p>
+
+<h2 id="exercises">Exercises with fully worked solutions</h2>
+<p><strong>1. Traction and shear.</strong> For the running stress, evaluate the plane normal \(\mathbf e_1\). Is the 6 MPa diagonal entry a principal stress?</p>
+<details><summary>Solution</summary><p>The traction is the first matrix column, \((6,2,0)\) MPa. Its normal component is 6 MPa and its shear vector \((0,2,0)\) MPa, of magnitude 2 MPa. The shear is nonzero, so this is not a principal plane and 6 MPa is not its principal traction. Diagonal entries become principal stresses only in a principal basis or when the corresponding basis direction is an eigenvector.</p></details>
+<p><strong>2. A maximum-shear normal.</strong> Construct a maximum-shear normal for principal values \((7,2,1)\) MPa and calculate its normal traction.</p>
+<details><summary>Solution</summary><p>In the principal basis choose \(\mathbf n=(1,0,1)/\sqrt2\). Its traction is \((7,0,1)/\sqrt2\) MPa. The normal component is \((7+1)/2=4\) MPa. Subtracting \(4\mathbf n\) leaves \((3,0,-3)/\sqrt2\), whose magnitude is 3 MPa. The plane has maximum shear but nonzero normal traction. Mapping the normal back with the principal axes gives its Cartesian orientation.</p></details>
+<p><strong>3. In-plane versus three-dimensional shear.</strong> A plane-stress matrix is \(\operatorname{diag}(8,3,0)\) MPa. Find both maximum shears and explain the difference.</p>
+<details><summary>Solution</summary><p>For normals confined to the 1–2 plane, only values 8 and 3 enter the circle, giving \((8-3)/2=2.5\) MPa. Allowing every spatial normal also admits the zero principal value, so the global maximum is \((8-0)/2=4\) MPa. Its normals bisect \(\mathbf e_1\) and \(\mathbf e_3\). Plane stress does not restrict all possible cutting planes to the 1–2 plane.</p></details>
+<p><strong>4. A forbidden stress-plane point.</strong> Can the running principal values produce \(q=4\) MPa and \(\tau=1\) MPa? Reconstruct the principal weights.</p>
+<details><summary>Solution</summary><p>Here \(M=q^2+\tau^2=17\) MPa². The first weight is \([17-3(4)+2]/[(7-2)(7-1)]=7/30\). The second is \([17-8(4)+7]/[(2-7)(2-1)]=8/5\). The third is \([17-9(4)+14]/[(1-7)(1-2)]=-5/6\). Although the weights sum to one, the last is negative. No real unit normal has negative squared components. The point satisfies crude independent stress bounds but lies inside an excluded smaller circle.</p></details>
+<p><strong>5. Add hydrostatic compression.</strong> Add \(-100\mathbf I\) MPa to the running stress. Find the new principal values, mean stress, maximum shear and \(J_2\).</p>
+<details><summary>Solution</summary><p>The eigenvectors are unchanged because identity acts equally on every direction. Principal values become \((-93,-98,-99)\) MPa and mean stress becomes \(10/3-100=-290/3\) MPa. Pairwise differences remain 5, 1 and 6 MPa. Hence maximum shear remains 3 MPa and \(J_2=(25+1+36)/6=31/3\) MPa². Every plane's normal traction decreases by 100 MPa, while its shear vector is unchanged. A pressure-sensitive material can nevertheless respond differently.</p></details>
+<p><strong>6. Pure shear and equivalent stress.</strong> For \(\boldsymbol\sigma=\left(\begin{smallmatrix}0&T&0\\T&0&0\\0&0&0\end{smallmatrix}\right)\), with \(T&gt;0\), find principal values, \(J_2\), maximum shear and von Mises stress.</p>
+<details><summary>Solution</summary><p>The in-plane characteristic equation is \(\lambda^2-T^2=0\); adding the third zero gives ordered values \((T,0,-T)\). The trace is zero, so the deviator is the whole tensor. Its squared Frobenius norm is \(2T^2\), hence \(J_2=T^2\). Maximum shear is \([T-(-T)]/2=T\), while von Mises stress is \(\sqrt3T\). In a von Mises yield model calibrated by uniaxial threshold \(Y\), pure-shear yielding would occur at \(T=Y/\sqrt3\); this last statement uses that material model, not stress algebra alone.</p></details>
+<p><strong>7. Degenerate eigenvalues.</strong> For \(\operatorname{diag}(S,S,0)\) with \(S&gt;0\), characterize principal and maximum-shear directions.</p>
+<details><summary>Solution</summary><p>Every unit vector in the 1–2 plane is a principal direction with value \(S\). The third axis has value zero. Choose any such in-plane unit vector \(\mathbf p\); normals \((\mathbf p\pm\mathbf e_3)/\sqrt2\) give equal weights on the extreme eigenspaces, hence shear \(S/2\) and normal traction \(S/2\). The maximum-shear directions form a continuous family. Formulas dividing by \(\sigma_1-\sigma_2\) fail here, but the weighted-average and variance arguments remain valid.</p></details>
+
+<h2 id="limits">From geometry to a material decision</h2>
+<p>Principal stresses identify normal-traction extrema, while the extreme principal pair determines maximum shear. Mohr circles encode plane orientation and the feasible relation between normal and tangential traction. The spherical/deviatoric split separates hydrostatic addition from shear, and invariants remove coordinate dependence. Choosing which scalar predicts yielding, fracture or damage requires evidence and a material law. A correct invariant is not automatically a universal failure criterion.</p>
+<h2 id="sources">Sources and attribution</h2>
+<ul><li>Prof. Gaurav Bhutani, NPTEL, <a href="https://www.youtube.com/watch?v=NkpFHqMq6bQ">L26</a>, <a href="https://www.youtube.com/watch?v=dUm4eugKcQo">L27</a>, <a href="https://www.youtube.com/watch?v=D2JWvOoeY7U">L28</a>, <a href="https://www.youtube.com/watch?v=zVzPAaiXV2E">L29</a>, and <a href="https://www.youtube.com/watch?v=oi3O0-4rn6Q">L30 tutorial</a>.</li><li>A. F. Bower, <a href="https://solidmechanics.org/Text/Chapter2_3/Chapter2_3.php"><em>Applied Mechanics of Solids</em>, §§2.3.3 and 2.3.6–2.3.8</a>: inspected for index conventions, principal and maximum-shear stress, hydrostatic/deviatoric stress and surface constraints. This chapter supplies its own proofs, feasible-weight derivation and constructed numbers.</li></ul>
+<!-- BOOK-CONTENT-END --></article><nav class="page-turn" aria-label="Chapter navigation"><a rel="prev" href="chapter-05-traction-cauchy-stress-equilibrium.html">Previous chapter</a><a href="index.html">Chapter index</a><a rel="next" href="chapter-07-motion-material-derivative.html">Next chapter</a></nav></main></div><footer class="site-footer">Independent study edition. Prof. Gaurav Bhutani’s NPTEL recordings provide the topic spine. Original exposition, source limitations and verification evidence are separately recorded.</footer></body></html>

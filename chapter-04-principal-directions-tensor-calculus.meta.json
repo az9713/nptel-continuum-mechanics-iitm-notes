@@ -1,0 +1,211 @@
+{
+  "chapter": 4,
+  "title": "Principal directions and tensor calculus",
+  "status": "reviewed — two independent AI reviews",
+  "authored_body_sha256": "03be9db870c34dabb5049a50ad83e20c67965fc60932b50756d309b39a8611c3",
+  "recordings": [
+    {
+      "video_id": "c9XGr1tELaA",
+      "playlist_position": 17,
+      "lecture_label": "Lecture 16",
+      "duration_seconds": 2110,
+      "decoded_audio_duration_seconds": 2109.0735,
+      "complete_decoded_audio": true,
+      "media_sha256": "f65987b4b9e4bf787ef27eb7fda2f19dea8770718e9305963f1c6f84e8a37b2d",
+      "transcript_first_start": 12.08,
+      "transcript_last_end": 2100.98,
+      "transcript_provenance": "Local faster-whisper small.en machine ASR; not publisher captions"
+    },
+    {
+      "video_id": "0Pz28dVwB5I",
+      "playlist_position": 18,
+      "lecture_label": "Lecture 17",
+      "duration_seconds": 1639,
+      "decoded_audio_duration_seconds": 1638.9335,
+      "complete_decoded_audio": true,
+      "media_sha256": "f3ba5d05723a9e3a37218789c7c2bb1e3c697848e8e88c1ea3c8692cac131325",
+      "transcript_first_start": 11.98,
+      "transcript_last_end": 1630.35,
+      "transcript_provenance": "Local faster-whisper small.en machine ASR; not publisher captions"
+    },
+    {
+      "video_id": "HaPy3c2IC1o",
+      "playlist_position": 19,
+      "lecture_label": "Lecture 18",
+      "duration_seconds": 2155,
+      "decoded_audio_duration_seconds": 2154.6535,
+      "complete_decoded_audio": true,
+      "media_sha256": "ae88db5c844d778cd55e3a401321ab6d71c302b68d8cf0d47e8009839635c117",
+      "transcript_first_start": 12.34,
+      "transcript_last_end": 2146.67,
+      "transcript_provenance": "Local faster-whisper small.en machine ASR; not publisher captions"
+    },
+    {
+      "video_id": "UQdyGT4Gs0o",
+      "playlist_position": 20,
+      "lecture_label": "Lecture 19",
+      "duration_seconds": 2269,
+      "decoded_audio_duration_seconds": 2268.3335,
+      "complete_decoded_audio": true,
+      "media_sha256": "ad8be58c87c651a032111b8e02d53cfeb90845e3cd540c24401f91f9193b4e26",
+      "transcript_first_start": 11.95,
+      "transcript_last_end": 2260.72,
+      "transcript_provenance": "Local faster-whisper small.en machine ASR; not publisher captions"
+    },
+    {
+      "video_id": "ljXaTYVt6JQ",
+      "playlist_position": 21,
+      "lecture_label": "Lecture 20",
+      "duration_seconds": 1940,
+      "decoded_audio_duration_seconds": 1939.6935,
+      "complete_decoded_audio": true,
+      "media_sha256": "21927029df1e89ca7c550de9494328261adb605777190e1e5338f0c8807e8ae3",
+      "transcript_first_start": 11.95,
+      "transcript_last_end": 1931.89,
+      "transcript_provenance": "Local faster-whisper small.en machine ASR; not publisher captions"
+    }
+  ],
+  "sections": [
+    {
+      "section": "Directions preserved by a linear map",
+      "anchor": "eigen",
+      "video_id": "c9XGr1tELaA",
+      "start": 43,
+      "end": 787,
+      "lecture_material": "Related lecture topic located by the stated span",
+      "research_extension": "Inspected external support is cited locally in the exposition",
+      "teaching_construction": "Expanded exposition, derivations, numerical checks and exercises are independently authored; an anchor does not attribute every statement to the recording"
+    },
+    {
+      "section": "The characteristic equation and its invariant coefficients",
+      "anchor": "characteristic",
+      "video_id": "c9XGr1tELaA",
+      "start": 788,
+      "end": 1624,
+      "lecture_material": "Related lecture topic located by the stated span",
+      "research_extension": "Inspected external support is cited locally in the exposition",
+      "teaching_construction": "Expanded exposition, derivations, numerical checks and exercises are independently authored; an anchor does not attribute every statement to the recording"
+    },
+    {
+      "section": "Why symmetry gives principal axes",
+      "anchor": "spectral",
+      "video_id": "c9XGr1tELaA",
+      "start": 1624,
+      "end": 2035,
+      "lecture_material": "Related lecture topic located by the stated span",
+      "research_extension": "Inspected external support is cited locally in the exposition",
+      "teaching_construction": "Expanded exposition, derivations, numerical checks and exercises are independently authored; an anchor does not attribute every statement to the recording"
+    },
+    {
+      "section": "Transforming into the principal basis",
+      "anchor": "principal-axes",
+      "video_id": "0Pz28dVwB5I",
+      "start": 249,
+      "end": 1528,
+      "lecture_material": "Related lecture topic located by the stated span",
+      "research_extension": "Inspected external support is cited locally in the exposition",
+      "teaching_construction": "Expanded exposition, derivations, numerical checks and exercises are independently authored; an anchor does not attribute every statement to the recording"
+    },
+    {
+      "section": "Fields, comma derivatives and gradient conventions",
+      "anchor": "derivatives",
+      "video_id": "HaPy3c2IC1o",
+      "start": 43,
+      "end": 1210,
+      "lecture_material": "Related lecture topic located by the stated span",
+      "research_extension": "Inspected external support is cited locally in the exposition",
+      "teaching_construction": "Expanded exposition, derivations, numerical checks and exercises are independently authored; an anchor does not attribute every statement to the recording"
+    },
+    {
+      "section": "Gradient, divergence, curl and Laplacian",
+      "anchor": "operators",
+      "video_id": "HaPy3c2IC1o",
+      "start": 1210,
+      "end": 2094,
+      "lecture_material": "Related lecture topic located by the stated span",
+      "research_extension": "Inspected external support is cited locally in the exposition",
+      "teaching_construction": "Expanded exposition, derivations, numerical checks and exercises are independently authored; an anchor does not attribute every statement to the recording"
+    },
+    {
+      "section": "Tensor derivatives and distinct contractions",
+      "anchor": "tensor-operators",
+      "video_id": "UQdyGT4Gs0o",
+      "start": 349,
+      "end": 1125,
+      "lecture_material": "Related lecture topic located by the stated span",
+      "research_extension": "Inspected external support is cited locally in the exposition",
+      "teaching_construction": "Expanded exposition, derivations, numerical checks and exercises are independently authored; an anchor does not attribute every statement to the recording"
+    },
+    {
+      "section": "From local derivatives to boundary integrals",
+      "anchor": "integral",
+      "video_id": "UQdyGT4Gs0o",
+      "start": 1125,
+      "end": 2260,
+      "lecture_material": "Related lecture topic located by the stated span",
+      "research_extension": "Inspected external support is cited locally in the exposition",
+      "teaching_construction": "Expanded exposition, derivations, numerical checks and exercises are independently authored; an anchor does not attribute every statement to the recording"
+    },
+    {
+      "section": "The fourth tutorial: a numerical eigensystem",
+      "anchor": "tutorial",
+      "video_id": "ljXaTYVt6JQ",
+      "start": 43,
+      "end": 1931,
+      "lecture_material": "Related lecture topic located by the stated span",
+      "research_extension": "Inspected external support is cited locally in the exposition",
+      "teaching_construction": "Expanded exposition, derivations, numerical checks and exercises are independently authored; an anchor does not attribute every statement to the recording"
+    },
+    {
+      "section": "Executable principal-response and derivative checks",
+      "anchor": "implementation",
+      "video_id": null,
+      "start": null,
+      "end": null,
+      "lecture_material": "",
+      "research_extension": "Inspected external support is cited locally in the exposition",
+      "teaching_construction": "Expanded exposition, derivations, numerical checks and exercises are independently authored; an anchor does not attribute every statement to the recording"
+    },
+    {
+      "section": "Exercises with worked solutions",
+      "anchor": "exercises",
+      "video_id": null,
+      "start": null,
+      "end": null,
+      "lecture_material": "",
+      "research_extension": "Inspected external support is cited locally in the exposition",
+      "teaching_construction": "Expanded exposition, derivations, numerical checks and exercises are independently authored; an anchor does not attribute every statement to the recording"
+    },
+    {
+      "section": "What these tools establish",
+      "anchor": "limits",
+      "video_id": null,
+      "start": null,
+      "end": null,
+      "lecture_material": "",
+      "research_extension": "Inspected external support is cited locally in the exposition",
+      "teaching_construction": "Expanded exposition, derivations, numerical checks and exercises are independently authored; an anchor does not attribute every statement to the recording"
+    },
+    {
+      "section": "Sources",
+      "anchor": "sources",
+      "video_id": null,
+      "start": null,
+      "end": null,
+      "lecture_material": "",
+      "research_extension": "Inspected external support is cited locally in the exposition",
+      "teaching_construction": "Expanded exposition, derivations, numerical checks and exercises are independently authored; an anchor does not attribute every statement to the recording"
+    }
+  ],
+  "references": [
+    {
+      "url": "https://solidmechanics.org/Text/AppendixC/AppendixC.php",
+      "title": "Applied Mechanics of Solids , Appendix C, §§C.5–C.6",
+      "supports": "Specific claim and locator are given beside the citation in chapter-04-principal-directions-tensor-calculus.html"
+    }
+  ],
+  "prose_words_including_math": 3885,
+  "solution_count": 8,
+  "executable_listing_count": 1,
+  "visual_boundary": "No comprehensive visual transcription or full audiovisual review is claimed. ASR cannot recover every board input; uncertain inputs are qualified locally."
+}

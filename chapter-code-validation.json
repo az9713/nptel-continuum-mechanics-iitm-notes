@@ -1,0 +1,187 @@
+{
+  "scope": "Actual isolated execution of authored listings; numerical checks are not a proof audit.",
+  "passed": true,
+  "listing_count": 20,
+  "results": [
+    {
+      "chapter": "chapter-01-continuum-tensors-index-notation.html",
+      "listing": "ch01",
+      "code_sha256": "853923d0898786c697677dddd1c51912a41f2675b681c340cdc6c5540091304f",
+      "returncode": 0,
+      "passed": true,
+      "stdout": "flux: [-4.0, -2.0, 0.0]\ntrace: 6.0\nclosed delta chain: 3.0\ntwo independent traces: 9.0\nflux dot gradient: -8.0\n",
+      "stderr": ""
+    },
+    {
+      "chapter": "chapter-02-alternating-tensors-and-algebra.html",
+      "listing": "ch02",
+      "code_sha256": "de31fffa5fb04ae13898f205034b4ba043c70a2e28cab218b441c3fc3a46cd0e",
+      "returncode": 0,
+      "passed": true,
+      "stdout": "epsilon square sum: 6\nsecond-third face normal: [1.0, -2.0, 0.0]\nsigned volume factor: 1.0\nparallel: [2.0, 2.0, 0.0]\nperpendicular: [1.0, -1.0, 2.0]\nFrobenius square and trace of square: 7.0 3.0\nskew axial vector: [-0.0, -0.0, -1.0]\nall contraction and reconstruction checks passed\n",
+      "stderr": ""
+    },
+    {
+      "chapter": "chapter-03-determinants-transformations-isotropy.html",
+      "listing": "ch03",
+      "code_sha256": "22767720b395635f271c67a66d8ab527240a83657cb097958779fcb7cd88ed27",
+      "returncode": 0,
+      "passed": true,
+      "stdout": "shear determinant: 1.0\nshear inverse: [[1.0, -2.0, 0.0], [0.0, 1.0, 0.0], [0.0, 0.0, 1.0]]\nrotated conductivity: [[2.5, -1.5, 0.0], [-1.5, 2.5, 0.0], [0.0, 0.0, 1.0]]\nrotated flux: [-4.242641, 1.414214, 0.0]\nconductivity invariants: 6.0 18.0 4.0\nreflection determinant: -1.0\nfourth-order response: [[6.0, 12.0, 0.0], [12.0, -6.0, 0.0], [0.0, 0.0, 0.0]]\nall covariance, orientation and inverse checks passed\n",
+      "stderr": ""
+    },
+    {
+      "chapter": "chapter-04-principal-directions-tensor-calculus.html",
+      "listing": "ch04",
+      "code_sha256": "7985153f19fe6a8a644be534754c8f2fbb06ee14fd3a7d9e6a6d075509e02bfe",
+      "returncode": 0,
+      "passed": true,
+      "stdout": "principal values: [2.0, 3.0, 5.0]\ninvariants: [10.0, 31.0, 30.0]\nflux W/m2: [-4.0, -1.0, 0.0]\nrow divergence: [1.0, 0.0, 0.0]\ncolumn divergence: [0.0, 0.0, 0.0]\n",
+      "stderr": ""
+    },
+    {
+      "chapter": "chapter-05-traction-cauchy-stress-equilibrium.html",
+      "listing": "ch05",
+      "code_sha256": "f8d5790b6a0181392961136a6519e392673b7c0d591b6858e89be9652863e960",
+      "returncode": 0,
+      "passed": true,
+      "stdout": "traction MPa: [5.2, 3.6, 0.0]\nnormal MPa: 6.0\nshear magnitude MPa: 2.0\ncoordinate traction squared MPa2: 54.0\nsurface force N: [0.0, -2.0, 0.0]\nbody force N: [0.0, 2.0, 0.0]\nforce residual N: [0.0, 0.0, 0.0]\n",
+      "stderr": ""
+    },
+    {
+      "chapter": "chapter-06-principal-stresses-mohr-invariants.html",
+      "listing": "ch06",
+      "code_sha256": "a4d385a4ae57e974321ca31df53a86e9686d079b1eacfeab416e53a0626491a5",
+      "returncode": 0,
+      "passed": true,
+      "stdout": "principal MPa: [7.0, 2.0, 1.0]\nplane [normal, shear] MPa: [6.0, 2.0]\nmaximum shear MPa: 3.0\nJ2 MPa2: 10.333333\nvon Mises MPa: 5.567764\noctahedral shear MPa: 2.624669\n",
+      "stderr": ""
+    },
+    {
+      "chapter": "chapter-07-motion-material-derivative.html",
+      "listing": "ch07",
+      "code_sha256": "77b595bb1b35f54a2013d3057920385db759eee69598f2a46de6fded6e43dfa1",
+      "returncode": 0,
+      "passed": true,
+      "stdout": "fixed station K/s: 0.1\nmoving particle K/s: 0.7\nstretch acceleration m/s2: 0.0\ntutorial material rate K/s: -1.231713\ntutorial derivative agreement: True\n",
+      "stderr": ""
+    },
+    {
+      "chapter": "chapter-08-deformation-and-strain.html",
+      "listing": "ch08",
+      "code_sha256": "66c219d4696559a7e21cf4ab77ac57e3fcdd73494b483f26cd4c39ca577613ec",
+      "returncode": 0,
+      "passed": true,
+      "stdout": "J: 1.0\nvertical extension: 0.077033\nexact angle decrease: 0.380506\nGreen E22: 0.08\nlinear epsilon22: 0.0\nrosette [epsilon11, epsilon22, epsilon12]:\n[-0.0003, 0.0005, 0.00011547]\n",
+      "stderr": ""
+    },
+    {
+      "chapter": "chapter-09-compatibility-and-velocity-gradients.html",
+      "listing": "ch09",
+      "code_sha256": "b3f8f9b45836ebe7f20c9cc19e7c7ca7d5ad58e0263f6b67ec2df7511257291f",
+      "returncode": 0,
+      "passed": true,
+      "stdout": "principal stretches: [0.618034, 1.0, 1.618034]\nvolume ratio: 1.0\npolar angle degrees: -26.565051\npolar rate per second: -0.4\nspin axial z per second: -0.5\nhorizontal line rate: [0.0, 0.0, 0.0]\n",
+      "stderr": ""
+    },
+    {
+      "chapter": "chapter-10-transport-and-balance-laws.html",
+      "listing": "ch10",
+      "code_sha256": "4455a3dc0bba6d8cada429f7c91a0326895871b5f3ff220fabce2738e958f2c3",
+      "returncode": 0,
+      "passed": true,
+      "stdout": "first Piola MPa: [[5.0, 4.0, 0.0], [0.5, 6.0, 0.0], [0.0, 0.0, 2.0]]\nreference force per area MPa: [5.0, 0.5, 0.0]\nreference powers MW/m3: [1.2, 1.2, 1.2]\nextension volume ratio: 1.491825\nextension density kg/m3: 670.320046\nreference mass density kg/m3: 1000.0\n",
+      "stderr": ""
+    },
+    {
+      "chapter": "chapter-11-constitutive-closure-and-objectivity.html",
+      "listing": "ch11",
+      "code_sha256": "cbcca4592f110a63a688aa3bd0f04cb6f2b098dac8734b1a7a83c9f71bb7cedd",
+      "returncode": 0,
+      "passed": true,
+      "stdout": "objective stress check: PASS\nraw-gradient stress error: 42.426407 Pa\nviscous dissipation: 15.000000 W/m^3\nconductive dissipation: 0.026667 W/m^3\n",
+      "stderr": ""
+    },
+    {
+      "chapter": "chapter-12-linear-and-hyperelasticity.html",
+      "listing": "ch12",
+      "code_sha256": "1f71886d1587a8768fd0b65a19e6505c30d0d568d303b62bb03f6b2169f0a11b",
+      "returncode": 0,
+      "passed": true,
+      "stdout": "energy derivative check: PASS\nrigid rotation energy check: PASS\naxial Cauchy stress: 10.500000 Pa\naxial nominal stress: 5.250000 Pa\n",
+      "stderr": ""
+    },
+    {
+      "chapter": "chapter-13-viscous-and-viscoelastic-materials.html",
+      "listing": "ch13",
+      "code_sha256": "4d28a6fc6f1d5409f7addf827cba265133f442f9b790ebdf02f04e0d978a6618",
+      "returncode": 0,
+      "passed": true,
+      "stdout": "power-law stresses (Pa): [0.502377, 2.0, 7.962143]\nCross midpoint viscosity (Pa s): 5.5\nrelaxation and creep times (s): 2.0 5.0\nstep-strain stress at 2 s (kPa): 31.036383\nstep-stress strain at 5 s: 0.038964\ncycle loss (J/m3): 471.238898\nsmooth-history energy balance: passed\n",
+      "stderr": ""
+    },
+    {
+      "chapter": "chapter-14-plasticity-and-constitutive-problems.html",
+      "listing": "ch14",
+      "code_sha256": "7b9d955e64d19cc985ed80f49172f97b87aae4b53a87f9910cfe21bd0f8d2ca7",
+      "returncode": 0,
+      "passed": true,
+      "stdout": "peak stress (MPa): 257.425743\nzero-stress residual strain: 0.003712871\npeak hardening storage (J/m3): 13785.413\npeak irreversible loss (J/m3): 928217.822\nresolved reversed-path energy balance: passed\nsmall-gradient error scales quadratically: passed\n",
+      "stderr": ""
+    },
+    {
+      "chapter": "chapter-15-linear-fluids-and-navier-stokes.html",
+      "listing": "ch15",
+      "code_sha256": "2bddca0f744cd1bb21a5b36c9f5c9adbfe9c1f85a4a9077929ae9ce765088248",
+      "returncode": 0,
+      "passed": true,
+      "stdout": "surface speed: 0.01000000 m/s\nvolume rate per width: 0.0000133333 m^2/s\nwall shear magnitude: 10.000000 Pa\nwall pressure excess: 17.320508 Pa\ngravity power per bed area: 0.06666667 W/m^2\nboundary, flux and dissipation checks: PASS\n",
+      "stderr": ""
+    },
+    {
+      "chapter": "chapter-16-course-synthesis.html",
+      "listing": "ch16",
+      "code_sha256": "f05ea6cc3398a328be07b9294781ac851cfaf768d8b0aec5a235f4e652bff7a0",
+      "returncode": 0,
+      "passed": true,
+      "stdout": "volume and metric checks: PASS\ncurrent/reference force check: PASS\nspatial stress power: 1.050000 W/m^3\nreference stress power: 1.050000 W/m^3\nstored energy rate: 1.050000 W/m^3\n",
+      "stderr": ""
+    },
+    {
+      "chapter": "chapter-17-live-tensor-and-stress-foundations.html",
+      "listing": "ch17",
+      "code_sha256": "5e31b202c7829ccb73785f6657a0005015f61387cfea29f34bea5707cf73ce22",
+      "returncode": 0,
+      "passed": true,
+      "stdout": "oblique coefficients: [1.0, 1.0, 0.0]\ndyads equal: False\nnormal MPa: 4.5\nsigned shear MPa: -2.5\nshear magnitude MPa: 2.5\n",
+      "stderr": ""
+    },
+    {
+      "chapter": "chapter-18-live-configurations-motion-strain.html",
+      "listing": "ch18",
+      "code_sha256": "2d15e6ce0460b3bebc59abb9dcdb559b8ada6c9c39c50e222beb8b3a3a867aad",
+      "returncode": 0,
+      "passed": true,
+      "stdout": "rigid rotation exact strain norm: 0.0\nrigid rotation linear epsilon11: -0.5\npolar reconstruction: True\naxial vector: [0.1, 0.2, 0.3]\n",
+      "stderr": ""
+    },
+    {
+      "chapter": "chapter-19-live-transport-balance-laws.html",
+      "listing": "ch19",
+      "code_sha256": "682840e4fa89c52f5329eacab14ab8e6f3e10bcdadafcf4c6bf1c241308601ea",
+      "returncode": 0,
+      "passed": true,
+      "stdout": "J: 1.056\ndeterminant rate: 0.335\nfinite difference agrees: True\narea map agrees: True\npower agrees: True\n",
+      "stderr": ""
+    },
+    {
+      "chapter": "chapter-20-live-constitutive-models-fluids.html",
+      "listing": "ch20",
+      "code_sha256": "007ed23a2f3f822c8388725721614499c11c6ba7bce1158ca64bf507caff2970",
+      "returncode": 0,
+      "passed": true,
+      "stdout": "energy derivative agrees: True\nstress covariance: True\nquadratic error ratio: 3.99316\n",
+      "stderr": ""
+    }
+  ]
+}

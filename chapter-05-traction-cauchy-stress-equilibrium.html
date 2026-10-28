@@ -1,0 +1,215 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="color-scheme" content="dark light"><meta name="book-content-sha256" content="44bbf9e203f6f2ec0bb4e43fa789608559d68dfe2924e1e3b7164fac0a0ad9ee">
+<title>Traction, Cauchy stress and local equilibrium · Foundations of Continuum Mechanics</title><link rel="stylesheet" href="assets/book.css">
+<script>window.MathJax={tex:{inlineMath:[['$','$'],['\\(','\\)']],displayMath:[['$$','$$'],['\\[','\\]']],processEscapes:true},svg:{fontCache:'local'},options:{skipHtmlTags:['script','noscript','style','textarea','pre','code']}};</script>
+<script defer src="assets/mathjax-tex-svg.js"></script><script defer src="assets/book.js"></script></head>
+<body><a class="skip" href="#main">Skip to content</a><header class="site-header"><a class="brand" href="index.html">Foundations of Continuum Mechanics · NPTEL IIT Mandi</a><nav class="course-nav" aria-label="Book"><a href="index.html">Chapters</a><a href="source-map.html">Source map</a><a href="references.html">References</a><a href="numerical-lab.html">Numerical lab</a></nav></header>
+<div class="layout"><aside class="toc" id="chapter-toc" aria-label="On this page"><h2>On this page</h2></aside><main id="main"><div class="reading-tools" aria-label="Reading controls"><button id="theme-toggle" aria-pressed="false">Light theme</button><button id="text-toggle" aria-pressed="false">Larger text</button><button id="solutions-toggle" aria-pressed="false">Expand solutions</button><button id="print-page">Print with solutions</button></div>
+<article id="chapter-content"><!-- BOOK-CONTENT-START --><h1>Traction, Cauchy stress and local equilibrium</h1>
+<p class="lead">A plane cut through a loaded wing can carry both a pulling force and a force parallel to the cut. Knowing the total load on the wing does not determine either force per area at that cut. The orientation of the cut matters, and infinitely many planes pass through one point. Cauchy's stress theorem reduces that infinite collection of possible surface forces to one linear map. This chapter derives the map, uses it to calculate normal and shear traction, and determines the differential constraints that force and moment balance impose on its spatial variation.</p>
+<p class="source-note">Lecture spine: L21–25, including the six mechanisms in the fifth tutorial. All locally generated transcript segments were read; their endpoints reach closing remarks within nine seconds of the listed durations. Board matrices are not generally recoverable from speech alone. Recoverable tutorial data are used explicitly, while constructed examples are identified as such. The lecture initially stores plane normals in the first stress index. This edition consistently stores the force component first; the two conventions are translated before symmetry is established.</p>
+
+<h2 id="traction" data-video="79pT3kqvhcg" data-start="73" data-end="741">From a total force to a force distribution <a class="timestamp" href="https://www.youtube.com/watch?v=79pT3kqvhcg&amp;t=73s">L21 1:13</a></h2>
+<p>A force resultant is insufficient to describe internal loading. A rope supporting a load and a wing carrying aerodynamic loading both transmit force through their interior. Even if two cross sections carry the same force, the one with smaller area has larger average force per area. Nonuniform distributions and different orientations require more information than that average. Stress describes this local distribution; it does not by itself say when a material breaks.</p>
+<p>Choose a region \(\Omega\) of material in its current, possibly deformed configuration. Its boundary is \(\partial\Omega\), with outward unit normal \(\mathbf n\). Position \(\mathbf x\) is measured in metres. The density \(\rho\) is mass per current volume, in kg/m³. A <dfn>body force per unit mass</dfn> \(\mathbf b\) has units N/kg, equivalently m/s². Gravity is \(\mathbf b=-g\mathbf e_3\) when \(x_3\) points upward and \(g\) is positive. The force on a volume element is \(\rho\mathbf b\,dV\); integrating gives total body force. Only for uniform density and body force does this reduce to \(\rho\mathbf b|\Omega|\).</p>
+<p>A <dfn>surface traction</dfn> is a vector force per unit current area, with units Pa = N/m². Pressure, contact and viscous forces can contribute to surface traction. A prescribed constant traction gives total force equal to traction times area, but a variable traction must be integrated. Statements that a force is a body or surface force classify its representation in a continuum model. They do not assert that its magnitude is independent of geometry or material response.</p>
+<p>The running local calculation uses a constructed stress matrix with rows \((6,2,0),(2,3,0),(0,0,1)\), in MPa, at one point. We will calculate traction on the plane with normal \(\mathbf n=(3,4,0)/5\). Its area could be small or large, but a force calculated by multiplying its pointwise traction by a finite area is exact only if traction is uniform across that area. Later we introduce a spatially varying stress field so that both boundary forces and volume balance can be checked.</p>
+<p><dfn>Homogeneity</dfn> means that a specified property is spatially uniform. <dfn>Isotropy</dfn> means that it has no preferred direction at a point. A uniform uniaxial stress is homogeneous and anisotropic. A pressure field can be isotropic at every point and spatially nonuniform. These terms answer different questions. Neither stress homogeneity nor stress isotropy follows from calling the material homogeneous or isotropic.</p>
+
+<h2 id="principle" data-video="79pT3kqvhcg" data-start="749" data-end="2100">A cut, its orientation and the Cauchy stress principle <a class="timestamp" href="https://www.youtube.com/watch?v=79pT3kqvhcg&amp;t=749s">L21 12:29</a></h2>
+<p>Imagine cutting the body through a point \(\mathbf x\), without physically separating or damaging it. Retain the material on one side. Its outward normal \(\mathbf n\) points toward the material removed from the free-body diagram. The traction \(\mathbf t(\mathbf x,\mathbf n)\) is the force per current area exerted <em>on the retained material</em> by material across the cut. The orientation is essential: \(\mathbf n\) labels which side receives the force. The geometrical plane with reversed normal describes the opposite retained side.</p>
+<p>More precisely, take a regular family of small surface patches surrounding the point, with area \(\Delta A\) and force resultant \(\Delta\mathbf F\). The Cauchy model assumes that the limit \(\lim_{\Delta A\to0}\Delta\mathbf F/\Delta A\) exists and depends on the local surface through \(\mathbf x\), time and \(\mathbf n\). We suppress time when discussing a fixed instant. The <dfn>Cauchy stress principle</dfn> excludes dependence on surface curvature or on further geometric information about the cut. It is a local model of contact action, rather than a theorem derived from particle counting.</p>
+<p>The model also excludes independent surface couples. For a bounded ordinary traction on a patch of diameter \(h\), the moment of that traction about its center has magnitude at most a constant times \(h\Delta A\). Its moment per area therefore tends to zero. A nonzero limiting couple per area would require additional surface data, often called couple traction. A classical <dfn>nonpolar continuum</dfn> has no independent body couples, surface couples or intrinsic spin angular momentum. The angular-momentum derivation below uses precisely these exclusions; their frequency in practical materials is irrelevant to the proof.</p>
+<p><a href="https://solidmechanics.org/Text/Chapter2_3/Chapter2_3.php">Bower, §2.3.1–2.3.2</a>, defines tractions on current area and describes imaginary internal cuts. We retain that physical definition and distinguish the traction vector from its signed normal scalar. The traction need not be perpendicular to the cut: pushing one half of a bar sideways while holding the other half produces a tangential component. The <dfn>state of stress</dfn> at a point is the complete map assigning traction to every oriented plane through that point. Its reduction to a matrix requires balance laws, not just an array with nine entries.</p>
+
+<h2 id="opposite" data-video="-tnTls6t2Jo" data-start="168" data-end="958">Why reversing the normal reverses the traction <a class="timestamp" href="https://www.youtube.com/watch?v=-tnTls6t2Jo&amp;t=168s">L22 2:48</a></h2>
+<p>The equal-and-opposite action on opposite sides of an internal cut can be derived by adding linear-momentum balances. Divide a material region into two parts sharing a surface patch \(S\). Each part's balance includes external forces and its traction on \(S\), with opposite normals. Adding those balances gives the balance for the union plus the extra interface integral \(\int_S[\mathbf t(\mathbf x,\mathbf n)+\mathbf t(\mathbf x,-\mathbf n)]\,dA\). The union contains no external interface there. Additivity of mass, momentum and body force therefore makes that integral zero.</p>
+<p>The surface patch can be selected arbitrarily. If the sum of its two traction fields were continuous and nonzero at a point, one component would keep a definite sign in a sufficiently small patch around it. Its integral could not vanish. Thus</p>
+\[
+\mathbf t(\mathbf x,-\mathbf n)=-\mathbf t(\mathbf x,\mathbf n). \tag{5.1}
+\]
+<p>The conclusion concerns the same point and the same geometrical cut. Opposite faces of a finite box generally lie at different positions, so their tractions need not be exactly opposite. Their difference can provide the net force that balances body force or produces acceleration. Treating (5.1) as exact cancellation across a finite spatial gap would erase the stress gradients needed for local momentum balance.</p>
+<p>A shrinking pillbox gives a complementary check. Let its broad faces have radius \(r\), thickness \(h\), and normals \(\pm\mathbf n\). Divide its momentum balance by a broad-face area. Bounded body force and inertia contribute terms of order \(h\); bounded rim traction contributes order \(h/r\). Let \(h/r\to0\), then \(r\to0\), using continuity in position. The broad-face averages tend to the two pointwise tractions, and the other terms vanish. This explains why boundedness and an appropriate shrinking geometry matter in such arguments.</p>
+
+<h2 id="tetrahedron" data-video="-tnTls6t2Jo" data-start="959" data-end="2212">Cauchy's formula from a shrinking tetrahedron <a class="timestamp" href="https://www.youtube.com/watch?v=-tnTls6t2Jo&amp;t=959s">L22 15:59</a></h2>
+<p>Three measured tractions, on the planes with normals \(\mathbf e_1,\mathbf e_2,\mathbf e_3\), will determine all the others. To prove this, first choose a unit normal \(\mathbf n\) with positive components. Construct a tetrahedron with one vertex at the point of interest, three faces normal to \(-\mathbf e_j\), and an inclined face of area \(A\), normal \(\mathbf n\). Its coordinate-face areas are \(A_j=n_j A\). This is the projected-area relation: dotting the inclined area vector \(A\mathbf n\) with \(\mathbf e_j\) gives the area of its orthogonal projection. Equivalently, the sum of the four oriented area vectors is zero.</p>
+<p>Let \(h\) be the perpendicular height to the inclined face, so the volume is \(V=Ah/3\). We require traction continuous in position for each fixed normal, and bounded \(\rho\mathbf b\) and \(\rho\mathbf a\), where \(\mathbf a\) is material acceleration in m/s². Use exact face averages \(\overline{\mathbf t}\) rather than assuming a finite face has constant traction. Linear momentum gives</p>
+\[
+A\overline{\mathbf t}(\mathbf n)
++\sum_{j=1}^{3}A_j\overline{\mathbf t}(-\mathbf e_j)
++\int_V\rho\mathbf b\,dV
+=\int_V\rho\mathbf a\,dV. \tag{5.2}
+\]
+<p>Now shrink the tetrahedron with fixed shape. Divide by \(A\). Volume terms tend to zero because \(V/A=h/3\). Each face average tends to its traction at the common limiting point. Equation (5.1) reverses the coordinate-face tractions. What remains is</p>
+\[
+\mathbf t(\mathbf n)=\sum_{j=1}^{3}n_j\mathbf t(\mathbf e_j). \tag{5.3}
+\]
+<p>For other octants, take coordinate-face normals opposite to the signs of the corresponding \(n_j\), with areas \(|n_j|A\). Combining these signs with (5.1) produces the same formula. Directions with a zero component follow by continuity in the normal, or by the limiting wedge construction. Thus (5.3) holds for every unit normal under the stated regularity assumptions. It does not require equilibrium: bounded inertia vanishes relative to surface forces in the shrinking-element limit. The original lecture's equilibrium derivation is therefore a special case.</p>
+<p>Equation (5.3) says that traction is the restriction to the unit sphere of a linear map on area vectors. It does not say that unit normals themselves can be added without renormalization. For example, \(\mathbf e_1+\mathbf e_2\) has length \(\sqrt2\), so the traction on its associated unit-normal plane is \([\mathbf t(\mathbf e_1)+\mathbf t(\mathbf e_2)]/\sqrt2\). The areas and direction cosines supply this normalization. Singular surface forces, independent edge forces or higher-gradient contact laws require a modified argument.</p>
+
+<h2 id="components" data-video="-tnTls6t2Jo" data-start="2213" data-end="2538">The stress matrix and the convention contract <a class="timestamp" href="https://www.youtube.com/watch?v=-tnTls6t2Jo&amp;t=2213s">L22 36:53</a></h2>
+<p>Define the Cauchy stress components by \(\sigma_{ij}=t_i(\mathbf e_j)\). The first index is the force component and the second is the plane-normal direction. The three coordinate tractions occupy the columns. Equation (5.3) becomes</p>
+\[
+t_i(\mathbf n)=\sigma_{ij}n_j,\qquad
+\mathbf t(\mathbf n)=\boldsymbol\sigma\mathbf n. \tag{5.4}
+\]
+<p>There are initially nine components. Symmetry has not been used. In the lecture's initial definition, the normal comes first: \(\sigma^{\mathrm{lec}}_{ji}=t_i(\mathbf e_j)\). Consequently \(\sigma_{ij}=\sigma^{\mathrm{lec}}_{ji}\), or \(\boldsymbol\sigma=(\boldsymbol\sigma^{\mathrm{lec}})^{\mathsf T}\). The lecture writes \(t_i=\sigma^{\mathrm{lec}}_{ji}n_j\), which is identical after this translation. Using a transposed convention is legitimate. Using the same array with the wrong contraction is not.</p>
+<p>A diagnostic nonsymmetric matrix makes the distinction visible. Suppose an array has only entry 12 equal to 2 Pa. Under the present force-first convention, the plane \(\mathbf n=\mathbf e_2\) carries \((2,0,0)\) Pa. Under a normal-first interpretation of the same printed array, that plane carries zero traction. This test is algebraic; we have not asserted that the nonsymmetric state satisfies the classical angular-momentum balance. Symmetric test matrices conceal the convention error and should not be the only tests of a general traction routine.</p>
+<p>In the present convention, \(\sigma_{11},\sigma_{22},\sigma_{33}\) are normal stresses on coordinate planes. The off-diagonal entries are shear components on those planes. On a positive \(\mathbf e_2\) face, \(\sigma_{12}\) acts in the \(\mathbf e_1\) direction. A positive diagonal value pulls the retained material outward and is tensile. A negative value pushes inward and is compressive. The sign of a shear component records a direction; it is not labeled tension or compression.</p>
+
+<h2 id="tensor-law" data-video="5LRiGFDZ6tI" data-start="325" data-end="1813">Why stress is a tensor, and what the stress cube depicts <a class="timestamp" href="https://www.youtube.com/watch?v=5LRiGFDZ6tI&amp;t=325s">L23 5:25</a></h2>
+<p>A nine-entry table does not establish tensor character. Let \(Q_{ai}=\mathbf e'_a\cdot\mathbf e_i\) be an orthogonal change of Cartesian basis. Traction and normal are physical vectors, so \(\mathbf t'=\mathbf Q\mathbf t\) and \(\mathbf n'=\mathbf Q\mathbf n\). Since \(\mathbf n=\mathbf Q^{\mathsf T}\mathbf n'\), (5.4) gives \(\mathbf t'=\mathbf Q\boldsymbol\sigma\mathbf Q^{\mathsf T}\mathbf n'\). Comparing with \(\mathbf t'=\boldsymbol\sigma'\mathbf n'\) for every unit normal proves</p>
+\[
+\boldsymbol\sigma'=\mathbf Q\boldsymbol\sigma\mathbf Q^{\mathsf T},\qquad
+\sigma'_{ab}=Q_{ai}Q_{bj}\sigma_{ij}. \tag{5.5}
+\]
+<p>The hinge is equality for <em>all</em> normals. Equality for one nonzero vector would not allow cancellation of that vector from a matrix equation. In particular, choosing the three basis normals shows that each column of the difference is zero. This establishes the second-order tensor transformation law without using symmetry. The normal-first stress transforms as a second-order tensor too; transposition changes its index interpretation, not its tensor order.</p>
+<p>A stress cube is a diagram for the nine directional components at a point. Its three positive coordinate faces display the three coordinate tractions, and the opposite faces display their reversed values in the locally uniform approximation. In an actual finite cube, the faces occupy different positions and can carry different stresses. The diagram is exact for a spatially uniform field, and otherwise depicts leading-order point values as the cube shrinks. The three planes defining a pointwise state all pass through the same point; spreading their arrows onto cube faces only makes the components legible.</p>
+<p>The running symmetric matrix illustrates both the definition and the transformation-independent physical force. The coordinate plane with \(\mathbf n=\mathbf e_1\) carries the first column \((6,2,0)\) MPa. The selected oblique plane instead carries</p>
+\[
+\mathbf t=\begin{bmatrix}6&amp;2&amp;0\\2&amp;3&amp;0\\0&amp;0&amp;1\end{bmatrix}
+\frac15\begin{bmatrix}3\\4\\0\end{bmatrix}
+=\begin{bmatrix}5.2\\3.6\\0\end{bmatrix}\ \mathrm{MPa}. \tag{5.6}
+\]
+<p>The normal is dimensionless, so multiplying it by stress preserves pressure units. If this traction were uniform on a 2 cm² patch, its resultant would be \((1040,720,0)\) N, since 1 MPa is \(10^6\) Pa and 2 cm² is \(2\times10^{-4}\) m². For a nonuniform patch, the corresponding expression is the area integral of traction.</p>
+
+<h2 id="normal-shear">Normal traction, shear traction and pressure</h2>
+<p>For any unit normal, define the signed scalar normal traction \(\sigma_n=\mathbf n\cdot\mathbf t\). Its vector part is \(\sigma_n\mathbf n\). The remaining <dfn>shear traction vector</dfn> is \(\boldsymbol\tau=\mathbf t-\sigma_n\mathbf n\). Dotting with \(\mathbf n\) gives zero, so it lies in the plane. These definitions apply before symmetry. Orthogonality gives</p>
+\[
+\sigma_n=\mathbf n\cdot\boldsymbol\sigma\mathbf n,\qquad
+|\boldsymbol\tau|^2=|\boldsymbol\sigma\mathbf n|^2-\sigma_n^2. \tag{5.7}
+\]
+<p>For (5.6), \(\sigma_n=(3/5)(5.2)+(4/5)(3.6)=6\) MPa. Its normal vector part is \((3.6,4.8,0)\) MPa, leaving shear vector \((1.6,-1.2,0)\) MPa. The magnitude is \(\sqrt{1.6^2+1.2^2}=2\) MPa. Independently, \(|\mathbf t|^2=5.2^2+3.6^2=40\) MPa² and subtracting \(6^2\) again gives shear magnitude 2 MPa. A traction-free plane requires the whole vector to vanish. Zero normal traction alone permits nonzero shear.</p>
+<p>Isotropic compressive stress of pressure \(p\gt0\) is \(\boldsymbol\sigma=-p\mathbf I\), which gives \(\mathbf t=-p\mathbf n\) and zero shear on every plane. This stress form is an assumption about a particular stress state; general solids and flowing viscous fluids need not have it. If every direction has traction parallel to its normal, take the three basis normals to make the matrix diagonal, then take \((\mathbf e_1+\mathbf e_2)/\sqrt2\). Parallel traction requires its first two diagonal values to agree. Repeating with the third direction forces all three equal, proving the isotropic form. The scalar \(-\operatorname{tr}\boldsymbol\sigma/3\) is a mean compressive stress for a general state, but thermodynamic pressure requires a constitutive interpretation.</p>
+
+<h2 id="balance" data-video="_B1TEunvdvU" data-start="44" data-end="814">Force equilibrium and the local momentum equation <a class="timestamp" href="https://www.youtube.com/watch?v=_B1TEunvdvU&amp;t=44s">L24 0:44</a></h2>
+<p>Static equilibrium means that material points remain at rest in the selected inertial frame and that every material subregion satisfies force and moment balance. Merely checking zero net force on the whole body is weaker: internal parts could accelerate while their total force cancels. To obtain a local equation, take an arbitrary material region \(\Omega(t)\), moving with its particles. Its acceleration field is \(\mathbf a\). Newton's law gives</p>
+\[
+\int_{\partial\Omega}\boldsymbol\sigma\mathbf n\,dA
++\int_\Omega\rho\mathbf b\,dV
+=\int_\Omega\rho\mathbf a\,dV. \tag{5.8}
+\]
+<p>The acceleration integral follows directly by summing \(\mathbf a\,dm\) over the same particles; their masses are constant. It is not a fixed-space volume derivative. For static equilibrium set \(\mathbf a=\mathbf0\). When stress is continuously differentiable, the componentwise divergence theorem converts the surface integral to \(\int_\Omega\sigma_{ij,j}\,dV\). Combining terms yields \(\int_\Omega(\sigma_{ij,j}+\rho b_i-\rho a_i)\,dV=0\).</p>
+<p>This balance holds for every subregion. If a continuous residual component were positive at a point, it would remain positive on a sufficiently small ball, contradicting its zero integral. The same applies to a negative value. Therefore</p>
+\[
+\sigma_{ij,j}+\rho b_i=\rho a_i,\qquad
+\operatorname{div}\boldsymbol\sigma+\rho\mathbf b=\rho\mathbf a. \tag{5.9}
+\]
+<p>We use the row divergence \((\operatorname{div}\boldsymbol\sigma)_i=\partial\sigma_{ij}/\partial x_j\), consistent with force-first traction. The three equilibrium equations are \(\sigma_{11,1}+\sigma_{12,2}+\sigma_{13,3}+\rho b_1=0\), \(\sigma_{21,1}+\sigma_{22,2}+\sigma_{23,3}+\rho b_2=0\), and \(\sigma_{31,1}+\sigma_{32,2}+\sigma_{33,3}+\rho b_3=0\). Each term has units N/m³. Body force per mass cannot be added directly to stress divergence without multiplying by density.</p>
+<p><a href="https://solidmechanics.org/Text/Chapter2_4/Chapter2_4.php">Bower, §2.4.2</a>, derives momentum balance with normal-first stress and spatial coordinate \(\mathbf y\). His \(\partial_j\sigma^{B}_{ji}\) becomes our \(\partial_j\sigma_{ij}\) under \(\sigma^B=\sigma^{\mathsf T}\) and \(\mathbf y=\mathbf x\). The derivative acts in the current configuration in both cases. Translating indices before invoking symmetry keeps the reasoning valid even while symmetry is still being derived.</p>
+
+<h2 id="symmetry" data-video="_B1TEunvdvU" data-start="818" data-end="1955">Angular momentum supplies stress symmetry <a class="timestamp" href="https://www.youtube.com/watch?v=_B1TEunvdvU&amp;t=818s">L24 13:38</a></h2>
+<p>Moment balance supplies a condition not contained in force balance. In a classical nonpolar continuum, angular momentum about a fixed origin is \(\int_\Omega\mathbf x\times\mathbf v\,dm\), where \(\mathbf v\) is particle velocity. Differentiating along particles gives \(d(\mathbf x\times\mathbf v)/dt=\mathbf v\times\mathbf v+\mathbf x\times\mathbf a=\mathbf x\times\mathbf a\). Thus its balance is</p>
+\[
+\int_{\partial\Omega}\mathbf x\times(\boldsymbol\sigma\mathbf n)\,dA
++\int_\Omega\mathbf x\times\rho\mathbf b\,dV
+=\int_\Omega\mathbf x\times\rho\mathbf a\,dV. \tag{5.10}
+\]
+<p>No independent couples or intrinsic spin appear under the model's hypotheses. The \(i\)th component of the surface moment is \(\epsilon_{ijk}x_j\sigma_{kl}n_l\). Apply the divergence theorem and product rule:</p>
+\[
+\partial_l(\epsilon_{ijk}x_j\sigma_{kl})
+=\epsilon_{ijk}\delta_{jl}\sigma_{kl}
++\epsilon_{ijk}x_j\sigma_{kl,l}
+=\epsilon_{ijk}\sigma_{kj}+\epsilon_{ijk}x_j\sigma_{kl,l}. \tag{5.11}
+\]
+<p>Substitution in (5.10) gives an integral whose integrand is \(\epsilon_{ijk}\sigma_{kj}+\epsilon_{ijk}x_j(\sigma_{kl,l}+\rho b_k-\rho a_k)\). The parenthesized expression vanishes by linear momentum. Localization then leaves \(\epsilon_{ijk}\sigma_{kj}=0\). Setting \(i=1\) gives \(\sigma_{32}-\sigma_{23}=0\); \(i=2\) gives \(\sigma_{13}-\sigma_{31}=0\); \(i=3\) gives \(\sigma_{21}-\sigma_{12}=0\). Therefore</p>
+\[
+\boldsymbol\sigma=\boldsymbol\sigma^{\mathsf T}. \tag{5.12}
+\]
+<p>This derivation works in dynamics as well as statics: the orbital acceleration contribution cancels using linear momentum. It does not claim that motion has zero rotation or angular acceleration. <a href="https://solidmechanics.org/Text/Chapter2_4/Chapter2_4.php">Bower, §2.4.3</a>, gives the corresponding angular-momentum derivation. Couple-stress or micropolar models add terms to (5.10), so the conclusion must be reconsidered there. Symmetry is a balance-law consequence within a model, not a property of every second-order tensor.</p>
+<p>The state now has six independent components, but equilibrium supplies only three differential equations. Boundary conditions and a constitutive law are still needed to determine a general stress field. A spatially uniform symmetric stress has zero divergence and can satisfy equilibrium without body force while exerting nonzero tractions on every boundary. Conversely, a divergence-free nonsymmetric array can satisfy force balance but violate moment balance. Force balance and symmetry are separate checks.</p>
+
+<h2 id="equilibrium-example">A field that balances force locally and globally</h2>
+<p>Consider the constructed symmetric stress field in a rectangular region \(0\le x\le L\), \(0\le y\le H\), \(0\le z\le D\). Here \(x=x_1,y=x_2,z=x_3\), and \(L,H,D\) are positive lengths. Let \(a\) be a constant with units Pa/m and set</p>
+\[
+\boldsymbol\sigma(x,y)=
+\begin{bmatrix}a y&amp;-a x&amp;0\\-a x&amp;0&amp;0\\0&amp;0&amp;0\end{bmatrix}.
+\tag{5.13}
+\]
+<p>Its divergence is \((0,-a,0)\): the first component is \(\partial_x(ay)+\partial_y(-ax)=0\), and the second is \(\partial_x(-ax)=-a\). Equilibrium therefore requires \(\rho\mathbf b=(0,a,0)\) N/m³. The first component does not contain \(\partial_y\sigma_{11}\), because divergence contracts the normal index. Taking every visible spatial derivative instead of the specified contraction would produce a wrong force.</p>
+<p>Check the boundary forces directly. On \(x=L\), the traction is \((ay,-aL,0)\); integrating gives \((aDH^2/2,-aLDH,0)\). On \(x=0\), the outward normal is \(-\mathbf e_1\), and traction is \((-ay,0,0)\), giving \((-aDH^2/2,0,0)\). The two \(y\) faces have opposite tractions \((\mp ax,0,0)\), whose integrals cancel. The \(z\) faces carry zero traction. Total surface force is therefore \((0,-aLHD,0)\), exactly opposite the integrated body force \((0,aLHD,0)\).</p>
+<p>For \(a=2\) Pa/m and \(L=H=D=1\) m, those forces are \((0,-2,0)\) N and \((0,2,0)\) N. Their moments balance as well. About the origin, the body-force moment is \(\int\mathbf x\times(0,a,0)\,dV=(-aLHD^2/2,0,aL^2HD/2)\). Substituting (5.13) into the surface moment gives its negative, either by direct face integration or by (5.11) with symmetric stress. This field is statically admissible under the prescribed body force and boundary tractions. No displacement or material compatibility has yet been demonstrated.</p>
+
+<h2 id="tutorial" data-video="1zc-23thT3Q" data-start="43" data-end="2149">The fifth tutorial: traction, reciprocity and zero-traction planes <a class="timestamp" href="https://www.youtube.com/watch?v=1zc-23thT3Q&amp;t=43s">L25 0:43</a></h2>
+<p>The tutorial begins with direct traction multiplication, then reconstructs a body force from a stress field. Those two mechanisms have been demonstrated in (5.6) and (5.13). Its third task is directional reciprocity. For unit vectors \(\mathbf n,\mathbf m\), symmetry gives \(\mathbf m\cdot\mathbf t(\mathbf n)=m_i\sigma_{ij}n_j=n_i\sigma_{ij}m_j=\mathbf n\cdot\mathbf t(\mathbf m)\). The middle equality swaps dummy labels and uses symmetry. It equates two scalar components on different planes; the traction vectors themselves generally differ.</p>
+<p>The fourth task gives a recoverable matrix with one unknown,</p>
+\[
+\boldsymbol\sigma=\begin{bmatrix}s&amp;2&amp;1\\2&amp;0&amp;2\\1&amp;2&amp;0\end{bmatrix}\sigma_* ,
+\qquad \sigma_*\gt0, \tag{5.14}
+\]
+<p>where \(\sigma_*\) is a stress unit and \(s\) dimensionless. A traction-free plane requires \(\boldsymbol\sigma\mathbf n=0\) with \(|\mathbf n|=1\), so determinant must vanish. Expanding the dimensionless determinant gives \(-4s+8=0\), hence \(s=2\). Rows two and three give \(n_3=-n_1\) and \(n_2=-n_1/2\). Normalization gives \((9/4)n_1^2=1\), so \(\mathbf n=\pm(2,-1,-2)/3\). The first row then gives \(4/3-2/3-2/3=0\), independently checking consistency. These opposite normals describe the same traction-free geometrical plane.</p>
+<p>The fifth task uses a uniaxial state \(\boldsymbol\sigma=\sigma_0\mathbf u\otimes\mathbf u\), where \(\mathbf u\) is a unit vector and \(\sigma_0\gt0\) a stress. For arbitrary unit \(\mathbf m\), traction is \(\sigma_0\mathbf u(\mathbf u\cdot\mathbf m)\). On the plane normal to \(\mathbf u\) it equals \(\sigma_0\mathbf u\); whenever \(\mathbf m\perp\mathbf u\), it vanishes. Thus the zero-eigenvalue eigenspace is the entire plane of normals perpendicular to \(\mathbf u\). These normals describe different geometrical cutting planes, all carrying zero traction in this idealized state.</p>
+<p>The last task asks whether the sum of squared traction magnitudes on coordinate planes depends on the chosen axes. In our convention it is \(\sum_j|\mathbf t(\mathbf e_j)|^2=\sigma_{ij}\sigma_{ij}=\operatorname{tr}(\boldsymbol\sigma^{\mathsf T}\boldsymbol\sigma)\). To prove invariance, substitute (5.5) twice. Orthogonality contracts the two copies of \(Q_{ai}\) and the two copies of \(Q_{bj}\) to deltas, returning \(\sigma_{ij}\sigma_{ij}\). For symmetric stress this equals the sum of squared principal stresses. It is not \((\operatorname{tr}\boldsymbol\sigma)^2\). For the running matrix the value is \(36+4+4+9+1=54\) MPa².</p>
+
+<h2 id="implementation">Executable traction and equilibrium model</h2>
+<p>The program implements the fixed stress in (5.6) and the variable field in (5.13), using Pa and metres for the field calculation. It computes the traction decomposition, tests directional reciprocity, and integrates surface and body forces on the unit cube. Each stress component is affine, so face-center quadrature gives the exact force on each planar face. The same quadrature would generally be approximate for nonlinear fields. NumPy is the only dependency; the program reads no files and prints its checks. Assertions fail if the independent expressions disagree.</p>
+<div class="codewrap"><button class="copybtn" type="button" onclick="copyCode(this)">Copy</button><pre data-run="ch05"><code class="language-python">import numpy as np
+
+stress = np.array([[6., 2., 0.], [2., 3., 0.], [0., 0., 1.]])
+normal = np.array([3., 4., 0.]) / 5
+traction = stress @ normal
+normal_stress = normal @ traction
+shear = traction - normal_stress * normal
+other = np.array([0., 0., 1.])
+assert np.isclose(other @ stress @ normal, normal @ stress @ other)
+assert np.isclose(normal @ shear, 0.)
+
+
+def field(point):
+    x, y, _ = point
+    return np.array([[2 * y, -2 * x, 0.],
+                     [-2 * x, 0., 0.], [0., 0., 0.]])
+
+
+surface_force = np.zeros(3)
+for axis in range(3):
+    for sign in [-1., 1.]:
+        center = np.full(3, 0.5)
+        center[axis] = (sign + 1) / 2
+        outward = np.eye(3)[axis] * sign
+        surface_force += field(center) @ outward
+body_force = np.array([0., 2., 0.])
+assert np.allclose(surface_force + body_force, np.zeros(3))
+free_stress = np.array([[2., 2., 1.], [2., 0., 2.], [1., 2., 0.]])
+free_normal = np.array([2., -1., -2.]) / 3
+assert np.allclose(free_stress @ free_normal, np.zeros(3))
+print('traction MPa:', np.round(traction, 6).tolist())
+print('normal MPa:', round(float(normal_stress), 6))
+print('shear magnitude MPa:', round(float(np.linalg.norm(shear)), 6))
+print('coordinate traction squared MPa2:', float(np.sum(stress**2)))
+print('surface force N:', surface_force.tolist())
+print('body force N:', body_force.tolist())
+print('force residual N:', (surface_force + body_force).tolist())</code></pre></div>
+<pre data-output="ch05">traction MPa: [5.2, 3.6, 0.0]
+normal MPa: 6.0
+shear magnitude MPa: 2.0
+coordinate traction squared MPa2: 54.0
+surface force N: [0.0, -2.0, 0.0]
+body force N: [0.0, 2.0, 0.0]
+force residual N: [0.0, 0.0, 0.0]</pre>
+<p>Checking a global force residual is useful but insufficient. The field was also checked pointwise against (5.9), and symmetry was checked analytically. Numerical integration can hide local errors through cancellation. A more general solver should report local residuals and test its quadrature, tensor convention, boundary normals and moment balance separately. Passing these consistency checks still does not establish that the field can arise in a specified elastic or viscous material.</p>
+
+<h2 id="exercises">Exercises with worked solutions</h2>
+<p><strong>1. Reverse a cut.</strong> Use the running stress and \(\mathbf n=(3,4,0)/5\). Find traction, signed normal traction and shear vector for the reversed normal. Which quantities change sign?</p>
+<details><summary>Solution</summary><p>Linearity gives \(\mathbf t(-\mathbf n)=(-5.2,-3.6,0)\) MPa. The signed normal scalar is \((-\mathbf n)\cdot[-\mathbf t(\mathbf n)]=6\) MPa, unchanged. Its vector part is now \((-3.6,-4.8,0)\), and the shear vector is \((-1.6,1.2,0)\) MPa, the negative of the original. Shear magnitude remains 2 MPa. Reversing the side receiving the force changes vector signs, but not the tension/compression classification of that geometrical plane.</p></details>
+<p><strong>2. Pure shear is not zero traction.</strong> Let \(\boldsymbol\sigma=\begin{bmatrix}0&amp;T&amp;0\\T&amp;0&amp;0\\0&amp;0&amp;0\end{bmatrix}\), with \(T\gt0\) in Pa. Find traction on \(\mathbf e_1\) and on \((\mathbf e_1+\mathbf e_2)/\sqrt2\).</p>
+<details><summary>Solution</summary><p>On \(\mathbf e_1\), traction is \((0,T,0)\), so normal traction is zero and shear magnitude is \(T\). On the diagonal normal, traction is \(T(1,1,0)/\sqrt2\), parallel to the normal, so normal traction is \(T\) and shear is zero. The first plane demonstrates why zero normal stress is weaker than a traction-free condition. The second is a principal plane. The opposite diagonal gives compressive principal value \(-T\).</p></details>
+<p><strong>3. Recover a body force.</strong> Let \(\ell\) be a length, \(\sigma_*\) a stress, \(X=x/\ell,Y=y/\ell,Z=z/\ell\), and prescribe the symmetric matrix \(\boldsymbol\sigma=\sigma_*\begin{bmatrix}XY&amp;Y^2&amp;0\\Y^2&amp;YZ&amp;Z^2\\0&amp;Z^2&amp;XZ\end{bmatrix}\). For constant density, find the required equilibrium body force per mass.</p>
+<details><summary>Solution</summary><p>Differentiate with physical coordinates, so every derivative brings \(1/\ell\). The row divergences are \((\sigma_*/\ell)(Y+2Y)\), \((\sigma_*/\ell)(0+Z+2Z)\), and \((\sigma_*/\ell)(0+0+X)\). Hence \(\rho\mathbf b=-(\sigma_*/\ell)(3Y,3Z,X)\), and divide by \(\rho\) for \(\mathbf b\). The dimensional factors make the result m/s². This reconstructs the mechanism and polynomial field recoverable from the second tutorial problem without treating bare coordinate products as dimensionally complete stresses.</p></details>
+<p><strong>4. Symmetry is an independent condition.</strong> Suppose a spatially constant array has \(\sigma_{12}=T\), \(\sigma_{21}=0\), all other entries zero, and no body force. Does it satisfy classical equilibrium?</p>
+<details><summary>Solution</summary><p>All spatial derivatives vanish, so force equilibrium holds. But the third component of the angular-momentum residual is \(\sigma_{21}-\sigma_{12}=-T\), nonzero. The array is therefore not an admissible stress state for a nonpolar continuum in static equilibrium. A model with an appropriate independent couple could change that conclusion, but introducing it changes the governing moment equation. Zero divergence alone is insufficient.</p></details>
+<p><strong>5. Find a traction-free plane.</strong> Starting from (5.14), derive both the unknown \(s\) and the complete set of unit normals carrying zero traction. Why does zero determinant alone not identify the plane?</p>
+<details><summary>Solution</summary><p>The determinant is \(-4s+8\), so \(s=2\). The remaining system gives \(n_3=-n_1\) and \(n_2=-n_1/2\). Normalize to obtain \(n_1=\pm2/3\), hence \(\mathbf n=\pm(2,-1,-2)/3\). The matrix has rank two, so this null space is one dimensional and these are all its unit vectors. Zero determinant guarantees a nontrivial null space but gives neither its direction nor its dimension; those require solving the system.</p></details>
+<p><strong>6. Pressure under gravity.</strong> Assume an isotropic stress \(-p\mathbf I\), constant density \(\rho\), gravity \(\mathbf b=-g\mathbf e_3\), and static equilibrium. Let \(p=p_0\) at height \(z=0\). Find \(p(z)\) and the traction on a horizontal plane whose retained material has upward normal.</p>
+<details><summary>Solution</summary><p>Stress divergence is \(-\nabla p\). Equation (5.9) gives \(-\nabla p-\rho g\mathbf e_3=0\), so \(p_{,z}=-\rho g\), with no horizontal variation. Integrating yields \(p=p_0-\rho gz\); below the reference plane, \(z\lt0\), pressure increases. For \(\mathbf n=\mathbf e_3\), traction is \(-p\mathbf e_3\), directed downward. Density variation would have to be retained inside the differential relation instead of inserting this linear profile.</p></details>
+<p><strong>7. A uniaxial state on an oblique cut.</strong> For \(\boldsymbol\sigma=\sigma_0\mathbf u\otimes\mathbf u\), let \(\mathbf u\cdot\mathbf n=\cos\alpha\). Find the normal scalar and shear magnitude on the plane normal to \(\mathbf n\), and identify a maximum shear orientation.</p>
+<details><summary>Solution</summary><p>Traction is \(\sigma_0\cos\alpha\,\mathbf u\), giving normal scalar \(\sigma_0\cos^2\alpha\). Its squared magnitude is \(\sigma_0^2\cos^2\alpha\); subtracting the squared normal scalar gives shear magnitude \(\sigma_0|\cos\alpha\sin\alpha|\). Since \(|\sin2\alpha|\le1\), the maximum is \(\sigma_0/2\), reached at 45 degrees and equivalent orientations. The maximum normal traction and maximum shear traction occur on different cuts, so a failure criterion must specify which quantity matters.</p></details>
+<p><strong>8. An invariant is not a trace squared.</strong> Calculate \(\sum_j|\mathbf t(\mathbf e_j)|^2\) and \((\operatorname{tr}\boldsymbol\sigma)^2\) for the running stress. Explain why their difference is not a coordinate effect.</p>
+<details><summary>Solution</summary><p>The column squared magnitudes are 40, 13 and 1 MPa², totaling 54 MPa². The trace is 10 MPa, so its square is 100 MPa². Both are invariant scalars, but they represent different contractions: \(\sigma_{ij}\sigma_{ij}\) versus \(\sigma_{ii}\sigma_{jj}\). A rotation preserves each separately and cannot turn one into the other. In principal axes the first is the sum of squared principal stresses, whereas the second includes the cross products between them.</p></details>
+
+<h2 id="limits">What is determined, and what remains to be supplied</h2>
+<p>Cauchy's formula determines traction on every plane from a pointwise stress tensor. Linear momentum restricts its spatial divergence, and classical angular momentum makes it symmetric. These results do not identify a material's failure mode or determine its stress field from boundary loading alone. A complete problem also needs geometry, boundary conditions and a constitutive relation compatible with deformation or flow. Across interfaces, discontinuous fields require jump conditions or the integral balances rather than an unqualified classical derivative. At singular loads, cracks or microstructural scales, the boundedness and regularity used in the shrinking-element arguments must be examined again.</p>
+<h2 id="sources">Sources</h2>
+<ul><li>NPTEL, Prof. Gaurav Bhutani: <a href="https://www.youtube.com/watch?v=79pT3kqvhcg">L21, Cauchy Stress Principle</a>; <a href="https://www.youtube.com/watch?v=-tnTls6t2Jo">L22, Cauchy Stress Formula</a>; <a href="https://www.youtube.com/watch?v=5LRiGFDZ6tI">L23, Cauchy Stress Tensor</a>; <a href="https://www.youtube.com/watch?v=_B1TEunvdvU">L24, Local Equilibrium Equations</a>; <a href="https://www.youtube.com/watch?v=1zc-23thT3Q">L25, Tutorial, Week 5</a>.</li><li>A. F. Bower, <a href="https://solidmechanics.org/Text/Chapter2_3/Chapter2_3.php"><em>Applied Mechanics of Solids</em>, §2.3</a>: current-area traction and internal cuts; <a href="https://solidmechanics.org/Text/Chapter2_4/Chapter2_4.php">§2.4.2–2.4.3</a>: linear and angular momentum. The stress convention is translated in the text. Numerical running cases and code are teaching constructions.</li></ul>
+<!-- BOOK-CONTENT-END --></article><nav class="page-turn" aria-label="Chapter navigation"><a rel="prev" href="chapter-04-principal-directions-tensor-calculus.html">Previous chapter</a><a href="index.html">Chapter index</a><a rel="next" href="chapter-06-principal-stresses-mohr-invariants.html">Next chapter</a></nav></main></div><footer class="site-footer">Independent study edition. Prof. Gaurav Bhutani’s NPTEL recordings provide the topic spine. Original exposition, source limitations and verification evidence are separately recorded.</footer></body></html>

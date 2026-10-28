@@ -1,0 +1,221 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="color-scheme" content="dark light"><meta name="book-content-sha256" content="68a8043b6bd4796097beab361b95e578a5f6125fcd75a5472dd2bca1ceeb0b13">
+<title>Viscous and viscoelastic materials · Foundations of Continuum Mechanics</title><link rel="stylesheet" href="assets/book.css">
+<script>window.MathJax={tex:{inlineMath:[['$','$'],['\\(','\\)']],displayMath:[['$$','$$'],['\\[','\\]']],processEscapes:true},svg:{fontCache:'local'},options:{skipHtmlTags:['script','noscript','style','textarea','pre','code']}};</script>
+<script defer src="assets/mathjax-tex-svg.js"></script><script defer src="assets/book.js"></script></head>
+<body><a class="skip" href="#main">Skip to content</a><header class="site-header"><a class="brand" href="index.html">Foundations of Continuum Mechanics · NPTEL IIT Mandi</a><nav class="course-nav" aria-label="Book"><a href="index.html">Chapters</a><a href="source-map.html">Source map</a><a href="references.html">References</a><a href="numerical-lab.html">Numerical lab</a></nav></header>
+<div class="layout"><aside class="toc" id="chapter-toc" aria-label="On this page"><h2>On this page</h2></aside><main id="main"><div class="reading-tools" aria-label="Reading controls"><button id="theme-toggle" aria-pressed="false">Light theme</button><button id="text-toggle" aria-pressed="false">Larger text</button><button id="solutions-toggle" aria-pressed="false">Expand solutions</button><button id="print-page">Print with solutions</button></div>
+<article id="chapter-content"><!-- BOOK-CONTENT-START --><h1>Viscous and viscoelastic materials</h1>
+<p class="lead">A component held at a fixed load continues to extend. A second specimen, held at a fixed extension, gradually requires less force. A viscosity fitted to one instant cannot determine both histories. Constitutive modeling must distinguish an instantaneous rate response from an evolving internal state, and a fluid that flows indefinitely from a solid that retains equilibrium stiffness. This chapter develops those distinctions through shear-flow models and a spring–dashpot specimen whose creep, relaxation, oscillatory response and energy balance can all be calculated.</p>
+<p class="source-note">Lecture spine: lesson 54, “Viscous Type Models,” of Prof. Gaurav Bhutani’s NPTEL course. Its local machine transcript reaches the closing remarks at 39:51 of the listed 40:00 recording. The standard-linear-solid derivation also connects to the constitutive tutorial in lesson 56. Machine recognition supports spoken topics and approximate timestamps, not exact board notation. Reference support is integrated from Bower’s author-hosted textbook. The numerical rheology and specimen parameters, structural-kinetics example, derivations, code and exercises are constructed teaching models, not fitted measurements.</p>
+
+<h2 id="viscosity" data-video="wQtZyxw_g0Y" data-start="12" data-end="388">Viscous stress, pressure and mechanical dissipation <a class="timestamp" href="https://www.youtube.com/watch?v=wQtZyxw_g0Y&amp;t=12s">L54 0:12</a></h2>
+<p>Let \(\mathbf v(\mathbf x,t)\) be velocity in m/s, with spatial position \(\mathbf x\) in metres and time \(t\) in seconds. The rate-of-deformation tensor is the symmetric velocity gradient, \(D_{ij}=(\partial v_i/\partial x_j+\partial v_j/\partial x_i)/2\), with units s⁻¹. Its trace \(\vartheta=D_{kk}=\nabla\cdot\mathbf v\) measures local volume-change rate. Define its trace-free part by \(\mathbf D^{\mathrm{dev}}=\mathbf D-(\vartheta/3)\mathbf I\). The double contraction is \(\mathbf A:\mathbf B=A_{ij}B_{ij}\).</p>
+<p>A Newtonian isotropic viscous model is linear in \(\mathbf D\). A useful compressible form for the symmetric Cauchy stress is</p>
+\[
+\boldsymbol\sigma=-p\mathbf I+2\mu\mathbf D^{\mathrm{dev}}+\zeta\vartheta\mathbf I
+=-p\mathbf I+2\mu\mathbf D+\lambda_v\vartheta\mathbf I,
+\qquad \zeta=\lambda_v+\frac23\mu. \tag{13.1}
+\]
+<p>Pressure \(p\) and stress have units Pa. Shear viscosity \(\mu\), bulk viscosity \(\zeta\), and the alternative second coefficient \(\lambda_v\) have units Pa s. Bulk viscosity is \(\zeta\), not \(\lambda_v\) in this convention. The mean mechanical pressure is \(-\operatorname{tr}\boldsymbol\sigma/3=p-\zeta\vartheta\); it need not equal thermodynamic pressure in a compressing viscous motion.</p>
+<p>The viscous part of the mechanical power per current volume is</p>
+\[
+(2\mu\mathbf D^{\mathrm{dev}}+\zeta\vartheta\mathbf I):\mathbf D
+=2\mu\mathbf D^{\mathrm{dev}}:\mathbf D^{\mathrm{dev}}+\zeta\vartheta^2. \tag{13.2}
+\]
+<p>The cross terms vanish because the deviatoric part has zero trace. Nonnegative \(\mu\) and \(\zeta\) make this dissipative power nonnegative for every rate tensor. Stokes’ hypothesis \(\lambda_v=-2\mu/3\) sets \(\zeta=0\); it is an additional model assumption, not a general consequence of isotropy or a universal property of fluids.</p>
+<p>For incompressible motion, \(\vartheta=0\), so \(\mathbf D^{\mathrm{dev}}=\mathbf D\) and the deviatoric viscous stress is \(\boldsymbol\tau=2\mu\mathbf D\). Pressure does no local incompressible deformation work because \((-p\mathbf I):\mathbf D=-p\vartheta=0\). The deviatoric tensor can contain normal components; calling every entry a “shear stress” would conceal that distinction.</p>
+<p>In simple shear \(\mathbf v=(\dot\gamma x_2,0,0)\), the signed engineering shear rate is \(\dot\gamma\). The only nonzero rate components are \(D_{12}=D_{21}=\dot\gamma/2\). Thus \(\tau_{12}=\mu\dot\gamma\), and dissipation is \(\boldsymbol\tau:\mathbf D=\mu\dot\gamma^2\). For \(\mu=2\) Pa s and \(\dot\gamma=3\) s⁻¹, shear stress is 6 Pa and power is 18 W/m³. A fluid's inability to sustain equilibrium shear describes an ideal fluid response; a yield-stress material below yield needs a different constitutive branch.</p>
+
+<h2 id="non-newtonian" data-video="wQtZyxw_g0Y" data-start="388" data-end="1263">Rate dependence, yielding and viscosity plateaus <a class="timestamp" href="https://www.youtube.com/watch?v=wQtZyxw_g0Y&amp;t=388s">L54 6:28</a></h2>
+<p>A generalized Newtonian model replaces constant shear viscosity by an instantaneous scalar function of a rate invariant. For incompressible motion define the effective shear rate \(r=\dot\gamma_{\mathrm{eff}}=\sqrt{2\mathbf D:\mathbf D}\), in s⁻¹. It equals \(|\dot\gamma|\) in simple shear. If \(J_2(\mathbf D)=\mathbf D:\mathbf D/2\), then \(r=2\sqrt{J_2(\mathbf D)}\); the effective rate is not \(J_2\) itself. Their units also differ.</p>
+<p>The constitutive law \(\boldsymbol\tau=2\mu(r)\mathbf D\), with \(\mu(r)\ge0\), gives dissipation \(\mu(r)r^2\). It can describe an instantaneous nonlinear response without memory. It does not describe every isotropic fluid response: normal-stress effects, directional microstructure and historical changes can require additional tensors or state variables.</p>
+<h3>Power-law response</h3>
+<p>The power-law model takes</p>
+\[
+\mu(r)=m r^{n-1},\qquad
+\boldsymbol\tau=2m r^{n-1}\mathbf D,
+\qquad \boldsymbol\tau:\mathbf D=m r^{n+1}, \tag{13.3}
+\]
+<p>where \(m&gt;0\) has units Pa sⁿ and \(n&gt;0\) is dimensionless. In simple shear, \(\tau_{12}=m|\dot\gamma|^{n-1}\dot\gamma\). For \(n=1\) viscosity is constant. For \(0&lt;n&lt;1\), apparent viscosity decreases with increasing rate, called shear thinning; for \(n&gt;1\) it increases, called shear thickening. Stress magnitude still increases with rate when \(n&gt;0\).</p>
+<p>For the constructed values \(m=2\) Pa s⁰·⁶ and \(n=0.6\), increasing positive rate from 1 to 10 s⁻¹ increases stress from 2 to approximately 7.962 Pa, while apparent viscosity falls from 2 to approximately 0.7962 Pa s. Apparent viscosity \(\tau_{12}/\dot\gamma\) is the secant ratio, not the tangent slope of the flow curve: for positive rate, \(\mathrm d\tau_{12}/\mathrm d\dot\gamma=n m\dot\gamma^{n-1}=n\mu\).</p>
+<p>At zero rate the apparent viscosity diverges for \(n&lt;1\), although stress tends continuously to zero for every \(n&gt;0\). A computer must define that zero-rate stress by continuity rather than multiply an infinite coefficient by zero. The model has no low- or high-rate viscosity plateaus. Its fitted interval must therefore be stated before extrapolation.</p>
+<h3>Bingham and Herschel–Bulkley yielding</h3>
+<p>Define an equivalent deviatoric stress \(t_e=\sqrt{\boldsymbol\tau:\boldsymbol\tau/2}\), which equals \(|\tau_{12}|\) in simple shear. A Bingham model has a yield stress \(\tau_y\ge0\) and plastic viscosity \(\mu_p&gt;0\). In an unyielded region, \(\mathbf D=0\) and \(t_e\le\tau_y\). In a yielded region,</p>
+\[
+\boldsymbol\tau=2\left(\mu_p+\frac{\tau_y}{r}\right)\mathbf D,
+\quad r&gt;0,
+\qquad \boldsymbol\tau:\mathbf D=\mu_p r^2+\tau_y r. \tag{13.4}
+\]
+<p>For positive simple shear this gives \(\tau_{12}=\tau_y+\mu_p\dot\gamma\); negative shear reverses the yield-stress contribution. At zero rate, the constitutive graph allows a range of stresses rather than a division by zero. The ideal Bingham unyielded region is rigid: it does not include elastic strain unless elasticity is added explicitly. An actual toothpaste or mud may exhibit more features than this idealization.</p>
+<p>The Herschel–Bulkley model replaces the yielded linear branch by a power law: \(\tau_{12}=\tau_y\operatorname{sign}(\dot\gamma)+m|\dot\gamma|^{n-1}\dot\gamma\) for nonzero simple-shear rate. Its incompressible tensor form has effective viscosity \(\tau_y/r+m r^{n-1}\), with the same unyielded stress inequality. It reduces to Bingham at \(n=1,m=\mu_p\), and to the power law at \(\tau_y=0\). With \(\tau_y=5\) Pa and the preceding power-law parameters, rate 1 s⁻¹ requires 7 Pa; stress 4 Pa permits the unyielded branch.</p>
+<h3>The Cross model and distinct rate limits</h3>
+<p>A viscosity curve with two finite plateaus can be modeled by</p>
+\[
+\mu(r)=\mu_\infty+
+\frac{\mu_0-\mu_\infty}{1+(k r)^a},
+\quad \mu_0\ge\mu_\infty&gt;0,\quad k&gt;0,\ a&gt;0. \tag{13.5}
+\]
+<p>Here \(\mu_0,\mu_\infty\) are zero- and infinite-rate viscosity limits in Pa s; \(k\) is a time in seconds and \(a\) is dimensionless. The product \(kr\) is dimensionless. At \(r=1/k\), viscosity lies halfway between the plateaus. Choosing \(\mu_0=10\) Pa s, \(\mu_\infty=1\) Pa s, \(k=2\) s and \(a=0.8\) gives 5.5 Pa s at rate 0.5 s⁻¹. Finite zero-rate viscosity differs fundamentally from the zero-rate singularity of a thinning power law.</p>
+<p>A smooth shear-thinning viscosity does not automatically give a monotone stress curve for every parameter choice. If monotonicity matters, check \(\mathrm d[r\mu(r)]/\mathrm dr\), not only the sign of \(\mu\). The choice \(0&lt;a\le1\) in (13.5) with the stated plateau ordering has a positive stress slope: differentiating the variable part gives a factor \([1+(1-a)(kr)^a]/[1+(kr)^a]^2\). Larger exponents need separate assessment.</p>
+
+<h2 id="time-dependence" data-video="wQtZyxw_g0Y" data-start="1263" data-end="1355">A structural state can evolve at fixed rate <a class="timestamp" href="https://www.youtube.com/watch?v=wQtZyxw_g0Y&amp;t=1263s">L54 21:03</a></h2>
+<p>Rate dependence and time dependence are different experiments. A generalized Newtonian model gives the same stress whenever its current rate tensor is the same. A thixotropic material can become less viscous during sustained shearing and recover structure after rest. Rheopexy describes an increase of viscosity during sustained shearing. These descriptions concern histories under specified protocols, not merely a negative or positive slope on an instantaneous viscosity-versus-rate curve.</p>
+<p>A constructed thixotropic model uses a structural fraction \(z\in[0,1]\), a recovery time \(T_b&gt;0\) in seconds, and a dimensionless breakdown coefficient \(b\ge0\):</p>
+\[
+\dot z=\frac{1-z}{T_b}-b r z,
+\qquad \mu(z)=\mu_\infty+(\mu_0-\mu_\infty)z. \tag{13.6}
+\]
+<p>The derivative points inward at both endpoints: at \(z=0\), it is \(1/T_b&gt;0\); at \(z=1\), it is \(-br\le0\). At constant rate, the equilibrium fraction is \(z_*=1/(1+bT_b r)\), and the exact solution is \(z(t)=z_*+[z(0)-z_*]\exp[-(1/T_b+br)t]\). At rest the structure recovers toward one. Thus a state variable produces memory while keeping viscosity positive.</p>
+<p>For \(T_b=5\) s, \(b=0.4\), \(r=2\) s⁻¹ and \(z(0)=1\), the equilibrium fraction is 0.2 and its decay time is 1 s. With plateau viscosities 10 and 1 Pa s, viscosity decreases from 10 toward 2.8 Pa s despite unchanged shear rate. This is an illustrative mechanism, not a calibrated description of a named suspension. Positive instantaneous dissipation alone does not validate the kinetics or determine an internal free energy.</p>
+
+<h2 id="elements" data-video="wQtZyxw_g0Y" data-start="1355" data-end="1690">Creep, relaxation and elementary energy balances <a class="timestamp" href="https://www.youtube.com/watch?v=wQtZyxw_g0Y&amp;t=1355s">L54 22:35</a></h2>
+<p>A <dfn>creep test</dfn> prescribes stress and observes strain over time. A <dfn>relaxation test</dfn> prescribes strain and observes stress. For the following one-dimensional material elements, \(\sigma\) is tensile stress in Pa, \(\varepsilon\) is small dimensionless axial strain, and \(\dot\varepsilon\) is its rate in s⁻¹. The parameters are constant and temperature is fixed. These scalar moduli are not automatically shear moduli in a three-dimensional fluid law.</p>
+<p>A linear spring obeys \(\sigma=E\varepsilon\), with \(E&gt;0\) in Pa. Its stored energy per volume is \(\psi=E\varepsilon^2/2\), obtained by integrating stress with respect to strain from zero. A linear dashpot obeys \(\sigma=\eta\dot\varepsilon\), with \(\eta&gt;0\) in Pa s. It stores no energy in this ideal model and dissipates power \(\sigma\dot\varepsilon=\eta\dot\varepsilon^2\). Power per volume has units Pa/s = W/m³.</p>
+<p>For spring and dashpot elements in series, stress is the same and strains add. For parallel elements, strain is the same and stresses add. These statements assume compatible element geometry and a quasistatic one-dimensional arrangement; they supply the constraints needed to derive a network's equations.</p>
+<p>An ideal step is shorthand for a limiting loading history. Write \(H(t)=0\) for \(t&lt;0\) and \(H(t)=1\) for \(t&gt;0\). A strain step \(\varepsilon_0H(t)\) has a distributional derivative \(\varepsilon_0\delta(t)\), where \(\delta\) denotes a unit impulse. A bare dashpot therefore requires a stress impulse to impose that step. It has zero stress only for subsequent constant-strain times \(t&gt;0\); this does not mean that applying the step costs no work.</p>
+<p>To see the physical limit, impose a linear ramp from zero to \(\varepsilon_0\) over duration \(t_a&gt;0\). The dashpot dissipation during the ramp is \(\eta(\varepsilon_0/t_a)^2t_a=\eta\varepsilon_0^2/t_a\), which diverges as \(t_a\to0\). Energy identities below apply to regular loading histories or to explicitly stated post-step intervals. Singular step products must not be integrated as ordinary finite functions.</p>
+<p><a href="https://solidmechanics.org/Text/Chapter3_6/Chapter3_6.php">Bower, §3.6.1</a>, distinguishes retarded elastic response from steady creep, and defines step and harmonic tests. A material with a nonzero equilibrium spring can reach finite creep strain and retain relaxation stress. A fluid-like network without that equilibrium spring can creep indefinitely and relax fully. Neither response is universally “unrealistic”; adequacy depends on the material, loading range and time window.</p>
+
+<h2 id="maxwell" data-video="wQtZyxw_g0Y" data-start="1690" data-end="1785">Maxwell: a spring and dashpot in series <a class="timestamp" href="https://www.youtube.com/watch?v=wQtZyxw_g0Y&amp;t=1690s">L54 28:10</a></h2>
+<p>Let \(\varepsilon_s,\varepsilon_d\) be the series spring and dashpot strains. Since \(\varepsilon=\varepsilon_s+\varepsilon_d\), \(\sigma=E\varepsilon_s\) and \(\sigma=\eta\dot\varepsilon_d\), differentiation gives</p>
+\[
+\dot\varepsilon=\frac{\dot\sigma}{E}+\frac{\sigma}{\eta},
+\qquad \tau_r=\frac{\eta}{E}. \tag{13.7}
+\]
+<p>The time \(\tau_r\) is the relaxation time. After a step strain is applied and held, \(\dot\varepsilon=0\) for \(t&gt;0\), so \(\dot\sigma=-\sigma/\tau_r\). The dashpot strain cannot jump under a bounded stress; the spring initially takes the strain. Thus \(\sigma(0^+)=E\varepsilon_0\), giving \(\sigma(t)=E\varepsilon_0e^{-t/\tau_r}\).</p>
+<p>Under constant step stress \(\sigma_0\), the spring contributes the instantaneous strain \(\sigma_0/E\), while the dashpot extends at rate \(\sigma_0/\eta\). Hence \(\varepsilon(t)=\sigma_0/E+\sigma_0t/\eta\) for \(t&gt;0\). A Maxwell element has no equilibrium modulus and no bounded long-time creep compliance. It models one fluid-like relaxation mechanism rather than a viscoelastic solid with permanent equilibrium stiffness.</p>
+<p>For regular histories its stored energy is \(\psi=\sigma^2/(2E)\). Multiplying (13.7) by stress gives \(\sigma\dot\varepsilon=\dot\psi+\sigma^2/\eta\). During relaxation at fixed total strain the external power vanishes; spring energy decreases and is dissipated in the dashpot. Internal flow can therefore dissipate energy even when the specimen's total strain is held constant.</p>
+
+<h2 id="kelvin" data-video="wQtZyxw_g0Y" data-start="1785" data-end="1975">Kelvin–Voigt and the standard linear solid <a class="timestamp" href="https://www.youtube.com/watch?v=wQtZyxw_g0Y&amp;t=1785s">L54 29:45</a></h2>
+<p>A Kelvin–Voigt element places a spring and dashpot in parallel. Shared strain and additive stresses give \(\sigma=E\varepsilon+\eta\dot\varepsilon\). A step stress starting from zero strain solves \(\dot\varepsilon+(E/\eta)\varepsilon=\sigma_0/\eta\), so \(\varepsilon(t)=(\sigma_0/E)[1-e^{-tE/\eta}]\). Strain starts continuously at zero and reaches a finite plateau. Its energy balance is \(\sigma\dot\varepsilon=\mathrm d(E\varepsilon^2/2)/\mathrm dt+\eta\dot\varepsilon^2\).</p>
+<p>An ideal strain step in Kelvin–Voigt requires \(\sigma=E\varepsilon_0H(t)+\eta\varepsilon_0\delta(t)\). It does not give an ordinary finite stress-relaxation curve through the loading instant. This limitation and its missing instantaneous creep jump explain why another network is useful.</p>
+<p>The <dfn>standard linear solid</dfn> places an equilibrium spring \(E_\infty&gt;0\) in parallel with a Maxwell branch consisting of spring \(E_1&gt;0\) and dashpot \(\eta&gt;0\). Define the instantaneous modulus \(E_0=E_\infty+E_1\), and let \(\sigma_1\) be the branch stress. Then \(\sigma=E_\infty\varepsilon+\sigma_1\), while the Maxwell branch gives \(\dot\sigma_1+\sigma_1/\tau_r=E_1\dot\varepsilon\), with \(\tau_r=\eta/E_1\). Eliminating \(\sigma_1\) yields</p>
+\[
+\dot\sigma+\frac{\sigma}{\tau_r}
+=E_0\dot\varepsilon+\frac{E_\infty}{\tau_r}\varepsilon. \tag{13.8}
+\]
+<p>At the instant of a strain step, the dashpot has no finite strain jump, so both springs initially carry that strain. Afterward the branch stress decays, giving the relaxation modulus</p>
+\[
+G(t)=\frac{\sigma(t)}{\varepsilon_0}
+=E_\infty+E_1e^{-t/\tau_r},\qquad t\ge0. \tag{13.9}
+\]
+<p>For a stress step, the same ODE gives a different time constant:</p>
+\[
+\varepsilon(t)=\sigma_0J(t),\quad
+J(t)=\frac1{E_\infty}
+-\left(\frac1{E_\infty}-\frac1{E_0}\right)e^{-t/\tau_c},
+\qquad \tau_c=\tau_r\frac{E_0}{E_\infty}. \tag{13.10}
+\]
+<p>To derive the initial condition, integrate (13.8) across the stress step: \(\Delta\sigma=E_0\Delta\varepsilon\), since the ordinary non-derivative terms have vanishing integral. Thus \(\varepsilon(0^+)=\sigma_0/E_0\). For \(t&gt;0\), (13.8) reduces to \(E_0\dot\varepsilon+(E_\infty/\tau_r)\varepsilon=\sigma_0/\tau_r\), whose equilibrium and decay rate give (13.10). Creep and relaxation times are generally unequal.</p>
+<p>Use a constructed specimen with \(E_\infty=2\) MPa, \(E_1=3\) MPa and \(\eta=6\) MPa s. Then \(E_0=5\) MPa, \(\tau_r=2\) s and \(\tau_c=5\) s. Holding strain 0.01 gives stress 50 kPa immediately, about 31.036 kPa after 2 s, and 20 kPa after long time. Holding stress 100 kPa instead gives strain 0.02 immediately, about 0.038964 after 5 s, and 0.05 after long time. These are predictions of the specified small-strain toy model; the strain range requires validation before using it for a real material.</p>
+<p>The stored energy is \(\psi=E_\infty\varepsilon^2/2+\sigma_1^2/(2E_1)\). From the branch equation, \(\sigma\dot\varepsilon=\dot\psi+\sigma_1^2/\eta\). Positive parameters therefore give a passive network. The equilibrium spring retains energy under held strain while the Maxwell branch loses energy. Sending \(E_\infty\) to zero removes the equilibrium spring and recovers the Maxwell ODE; formulas containing \(1/E_\infty\) must be interpreted by that limit, not by substituting zero into a denominator.</p>
+
+<h2 id="oscillations" data-video="wQtZyxw_g0Y" data-start="1975" data-end="2159">Storage, loss and work in one loading cycle <a class="timestamp" href="https://www.youtube.com/watch?v=wQtZyxw_g0Y&amp;t=1975s">L54 32:55</a></h2>
+<p>In steady oscillatory loading, prescribe \(\varepsilon(t)=\varepsilon_a\cos\omega t\), where \(\varepsilon_a\) is dimensionless amplitude and \(\omega&gt;0\) is angular frequency in rad/s. A linear time-invariant model gives \(\sigma(t)=\varepsilon_a[G'(\omega)\cos\omega t-G''(\omega)\sin\omega t]\). The storage modulus \(G'\) is the in-phase coefficient; the loss modulus \(G''\) is the quadrature coefficient. The prime marks frequency-dependent modulus components, not time derivatives.</p>
+<p>One way to solve (13.8) is to use complex amplitudes proportional to \(e^{i\omega t}\), where \(i^2=-1\), and take real parts afterward. For a Maxwell branch, replacing a time derivative by \(i\omega\) gives complex modulus \(E_1i\omega\tau_r/(1+i\omega\tau_r)\). Adding the equilibrium spring yields</p>
+\[
+G'=E_\infty+\frac{E_1(\omega\tau_r)^2}{1+(\omega\tau_r)^2},
+\qquad G''=\frac{E_1\omega\tau_r}{1+(\omega\tau_r)^2}. \tag{13.11}
+\]
+<p>At low frequency the storage modulus tends to \(E_\infty\); at high frequency it tends to \(E_0\). The loss contribution peaks at \(\omega\tau_r=1\), since differentiating \(x/(1+x^2)\) changes sign there. For the running specimen at \(\omega=0.5\) rad/s, \(G'=3.5\) MPa and \(G''=1.5\) MPa.</p>
+<p>The work per volume over one steady cycle is \(\int_0^{2\pi/\omega}\sigma\dot\varepsilon\,\mathrm dt\). The cosine–sine cross term integrates to zero and the sine square integrates to \(\pi/\omega\), giving \(W_{\mathrm{cycle}}=\pi\varepsilon_a^2G''\). With amplitude 0.01, this is approximately 471.239 J/m³ for the constructed specimen. Stored energy returns to its initial value each cycle, so this net work is dissipated. A single frequency measurement does not uniquely identify a spectrum of relaxation mechanisms.</p>
+
+<h2 id="memory" data-video="wQtZyxw_g0Y" data-start="2159" data-end="2318">The integral memory form and its initial jump <a class="timestamp" href="https://www.youtube.com/watch?v=wQtZyxw_g0Y&amp;t=2159s">L54 35:59</a></h2>
+<p>For a causal linear time-invariant specimen initially relaxed, each small strain increment at time \(s\) contributes its increment multiplied by the later relaxation modulus \(G(t-s)\). Adding these contributions gives the hereditary relation. With zero strain before time zero and a possible initial jump, write it without hiding that jump:</p>
+\[
+\sigma(t)=G(t)\varepsilon(0^+)
++\int_0^tG(t-s)\dot\varepsilon_{\mathrm{reg}}(s)\,\mathrm ds,
+\qquad t&gt;0. \tag{13.12}
+\]
+<p>The subscript “reg” denotes the ordinary derivative after the initial jump. Later jumps require their own \(G(t-t_j)\Delta\varepsilon_j\) terms. Equivalently, one can integrate \(G(t-s)\) against the full strain increment measure. Omitting the initial term would predict zero stress for a held strain step, precisely the history for which relaxation modulus is defined.</p>
+<p>For the standard linear solid, (13.9) inserted into (13.12) gives the equilibrium spring plus one exponential memory. A strain pulse that jumps to \(\varepsilon_0\) at zero and back to zero at \(t_1\) gives \(\sigma(t)=\varepsilon_0[G(t)-G(t-t_1)]\) for \(t&gt;t_1\). The equilibrium terms cancel; the remaining transient stress is negative and later decays to zero. It reflects the internal branch state at unloading, not a violation of positive dissipation.</p>
+<p><a href="https://solidmechanics.org/Text/Chapter3_6/Chapter3_6.php">Bower, §§3.6.2–3.6.3</a>, develops hereditary linear response and spring–damper approximations; its shear convention differs from the axial convention used here. A sum \(G(t)=E_\infty+\sum_aE_a e^{-t/\tau_a}\), with positive \(E_a,\tau_a\), represents parallel Maxwell branches and an equilibrium spring. Kelvin–Voigt's ideal dashpot requires a singular kernel contribution rather than an ordinary decaying function. Linearity, fixed parameters, small strains and a stated initial history are essential; a convolution with an arbitrary kernel is not automatically passive.</p>
+
+<h2 id="implementation">Numerical checks of flow curves and one memory mechanism</h2>
+<p>The listing evaluates constructed flow curves, integrates the standard-linear-solid branch under a smooth imposed strain with a fourth-order Runge–Kutta method, and checks mechanical work against stored-energy change plus dashpot dissipation. This smooth test avoids undefined work products at an ideal step. It separately checks analytic step responses and oscillatory cycle loss. Inputs are fixed, NumPy is required, no files are read or written, and inconsistent checks raise assertions.</p>
+<pre data-run="ch13"><code class="language-python">import numpy as np
+
+rates = np.array([0.1, 1., 10.])
+power_stress = 2*rates**0.6
+assert np.all(np.diff(power_stress) &gt; 0)
+assert np.all(np.diff(power_stress/rates) &lt; 0)
+cross_midpoint = 1 + 9/(1 + (2*0.5)**0.8)
+assert cross_midpoint == 5.5
+equilibrium, branch_modulus, viscosity = 2e6, 3e6, 6e6
+instantaneous = equilibrium + branch_modulus
+relaxation_time = viscosity/branch_modulus
+creep_time = relaxation_time*instantaneous/equilibrium
+stress_at_two = 0.01*(equilibrium + branch_modulus*np.exp(-1))
+strain_at_five = 1e5*(1/equilibrium
+                      - (1/equilibrium-1/instantaneous)*np.exp(-1))
+time = np.linspace(0, 8, 16001)
+dt = time[1] - time[0]
+strain = 0.01*np.sin(time)
+strain_rate = 0.01*np.cos(time)
+branch = np.zeros_like(time)
+
+
+def rhs(t, value):
+    return branch_modulus*0.01*np.cos(t) - value/relaxation_time
+
+
+for j in range(len(time)-1):
+    t, value = time[j], branch[j]
+    k1 = rhs(t, value)
+    k2 = rhs(t+dt/2, value+dt*k1/2)
+    k3 = rhs(t+dt/2, value+dt*k2/2)
+    k4 = rhs(t+dt, value+dt*k3)
+    branch[j+1] = value + dt*(k1+2*k2+2*k3+k4)/6
+stress = equilibrium*strain + branch
+energy = equilibrium*strain**2/2 + branch**2/(2*branch_modulus)
+work = np.trapezoid(stress*strain_rate, time)
+loss = np.trapezoid(branch**2/viscosity, time)
+assert abs(work - (energy[-1]-energy[0]) - loss) &lt; 1e-4
+omega = 1/relaxation_time
+storage = equilibrium + branch_modulus/2
+loss_modulus = branch_modulus/2
+cycle_time = np.linspace(0, 2*np.pi/omega, 10001)
+cycle_stress = 0.01*(storage*np.cos(omega*cycle_time)
+                     - loss_modulus*np.sin(omega*cycle_time))
+cycle_rate = -0.01*omega*np.sin(omega*cycle_time)
+cycle_work = np.trapezoid(cycle_stress*cycle_rate, cycle_time)
+assert np.isclose(cycle_work, np.pi*0.01**2*loss_modulus)
+print('power-law stresses (Pa):', np.round(power_stress, 6).tolist())
+print('Cross midpoint viscosity (Pa s):', cross_midpoint)
+print('relaxation and creep times (s):', relaxation_time, creep_time)
+print('step-strain stress at 2 s (kPa):', round(stress_at_two/1000, 6))
+print('step-stress strain at 5 s:', round(strain_at_five, 6))
+print('cycle loss (J/m3):', round(cycle_work, 6))
+print('smooth-history energy balance: passed')</code></pre>
+<pre data-output="ch13">power-law stresses (Pa): [0.502377, 2.0, 7.962143]
+Cross midpoint viscosity (Pa s): 5.5
+relaxation and creep times (s): 2.0 5.0
+step-strain stress at 2 s (kPa): 31.036383
+step-stress strain at 5 s: 0.038964
+cycle loss (J/m3): 471.238898
+smooth-history energy balance: passed</pre>
+<p>The energy residual is an integration check for the stated network and resolution, not experimental validation. Positive loss in a selected test does not replace the network's analytical dissipation argument. The small-strain histories also do not supply an objective finite-deformation constitutive equation.</p>
+
+<h2 id="limits">Choosing the missing mechanism</h2>
+<p>Constant viscosity, instantaneous shear thinning, a yield threshold, two viscosity plateaus, evolving structure and elastic memory answer different questions. Maxwell and Kelvin–Voigt describe different limiting networks; the standard linear solid supplies an instantaneous modulus, a lower equilibrium modulus and a finite relaxation time. Its creep and relaxation tests share parameters but have different time constants. Smooth-history work separates recoverable spring energy from dashpot dissipation.</p>
+<p>Model choice must follow the loading protocol, observable and range of rates or times. Temperature shifts, aging, nonlinear yielding, anisotropic structure and large-strain objectivity require additional equations. The numerical examples establish consequences of explicit assumptions; they do not identify a real polymer, tissue, slurry or granular mixture.</p>
+
+<h2 id="exercises">Exercises with worked solutions</h2>
+<p><strong>1. Which invariant has shear-rate units?</strong> In simple shear with \(\dot\gamma=-4\) s⁻¹, find \(\mathbf D:\mathbf D\), \(J_2(\mathbf D)\), effective rate, and Newtonian dissipation for \(\mu=3\) Pa s.</p>
+<details><summary>Solution</summary><p>The two nonzero components are \(D_{12}=D_{21}=-2\) s⁻¹. Thus \(\mathbf D:\mathbf D=8\) s⁻², \(J_2=4\) s⁻², and \(r=\sqrt{16}=4\) s⁻¹. Shear stress is \(\tau_{12}=3(-4)=-12\) Pa, while dissipation is \(\mu\dot\gamma^2=48\) W/m³. Both off-diagonal entries contribute to the tensor contraction: \(2(-12)(-2)=48\). A negative signed rate reverses stress, not dissipation.</p></details>
+<p><strong>2. Invert a yielded flow curve.</strong> A Herschel–Bulkley material has \(\tau_y=5\) Pa, \(m=2\) Pa s⁰·⁵, and \(n=0.5\). Find steady simple-shear rates for applied shear stresses 4, 7 and −9 Pa. State the zero-rate convention.</p>
+<details><summary>Solution</summary><p>Stress magnitude below 5 Pa belongs to the unyielded branch, so 4 Pa gives zero rate. Above yield, \(|\tau_{12}|-5=2\sqrt{|\dot\gamma|}\), so \(\dot\gamma=\operatorname{sign}(\tau_{12})[(|\tau_{12}|-5)/2]^2\). Stress 7 Pa gives +1 s⁻¹; stress −9 Pa gives −4 s⁻¹. At zero rate the ideal graph permits every shear stress in [−5,5] Pa. It does not set the stress to zero or evaluate \(5/r\) there. Elastic strain below yield would need another element or constitutive variable.</p></details>
+<p><strong>3. Same rate, different history.</strong> Use (13.6) with \(T_b=5\) s, \(b=0.4\), rate 2 s⁻¹ and initial structure one. Find structure after 1 s, its long-time viscosity with \(\mu_0=10,\mu_\infty=1\) Pa s, and the recovery time after stopping shear.</p>
+<details><summary>Solution</summary><p>The equilibrium fraction is \(1/(1+0.4\times5\times2)=0.2\). The decay rate is \(1/5+0.4\times2=1\) s⁻¹, so \(z(1)=0.2+0.8/e\), approximately 0.494304. The long-time viscosity is \(1+9(0.2)=2.8\) Pa s. After shear stops, \(\dot z=(1-z)/5\), so recovery toward one has time constant 5 s. A second specimen already at \(z=0.2\) initially has lower viscosity at the same rate. No instantaneous rate-only law can distinguish these states.</p></details>
+<p><strong>4. Energy released in Maxwell relaxation.</strong> A Maxwell element has \(E=5\) MPa, \(\eta=10\) MPa s and initially imposed held strain 0.01. Find stress after 2 s and total post-loading dissipation from time zero to infinity.</p>
+<details><summary>Solution</summary><p>The relaxation time is 2 s. Initial stress is 50 kPa, and stress after 2 s is \(50/e\), approximately 18.394 kPa. Immediately after loading, spring energy is \(E\varepsilon_0^2/2=250\) J/m³. It tends to zero while total strain is held fixed, so all 250 J/m³ is dissipated afterward. Direct integration confirms \(\int_0^\infty\sigma(0^+)^2e^{-2t/\tau_r}/\eta\,\mathrm dt=\sigma(0^+)^2\tau_r/(2\eta)=\sigma(0^+)^2/(2E)=250\). The work during the loading ramp is a separate question; this calculation begins just after its idealization.</p></details>
+<p><strong>5. Identify an ideal standard linear solid.</strong> A constructed step-relaxation test gives initial modulus 8 MPa, equilibrium modulus 2 MPa, and exponential relaxation time 3 s. Determine the three network parameters and the creep time. Is creep compliance the pointwise reciprocal of relaxation modulus?</p>
+<details><summary>Solution</summary><p>The equilibrium spring has \(E_\infty=2\) MPa, the Maxwell spring has \(E_1=8-2=6\) MPa, and \(\eta=E_1\tau_r=18\) MPa s. Creep time is \(\tau_c=3(8/2)=12\) s. The endpoints satisfy \(J(0^+)=1/8\) MPa⁻¹ and \(J(\infty)=1/2\) MPa⁻¹, but at intermediate times (13.10) uses an exponential with time 12 s, while \(1/G(t)=1/[2+6e^{-t/3}]\) does not have that form. Endpoint reciprocity does not imply pointwise reciprocity of the full functions.</p></details>
+<p><strong>6. A strain step through a dashpot.</strong> A Kelvin–Voigt element has \(E=2\) MPa and \(\eta=4\) MPa s. Ramp strain linearly from zero to 0.01 over a time \(t_a\), then hold. Find spring energy, ramp dissipation, and the limit as \(t_a\to0\).</p>
+<details><summary>Solution</summary><p>The final spring energy is \(E(0.01)^2/2=100\) J/m³, independent of ramp time. The rate is \(0.01/t_a\), so dashpot dissipation is \(\eta(0.01)^2/t_a=400/t_a\) J/m³ when \(t_a\) is in seconds. At \(t_a=1\) s the total work is 500 J/m³; at 0.1 s it is 4100 J/m³. After the ramp, strain rate and dissipation vanish while spring stress remains 20 kPa. As ramp time tends to zero the loading dissipation diverges. The post-step finite spring stress cannot represent the impulse or its loading work.</p></details>
+
+<h2 id="sources">Sources and further development</h2>
+<ul><li>NPTEL, Prof. Gaurav Bhutani: <a href="https://www.youtube.com/watch?v=wQtZyxw_g0Y">L54, Viscous Type Models</a>; the standard-linear-solid network is revisited in <a href="https://www.youtube.com/watch?v=rcHFRFZ7uSw&amp;t=1013s">L56, constitutive tutorial</a>.</li><li>A. F. Bower, <a href="https://solidmechanics.org/Text/Chapter3_6/Chapter3_6.php"><em>Applied Mechanics of Solids</em>, §§3.6.1–3.6.3</a>: step/harmonic response, hereditary linear viscoelasticity and spring–damper approximation. Its shear-modulus convention must not be silently identified with the axial moduli used in this chapter.</li></ul>
+<!-- BOOK-CONTENT-END --></article><nav class="page-turn" aria-label="Chapter navigation"><a rel="prev" href="chapter-12-linear-and-hyperelasticity.html">Previous chapter</a><a href="index.html">Chapter index</a><a rel="next" href="chapter-14-plasticity-and-constitutive-problems.html">Next chapter</a></nav></main></div><footer class="site-footer">Independent study edition. Prof. Gaurav Bhutani’s NPTEL recordings provide the topic spine. Original exposition, source limitations and verification evidence are separately recorded.</footer></body></html>

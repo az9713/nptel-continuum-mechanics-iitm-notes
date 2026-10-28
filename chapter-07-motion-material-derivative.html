@@ -1,0 +1,196 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="color-scheme" content="dark light"><meta name="book-content-sha256" content="47be250f716371f9e22057b35dd083ecc4fd6f33256356277e7fedd6133e5403">
+<title>Motion, descriptions and material differentiation · Foundations of Continuum Mechanics</title><link rel="stylesheet" href="assets/book.css">
+<script>window.MathJax={tex:{inlineMath:[['$','$'],['\\(','\\)']],displayMath:[['$$','$$'],['\\[','\\]']],processEscapes:true},svg:{fontCache:'local'},options:{skipHtmlTags:['script','noscript','style','textarea','pre','code']}};</script>
+<script defer src="assets/mathjax-tex-svg.js"></script><script defer src="assets/book.js"></script></head>
+<body><a class="skip" href="#main">Skip to content</a><header class="site-header"><a class="brand" href="index.html">Foundations of Continuum Mechanics · NPTEL IIT Mandi</a><nav class="course-nav" aria-label="Book"><a href="index.html">Chapters</a><a href="source-map.html">Source map</a><a href="references.html">References</a><a href="numerical-lab.html">Numerical lab</a></nav></header>
+<div class="layout"><aside class="toc" id="chapter-toc" aria-label="On this page"><h2>On this page</h2></aside><main id="main"><div class="reading-tools" aria-label="Reading controls"><button id="theme-toggle" aria-pressed="false">Light theme</button><button id="text-toggle" aria-pressed="false">Larger text</button><button id="solutions-toggle" aria-pressed="false">Expand solutions</button><button id="print-page">Print with solutions</button></div>
+<article id="chapter-content"><!-- BOOK-CONTENT-START --><h1>Motion, descriptions and material differentiation</h1>
+<p class="lead">A thermometer fixed beside a flowing stream can report an unchanging temperature while a thermometer carried by the water reports warming. Both readings can be correct. They compare different events: one holds position fixed, while the other follows the same matter. Continuum kinematics makes this distinction precise by assigning each particle a permanent label and describing how its position and properties evolve.</p>
+<p class="source-note">Lecture spine: NPTEL lessons 31–35. Lessons 31–35 were read completely after the truncated lesson-31 download and ASR were replaced. Lessons 32–35 were read completely as local machine transcripts. Board formulas and diagrams were not independently inspected; where speech does not identify a tutorial equation, an explicitly constructed example develops its mechanism instead. The polynomial-motion and final temperature examples reconstruct equations recoverable from speech. Approximation, invertibility and physical-admissibility limits are stated independently.</p>
+
+<h2 id="configurations" data-video="itMny5VJFCQ" data-start="140" data-end="2123">A material body and its configurations <a class="timestamp" href="https://www.youtube.com/watch?v=itMny5VJFCQ&amp;t=140s">L31 2:20</a></h2>
+<p>A <dfn>material body</dfn> is a persistent collection of material points, or particles, whose positions may change. A particle here is an ideal continuum label, not necessarily a molecule. A <dfn>configuration</dfn> assigns a spatial position to every material point at a specified stage. Motion is a time-dependent family of such assignments. Deformation compares the relative placement of neighboring material points in two configurations. Translation and rigid rotation are motions that preserve all distances.</p>
+<p>Let the reference configuration occupy a region \(\Omega_0\subset\mathbb R^3\). A point's reference position \(\mathbf X\in\Omega_0\), measured in metres, serves as its permanent label. Let time \(t\) be in seconds. The <dfn>motion map</dfn> is \(\boldsymbol\chi(\mathbf X,t)\), taking that label to the current position \(\mathbf x\in\Omega_t\). The region \(\Omega_t\) is the current configuration. An initial configuration is the actual configuration at the initial time, conventionally zero. A reference configuration is a chosen comparison configuration; it need not be initial, unstressed or physically realized during the motion.</p>
+<p>These distinctions matter when a specimen is already stretched before observations begin. Its configuration at the start is initial for the experiment, but the analyst may choose an earlier unloaded configuration as reference. If the initial configuration is selected as reference and the coordinate frames coincide, \(\boldsymbol\chi(\mathbf X,0)=\mathbf X\). This equality is a useful check on a specified motion, rather than a universal identity for every reference choice.</p>
+<p>For the running case, imagine marked water in a straight channel with uniform prescribed velocity \(U\mathbf e_1\), where \(U\) is in m/s and \(\mathbf e_1\) a fixed Cartesian unit vector. Its motion is \(\boldsymbol\chi(\mathbf X,t)=\mathbf X+Ut\mathbf e_1\). A material mark keeps the same \(\mathbf X\) while its current \(x_1\) increases. A fixed laboratory station keeps the same \(\mathbf x\) while different material marks pass through it. This distinction is independent of whether the substance is a solid or fluid.</p>
+
+<p>A continuum point has a position and a density, rather than the finite mass of a small rigid bead. For bounded mass density \(\rho\), in kg/m³, the mass of a region is \(\int\rho\,dV\); an isolated point has zero volume and zero mass under this model. This does not make its density zero. The idealized pointwise density is the local field used to calculate the mass of finite material regions.</p>
+<p>Fluid flow can be described with the same material body construction. For the shear motion \(x_1=X_1+ctX_2\), \(x_2=X_2\), neighboring layers move at different velocities and a marked fluid rectangle changes shape continuously. This map has unit determinant, so it is isochoric: it preserves volume locally. An isotropic dilation \(\mathbf x=a\mathbf X\) instead preserves shape while multiplying all lengths by \(a\) and volume by \(a^3\). More generally dilation denotes volume change; shape change and volume change can occur together. A prescribed shear stress causing indefinite flow is a material-response statement valid for appropriate fluids, not for every complex fluid at every stress.</p>
+<p>The opening lecture's rectangle example maps initial dimensions \(L_0,H_0\) to \(L,H\) through \(x_1=(L/L_0)X_1\), \(x_2=(H/H_0)X_2\). A point at the reference midpoint therefore maps to the current midpoint. A length ratio is dimensionless. Specifying how every point moves, rather than only the final outline, distinguishes a material deformation map from a drawing of two shapes.</p>
+<h2 id="coordinates" data-video="hZ52RJDhmT4" data-start="77" data-end="1354">Material coordinates label particles; spatial coordinates label places <a class="timestamp" href="https://www.youtube.com/watch?v=hZ52RJDhmT4&amp;t=77s">L32 1:17</a></h2>
+<p>Once a one-to-one reference placement is selected, a particle can be identified by its reference position rather than a separate name. The components \(X_A\), with capital index \(A=1,2,3\), are material coordinates. They do not change when that particle moves. The components \(x_i\), with lowercase index \(i=1,2,3\), are spatial coordinates of its current position. Both component lists have units of length, but they answer different questions.</p>
+<p>The capital and lowercase indices keep the input and output of the motion distinct. Repeated indices are summed from 1 to 3. We use fixed coincident Cartesian reference and spatial axes, so vectors can be subtracted componentwise. Different bases are permissible, but components must first be related by the appropriate coordinate transformation. A changing spatial basis also contributes its own derivative when differentiating vector components. The component material-derivative formulas below assume a fixed Cartesian basis.</p>
+<p>In the channel, the material particle labeled \((0,0,0)\) is at \((Ut,0,0)\). The material particle currently at the laboratory origin instead has label \((-Ut,0,0)\), provided that point belongs to the selected reference body. Saying “the point at the origin” therefore needs a time and a statement of whether the origin denotes a reference label or a spatial location. Ambiguity about the particle creates ambiguity about its velocity, temperature and acceleration.</p>
+<p>The reference choice can be changed without changing the physical motion. If a new label \(\mathbf Y=\boldsymbol\psi(\mathbf X)\) is assigned by a fixed invertible reference relabeling, the same trajectory is \(\widetilde{\boldsymbol\chi}(\mathbf Y,t)=\boldsymbol\chi(\boldsymbol\psi^{-1}(\mathbf Y),t)\). This is composition of functions, not a new physical deformation. It explains why a material coordinate is a label with geometrical structure, rather than the particle's present location.</p>
+
+<h2 id="trajectory" data-video="hZ52RJDhmT4" data-start="1355" data-end="1842">Trajectories, velocity and acceleration <a class="timestamp" href="https://www.youtube.com/watch?v=hZ52RJDhmT4&amp;t=1355s">L32 22:35</a></h2>
+<p>Fix a particle label \(\mathbf X_P\). Its <dfn>trajectory</dfn>, or pathline, is the time-parametrized curve \(\mathbf x_P(t)=\boldsymbol\chi(\mathbf X_P,t)\). Eliminating time can describe its geometric locus, but is not required to define a trajectory. The parameter retains travel direction, speed and the permitted time interval, which a locus alone may lose.</p>
+<p>Assume the motion is twice differentiable in time. Material velocity \(\mathbf V\), in m/s, and material acceleration \(\mathbf A\), in m/s², are</p>
+\[
+\mathbf V(\mathbf X,t)=\left.\frac{\partial\boldsymbol\chi}{\partial t}\right|_{\mathbf X},
+\qquad
+\mathbf A(\mathbf X,t)=\left.\frac{\partial^2\boldsymbol\chi}{\partial t^2}\right|_{\mathbf X}.
+\]
+<p>The subscript means the derivative holds the particle label fixed. It does not hold its current spatial position fixed. In the running translation, \(\mathbf V=U\mathbf e_1\) and \(\mathbf A=0\). A particle can therefore travel across a nonuniform temperature field with constant velocity and zero acceleration while its temperature changes.</p>
+<p>To separate a motion law from a velocity field, consider the one-dimensional stretch \(x=a(t)X\), with positive dimensionless function \(a\). Its trajectory has velocity \(\dot aX\) and acceleration \(\ddot aX\). These derivatives describe fixed \(X\). Replacing \(X\) by \(x/a(t)\) afterward gives spatial formulas \(v=(\dot a/a)x\) and \(a_{\mathrm{sp}}=(\ddot a/a)x\). The notation \(a_{\mathrm{sp}}\) here denotes acceleration, while \(a(t)\) remains the stretch factor.</p>
+
+<h2 id="inverse" data-video="Bku9aT4OsgM" data-start="485" data-end="863">The inverse map and the limits of a Jacobian test <a class="timestamp" href="https://www.youtube.com/watch?v=Bku9aT4OsgM&amp;t=485s">L33 8:05</a></h2>
+<p>At a fixed time, assume \(\boldsymbol\chi\) is one-to-one onto \(\Omega_t\). Then \(\mathbf X=\boldsymbol\xi(\mathbf x,t)=\boldsymbol\chi^{-1}(\mathbf x,t)\) identifies the particle occupying \(\mathbf x\). Single-valuedness of the forward function means one particle has one position. Injectivity means two different particles do not occupy the same position. Neither property should be substituted for the other.</p>
+<p>Define the deformation-gradient matrix \(F_{iA}=\partial\chi_i/\partial X_A\), dimensionless, and its determinant \(J=\det\mathbf F\), the Jacobian determinant. The inverse function theorem says that a continuously differentiable motion with \(J\ne0\) at a point has a differentiable inverse in a sufficiently small neighborhood. This is a local conclusion. An ordinary orientation-preserving body model additionally requires \(J>0\) and global one-to-one placement over the body.</p>
+<p>A counterexample separates the claims. On a domain allowing \(X_2\) to range over more than \(2\pi L\), take</p>
+\[
+x_1=L e^{X_1/L}\cos(X_2/L),\qquad
+x_2=L e^{X_1/L}\sin(X_2/L),\qquad x_3=X_3,
+\]
+<p>where \(L>0\) is a fixed length. Its determinant is \(e^{2X_1/L}>0\), but labels differing by \(2\pi L\) in \(X_2\) have the same image. Thus positive Jacobian does not prove global invertibility. Restricting the angular domain can remove this particular overlap. The admissibility assumptions in <a href="https://solidmechanics.org/Text/Chapter2_2/Chapter2_2.php">Bower, §2.2.1</a>, explicitly keep invertibility and the determinant condition separate.</p>
+<p>For a smooth physical evolution starting from the identity, a determinant cannot become negative without first passing through zero. At zero, local differential volume collapses and a smooth inverse fails. A map evaluated after that event might still be algebraically invertible; it is not an admissible continuation through the collapsed state under the assumptions used here. Cracks, contact and other singular processes require a more detailed description than one smooth body-wide map.</p>
+
+<h2 id="descriptions" data-video="Bku9aT4OsgM" data-start="1608" data-end="2494">Lagrangian and Eulerian descriptions are compositions <a class="timestamp" href="https://www.youtube.com/watch?v=Bku9aT4OsgM&amp;t=1608s">L33 26:48</a></h2>
+<p>Let \(\theta_E(\mathbf x,t)\) be a spatial temperature field in kelvins. Its material representation is \(\theta_L(\mathbf X,t)=\theta_E(\boldsymbol\chi(\mathbf X,t),t)\). Conversely, \(\theta_E(\mathbf x,t)=\theta_L(\boldsymbol\xi(\mathbf x,t),t)\). A Lagrangian description holds particle labels as independent variables. An Eulerian description holds spatial position as an independent variable. These names identify descriptions of quantities, rather than two mutually exclusive kinds of matter.</p>
+<p>The same construction applies to density, velocity and any component field expressed in a common fixed basis. For example, current mass density \(\rho_E\), in kg/m³, and its composition \(\rho_L=\rho_E\circ\boldsymbol\chi\) have the same physical units and values along a particle. This composition is not the reference-volume density that appears in mass balance. Transforming an integration volume introduces a Jacobian, whereas merely changing the independent variables of a pointwise scalar does not.</p>
+<p>For the running channel, prescribe \(\theta_E(\mathbf x,t)=\theta_0+g x_1+b t\), with \(\theta_0\) in kelvins, \(g\) in K/m and \(b\) in K/s. Its material representation is \(\theta_L(\mathbf X,t)=\theta_0+gX_1+(gU+b)t\). At the laboratory origin the temperature changes at rate \(b\). Along every material particle it changes at rate \(gU+b\). These are two derivatives of the same physical field along different space-time curves.</p>
+<p>Spatial velocity is \(\mathbf v(\mathbf x,t)=\mathbf V(\boldsymbol\xi(\mathbf x,t),t)\). Integrating a material velocity at fixed \(\mathbf X\) gives \(\boldsymbol\chi(\mathbf X,t)=\boldsymbol\chi(\mathbf X,0)+\int_0^t\mathbf V(\mathbf X,s)\,ds\). In contrast, integrating an Eulerian velocity requires solving the trajectory equation \(\dot{\mathbf x}=\mathbf v(\mathbf x,t)\). The position inside the velocity function changes while the particle moves. Treating that argument as constant generally produces the wrong motion.</p>
+
+<h2 id="chain-rule" data-video="r3E1fKUIJgU" data-start="40" data-end="398">The material derivative follows matter <a class="timestamp" href="https://www.youtube.com/watch?v=r3E1fKUIJgU&amp;t=40s">L34 0:40</a></h2>
+<p>The <dfn>material derivative</dfn> is the instantaneous rate of a quantity measured along the motion of a fixed material particle. Suppose \(f(\mathbf x,t)\) is a continuously differentiable scalar field, with any specified physical units. Its material representation is \(f_L(\mathbf X,t)=f(\boldsymbol\chi(\mathbf X,t),t)\). Applying the chain rule at fixed \(\mathbf X\) gives</p>
+\[
+\frac{\partial f_L}{\partial t}(\mathbf X,t)
+=\frac{\partial f}{\partial t}(\boldsymbol\chi(\mathbf X,t),t)
++\frac{\partial f}{\partial x_i}(\boldsymbol\chi(\mathbf X,t),t)V_i(\mathbf X,t).
+\]
+<p>Reexpressing the result at a current location defines</p>
+\[
+\frac{Df}{Dt}=\frac{\partial f}{\partial t}+v_i\frac{\partial f}{\partial x_i}
+=\frac{\partial f}{\partial t}+\mathbf v\cdot\nabla f.
+\]
+<p>The first term is the local rate at fixed position. The second is the convective rate caused by movement through spatial variation. Each has units of the field divided by seconds. The gradient \(\nabla f\) has units of the field per metre, so multiplication by velocity supplies the correct rate. The sum is one derivative along one particle path, rather than two separate physical heating mechanisms.</p>
+<p>The convective term need not be nonzero whenever velocity and gradient are nonzero. It is a dot product. Motion tangent to an isothermal surface has \(\mathbf v\cdot\nabla\theta=0\). For example, temperature varying only with \(x_2\) and velocity along \(x_1\) gives zero convective temperature rate. Alignment as well as magnitude matters.</p>
+
+<h2 id="difference-quotient" data-video="r3E1fKUIJgU" data-start="1106" data-end="1694">A difference quotient exposes the physical meaning <a class="timestamp" href="https://www.youtube.com/watch?v=r3E1fKUIJgU&amp;t=1106s">L34 18:26</a></h2>
+<p>Consider one dimension, with a particle at \(x(t)\). Over an interval \(\Delta t\), let \(\Delta x=x(t+\Delta t)-x(t)\). Its measured field change is \(f(x+\Delta x,t+\Delta t)-f(x,t)\). Add and subtract \(f(x,t+\Delta t)\) to split this change into two increments:</p>
+\[
+\frac{f(x+\Delta x,t+\Delta t)-f(x,t)}{\Delta t}
+=\frac{f(x,t+\Delta t)-f(x,t)}{\Delta t}
++\frac{f(x+\Delta x,t+\Delta t)-f(x,t+\Delta t)}{\Delta t}.
+\]
+<p>The first increment holds position fixed and tends to \(\partial_t f\). In the second, differentiability gives the numerator \(\partial_x f\,\Delta x+o(|\Delta x|+|\Delta t|)\) with the joint first-order expansion understood along a differentiable trajectory. More directly, the integral identity writes that increment as \(\Delta x\int_0^1\partial_x f(x+s\Delta x,t+\Delta t)\,ds\). Dividing by \(\Delta t\) and taking the limit gives \(v\partial_x f\), even when some increments \(\Delta x\) vanish. The argument requires no division by a possibly zero \(\Delta x\).</p>
+<p>In the channel example choose \(U=2\) m/s, \(g=0.3\) K/m and \(b=0.1\) K/s. A stationary probe reads 0.1 K/s; a material mark experiences 0.7 K/s. If \(b=0\), the field is steady at every station but the moving mark still warms at 0.6 K/s. If instead \(b=-gU\), every material mark retains its temperature while stationary probes register change. A vanishing material derivative therefore does not require a stationary field.</p>
+<p>These are kinematic statements about a prescribed field. A steady spatial temperature gradient carried by a flowing fluid is not sustained by the material derivative alone. Energy supply, conduction or boundary conditions must make the assumed temperature compatible with an energy balance. This distinction avoids interpreting transport through an imposed pattern as a complete thermal model.</p>
+
+<h2 id="acceleration" data-video="r3E1fKUIJgU" data-start="768" data-end="1106">Acceleration can be nonzero in a steady field <a class="timestamp" href="https://www.youtube.com/watch?v=r3E1fKUIJgU&amp;t=768s">L34 12:48</a></h2>
+<p>Apply the material derivative to each velocity component in the fixed Cartesian basis. Spatial acceleration is</p>
+\[
+a_i=\frac{Dv_i}{Dt}=\frac{\partial v_i}{\partial t}+v_j\frac{\partial v_i}{\partial x_j}.
+\]
+<p>The free index \(i\) identifies the output component. The summed index \(j\) runs through the directional derivatives of that same component \(v_i\). Replacing the last component by \(v_j\) would incorrectly contract away the acceleration direction. Newton's law follows a particle or material collection, which is why the material rate appears even when momentum is expressed spatially.</p>
+<p>For the stretch \(x=a(t)X\), spatial velocity is \(v=(\dot a/a)x\). Differentiation at fixed \(x\) gives \(\partial_t v=(\ddot a/a-\dot a^2/a^2)x\). The convective term is \(v\partial_xv=(\dot a^2/a^2)x\). Their sum is \((\ddot a/a)x=\ddot aX\), matching direct particle differentiation. The cancellation is a check that the two descriptions agree.</p>
+<p>An exponential stretch \(a(t)=e^{kt}\), where \(k\) is a constant rate in s⁻¹, has steady spatial velocity \(v=kx\), but acceleration \(k^2x\). Particles encounter larger velocities as they move. Similarly, steady circular motion \(\mathbf v=(-\omega x_2,\omega x_1,0)\), with constant angular speed \(\omega\) in s⁻¹, gives \(\mathbf a=(-\omega^2x_1,-\omega^2x_2,0)\). Time independence of a velocity field does not imply straight, uniform particle motion.</p>
+<p>The same componentwise chain rule applies to a tensor field in a fixed basis, using a fresh dummy index: \(DA_{ij}/Dt=\partial_tA_{ij}+v_k\partial_kA_{ij}\). This ordinary material derivative is not automatically an objective constitutive rate under rotating observers. That is a separate requirement addressed when material response is modeled.</p>
+
+<h2 id="polynomial-example" data-video="Bku9aT4OsgM" data-start="863" data-end="1608">A tutorial motion tests physical admissibility <a class="timestamp" href="https://www.youtube.com/watch?v=Bku9aT4OsgM&amp;t=863s">L33 14:23</a></h2>
+<p>The polynomial example recoverable from the lecture is \(x_1=X_1+s^2X_2\), \(x_2=s^2X_1+X_2\), \(x_3=X_3\). Here \(s=t/\tau\) is dimensionless time and \(\tau>0\) is a fixed time scale; the recording uses numerical time in these equations. A particle initially at \((L,2L,L)\), with length scale \(L\), has trajectory \((L(1+2s^2),L(2+s^2),L)\). Eliminating \(s\) gives \(x_1-2x_2=-3L\), \(x_3=L\). For \(s\geq0\), only the ray with \(x_2\geq2L\) is traversed.</p>
+<p>Differentiation gives \(\mathbf V=(2sX_2/\tau,2sX_1/\tau,0)\) and \(\mathbf A=(2X_2/\tau^2,2X_1/\tau^2,0)\). At \(s=2\), their values for that particle are \((8L/\tau,4L/\tau,0)\) and \((4L/\tau^2,2L/\tau^2,0)\). These formal arithmetic values agree with the stated unit-scale lecture calculation.</p>
+<p>The determinant reveals a boundary absent from that arithmetic: \(J=1-s^4\). The motion is orientation preserving for \(0\leq s&lt;1\), collapses at \(s=1\), and reverses orientation for \(s&gt;1\). Thus the formal value at \(s=2\) is not a valid physical continuation from the reference state within this smooth-body model. It is still a differentiable algebraic trajectory. Computation of a derivative cannot certify admissibility of the motion being differentiated.</p>
+<p>For \(s\ne1\) and \(s\ne-1\), inversion gives</p>
+\[
+X_1=\frac{x_1-s^2x_2}{1-s^4},\qquad
+X_2=\frac{x_2-s^2x_1}{1-s^4},\qquad X_3=x_3.
+\]
+<p>Substituting these expressions into \(\mathbf V\) and \(\mathbf A\) produces Eulerian fields. At location \((L,0,L)\) and \(s=2\), the formal label is \((-L/15,4L/15,L)\). Therefore velocity is \((16L/(15\tau),-4L/(15\tau),0)\), and acceleration is \((8L/(15\tau^2),-2L/(15\tau^2),0)\). This calculation identifies the occupying particle first; it does not confuse that particle with the one initially labeled \((L,0,L)\).</p>
+
+<h2 id="tutorial" data-video="FHaA3KbBwoE" data-start="40" data-end="1660">Four tutorial mechanisms <a class="timestamp" href="https://www.youtube.com/watch?v=FHaA3KbBwoE&amp;t=40s">L35 0:40</a></h2>
+<p>The tutorial first tests invertibility by calculating a Jacobian equal to one. The appropriate conclusion from that computation alone is local invertibility. A triangular constructed map \(x_1=X_1+ctX_2\), \(x_2=X_2\), \(x_3=X_3\), with rate \(c\), has determinant one and a global inverse \(X_1=x_1-ctx_2\). Writing the inverse supplies the additional global argument for this example. The ASR does not identify every board coefficient of the original first problem, so this triangular map is an explicit teaching replacement for its mechanism.</p>
+<p>The second problem integrates a Lagrangian velocity using the condition \(\boldsymbol\chi(\mathbf X,0)=\mathbf X\), then converts velocity and acceleration to Eulerian form. For a constructed instance, choose \(V_1=cX_1\), \(V_2=V_3=0\), with \(c&gt;0\). Integration gives \(x_1=(1+ct)X_1\). The integration constant is the function \(X_1\), rather than an arbitrary scalar, because each particle has its own initial position. Inverting yields \(v_1=cx_1/(1+ct)\), while acceleration is zero. Local and convective acceleration terms cancel exactly.</p>
+<p>The third problem starts from an Eulerian velocity and asks for acceleration at a specified location and time. Its general procedure is \(\mathbf a=\partial_t\mathbf v+(\mathbf v\cdot\nabla)\mathbf v\). Differentiate the full field first, then evaluate the location. Replacing the field by its value at one point before taking derivatives destroys information. The circular-flow example above is a fully specified application of this mechanism; the board-only coefficients of the original are not asserted here.</p>
+<p>The fourth problem's recoverable motion is \(x_1=X_1e^{-kt}\), \(x_2=X_2e^{kt}\), \(x_3=X_3+X_2(e^{-kt}-1)\), with constant rate \(k\). Inversion gives \(X_1=x_1e^{kt}\), \(X_2=x_2e^{-kt}\), and \(X_3=x_3-x_2e^{-kt}(e^{-kt}-1)\). Differentiating before substitution gives</p>
+\[
+\mathbf v=(-kx_1,kx_2,-kx_2e^{-2kt}).
+\]
+<p>The second component follows from the motion itself; an inconsistent spoken or recognized exponential cannot override that derivative. The tutorial temperature is reconstructed as \(\theta=\theta_0+g e^{-kt}(x_1-2x_2+3x_3)\), where \(g\) has units K/m. Its local rate is \(-kg e^{-kt}(x_1-2x_2+3x_3)\), and its convective rate is \(kg e^{-kt}(-x_1-2x_2-3x_2e^{-2kt})\). Their sum is</p>
+\[
+\frac{D\theta}{Dt}=-kg e^{-kt}(2x_1+3x_3+3x_2e^{-2kt}).
+\]
+<p>Substitution of the motion into temperature and direct differentiation at fixed \(\mathbf X\) gives the same expression. All three terms, including the third velocity component induced by the coupling to \(X_2\), are needed for agreement.</p>
+
+<h2 id="implementation">Executable comparison of particle and fixed-location rates</h2>
+<p>The NumPy program checks the channel temperature derivative by centered differences along a particle and at a fixed station. It also verifies cancellation in the linear stretch and checks the reconstructed tutorial temperature by two independently arranged calculations. The inputs are prescribed kinematics and fields, with SI units. The code prints results, reads no files, and changes no external state. Floating-point finite differences are numerical checks, not a proof of the chain rule.</p>
+<pre data-run="ch07"><code class="language-python">import numpy as np
+
+speed, gradient, local_rate = 2.0, 0.3, 0.1
+position, time, step = 1.0, 0.7, 1e-5
+
+
+def temperature(x, t):
+    return 300.0 + gradient*x + local_rate*t
+
+
+particle_rate = (
+    temperature(position + speed*step, time + step)
+    - temperature(position - speed*step, time - step)
+)/(2*step)
+fixed_rate = (
+    temperature(position, time + step)
+    - temperature(position, time - step)
+)/(2*step)
+assert np.isclose(particle_rate, gradient*speed + local_rate)
+assert np.isclose(fixed_rate, local_rate)
+c, x, t = 0.2, 3.0, 2.0
+velocity = c*x/(1 + c*t)
+local_accel = -c*c*x/(1 + c*t)**2
+convective_accel = velocity*c/(1 + c*t)
+assert np.isclose(local_accel + convective_accel, 0.0)
+label = np.array([1.0, 2.0, 3.0])
+k, g, t = 0.4, 0.3, 0.7
+
+
+def motion(s):
+    a, b, z = label
+    return np.array([a*np.exp(-k*s), b*np.exp(k*s),
+                     z + b*(np.exp(-k*s) - 1)])
+
+
+def theta(y, s):
+    return 300 + g*np.exp(-k*s)*(y @ np.array([1., -2., 3.]))
+
+
+y = motion(t)
+direct = (theta(motion(t + step), t + step)
+          - theta(motion(t - step), t - step))/(2*step)
+bracket = 2*y[0] + 3*y[2] + 3*y[1]*np.exp(-2*k*t)
+material = -k*g*np.exp(-k*t)*bracket
+assert np.isclose(direct, material)
+print('fixed station K/s:', round(float(fixed_rate), 6))
+print('moving particle K/s:', round(float(particle_rate), 6))
+print('stretch acceleration m/s2:', round(local_accel + convective_accel, 6))
+print('tutorial material rate K/s:', round(float(material), 6))
+print('tutorial derivative agreement:', bool(np.isclose(direct, material)))
+</code></pre>
+<pre data-output="ch07">fixed station K/s: 0.1
+moving particle K/s: 0.7
+stretch acceleration m/s2: 0.0
+tutorial material rate K/s: -1.231713
+tutorial derivative agreement: True</pre>
+
+<h2 id="exercises">Exercises with fully worked solutions</h2>
+<p><strong>1. Identify the particle.</strong> A channel translates at \(U=2\) m/s. Which reference particle occupies \(x_1=5\) m at \(t=3\) s? Where is the particle initially labeled \(X_1=5\) m?</p>
+<details><summary>Solution</summary><p>The inverse translation is \(X_1=x_1-Ut\), so the particle at the station has label \(-1\) m. The particle labeled 5 m is instead at \(5+2(3)=11\) m. Both answers assume the relevant labels belong to the selected body. The spatial location 5 m and material label 5 m coincide only at the reference time.</p></details>
+<p><strong>2. Recover motion from material velocity.</strong> Let \(V_1=2btX_2\), \(V_2=V_3=0\), with \(b\) in s⁻² and reference equal to initial configuration. Find motion, inverse and acceleration.</p>
+<details><summary>Solution</summary><p>Integration at fixed label gives \(x_1=X_1+bt^2X_2\), \(x_2=X_2\), \(x_3=X_3\). The initial condition supplies the three label-dependent integration constants. The inverse is \(X_1=x_1-bt^2x_2\), \(X_2=x_2\), \(X_3=x_3\). Thus \(\mathbf v=(2btx_2,0,0)\). Direct material acceleration is \((2bX_2,0,0)\), or spatially \((2bx_2,0,0)\). In the Eulerian formula the convective contribution is zero because the field varies in \(x_2\) while velocity points along \(x_1\).</p></details>
+<p><strong>3. A steady field with changing particle temperature.</strong> For \(\theta=300\ \mathrm K+g x_1\), \(g=0.5\) K/m, and \(\mathbf v=(2,3,0)\) m/s, calculate local and material rates. How would the answer change if the gradient were along \(x_3\)?</p>
+<details><summary>Solution</summary><p>The local rate is zero because the field has no explicit time dependence. Its gradient is \((0.5,0,0)\) K/m, so \(D\theta/Dt=2(0.5)=1\) K/s. With a gradient only along \(x_3\), the dot product is zero because \(v_3=0\). The speed magnitude alone cannot determine the rate: only the component across isotherms contributes.</p></details>
+<p><strong>4. A transported scalar that changes at fixed places.</strong> Let \(f(x,t)=\sin[k(x-Ut)]\) in a uniform one-dimensional flow of speed \(U\), where \(k\) is in m⁻¹. Calculate its material derivative.</p>
+<details><summary>Solution</summary><p>At fixed position, \(\partial_tf=-kU\cos[k(x-Ut)]\). The spatial derivative is \(\partial_xf=k\cos[k(x-Ut)]\). Their sum \(\partial_tf+U\partial_xf\) vanishes. Along a particle \(x=X+Ut\), the field is \(\sin(kX)\), constant in time. A stationary sensor generally records oscillation even though every material particle carries a constant scalar value.</p></details>
+<p><strong>5. Steady rotation.</strong> Derive the acceleration of \(\mathbf v=(-\omega x_2,\omega x_1,0)\) and test a particle at \((R,0,0)\).</p>
+<details><summary>Solution</summary><p>The velocity-gradient planar block is \(\left(\begin{smallmatrix}0&-\omega\\\omega&0\end{smallmatrix}\right)\). Multiplying it by \(\mathbf v\) gives \((-\omega^2x_1,-\omega^2x_2,0)\), while the local time derivative is zero. At \((R,0,0)\), velocity is \((0,\omega R,0)\) and acceleration \((-\omega^2R,0,0)\), perpendicular to velocity and directed inward. The particle's speed remains constant because \(\mathbf v\cdot\mathbf a=0\); its velocity direction changes.</p></details>
+<p><strong>6. Invertibility versus admissibility.</strong> For the polynomial example, find the first positive time at which the inverse fails. Can evaluation at \(t=2\tau\) certify an admissible body motion?</p>
+<details><summary>Solution</summary><p>The planar matrix has eigenvalues \(1+s^2\) and \(1-s^2\), whose product is \(1-s^4\). It first vanishes at \(s=1\), or \(t=\tau\), when the direction \((1,-1,0)\) collapses. At \(s=2\), the determinant is -15, so the matrix is invertible but orientation reversing. No smooth evolution from identity can reach it without passing through the singular time. A correct formal velocity at that time does not repair the loss of physical admissibility.</p></details>
+<p><strong>7. Reference description of density.</strong> Suppose a one-dimensional stretch \(x=a(t)X\) has current density \(\rho_E(x,t)=\rho_*[1+x/L]\). Find its material representation. Does substitution alone produce a reference-volume density?</p>
+<details><summary>Solution</summary><p>Composition gives \(\rho_L(X,t)=\rho_*[1+a(t)X/L]\), still current mass per current volume sampled along a particle. In a three-dimensional motion with only the first direction stretched, \(J=a(t)\). A reference-volume density entering a mass integral would be \(J\rho_L\), a different quantity. The prescribed density need not satisfy mass conservation for this stretch; that requires a separate balance check. Changing independent variables alone never supplies that physical law.</p></details>
+
+<h2 id="limits">What the kinematics establishes</h2>
+<p>A motion identifies particles and trajectories. Its inverse converts fixed-particle fields into fixed-location fields wherever the map remains admissible. The material derivative then computes the rate needed for particle-based physical laws in either description. These constructions do not determine which motion occurs under a force, whether a temperature profile is energetically sustainable, or which stresses accompany deformation. Those questions require balance laws and material response. The deformation gradient and strain developed next quantify how the same motion changes neighboring lengths and angles.</p>
+<h2 id="sources">Sources and attribution</h2>
+<ul><li>Prof. Gaurav Bhutani, NPTEL, <a href="https://www.youtube.com/watch?v=itMny5VJFCQ">L31</a>, <a href="https://www.youtube.com/watch?v=hZ52RJDhmT4">L32</a>, <a href="https://www.youtube.com/watch?v=Bku9aT4OsgM">L33</a>, <a href="https://www.youtube.com/watch?v=r3E1fKUIJgU">L34</a>, and <a href="https://www.youtube.com/watch?v=FHaA3KbBwoE">L35 tutorial</a>. Complete source status is recorded in the editorial report.</li><li>A. F. Bower, <a href="https://solidmechanics.org/Text/Chapter2_2/Chapter2_2.php"><em>Applied Mechanics of Solids</em>, §§2.2.1–2.2.4</a>: configurations, description changes, acceleration and deformation gradient; inspected for these definitions. The counterexamples, channel numbers and computational checks are independent teaching constructions.</li></ul>
+<!-- BOOK-CONTENT-END --></article><nav class="page-turn" aria-label="Chapter navigation"><a rel="prev" href="chapter-06-principal-stresses-mohr-invariants.html">Previous chapter</a><a href="index.html">Chapter index</a><a rel="next" href="chapter-08-deformation-and-strain.html">Next chapter</a></nav></main></div><footer class="site-footer">Independent study edition. Prof. Gaurav Bhutani’s NPTEL recordings provide the topic spine. Original exposition, source limitations and verification evidence are separately recorded.</footer></body></html>

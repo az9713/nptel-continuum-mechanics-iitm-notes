@@ -1,0 +1,243 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="color-scheme" content="dark light"><meta name="book-content-sha256" content="e95f0de958bdd7c5e60794137f96618786c40d830856adb371f2a7fde59761a5">
+<title>Transport, mass, momentum and energy balances · Foundations of Continuum Mechanics</title><link rel="stylesheet" href="assets/book.css">
+<script>window.MathJax={tex:{inlineMath:[['$','$'],['\\(','\\)']],displayMath:[['$$','$$'],['\\[','\\]']],processEscapes:true},svg:{fontCache:'local'},options:{skipHtmlTags:['script','noscript','style','textarea','pre','code']}};</script>
+<script defer src="assets/mathjax-tex-svg.js"></script><script defer src="assets/book.js"></script></head>
+<body><a class="skip" href="#main">Skip to content</a><header class="site-header"><a class="brand" href="index.html">Foundations of Continuum Mechanics · NPTEL IIT Mandi</a><nav class="course-nav" aria-label="Book"><a href="index.html">Chapters</a><a href="source-map.html">Source map</a><a href="references.html">References</a><a href="numerical-lab.html">Numerical lab</a></nav></header>
+<div class="layout"><aside class="toc" id="chapter-toc" aria-label="On this page"><h2>On this page</h2></aside><main id="main"><div class="reading-tools" aria-label="Reading controls"><button id="theme-toggle" aria-pressed="false">Light theme</button><button id="text-toggle" aria-pressed="false">Larger text</button><button id="solutions-toggle" aria-pressed="false">Expand solutions</button><button id="print-page">Print with solutions</button></div>
+<article id="chapter-content"><!-- BOOK-CONTENT-START --><h1>Transport, mass, momentum and energy balances</h1>
+<p class="lead">A material element can keep the same particles while its volume, area and surface normal change. A laboratory control volume can keep the same shape while particles carry mass, momentum and energy across its boundary. Confusing these descriptions produces incorrect flux signs and missing terms. Transport the material geometry first, then apply mass, momentum and energy balance to the same particles. Finally, transform their surface forces to the reference configuration without changing the physical force being calculated.</p>
+<p class="source-note">Lecture spine: L46–50, including the isochoric-motion calculation in L46 and all three questions in the combined energy lecture and tenth tutorial. Every local ASR segment was read, with closing remarks ending about eight seconds before the listed durations. The affine numerical examples and code are teaching constructions. Unspoken board inputs are not guessed. Force-component-first stress and Piola conventions are used throughout and translated explicitly from the lecture's normal-first arrays.</p>
+
+<h2 id="line-elements" data-video="XrYnN-TmyMc" data-start="41" data-end="286">Material lines and the objects being transported <a class="timestamp" href="https://www.youtube.com/watch?v=XrYnN-TmyMc&amp;t=41s">L46 0:41</a></h2>
+<p>Let a smooth orientation-preserving motion map reference position \(\mathbf X\in\Omega_0\) to current position \(\mathbf x=\boldsymbol\chi(\mathbf X,t)\in\Omega_t\). Both positions have units m; time has units s. The reference region contains a fixed collection of particles. Define \(F_{iA}=\partial\chi_i/\partial X_A\), \(J=\det\mathbf F\gt0\), spatial velocity \(\mathbf v\), and its component-first gradient \(L_{ij}=v_{i,j}\). Lowercase indices denote spatial components and uppercase indices material components, both from 1 to 3. The material derivative of a spatial field \(f\) is \(\dot f=Df/Dt=\partial_t f+v_j f_{,j}\).</p>
+<p>For a fixed reference line \(d\mathbf X\), its current image is \(d\mathbf x=\mathbf F\,d\mathbf X\). Since \(\dot{\mathbf F}=\mathbf L\mathbf F\),</p>
+\[
+\frac{D(d\mathbf x)}{Dt}=\mathbf L\,d\mathbf x,
+\qquad
+\frac{D|d\mathbf x|^2}{Dt}
+=2\,d\mathbf x\cdot\mathbf D\,d\mathbf x,
+\quad \mathbf D=\tfrac12(\mathbf L+\mathbf L^{\mathsf T}). \tag{10.1}
+\]
+<p>The reference line does not acquire a time derivative because its particles are fixed labels. The second identity differentiates a dot product and removes the skew part of \(\mathbf L\). A material line is therefore not transported like a fixed vector in space: its components change through the local velocity gradient, even when it is moving through a steady velocity field.</p>
+<p>As a running family, consider homogeneous extension \(x_1=e^{at}X_1\), \(x_2=e^{bt}X_2\), \(x_3=e^{ct}X_3\), with constant rates \(a,b,c\) in s⁻¹. Then \(\mathbf F=\operatorname{diag}(e^{at},e^{bt},e^{ct})\), \(\mathbf v=(ax_1,bx_2,cx_3)\), and \(\mathbf L=\operatorname{diag}(a,b,c)\). A line along axis 1 changes at fractional rate \(a\). A surface normal to that axis and a volume will have different rates; treating all three geometrical elements as scalar copies of one another would be incorrect.</p>
+
+<h2 id="area-elements" data-video="XrYnN-TmyMc" data-start="289" data-end="978">Oriented area, Nanson's formula and normal rotation <a class="timestamp" href="https://www.youtube.com/watch?v=XrYnN-TmyMc&amp;t=289s">L46 4:49</a></h2>
+<p>Two independent reference tangents \(d\mathbf X^{(1)},d\mathbf X^{(2)}\) span an oriented parallelogram. Write its area vector as \(d\mathbf A_0=\mathbf N\,dA_0=d\mathbf X^{(1)}\times d\mathbf X^{(2)}\), where \(\mathbf N\) is a unit normal and \(dA_0\) a positive area in m². Its mapped area vector is \(d\mathbf A=\mathbf n\,dA=(\mathbf Fd\mathbf X^{(1)})\times(\mathbf Fd\mathbf X^{(2)})\). Area vectors encode both magnitude and orientation.</p>
+<p>To obtain their transformation, dot \(d\mathbf A\) with any mapped vector \(\mathbf F\mathbf c\). The scalar triple product transforms by a determinant: \((\mathbf F\mathbf c)\cdot d\mathbf A=J\,\mathbf c\cdot d\mathbf A_0\). Since this holds for every \(\mathbf c\), \(\mathbf F^{\mathsf T}d\mathbf A=Jd\mathbf A_0\). Invertibility gives <dfn>Nanson's formula</dfn>:</p>
+\[
+\mathbf n\,dA=J\mathbf F^{-\mathsf T}\mathbf N\,dA_0.
+\tag{10.2}
+\]
+<p>The matrix \(J\mathbf F^{-\mathsf T}\) is the cofactor of \(\mathbf F\). Taking norms gives \(dA/dA_0=J|\mathbf F^{-\mathsf T}\mathbf N|\); normalizing gives \(\mathbf n=\mathbf F^{-\mathsf T}\mathbf N/|\mathbf F^{-\mathsf T}\mathbf N|\). A normal does not transform by \(\mathbf F\) as a material tangent does. Indeed \((\mathbf F^{-\mathsf T}\mathbf N)\cdot(\mathbf F\mathbf T)=\mathbf N\cdot\mathbf T=0\) for every original tangent \(\mathbf T\).</p>
+<p>The determinant rate, derived in the next section, is \(\dot J=J\operatorname{tr}\mathbf L\). Differentiating \(\mathbf F^{-\mathsf T}\mathbf F^{\mathsf T}=\mathbf I\) gives \(D\mathbf F^{-\mathsf T}/Dt=-\mathbf L^{\mathsf T}\mathbf F^{-\mathsf T}\). Consequently</p>
+\[
+\frac{D(d\mathbf A)}{Dt}
+=[(\operatorname{tr}\mathbf L)\mathbf I-\mathbf L^{\mathsf T}]d\mathbf A,
+\quad
+\frac{\dot{dA}}{dA}=\operatorname{tr}\mathbf D-\mathbf n\cdot\mathbf D\mathbf n.
+\tag{10.3}
+\]
+<p>The second relation follows by dotting the first with \(\mathbf n\); skew contributions vanish in the normal quadratic form. Removing this scalar magnitude rate from the vector derivative yields \(\dot{\mathbf n}=-\mathbf L^{\mathsf T}\mathbf n+(\mathbf n\cdot\mathbf D\mathbf n)\mathbf n\). Its dot product with \(\mathbf n\) is zero, as required for a unit normal. Normal evolution differs from material-line evolution because normality to all surface tangents must be preserved.</p>
+<p>For the diagonal extension, an area normal to axis 1 scales by \(e^{(b+c)t}\), so its fractional area rate is \(b+c\). Formula (10.3) gives \(a+b+c-a=b+c\). In simple shear with \(F_{12}=\kappa\), a reference normal \(\mathbf e_1\) maps to an area vector proportional to \((1,-\kappa,0)\); its area increases by \(\sqrt{1+\kappa^2}\) even though \(J=1\). Volume preservation does not preserve the area of every material surface.</p>
+
+<h2 id="volume-elements" data-video="XrYnN-TmyMc" data-start="978" data-end="1646">Material volume and the determinant rate <a class="timestamp" href="https://www.youtube.com/watch?v=XrYnN-TmyMc&amp;t=978s">L46 16:18</a></h2>
+<p>Three reference lines span a material volume. Their scalar triple product after mapping is \(J\) times the reference product, so \(dV=JdV_0\). To differentiate \(J\), use multilinearity of the determinant in its columns. The derivative is the sum of determinants in which one column is differentiated. In components, this is \(\dot J=(\operatorname{Cof}\mathbf F)_{iA}\dot F_{iA}=J(F^{-1})_{Ai}\dot F_{iA}\). Therefore</p>
+\[
+\dot J=J\operatorname{tr}(\dot{\mathbf F}\mathbf F^{-1})
+=J\operatorname{div}\mathbf v,
+\qquad
+\frac{D(dV)}{Dt}=(\operatorname{div}\mathbf v)dV. \tag{10.4}
+\]
+<p>This argument is Jacobi's determinant identity specialized to an invertible motion gradient. It explains both the inverse and the trace. The trace of an untransformed \(\dot{\mathbf F}\) would not generally give the fractional volume rate. For diagonal extension, \(J=e^{(a+b+c)t}\), giving \(\dot J/J=a+b+c\), as the identity predicts.</p>
+<p>A motion preserving each material volume is <dfn>isochoric</dfn>. If the reference is the initial configuration with \(J(\mathbf X,0)=1\), divergence-free velocity for all times gives \(J=1\). Without that initial normalization, divergence-free velocity makes \(J\) constant along a particle, not necessarily equal to one. In the running extension, isochoric motion requires \(a+b+c=0\). A specimen can contract along one axis and expand along another while satisfying this requirement.</p>
+<p>The lecture's closing calculation imposes \(\det\mathbf F=1\) on a motion containing positive parameters \(\alpha,\beta\). The spoken reduced relation is \(\beta=\alpha(1+\alpha)/(\alpha^2+\alpha-1)\). Positivity therefore also requires \(\alpha\gt(\sqrt5-1)/2\); otherwise the denominator is nonpositive and no positive \(\beta\) satisfies that expression. The full board map is not available from speech alone, so this algebraic restriction is stated without inventing its deformation matrix. Equations (10.2)–(10.4) provide the procedure for any fully specified motion.</p>
+
+<h2 id="transport" data-video="MLhADOO7Q1g" data-start="123" data-end="1109">The transport theorem follows a moving collection of particles <a class="timestamp" href="https://www.youtube.com/watch?v=MLhADOO7Q1g&amp;t=123s">L47 2:03</a></h2>
+<p>Let \(f(\mathbf x,t)\) be a scalar quantity per unit current volume. Its units depend on the property: kg/m³ for mass, J/m³ for energy. Assume the motion and field are smooth enough to differentiate under an integral on a bounded material region. Pull its integral back to the fixed reference region:</p>
+\[
+I(t)=\int_{\Omega_t}f\,dV
+=\int_{\Omega_0}f(\boldsymbol\chi(\mathbf X,t),t)J\,dV_0.
+\tag{10.5}
+\]
+<p>The chain rule differentiates the composed field into \(Df/Dt\). The product rule adds the derivative of \(J\). Using (10.4) and returning to current variables gives Reynolds' transport theorem:</p>
+\[
+\frac{dI}{dt}
+=\int_{\Omega_t}(\dot f+f\operatorname{div}\mathbf v)\,dV
+=\int_{\Omega_t}\partial_t f\,dV
++\int_{\partial\Omega_t}f\mathbf v\cdot\mathbf n\,dA.
+\tag{10.6}
+\]
+<p>The surface term is positive for outward transport. It appears with a plus sign here because the left side is the rate of the property carried by a moving material region; it corrects a local derivative at fixed spatial points. It should not be called heat entering or material entering without checking its sign and the quantity being compared. A local time derivative is accumulation at a location, not automatically physical creation of the quantity.</p>
+<p>For a different region \(V(t)\) whose boundary moves with velocity \(\mathbf w\), the geometrical transport formula uses \(f\mathbf w\cdot\mathbf n\) in place of the last integrand. Combining it with a local conservation law \(\partial_t f+\operatorname{div}(f\mathbf v)=s\) yields</p>
+\[
+\frac d{dt}\int_{V(t)}f\,dV
+=-\int_{\partial V(t)}f(\mathbf v-\mathbf w)\cdot\mathbf n\,dA
++\int_{V(t)}s\,dV. \tag{10.7}
+\]
+<p>The boundary sees relative velocity. A fixed control volume has \(\mathbf w=0\), and outward flux reduces its contents. A material boundary has \(\mathbf w=\mathbf v\) in the normal direction, and advective exchange vanishes. These formulas describe different derivatives. Using the material-region formula with a stationary inlet and omitting its flux would discard the entering particles.</p>
+
+<h2 id="mass" data-video="MLhADOO7Q1g" data-start="1110" data-end="2161">Mass conservation and density along particle paths <a class="timestamp" href="https://www.youtube.com/watch?v=MLhADOO7Q1g&amp;t=1110s">L47 18:30</a></h2>
+<p>Let \(\rho\gt0\) be current mass density in kg/m³, with no mass sources. The mass of every material region is constant. Setting \(f=\rho\) in (10.6) and localizing over arbitrary regions gives</p>
+\[
+\dot\rho+\rho\operatorname{div}\mathbf v=0,
+\qquad
+\partial_t\rho+\operatorname{div}(\rho\mathbf v)=0,
+\qquad
+\rho(\boldsymbol\chi(\mathbf X,t),t)J(\mathbf X,t)=\rho_0(\mathbf X).
+\tag{10.8}
+\]
+<p>The first two forms are equivalent by the product rule. The third follows either by integrating \(D(\rho J)/Dt=0\), or by equating current and reference masses of every particle collection. Here \(\rho_0\) is the mass per reference volume, not an Eulerian density field at every later time. In diagonal extension, \(\rho(\boldsymbol\chi,t)=\rho_0(\mathbf X)e^{-(a+b+c)t}\). To obtain the spatial field, substitute \(\mathbf X=(e^{-at}x_1,e^{-bt}x_2,e^{-ct}x_3)\). Uniform initial density is an additional assumption needed to remove the spatial dependence.</p>
+<p>With conserved mass and positive density, \(\dot\rho=0\) is equivalent to \(\operatorname{div}\mathbf v=0\). Density may nevertheless vary between particles. For a translating incompressible inhomogeneous mixture, \(\rho(\mathbf x,t)=\rho_0(\mathbf x-\mathbf U t)\), so \(\partial_t\rho=-\mathbf U\cdot\nabla\rho\) need not vanish. Conversely, a density uniform in space but varying in time can satisfy a compressible expansion. The material derivative, not spatial uniformity alone, identifies constant density following matter.</p>
+<p>A useful consequence of mass conservation is the transport rule for any property \(\psi\) per unit mass:</p>
+\[
+\frac d{dt}\int_{\Omega_t}\rho\psi\,dV
+=\int_{\Omega_t}\rho\dot\psi\,dV. \tag{10.9}
+\]
+<p>Apply (10.6) to \(f=\rho\psi\), expand, and collect \(\psi(\dot\rho+\rho\operatorname{div}\mathbf v)\); it vanishes by (10.8). This is why acceleration and specific-energy rates enter balance laws without an extra density-rate term. The cancellation depends on mass conservation and following the same particles. It is not a rule for arbitrary fixed-space integrals.</p>
+
+<h2 id="momentum" data-video="U08wmKR7cbk" data-start="355" data-end="1648">Linear and angular momentum in the current configuration <a class="timestamp" href="https://www.youtube.com/watch?v=U08wmKR7cbk&amp;t=355s">L48 5:55</a></h2>
+<p>Let \(\mathbf b\) be body force per mass in m/s², and \(\boldsymbol\sigma\) Cauchy stress in Pa, with traction \(\mathbf t=\boldsymbol\sigma\mathbf n\). Newton's law for a material region equates the derivative of \(\int\rho\mathbf v\,dV\) to body force and boundary traction. Applying (10.9) componentwise, then the divergence theorem and localization, gives</p>
+\[
+\rho\dot v_i=\sigma_{ij,j}+\rho b_i,
+\qquad
+\partial_t(\rho v_i)+\partial_j(\rho v_i v_j)
+=\partial_j\sigma_{ij}+\rho b_i. \tag{10.10}
+\]
+<p>The conservative form follows by expanding its left side and using mass balance. It identifies the advective momentum flux through a fixed face: mass flux \(\rho\mathbf v\cdot\mathbf n\) carries momentum per mass \(\mathbf v\). The traction is a separate boundary interaction. Combining both into a flux tensor \(\rho\mathbf v\otimes\mathbf v-\boldsymbol\sigma\) places the minus sign before stress. In equilibrium \(\dot{\mathbf v}=0\), the equation reduces to local force balance.</p>
+<p>Angular momentum of a classical nonpolar continuum is \(\int\rho\mathbf x\times\mathbf v\,dV\), measured about a fixed inertial origin. Its material rate is \(\int\rho\mathbf x\times\dot{\mathbf v}\,dV\), because \(\mathbf v\times\mathbf v=0\). Boundary moment is \(\int\mathbf x\times\boldsymbol\sigma\mathbf n\,dA\). In components its divergence is \(\partial_l(\epsilon_{ijk}x_j\sigma_{kl})=\epsilon_{ijk}\sigma_{kj}+\epsilon_{ijk}x_j\sigma_{kl,l}\). The second term cancels the orbital contribution using (10.10). Thus \(\epsilon_{ijk}\sigma_{kj}=0\), giving \(\boldsymbol\sigma=\boldsymbol\sigma^{\mathsf T}\).</p>
+<p>This symmetry holds under acceleration as well as in equilibrium. It assumes no independent couple traction, body couple or intrinsic spin angular momentum. It does not say that a particle cannot rotate. A spatially varying angular velocity, or even rigid-body rotation with centripetal acceleration, must still satisfy the linear-momentum equation with the appropriate forces. Balance laws constrain the motion; they do not supply a material stress law.</p>
+
+<h2 id="piola" data-video="FWc2--detpM" data-start="388" data-end="1641">Reference-area traction and first Piola–Kirchhoff stress <a class="timestamp" href="https://www.youtube.com/watch?v=FWc2--detpM&amp;t=388s">L49 6:28</a></h2>
+<p>The same present force can be divided by current area or by the corresponding reference area. Define nominal traction \(\mathbf p(\mathbf N)\) by \(d\mathbf f=\mathbf p(\mathbf N)dA_0\). Its force components remain spatial, while its area normal is material. Nanson's formula gives \(d\mathbf f=\boldsymbol\sigma\mathbf n\,dA=J\boldsymbol\sigma\mathbf F^{-\mathsf T}\mathbf N\,dA_0\). Hence the force-first <dfn>first Piola–Kirchhoff stress</dfn> is</p>
+\[
+\mathbf P=J\boldsymbol\sigma\mathbf F^{-\mathsf T},
+\qquad p_i=P_{iA}N_A. \tag{10.11}
+\]
+<p>Its components have units Pa, but its area is reference area. It is a two-point tensor: its first index is a spatial force direction and its second a material normal direction. The lecture writes a normal-first array \(P^{\mathrm{lec}}_{Ai}\); our \(P_{iA}=P^{\mathrm{lec}}_{Ai}\). These arrays are transposes. A two-point stress is not generally symmetric, and symmetry of Cauchy stress cannot be transferred to its printed matrix without the deformation factors.</p>
+<p>Pull the material-region momentum balance back to \(\Omega_0\). Body force and acceleration use \(\rho J=\rho_0\), while boundary force uses \(\mathbf P\mathbf N\). Applying the reference divergence theorem yields</p>
+\[
+P_{iA,A}+\rho_0 b_i=\rho_0 a_i,
+\qquad \operatorname{Div}\mathbf P+\rho_0\mathbf b=\rho_0\mathbf a.
+\tag{10.12}
+\]
+<p>All spatial quantities here are evaluated at \(\boldsymbol\chi(\mathbf X,t)\). Capital \(\operatorname{Div}\) means a reference derivative. It is not the spatial divergence of the same component functions. Directly, \(P_{iA}=\sigma_{ij}(\operatorname{Cof}\mathbf F)_{jA}\). The Piola identity \(\partial_A(\operatorname{Cof}\mathbf F)_{jA}=0\) follows by writing each cofactor with two alternating symbols and two factors \(\chi_{i,A}\): each derivative term contains a symmetric mixed derivative contracted with an antisymmetric index pair. The chain rule then gives \(P_{iA,A}=J\sigma_{ij,j}\), proving equivalence with (10.10).</p>
+<p>For a numerical check at one instant, take \(\mathbf F\) with rows \((2,0.5,0),(0,1,0),(0,0,1)\), so \(J=2\), and the symmetric Cauchy stress with rows \((6,2,0),(2,3,0),(0,0,1)\) MPa. Formula (10.11) gives rows \((5,4,0),(0.5,6,0),(0,0,2)\) MPa. The off-diagonal entries differ. On reference normal \(\mathbf N=\mathbf e_1\), nominal traction is \((5,0.5,0)\) MPa. The corresponding current area vector per unit reference area is \((1,-0.5,0)\); multiplying it by Cauchy stress returns exactly the same force per reference area.</p>
+
+<h2 id="second-piola" data-video="FWc2--detpM" data-start="1641" data-end="2525">Material stress, angular momentum and work conjugacy <a class="timestamp" href="https://www.youtube.com/watch?v=FWc2--detpM&amp;t=1641s">L49 27:21</a></h2>
+<p>Transforming angular momentum to reference coordinates leaves the current moment arm \(\mathbf x\), not \(\mathbf X\). Differentiating that moment arm gives \(F_{jA}\), so the remaining angular-momentum condition makes \(\mathbf P\mathbf F^{\mathsf T}\) symmetric. Indeed (10.11) gives \(\mathbf P\mathbf F^{\mathsf T}=J\boldsymbol\sigma\). Define the <dfn>second Piola–Kirchhoff stress</dfn></p>
+\[
+\mathbf S=\mathbf F^{-1}\mathbf P
+=J\mathbf F^{-1}\boldsymbol\sigma\mathbf F^{-\mathsf T},
+\qquad \mathbf P=\mathbf F\mathbf S. \tag{10.13}
+\]
+<p>Both indices of \(\mathbf S\) are material, and transposition shows that it is symmetric when Cauchy stress is symmetric. In the numerical case above, its planar block is \(\begin{bmatrix}2.375&amp;0.5\\0.5&amp;6\end{bmatrix}\) MPa, with \(S_{33}=2\) MPa. It is not the actual current traction on a spatial plane. It is useful because it pairs with a material strain rate and remains symmetric in reference equations.</p>
+<p>Define double contraction by \(\mathbf A:\mathbf B=A_{ij}B_{ij}\), or the analogous sum over material and two-point indices. The stress power per current volume is \(\boldsymbol\sigma:\mathbf L=\boldsymbol\sigma:\mathbf D\), since symmetric stress contracts to zero with skew spin. With \(\dot{\mathbf F}=\mathbf L\mathbf F\), (10.11) gives</p>
+\[
+\mathbf P:\dot{\mathbf F}
+=J\boldsymbol\sigma:\mathbf L
+=J\boldsymbol\sigma:\mathbf D
+=\mathbf S:\dot{\mathbf E},
+\qquad \dot{\mathbf E}=\mathbf F^{\mathsf T}\mathbf D\mathbf F.
+\tag{10.14}
+\]
+<p>To check the first equality in components, \(P_{iA}\dot F_{iA}=J\sigma_{ij}(F^{-1})_{Aj}L_{ik}F_{kA}=J\sigma_{ij}L_{ij}\). For the last, use \(\mathbf S\)'s symmetry in \(\dot{\mathbf E}=\operatorname{sym}(\mathbf F^{\mathsf T}\dot{\mathbf F})\), obtaining \(\mathbf S:\dot{\mathbf E}=(\mathbf F\mathbf S):\dot{\mathbf F}\). These are powers per reference volume, while \(\boldsymbol\sigma:\mathbf D\) is power per current volume. The factor \(J\) is therefore necessary.</p>
+<p><a href="https://solidmechanics.org/Text/Chapter2_5/Chapter2_5.php">Bower, §2.5.2</a>, uses nominal stress \(\mathbf S_B\) and material stress \(\boldsymbol\Sigma_B\). In this chapter's notation these correspond to \(\mathbf P^{\mathsf T}\) and \(\mathbf S\), respectively. His nominal-power expression \((S_B)_{Ai}\dot F_{iA}\) is our \(P_{iA}\dot F_{iA}\). This symbol translation avoids confusing the source's nominal \(S_B\) with our second Piola stress. In the small-displacement-gradient limit, \(\mathbf F\approx\mathbf I\) and \(J\approx1\), the stress measures coincide to leading order in aligned frames.</p>
+
+<h2 id="energy" data-video="lAbXNLKvH-I" data-start="12" data-end="940">Total energy, stress power and the heat-flux sign <a class="timestamp" href="https://www.youtube.com/watch?v=lAbXNLKvH-I&amp;t=12s">L50 0:12</a></h2>
+<p>Let \(e\) be specific internal energy in J/kg, \(\mathbf q\) heat flux in W/m², and \(r\) heat supplied per mass per time in W/kg. We choose \(\mathbf q\cdot\mathbf n\gt0\) for heat leaving the material across an outward-oriented surface. A positive source \(r\) supplies energy. Define kinetic energy \(K=\int\frac12\rho|\mathbf v|^2dV\) and internal energy \(U=\int\rho e\,dV\). The first law for a material region is</p>
+\[
+\frac d{dt}(K+U)
+=\int_{\partial\Omega_t}\mathbf v\cdot\boldsymbol\sigma\mathbf n\,dA
++\int_{\Omega_t}\rho\mathbf b\cdot\mathbf v\,dV
+-\int_{\partial\Omega_t}\mathbf q\cdot\mathbf n\,dA
++\int_{\Omega_t}\rho r\,dV. \tag{10.15}
+\]
+<p>Traction power is force dotted with particle velocity, integrated over the current surface. The minus sign on outgoing heat is fixed by the energy-accounting convention, not by Fourier's law. Electromagnetic, chemical or other energy transfer must be represented explicitly by appropriate fluxes or sources if included in the model. The equation here retains mechanical work and heat transfer only.</p>
+<p>To separate kinetic and internal storage, (10.9) gives \(\dot K=\int\rho\mathbf v\cdot\dot{\mathbf v}\,dV\). Insert momentum balance, then use \(v_i\sigma_{ij,j}=(v_i\sigma_{ij})_{,j}-\sigma_{ij}v_{i,j}\). The divergence theorem yields traction power plus body-force power, minus \(\int\boldsymbol\sigma:\mathbf D\,dV\). Subtract that kinetic-energy equation from (10.15), convert the heat surface term to a divergence, and localize:</p>
+\[
+\rho\dot e=\boldsymbol\sigma:\mathbf D-\operatorname{div}\mathbf q+\rho r.
+\tag{10.16}
+\]
+<p>Every term has units W/m³. Stress power can store recoverable elastic energy, produce heat through irreversible processes, or reduce internal energy during unloading. It is not automatically heat production. For an ideal reversible elastic deformation, positive stress power can be stored without dissipation. The first law balances energy but does not prove nonnegative entropy production; the second law and constitutive assumptions provide that restriction.</p>
+<p><a href="https://solidmechanics.org/Text/Chapter2_6/Chapter2_6.php">Bower, §2.6</a>, uses the same outward heat-flux convention, a volumetric heat source rather than our per-mass \(r\), and a different symbol for specific internal energy. Translating his volumetric source to \(\rho r\) gives (10.16). For a slab with \(q_1=Qx_1/L\), \(Q\) in W/m² and \(L\) in m, divergence is \(Q/L\). With no motion or volumetric supply, \(\rho\dot e=-Q/L\): the increasing outward flux cools the material. If \(\mathbf q=-k\nabla\theta\) with constant conductivity, the heat term becomes \(+k\nabla^2\theta\), recovering the usual diffusion sign.</p>
+<p>Reference heat flux is \(\mathbf Q_0=J\mathbf F^{-1}\mathbf q\), since \(\mathbf q\cdot\mathbf n\,dA=\mathbf Q_0\cdot\mathbf N\,dA_0\). Transforming (10.16) gives \(\rho_0\dot e=\mathbf P:\dot{\mathbf F}-\operatorname{Div}\mathbf Q_0+\rho_0r\). The heat flux and Piola stress use inverse factors in different positions because one transports a scalar heat flux and the other a spatial force vector. Their index roles determine the formulas.</p>
+
+<h2 id="tutorial" data-video="lAbXNLKvH-I" data-start="940" data-end="1755">The tenth tutorial: density, pressure work and rigid rotation <a class="timestamp" href="https://www.youtube.com/watch?v=lAbXNLKvH-I&amp;t=940s">L50 15:40</a></h2>
+<p>The first question has a velocity with constant divergence \(2a\). Continuity gives \(d\rho/dt=-2a\rho\) along each particle. Integrating yields \(\rho(\boldsymbol\chi(\mathbf X,t),t)=\rho_0(\mathbf X)e^{-2at}\). A purely time-dependent density \(\rho_{\rm initial}e^{-2at}\) requires spatially uniform initial density. Isochoric motion requires \(a=0\). Other constants in the unspoken velocity components cannot be constrained from divergence alone, and the full velocity field is not invented here.</p>
+<p>The second question sets \(\boldsymbol\sigma=-p\mathbf I\). Momentum becomes \(\rho\dot{\mathbf v}=-\nabla p+\rho\mathbf b\). Stress power is \(-p\operatorname{tr}\mathbf D=-p\operatorname{div}\mathbf v\). Using continuity gives \(\boldsymbol\sigma:\mathbf D=p\dot\rho/\rho\). Compression with \(p\gt0\) and \(\dot\rho\gt0\) therefore supplies positive internal power. In incompressible motion, isotropic pressure contributes zero stress power, even though it can transmit force and redistribute kinetic energy through boundary work.</p>
+<p>The last question concerns rigid rotation \(\mathbf v=\boldsymbol\omega(t)\times\mathbf x\) about a fixed origin, with spatially uniform angular velocity \(\boldsymbol\omega\). The vector triple product gives \(\mathbf x\times(\boldsymbol\omega\times\mathbf x)=|\mathbf x|^2\boldsymbol\omega-(\mathbf x\cdot\boldsymbol\omega)\mathbf x\). Hence angular momentum is \(L_i=I_{ij}\omega_j\), where</p>
+\[
+I_{ij}(t)=\int_{\Omega_t}\rho
+(x_kx_k\delta_{ij}-x_i x_j)\,dV,
+\qquad M_i=\frac d{dt}(I_{ij}\omega_j). \tag{10.17}
+\]
+<p>The inertia tensor has units kg m² and can change its spatial components as the body rotates. The derivative acts on both \(I_{ij}\) and \(\omega_j\). In a body-fixed frame, \(\mathbf I_B\) is constant but the derivative of a vector must include frame rotation. Writing \(\mathbf I=\mathbf R\mathbf I_B\mathbf R^{\mathsf T}\) and \(\dot{\mathbf R}\mathbf R^{\mathsf T}\mathbf a=\boldsymbol\omega\times\mathbf a\) gives \(\mathbf M=\mathbf I\dot{\boldsymbol\omega}+\boldsymbol\omega\times(\mathbf I\boldsymbol\omega)\). The second term explains why torque need not be parallel to angular acceleration.</p>
+
+<h2 id="implementation">Executable check: force transformation and stress power</h2>
+<p>The program uses the finite deformation and stress from the reference-traction example. It imposes a local velocity gradient with entries in s⁻¹ and constructs \(\dot{\mathbf F}=\mathbf L\mathbf F\). It compares forces computed on corresponding current and reference surfaces, and verifies all three stress-power measures. A diagonal extension separately checks mass conservation. The program uses NumPy, reads no files and prints only consistency checks; it does not solve a constitutive boundary-value problem.</p>
+<div class="codewrap"><button class="copybtn" type="button" onclick="copyCode(this)">Copy</button><pre data-run="ch10"><code class="language-python">import numpy as np
+
+deformation = np.array([[2., 0.5, 0.], [0., 1., 0.], [0., 0., 1.]])
+stress = np.array([[6., 2., 0.], [2., 3., 0.], [0., 0., 1.]])
+gradient = np.array([[0.1, 0.3, 0.], [0., -0.2, 0.], [0., 0., 0.]])
+jacobian = np.linalg.det(deformation)
+inverse = np.linalg.inv(deformation)
+piola = jacobian * stress @ inverse.T
+second_piola = inverse @ piola
+deformation_rate = gradient @ deformation
+stretch_rate = (gradient + gradient.T) / 2
+strain_rate = deformation.T @ stretch_rate @ deformation
+powers = [np.sum(piola * deformation_rate),
+          jacobian * np.sum(stress * stretch_rate),
+          np.sum(second_piola * strain_rate)]
+assert np.allclose(powers, powers[0])
+assert np.allclose(second_piola, second_piola.T)
+reference_normal = np.array([1., 0., 0.])
+area_vector = jacobian * inverse.T @ reference_normal
+assert np.allclose(stress @ area_vector, piola @ reference_normal)
+rates = np.array([0.1, -0.2, 0.3])
+time = 2.0
+volume_ratio = np.exp(np.sum(rates) * time)
+initial_density = 1000.0
+density = initial_density / volume_ratio
+assert np.isclose(density * volume_ratio, initial_density)
+print('first Piola MPa:', np.round(piola, 6).tolist())
+print('reference force per area MPa:', (piola @ reference_normal).tolist())
+print('reference powers MW/m3:', np.round(powers, 6).tolist())
+print('extension volume ratio:', round(float(volume_ratio), 6))
+print('extension density kg/m3:', round(float(density), 6))
+print('reference mass density kg/m3:', round(float(
+    density * volume_ratio), 6))</code></pre></div>
+<pre data-output="ch10">first Piola MPa: [[5.0, 4.0, 0.0], [0.5, 6.0, 0.0], [0.0, 0.0, 2.0]]
+reference force per area MPa: [5.0, 0.5, 0.0]
+reference powers MW/m3: [1.2, 1.2, 1.2]
+extension volume ratio: 1.491825
+extension density kg/m3: 670.320046
+reference mass density kg/m3: 1000.0</pre>
+<p>The stress inputs use MPa, so their contraction with s⁻¹ produces MPa/s, equal to MW/m³. All three printed powers are per reference volume. The present-volume value is smaller by \(J=2\). The test intentionally uses a shear-containing deformation, producing a nonsymmetric first Piola matrix. A diagonal deformation alone would be a weaker test of index order. For singular \(\mathbf F\), the inverse and these formulas fail; the positive-J motion assumption excludes that case.</p>
+
+<h2 id="exercises">Exercises with worked solutions</h2>
+<p><strong>1. Line, area and volume rates.</strong> In diagonal extension take \(a=0.1,b=-0.2,c=0.3\) s⁻¹. Find fractional rates of a line along axis 1, an area normal to axis 1 and a volume. Find the two-second volume ratio.</p>
+<details><summary>Solution</summary><p>The line rate is \(a=0.1\) s⁻¹. The area rate is \(b+c=0.1\) s⁻¹, coincidentally equal in this numerical example. The volume rate is \(a+b+c=0.2\) s⁻¹. Integrating \(\dot J=0.2J\) with \(J(0)=1\) gives \(J(2)=e^{0.4}\approx1.491825\). The equality of the first two rates is not a general geometrical law; choosing a different normal or different rate constants changes it.</p></details>
+<p><strong>2. Area in shear.</strong> For \(\mathbf F=\begin{bmatrix}1&amp;\kappa&amp;0\\0&amp;1&amp;0\\0&amp;0&amp;1\end{bmatrix}\), find the current area and normal of a unit reference patch normal to \(\mathbf e_1\). Verify orthogonality with mapped reference tangent \(\mathbf e_2\).</p>
+<details><summary>Solution</summary><p>Nanson gives area vector \((1,-\kappa,0)\). Its magnitude is \(\sqrt{1+\kappa^2}\), and normal is that vector divided by its magnitude. The tangent maps to \((\kappa,1,0)\); the dot product is \(\kappa-\kappa=0\). Transforming the normal by \(\mathbf F\) would instead give \(\mathbf e_1\), which is not perpendicular to the mapped tangent when \(\kappa\ne0\).</p></details>
+<p><strong>3. Material density versus spatial density.</strong> Let \(\mathbf v=(ax,ay,0)\) and initial density \(\rho_0(X,Y,Z)=\rho_*[1+X/\ell]\) on a region where it is positive. Find the density at a later spatial position.</p>
+<details><summary>Solution</summary><p>The paths are \(x=e^{at}X,y=e^{at}Y,z=Z\), with \(J=e^{2at}\). Thus \(\rho(\boldsymbol\chi,t)=\rho_*[1+X/\ell]e^{-2at}\). Substitute \(X=e^{-at}x\) to obtain \(\rho(x,y,z,t)=\rho_*[1+e^{-at}x/\ell]e^{-2at}\). The integration constant along a particle is a function of its label. Suppressing that dependence would lose the transported initial inhomogeneity.</p></details>
+<p><strong>4. Moving control surface.</strong> A one-dimensional stream of density \(\rho\) flows at speed \(u\) through a planar area \(A\). A control face moves downstream at speed \(w\). What is outward mass flux through that face, and what happens at \(w=u\)?</p>
+<details><summary>Solution</summary><p>With outward normal downstream, the relative outward flux is \(\rho(u-w)A\), in kg/s. If \(u\gt w\), particles leave the moving region across that face. If \(u=w\), the face moves with the particles and the advective mass flux vanishes. This single-face calculation does not determine the total mass rate without including every other boundary face. It identifies the velocity that belongs in the boundary transport term.</p></details>
+<p><strong>5. First Piola stress is not symmetric.</strong> Use the finite deformation and Cauchy stress in the numerical example. Find \(\mathbf P\), \(\mathbf S\), and \(\mathbf P\mathbf F^{\mathsf T}\), and interpret symmetry.</p>
+<details><summary>Solution</summary><p>The planar first Piola block is \(\begin{bmatrix}5&amp;4\\0.5&amp;6\end{bmatrix}\) MPa. Premultiplying by \(\mathbf F^{-1}\) gives \(\begin{bmatrix}2.375&amp;0.5\\0.5&amp;6\end{bmatrix}\) MPa for \(\mathbf S\). Multiplying \(\mathbf P\) by \(\mathbf F^{\mathsf T}\) gives \(\begin{bmatrix}12&amp;4\\4&amp;6\end{bmatrix}=J\boldsymbol\sigma\) in the planar block. Thus angular momentum is respected: the product is symmetric even though \(\mathbf P\) is not. The third diagonal entries are 2 in each reference stress.</p></details>
+<p><strong>6. Compute stress power in two configurations.</strong> For the numerical \(\mathbf F,\boldsymbol\sigma\) and \(\mathbf L\) from the code, calculate \(\boldsymbol\sigma:\mathbf D\) and \(\mathbf P:\dot{\mathbf F}\) by hand.</p>
+<details><summary>Solution</summary><p>The planar \(\mathbf D\) has diagonal entries 0.1, −0.2 and off-diagonal entries 0.15 s⁻¹. Its power is \(6(0.1)+2(0.15)+2(0.15)+3(-0.2)=0.6\) MPa/s, or 0.6 MW/m³ current volume. The planar \(\dot{\mathbf F}=\mathbf L\mathbf F\) has rows \((0.2,0.35),(0,-0.2)\). Contracting with \(\mathbf P\) gives \(5(0.2)+4(0.35)+0.5(0)+6(-0.2)=1.2\) MW/m³ reference volume. The factor two is the Jacobian, not an error in shear convention.</p></details>
+<p><strong>7. Heat loss and pressure work.</strong> A homogeneous compressing element has \(p=10^5\) Pa, \(\operatorname{div}\mathbf v=-0.02\) s⁻¹, heat-flux divergence 500 W/m³, and no volumetric heat source. Find \(\rho\dot e\). Is all supplied mechanical power dissipated?</p>
+<details><summary>Solution</summary><p>Isotropic stress power is \(-p\operatorname{div}\mathbf v=2000\) W/m³. Equation (10.16) subtracts outgoing heat divergence, giving \(\rho\dot e=2000-500=1500\) W/m³. The first law fixes net internal-energy storage. It does not split stored energy into recoverable elastic energy, thermal energy and irreversible dissipation. That interpretation needs a material model and entropy balance.</p></details>
+<p><strong>8. Rigid-body inertia derivative.</strong> For a spherical inertia tensor \(\mathbf I=I_*\mathbf I_3\), simplify (10.17). Then explain why the same simplification can fail for an anisotropic body with constant body-frame inertia.</p>
+<details><summary>Solution</summary><p>Spherical inertia is unchanged by rotation, and \(\boldsymbol\omega\times\mathbf I\boldsymbol\omega=0\). Hence \(\mathbf M=I_*\dot{\boldsymbol\omega}\). For anisotropic inertia, \(\mathbf I_B\) may be constant in body coordinates while \(\mathbf I=\mathbf R\mathbf I_B\mathbf R^{\mathsf T}\) varies in space. Its derivative generates \(\boldsymbol\omega\times(\mathbf I\boldsymbol\omega)\), generally nonzero when angular velocity is not a principal-inertia direction. Treating all inertia components as constant in the spatial frame would omit this term.</p></details>
+
+<h2 id="limits">Balances constrain a model without closing it</h2>
+<p>Transport distinguishes changing material geometry from flux across a chosen control boundary. Mass, linear momentum, angular momentum and the first law then supply local equations, reference transformations and consistent power measures. They do not determine how stress and heat flux depend on the material state. That requires constitutive closure and thermodynamic restrictions. Smooth classical derivatives also need modification at shocks, interfaces or concentrated loads: the integral statements remain the starting point for deriving appropriate jump conditions. Conservation, constitutive modeling and numerical consistency are separate requirements.</p>
+<h2 id="sources">Sources</h2>
+<ul><li>NPTEL, Prof. Gaurav Bhutani: <a href="https://www.youtube.com/watch?v=XrYnN-TmyMc">L46, Material Derivative of Elements</a>; <a href="https://www.youtube.com/watch?v=MLhADOO7Q1g">L47, Reynolds Transport Theorem and Conservation of Mass</a>; <a href="https://www.youtube.com/watch?v=U08wmKR7cbk">L48, Momentum Equations</a>; <a href="https://www.youtube.com/watch?v=FWc2--detpM">L49, Lagrangian Form of Momentum Equations</a>; <a href="https://www.youtube.com/watch?v=lAbXNLKvH-I">L50, Energy Equation and Tutorial, Week 10</a>.</li><li>A. F. Bower, <a href="https://solidmechanics.org/Text/Chapter2_5/Chapter2_5.php"><em>Applied Mechanics of Solids</em>, §2.5.1–2.5.2</a>: mechanical power and reference work pairs; <a href="https://solidmechanics.org/Text/Chapter2_6/Chapter2_6.php">§2.6</a>: first-law signs. Source notation is translated beside the relevant equations. The affine models and code are independent constructions.</li></ul>
+<!-- BOOK-CONTENT-END --></article><nav class="page-turn" aria-label="Chapter navigation"><a rel="prev" href="chapter-09-compatibility-and-velocity-gradients.html">Previous chapter</a><a href="index.html">Chapter index</a><a rel="next" href="chapter-11-constitutive-closure-and-objectivity.html">Next chapter</a></nav></main></div><footer class="site-footer">Independent study edition. Prof. Gaurav Bhutani’s NPTEL recordings provide the topic spine. Original exposition, source limitations and verification evidence are separately recorded.</footer></body></html>

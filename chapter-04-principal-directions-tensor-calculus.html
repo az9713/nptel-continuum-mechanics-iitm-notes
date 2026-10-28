@@ -1,0 +1,211 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="color-scheme" content="dark light"><meta name="book-content-sha256" content="03be9db870c34dabb5049a50ad83e20c67965fc60932b50756d309b39a8611c3">
+<title>Principal directions and tensor calculus · Foundations of Continuum Mechanics</title><link rel="stylesheet" href="assets/book.css">
+<script>window.MathJax={tex:{inlineMath:[['$','$'],['\\(','\\)']],displayMath:[['$$','$$'],['\\[','\\]']],processEscapes:true},svg:{fontCache:'local'},options:{skipHtmlTags:['script','noscript','style','textarea','pre','code']}};</script>
+<script defer src="assets/mathjax-tex-svg.js"></script><script defer src="assets/book.js"></script></head>
+<body><a class="skip" href="#main">Skip to content</a><header class="site-header"><a class="brand" href="index.html">Foundations of Continuum Mechanics · NPTEL IIT Mandi</a><nav class="course-nav" aria-label="Book"><a href="index.html">Chapters</a><a href="source-map.html">Source map</a><a href="references.html">References</a><a href="numerical-lab.html">Numerical lab</a></nav></header>
+<div class="layout"><aside class="toc" id="chapter-toc" aria-label="On this page"><h2>On this page</h2></aside><main id="main"><div class="reading-tools" aria-label="Reading controls"><button id="theme-toggle" aria-pressed="false">Light theme</button><button id="text-toggle" aria-pressed="false">Larger text</button><button id="solutions-toggle" aria-pressed="false">Expand solutions</button><button id="print-page">Print with solutions</button></div>
+<article id="chapter-content"><!-- BOOK-CONTENT-START --><h1>Principal directions and tensor calculus</h1>
+<p class="lead">A heat-conducting solid can carry heat in a direction different from the imposed temperature gradient. Rotating the laboratory axes changes its component table but cannot change that physical response. Which directions belong to the response itself, and how do we differentiate that response when it varies through the solid? Principal directions answer the first question. Tensor calculus answers the second. Together they distinguish a rotation of coordinates from a spatial change of a physical field.</p>
+<p class="source-note">Lecture spine: L16–20, including all six problems in the fourth tutorial. The locally generated transcripts reach the closing remarks, within nine seconds of the listed recording durations. Machine transcription does not reliably preserve board equations. The calculations reconstruct the mathematics explicitly. The conductivity field and executable checks are teaching constructions; the numerical tutorial matrix is recovered from L20. This edition uses component-first vector gradients, while L19 sometimes arranges the derivative index first; the translation appears below.</p>
+
+<h2 id="eigen" data-video="c9XGr1tELaA" data-start="43" data-end="787">Directions preserved by a linear map <a class="timestamp" href="https://www.youtube.com/watch?v=c9XGr1tELaA&amp;t=43s">L16 0:43</a></h2>
+<p>Consider the model \(\mathbf q=-\mathbf K\mathbf g\), where \(\mathbf q\) is heat flux in W/m², \(\mathbf g=\nabla\theta\) is a temperature gradient in K/m, and \(\mathbf K\) is conductivity in W/(m K). We use a fixed orthonormal Cartesian basis \(\mathbf e_i\), with indices from 1 to 3. Components satisfy \(q_i=-K_{ij}g_j\): the second index selects an input component and the first selects an output component. Repeated indices in a term are summed. Suppose that the conductivity is real and symmetric, \(K_{ij}=K_{ji}\). That is an assumption about this response, not a property of every tensor.</p>
+<p>The running example is</p>
+\[
+\mathbf K=k_*\mathbf A,\qquad
+\mathbf A=\begin{bmatrix}4&amp;1&amp;0\\1&amp;4&amp;0\\0&amp;0&amp;2\end{bmatrix},
+\qquad k_*=1\ \mathrm{W/(m\,K)}. \tag{4.1}
+\]
+<p>The matrix \(\mathbf A\) is dimensionless. For \(\mathbf g=(1,0,0)\) K/m, the flux is \((-4,-1,0)\) W/m²: a transverse component remains. To identify directions without that component, choose a dimensionless unit vector \(\mathbf n\) and ask when \(\mathbf A\mathbf n\) is a scalar multiple of \(\mathbf n\). This question concerns an axis, so reversing its unit vector leaves the physical line unchanged.</p>
+<p>A nonzero vector satisfying \(\mathbf A\mathbf n=\lambda\mathbf n\) is an <dfn>eigenvector</dfn>; its direction is a <dfn>principal direction</dfn>, and \(\lambda\) is an <dfn>eigenvalue</dfn> or principal value. Normalization \(\mathbf n\cdot\mathbf n=1\) removes arbitrary length. Eigenvalues of a dimensional tensor carry that tensor's units. Thus \(k_*\lambda\) is the principal conductivity here. Negative eigenvalues reverse vectors, and a zero eigenvalue annihilates them; neither should be described as preserving an oriented arrow.</p>
+<p>Direct multiplication gives \(\mathbf A(1,1,0)=(5,5,0)\), \(\mathbf A(-1,1,0)=(-3,3,0)\), and \(\mathbf A(0,0,1)=(0,0,2)\). Normalize these to obtain \(\mathbf n^{(1)}=(1,1,0)/\sqrt2\), \(\mathbf n^{(2)}=(-1,1,0)/\sqrt2\), and \(\mathbf n^{(3)}=(0,0,1)\), with eigenvalues 5, 3 and 2. Their ordering and signs give a right-handed orthonormal basis. Parenthesized superscripts label eigenvectors and are not Cartesian component indices.</p>
+
+<h2 id="characteristic" data-video="c9XGr1tELaA" data-start="788" data-end="1624">The characteristic equation and its invariant coefficients <a class="timestamp" href="https://www.youtube.com/watch?v=c9XGr1tELaA&amp;t=788s">L16 13:08</a></h2>
+<p>The equation \((\mathbf A-\lambda\mathbf I)\mathbf n=\mathbf0\), where \(\mathbf I\) is the identity map, has a nonzero solution precisely when its matrix is singular. Hence \(\det(\lambda\mathbf I-\mathbf A)=0\). This is the <dfn>characteristic equation</dfn>. In three dimensions its polynomial is</p>
+\[
+p(\lambda)=\lambda^3-I_1\lambda^2+I_2\lambda-I_3,
+\quad I_1=A_{ii},\quad
+I_2=\tfrac12[(A_{ii})(A_{jj})-A_{ij}A_{ji}],\quad
+I_3=\det\mathbf A. \tag{4.2}
+\]
+<p>Expanding the determinant explains the coefficients. Choosing \(\lambda\) from each diagonal gives \(\lambda^3\). Choosing two copies of \(\lambda\) and one component of \(-\mathbf A\) gives the negative trace. The coefficient of \(\lambda\) is the sum of principal two-by-two minors: \(A_{11}A_{22}-A_{12}A_{21}\), \(A_{11}A_{33}-A_{13}A_{31}\), and \(A_{22}A_{33}-A_{23}A_{32}\). Expanding the squared trace and subtracting \(\operatorname{tr}(\mathbf A^2)=A_{ij}A_{ji}\) gives twice that sum. The constant is \(\det(-\mathbf A)=-\det\mathbf A\). Symmetry is unnecessary for this coefficient formula.</p>
+<p>A passive orthogonal basis change has matrix \(Q_{ai}=\mathbf e'_a\cdot\mathbf e_i\). Thus \(\mathbf Q\mathbf Q^{\mathsf T}=\mathbf I\) and \(\mathbf A'=\mathbf Q\mathbf A\mathbf Q^{\mathsf T}\). Its characteristic polynomial satisfies</p>
+\[
+\det(\lambda\mathbf I-\mathbf A')
+=\det[\mathbf Q(\lambda\mathbf I-\mathbf A)\mathbf Q^{\mathsf T}]
+=(\det\mathbf Q)^2p(\lambda)=p(\lambda). \tag{4.3}
+\]
+<p>The last equality uses \((\det\mathbf Q)^2=1\). The coefficients and roots agree in both bases. This makes the \(I_r\) <dfn>invariants</dfn>, meaning quantities unchanged by a change of orthonormal axes. Eigenvectors change components according to \(\mathbf n'=\mathbf Q\mathbf n\), but their physical directions remain unchanged. Rotating the coordinate system does not rotate the material.</p>
+<p>For (4.1), \(I_1=10\), \(\operatorname{tr}(\mathbf A^2)=38\), \(I_2=(100-38)/2=31\), and \(I_3=30\). Hence \(p(\lambda)=\lambda^3-10\lambda^2+31\lambda-30=(\lambda-5)(\lambda-3)(\lambda-2)\). Independently expanding the block determinant gives \((\lambda-2)[(\lambda-4)^2-1]\). These calculations check the signs in (4.2). Using \(\det(\mathbf A-\lambda\mathbf I)\) instead reverses the overall polynomial sign in three dimensions and leaves its roots unchanged.</p>
+<p>For each root, solve the null-space equation before normalizing. At \(\lambda=5\), its rows give \(n_1=n_2\) and \(n_3=0\). Therefore \(2n_1^2=1\), leaving the two signs of one principal axis. This particular matrix has rank two after subtracting \(5\mathbf I\). A repeated eigenvalue can instead yield rank one or zero. The unit-length condition cannot select a unique axis inside a multidimensional null space.</p>
+
+<h2 id="spectral" data-video="c9XGr1tELaA" data-start="1624" data-end="2035">Why symmetry gives principal axes <a class="timestamp" href="https://www.youtube.com/watch?v=c9XGr1tELaA&amp;t=1624s">L16 27:04</a></h2>
+<p>The cubic alone does not explain why a real symmetric tensor has real eigenvalues and mutually perpendicular principal axes. A constructive proof establishes both. Define the real quadratic form \(R(\mathbf n)=\mathbf n\cdot\mathbf A\mathbf n\) on the unit sphere. It is continuous on a compact set, so it attains a maximum. Apply a real Lagrange multiplier to \(n_i n_i=1\):</p>
+\[
+\frac{\partial}{\partial n_k}
+\{n_i A_{ij}n_j-\lambda(n_i n_i-1)\}
+=A_{kj}n_j+n_i A_{ik}-2\lambda n_k
+=2(A_{kj}n_j-\lambda n_k)=0. \tag{4.4}
+\]
+<p>The last equality uses symmetry. The maximizer is therefore a real unit eigenvector. If \(\mathbf m\) is perpendicular to it, then \(\mathbf n\cdot\mathbf A\mathbf m=(\mathbf A\mathbf n)\cdot\mathbf m=\lambda\mathbf n\cdot\mathbf m=0\). Consequently \(\mathbf A\) maps its perpendicular plane into that plane. Repeat the same maximum argument on the unit circle there, and then on the remaining perpendicular line. This constructs three real orthonormal eigenvectors. It proves the finite-dimensional spectral theorem needed here without assuming anything about the cubic's roots.</p>
+<p>For any two eigenvectors, symmetry gives</p>
+\[
+\lambda_a\,\mathbf n^{(b)}\cdot\mathbf n^{(a)}
+=\mathbf n^{(b)}\cdot\mathbf A\mathbf n^{(a)}
+=\mathbf n^{(a)}\cdot\mathbf A\mathbf n^{(b)}
+=\lambda_b\,\mathbf n^{(a)}\cdot\mathbf n^{(b)}. \tag{4.5}
+\]
+<p>Distinct eigenvalues force their dot product to vanish. For equal eigenvalues, division by their difference is unavailable. An orthogonal pair can still be chosen in a repeated eigenspace, but arbitrary vectors in that space need not be perpendicular. For \(\operatorname{diag}(3,3,2)\), every vector in the \(x_1x_2\) plane belongs to eigenvalue 3. The plane is determined, but no unique axes within it are selected. If all three values equal \(\lambda\), diagonalization gives \(\mathbf A=\lambda\mathbf I\), and every direction is principal.</p>
+<p><dfn>Positive definiteness</dfn> means \(\mathbf z\cdot\mathbf A\mathbf z\gt0\) for every nonzero real \(\mathbf z\). Expand \(\mathbf z=\sum_a z_a^*\mathbf n^{(a)}\). Orthogonality gives \(\mathbf z\cdot\mathbf A\mathbf z=\sum_a\lambda_a(z_a^*)^2\). All positive eigenvalues make this positive; conversely choosing \(\mathbf z=\mathbf n^{(a)}\) proves that every eigenvalue must be positive. Replacing strict positivity by nonnegativity defines positive semidefiniteness. Several eigenvalues can then vanish, including all three.</p>
+<p>The running conductivity is positive definite, so \(\mathbf q\cdot\mathbf g=-k_*\mathbf g\cdot\mathbf A\mathbf g\lt0\) for nonzero gradients. This checks the direction of heat transfer in the proposed law. A full thermodynamic claim additionally requires temperature and entropy balance. The eigenvalue arguments above require symmetry. The real nonsymmetric matrix \(\begin{bmatrix}0&amp;-1\\1&amp;0\end{bmatrix}\) has eigenvalues \(\pm i\), while \(\begin{bmatrix}1&amp;1\\0&amp;1\end{bmatrix}\) has only one independent eigenvector. Neither has a real orthonormal principal basis.</p>
+
+<h2 id="principal-axes" data-video="0Pz28dVwB5I" data-start="249" data-end="1528">Transforming into the principal basis <a class="timestamp" href="https://www.youtube.com/watch?v=0Pz28dVwB5I&amp;t=249s">L17 4:09</a></h2>
+<p>Put the selected principal directions in the rows of \(\mathbf Q\): \(Q_{ai}=n_i^{(a)}\). The label \(a\) selects an axis, and \(i\) selects its original-basis component. Their dot products give \(Q_{ai}Q_{bi}=\delta_{ab}\), proving orthogonality of the transformation. A vector's principal components are \(z_a^*=Q_{ai}z_i\). The principal directions themselves have component lists \((1,0,0)\), \((0,1,0)\), and \((0,0,1)\) in that basis.</p>
+<p>Calculate each transformed tensor entry while keeping the eigenvector labels fixed:</p>
+\[
+A^*_{ab}=n_i^{(a)}A_{ij}n_j^{(b)}
+=\lambda_b n_i^{(a)}n_i^{(b)}
+=\lambda_b\delta_{ab},\qquad \text{no sum on }b. \tag{4.6}
+\]
+<p>Only the diagonal survives: \(\mathbf Q\mathbf A\mathbf Q^{\mathsf T}=\operatorname{diag}(\lambda_1,\lambda_2,\lambda_3)\). Reversing the transformation gives the <dfn>spectral representation</dfn> \(\mathbf A=\sum_a\lambda_a\mathbf n^{(a)}\otimes\mathbf n^{(a)}\). Each dyad sends \(\mathbf z\) to \(\mathbf n^{(a)}[\mathbf n^{(a)}\cdot\mathbf z]\), extracting a principal component before scaling it. <a href="https://solidmechanics.org/Text/AppendixC/AppendixC.php">Bower, Appendix C, §C.5</a>, uses the same row-based direction-cosine transformation; (4.6) establishes its diagonal form here.</p>
+<p>For \(\mathbf g=(1,0,0)\) K/m, the principal components are \((1,-1,0)/\sqrt2\). Diagonal multiplication gives \(\mathbf q^*=(-5,3,0)/\sqrt2\) W/m². Transforming back gives \(\mathbf q=\mathbf Q^{\mathsf T}\mathbf q^*=(-4,-1,0)\) W/m², as before. Changing the representation simplifies calculation while retaining the physical vector. The material has not become isotropic: unequal principal conductivities remain unequal in every basis.</p>
+<p>If \(\mathbf A\) is invertible, multiply \(\mathbf A\mathbf n^{(a)}=\lambda_a\mathbf n^{(a)}\) by \(\mathbf A^{-1}\). Dividing by the nonzero eigenvalue gives \(\mathbf A^{-1}\mathbf n^{(a)}=\lambda_a^{-1}\mathbf n^{(a)}\). Thus the inverse has the same principal directions and reciprocal eigenvalues. They are \(1/5,1/3,1/2\) in the running example. If any eigenvalue vanishes, the inverse does not exist. Reciprocal eigenvalues then cannot be assigned to an inverse response.</p>
+
+<h2 id="derivatives" data-video="HaPy3c2IC1o" data-start="43" data-end="1210">Fields, comma derivatives and gradient conventions <a class="timestamp" href="https://www.youtube.com/watch?v=HaPy3c2IC1o&amp;t=43s">L18 0:43</a></h2>
+<p>A principal basis at one point does not yet describe variation between neighboring points. Let \(f(\mathbf x,t)\), \(v_i(\mathbf x,t)\), and \(A_{ij}(\mathbf x,t)\) be scalar, vector, and second-order tensor fields. Position \(\mathbf x\) is in metres and time \(t\) in seconds. A partial spatial derivative holds the other coordinates and time fixed. We abbreviate \(\partial f/\partial x_j\) by \(f_{,j}\) or \(\partial_j f\), and \(\partial A_{ij}/\partial x_k\) by \(A_{ij,k}\). The comma separates component indices from derivative indices.</p>
+<p>Componentwise differentiation gives tensors in a fixed Cartesian basis because its vectors do not vary with position. Under a constant orthogonal transformation, \(x'_a=Q_{ai}x_i\), the chain rule gives \(\partial/\partial x'_b=Q_{bj}\partial/\partial x_j\). Combining this with \(v'_a=Q_{ai}v_i\) gives \(v'_{a,b}=Q_{ai}Q_{bj}v_{i,j}\), the second-order tensor transformation law. In a position-dependent basis, derivatives of the basis enter as well. The partial-derivative formulas below cannot be transferred unchanged to cylindrical or spherical components.</p>
+<p>We define the vector gradient by the linear map predicting a local increment:</p>
+\[
+G_{ij}=(\nabla\mathbf v)_{ij}=v_{i,j},\qquad
+v_i(\mathbf x+\mathbf h)-v_i(\mathbf x)=G_{ij}h_j+o(|\mathbf h|). \tag{4.7}
+\]
+<p>The component index is first, and the derivative index second. Here \(\mathbf h\) is a small displacement, and the remainder divided by \(|\mathbf h|\) tends to zero with \(\mathbf h\). For velocity, \(G_{ij}\) has units s⁻¹. L19 also uses the derivative-first outer product \(\nabla\otimes\mathbf v\), with entries \(v_{j,i}\). Its matrix is \(\mathbf G^{\mathsf T}\). Either convention works when the contraction is explicit. Silent transposition exchanges the input and output roles.</p>
+<p>Simple shear, \(\mathbf v=(\gamma x_2,0,0)\) with constant \(\gamma\) in s⁻¹, has only \(G_{12}=\gamma\) nonzero. For \(\mathbf h=h\mathbf e_2\), the increment is exactly \(\gamma h\mathbf e_1\). The transposed matrix acting on this displacement gives zero. This nonsymmetric field detects a convention error that a diagonal field conceals. A divergence test alone cannot detect it because transposition preserves trace.</p>
+<p>Derivative index counting remains the usual free-index counting. The Hessian \(f_{,ij}\), the array of second derivatives of a scalar, has order two; \(v_{k,ij}\) has order three. Contracting to \(v_{i,ij}\) leaves only \(j\) free, while \(v_{i,i}\) is scalar. Independent Cartesian coordinates satisfy \(x_{i,j}=\delta_{ij}\), hence \(x_{i,i}=3\). Mixed derivatives commute when the relevant second derivatives are continuous in a neighborhood. We assume that regularity whenever we use \(v_{k,ij}=v_{k,ji}\).</p>
+
+<h2 id="operators" data-video="HaPy3c2IC1o" data-start="1210" data-end="2094">Gradient, divergence, curl and Laplacian <a class="timestamp" href="https://www.youtube.com/watch?v=HaPy3c2IC1o&amp;t=1210s">L18 20:10</a></h2>
+<p>The scalar gradient \((\nabla f)_i=f_{,i}\) gives directional rates: along the line \(\mathbf x+s\mathbf n\), for a unit \(\mathbf n\), \(df/ds=f_{,i}n_i\). The divergence \(\operatorname{div}\mathbf v=v_{i,i}\) measures outward flux per volume. On a small box, the opposite faces normal to \(\mathbf e_1\) contribute \([v_1(x_1+\Delta x_1/2)-v_1(x_1-\Delta x_1/2)]\Delta x_2\Delta x_3\). Dividing by volume and shrinking gives \(v_{1,1}\). Summing the other two pairs gives the divergence.</p>
+<p>Using the alternating symbol \(\epsilon_{ijk}\), with value +1 for even permutations of 123, −1 for odd permutations and zero for repeated labels, define</p>
+\[
+(\nabla\times\mathbf v)_i=\epsilon_{ijk}v_{k,j},\qquad
+\nabla^2f=f_{,jj},\qquad
+(\nabla^2\mathbf v)_i=v_{i,jj}. \tag{4.8}
+\]
+<p>For simple shear, divergence is zero and curl is \((0,0,-\gamma)\) s⁻¹. Thus a divergence-free field can have spatial variation and local rotation. For rigid rotational velocity \(\mathbf v=(-\omega x_2,\omega x_1,0)\), curl is \((0,0,2\omega)\). The factor two distinguishes vorticity, defined as curl of velocity, from angular velocity in this motion. A general motion needs the decomposition developed later in the course.</p>
+<p>For twice continuously differentiable fields, antisymmetry proves \((\nabla\times\nabla f)_i=\epsilon_{ijk}f_{,kj}=0\). The derivative pair is symmetric in \(j,k\), while epsilon is antisymmetric. Likewise \(\operatorname{div}(\nabla\times\mathbf v)=\epsilon_{ijk}v_{k,ji}=0\). Swapping the two summed derivative labels changes the sign while leaving the value unchanged. The contraction must therefore equal its own negative.</p>
+<p>The double curl follows from the epsilon contraction identity:</p>
+\[
+[\nabla\times(\nabla\times\mathbf v)]_i
+=\epsilon_{ijk}\epsilon_{klm}v_{m,lj}
+=(\delta_{il}\delta_{jm}-\delta_{im}\delta_{jl})v_{m,lj}
+=v_{j,ij}-v_{i,jj}. \tag{4.9}
+\]
+<p>In vector notation this is \(\nabla(\operatorname{div}\mathbf v)-\nabla^2\mathbf v\). These local identities do not establish a globally single-valued potential for every curl-free field. On the punctured plane, \(\mathbf v=(-x_2,x_1,0)/(x_1^2+x_2^2)\) has zero curl away from the excluded axis. Parametrize the unit circle by \((\cos s,\sin s,0)\): its circulation integrand is 1, so its circulation is \(2\pi\). No spanning disk lies entirely within the field's smooth domain. The domain, as well as the derivative, matters.</p>
+
+<h2 id="tensor-operators" data-video="UQdyGT4Gs0o" data-start="349" data-end="1125">Tensor derivatives and distinct contractions <a class="timestamp" href="https://www.youtube.com/watch?v=UQdyGT4Gs0o&amp;t=349s">L19 5:49</a></h2>
+<p>The gradient of \(A_{ij}\) has components \(A_{ij,k}\). Its three possible contractions are \(A_{ij,j}\), \(A_{ij,i}\), and \(A_{ii,k}\). We define \((\operatorname{div}\mathbf A)_i=A_{ij,j}\), called row divergence, because it is compatible with surface vectors \(\mathbf A\mathbf n\). The second is \((\operatorname{div}\mathbf A^{\mathsf T})_j=A_{ij,i}\), and the third is \([\nabla\operatorname{tr}\mathbf A]_k\). Symmetry makes the first two agree after relabeling the free index. It does not identify either with the gradient of the trace.</p>
+<p>For \(A_{12}=x_2/L\) with all other components zero, where \(L\) is a fixed length, row divergence is \((1/L,0,0)\). The other divergence and the trace gradient both vanish. This nonsymmetric example distinguishes the operations. To vary the running conductivity, instead set \(\alpha=1+x_1/L\) and \(\mathbf K(\mathbf x)=k_*\alpha\mathbf A\), restricting attention to \(x_1\gt-L\). The principal directions stay fixed, while the three principal conductivities change with position. Row divergence becomes \(k_*\mathbf A\nabla\alpha=(k_*/L)(4,1,0)\), in W/(m² K).</p>
+<p>A tensor curl needs a separate convention. We take the curl of each row:</p>
+\[
+(\operatorname{Curl}\mathbf A)_{ip}=\epsilon_{pjk}A_{ik,j}. \tag{4.10}
+\]
+<p>The first label chooses a row vector and the second its curl component. The L19 expression \(\epsilon_{jkp}A_{ik,j}\) is equivalent by cyclic permutation of epsilon. A column-wise curl is another operation. For a symmetric field, the trace of our curl is \(\epsilon_{ijk}A_{ik,j}=0\): for fixed \(j\), differentiating preserves symmetry in \(i,k\), and epsilon is antisymmetric in those labels. This proves a scalar identity, not that the entire tensor curl vanishes.</p>
+<p>The product rule links these operations to physical variation. For scalars \(\alpha,f\), \((\alpha f_{,i})_{,i}=\alpha f_{,ii}+\alpha_{,i}f_{,i}\). Equivalently \(\operatorname{div}(\alpha\nabla f)=\alpha\nabla^2f+\nabla\alpha\cdot\nabla f\). For anisotropic heat conduction the corresponding formula is \(\operatorname{div}\mathbf q=-K_{ij,i}\theta_{,j}-K_{ij}\theta_{,ji}\). The derivative contracts the flux component index. Retaining the variable-conductivity term is essential even if each local matrix is diagonalizable.</p>
+
+<h2 id="integral" data-video="UQdyGT4Gs0o" data-start="1125" data-end="2260">From local derivatives to boundary integrals <a class="timestamp" href="https://www.youtube.com/watch?v=UQdyGT4Gs0o&amp;t=1125s">L19 18:45</a></h2>
+<p>Let \(\Omega\) be a bounded region with piecewise smooth boundary \(\partial\Omega\), outward unit normal \(\mathbf n\), volume element \(dV\), and area element \(dA\). For a continuously differentiable tensor field, the componentwise divergence theorem reads</p>
+\[
+\int_\Omega C_{i\cdots,k}\,dV
+=\int_{\partial\Omega}C_{i\cdots}n_k\,dA. \tag{4.11}
+\]
+<p>On a box, integrate the derivative in \(x_k\), holding transverse coordinates fixed. The fundamental theorem of calculus yields values on the two opposite faces, with their opposite signs. Partitioning a region into small cells cancels internal face contributions and leaves the boundary flux. This explains the outward orientation in (4.11). The standard divergence theorem extends the argument to regular regions by a limiting construction. For an internal discontinuity, apply it on smooth subregions and retain any noncancelling interface terms.</p>
+<p>Contracting indices gives \(\int_\Omega v_{i,i}\,dV=\int_{\partial\Omega}v_i n_i\,dA\). Keeping a free component gives \(\int_\Omega A_{ij,j}\,dV=\int_{\partial\Omega}A_{ij}n_j\,dA\). For a scalar it gives \(\int_\Omega\nabla f\,dV=\int_{\partial\Omega}f\mathbf n\,dA\). Multiplication by epsilon gives \(\int_\Omega\nabla\times\mathbf v\,dV=\int_{\partial\Omega}\mathbf n\times\mathbf v\,dA\). Different apparent vector theorems are componentwise applications of the same identity.</p>
+<p>Take the position vector itself: \(x_{i,i}=3\) gives \(\int_{\partial\Omega}\mathbf x\cdot\mathbf n\,dA=3|\Omega|\), where \(|\Omega|\) denotes volume. Since \(\nabla(|\mathbf x|^2)=2\mathbf x\), the fourth tutorial's surface integral is \(\int_{\partial\Omega}\nabla(|\mathbf x|^2)\cdot\mathbf n\,dA=6|\Omega|\). Both sides have units m³. Neither the shape of the region nor the choice of origin changes the result; shifting the origin adds a constant vector whose closed-surface flux vanishes.</p>
+<p>Stokes' theorem instead relates an oriented surface \(S\) to its boundary curve \(C\):</p>
+\[
+\int_S(\nabla\times\mathbf v)\cdot\mathbf n\,dA
+=\oint_C\mathbf v\cdot d\mathbf x. \tag{4.12}
+\]
+<p>The boundary traversal follows the right-hand rule relative to the surface normal. On an infinitesimal rectangle in the \(x_1x_2\) plane, its four directed edge integrals sum to \((v_{2,1}-v_{1,2})\Delta x_1\Delta x_2\) at leading order. This coefficient is the third curl component. Subdivision cancels shared oriented edges, leaving only boundary circulation. The field must be smooth on the chosen surface. For rigid rotation \(\mathbf v=(-\omega x_2,\omega x_1,0)\) on a radius-\(R\) disk, the surface integral is \(2\omega\pi R^2\). Parameterizing its circle gives \(\mathbf v\cdot d\mathbf x=\omega R^2 ds\), and the line integral agrees. Reversing orientation reverses both signs.</p>
+
+<h2 id="tutorial" data-video="ljXaTYVt6JQ" data-start="43" data-end="1931">The fourth tutorial: a numerical eigensystem <a class="timestamp" href="https://www.youtube.com/watch?v=ljXaTYVt6JQ&amp;t=43s">L20 0:43</a></h2>
+<p>The six tutorial tasks connect orthogonality, principal-basis components, inverse eigenvalues, a numerical eigensystem, the scalar product rule and the closed-surface integral above. Equations (4.5)–(4.6) establish the first two, and invertibility supplies the third. The numerical matrix is</p>
+\[
+\mathbf B=\begin{bmatrix}5&amp;2&amp;0\\2&amp;2&amp;0\\0&amp;0&amp;3\end{bmatrix},\qquad
+\det(\lambda\mathbf I-\mathbf B)
+=(\lambda-3)[(\lambda-5)(\lambda-2)-4]
+=(\lambda-3)(\lambda-6)(\lambda-1). \tag{4.13}
+\]
+<p>For eigenvalue 6, the first row gives \(-n_1+2n_2=0\); normalize to \((2,1,0)/\sqrt5\). For eigenvalue 1, the first row gives \(4n_1+2n_2=0\); choose \((-1,2,0)/\sqrt5\). For eigenvalue 3, the upper block is nonsingular, forcing \(n_1=n_2=0\), and choose \((0,0,1)\). The first two vectors have dot product \((-2+2)/5=0\) and cross product \((0,0,1)\), giving a right-handed ordered basis for values 6, 1, 3.</p>
+<p>The weighted dyads reconstruct the upper block as \(\frac65\begin{bmatrix}4&amp;2\\2&amp;1\end{bmatrix}+\frac15\begin{bmatrix}1&amp;-2\\-2&amp;4\end{bmatrix}=\begin{bmatrix}5&amp;2\\2&amp;2\end{bmatrix}\). The third contributes only \(B_{33}=3\). This checks normalization and the association between each eigenvalue and its own vector. Relabeling eigenvalues without relabeling their vectors fails reconstruction even though the list of eigenvalues remains correct.</p>
+
+<h2 id="implementation">Executable principal-response and derivative checks</h2>
+<p>The program computes the eigensystem of (4.1), compares direct heat-flux calculation with diagonal multiplication, and distinguishes both divergences on a nonsymmetric field. It uses NumPy, reads no files and prints only results. Coordinates are numerical metre values. Assertions check independent algebraic forms; they do not validate a material law. A failed assertion signals an inconsistent eigensystem, transformation or derivative implementation.</p>
+<div class="codewrap"><button class="copybtn" type="button" onclick="copyCode(this)">Copy</button><pre data-run="ch04"><code class="language-python">import numpy as np
+
+matrix = np.array([[4., 1., 0.], [1., 4., 0.], [0., 0., 2.]])
+values, vectors = np.linalg.eigh(matrix)
+gradient = np.array([1., 0., 0.])
+flux = -matrix @ gradient
+principal_flux = -values * (vectors.T @ gradient)
+assert np.allclose(vectors @ principal_flux, flux)
+assert np.allclose(matrix @ vectors, vectors * values)
+assert np.allclose(vectors.T @ vectors, np.eye(3))
+invariants = [np.trace(matrix),
+              (np.trace(matrix)**2 - np.trace(matrix @ matrix)) / 2,
+              np.linalg.det(matrix)]
+
+
+def field(point):
+    tensor = np.zeros((3, 3))
+    tensor[0, 1] = point[1]
+    return tensor
+
+
+point = np.array([0.3, 0.4, 0.5])
+step = 1.e-4
+derivatives = np.stack([
+    (field(point + step * axis) - field(point - step * axis))
+    / (2 * step) for axis in np.eye(3)
+], axis=2)
+row_div = np.einsum('ijj-&gt;i', derivatives)
+column_div = np.einsum('iji-&gt;j', derivatives)
+assert np.allclose(row_div, [1., 0., 0.])
+assert np.allclose(column_div, [0., 0., 0.])
+print('principal values:', np.round(values, 6).tolist())
+print('invariants:', np.round(invariants, 6).tolist())
+print('flux W/m2:', flux.tolist())
+print('row divergence:', np.round(row_div, 6).tolist())
+print('column divergence:', np.round(column_div, 6).tolist())</code></pre></div>
+<pre data-output="ch04">principal values: [2.0, 3.0, 5.0]
+invariants: [10.0, 31.0, 30.0]
+flux W/m2: [-4.0, -1.0, 0.0]
+row divergence: [1.0, 0.0, 0.0]
+column divergence: [0.0, 0.0, 0.0]</pre>
+<p>The eigensolver returns values in ascending order and vectors in columns, so its eigenvector matrix is the transpose of our row-based \(\mathbf Q\). Individual signs may differ between implementations; repeated values also permit rotations within an eigenspace. Compare reconstructed tensors and physical outputs. The central difference is exact up to roundoff for this affine test field. For nonlinear fields it also has truncation error, while excessively small steps amplify roundoff.</p>
+
+<h2 id="exercises">Exercises with worked solutions</h2>
+<p><strong>1. Reconstruct the response.</strong> Use the principal conductivities 5, 3, 2 W/(m K) and the three directions in the opening section to recover \(\mathbf K\). Find flux for \(\mathbf g=(0,2,0)\) K/m.</p>
+<details><summary>Solution</summary><p>The first two weighted dyads give \(\frac52\begin{bmatrix}1&amp;1\\1&amp;1\end{bmatrix}+\frac32\begin{bmatrix}1&amp;-1\\-1&amp;1\end{bmatrix}=\begin{bmatrix}4&amp;1\\1&amp;4\end{bmatrix}\). The third adds 2 in the remaining diagonal. Multiplication gives \(\mathbf q=(-2,-8,0)\) W/m². The nonzero transverse component follows from the off-diagonal conductivity in the laboratory basis; it is retained when the principal calculation is transformed back.</p></details>
+<p><strong>2. Repeated eigenvalues.</strong> For \(\mathbf D=\operatorname{diag}(3,3,2)\), find the rank of \(\mathbf D-3\mathbf I\) and every unit eigenvector for eigenvalue 3. Are they all mutually perpendicular?</p>
+<details><summary>Solution</summary><p>The matrix \(\operatorname{diag}(0,0,-1)\) has rank one. Its null space is the \(x_1x_2\) plane, with unit vectors \((\cos s,\sin s,0)\). Two have dot product \(\cos(s-r)\), which is generally nonzero. An orthonormal pair can be selected, such as \(\mathbf e_1,\mathbf e_2\), but the tensor does not select that particular pair. The repeated eigenspace is determined while its internal axes remain arbitrary.</p></details>
+<p><strong>3. Inverse and positivity.</strong> Find the inverse of tutorial matrix \(\mathbf B\). Is \(\mathbf B-2\mathbf I\) positive definite?</p>
+<details><summary>Solution</summary><p>The upper block determinant is 6, so its inverse is \(\frac16\begin{bmatrix}2&amp;-2\\-2&amp;5\end{bmatrix}\), and the final diagonal entry is \(1/3\). The inverse eigenvalues are \(1/6,1,1/3\), with the respective original eigenvectors. Subtracting \(2\mathbf I\) shifts the original eigenvalues to 4, −1, 1 without changing their vectors. The vector \((-1,2,0)/\sqrt5\) then has quadratic form −1, proving that the shifted tensor is indefinite.</p></details>
+<p><strong>4. A gradient as a map.</strong> Let \(\mathbf v=(a x_2,b x_1,0)\), with \(a,b\) in s⁻¹. Find its gradient, divergence, curl, and velocity difference under displacement \(h\mathbf e_1\).</p>
+<details><summary>Solution</summary><p>The component-first gradient has rows \((0,a,0),(b,0,0),(0,0,0)\). Its trace is zero and its curl is \((0,0,b-a)\). Acting on \(h\mathbf e_1\) gives \((0,bh,0)\), the exact difference for this affine field. A derivative-first matrix requires the transposed contraction. For \(a=b\), curl vanishes although the field still varies, showing that zero curl does not imply a constant vector field.</p></details>
+<p><strong>5. Three contractions.</strong> For \(A_{ij}=x_i x_j/L^2\), calculate \(A_{ij,j}\), \(A_{ij,i}\), and \(A_{ii,k}\), including units.</p>
+<details><summary>Solution</summary><p>The product rule gives \((x_i x_j)_{,j}=\delta_{ij}x_j+x_i\delta_{jj}=4x_i\), so row divergence is \(4x_i/L^2\). Symmetry gives the other divergence \(4x_j/L^2\). The trace is \(|\mathbf x|^2/L^2\), whose gradient is \(2x_k/L^2\). Every result has units m⁻¹ because the original tensor is dimensionless. Symmetry equates the two divergences, but does not equate them to the trace gradient.</p></details>
+<p><strong>6. Variable conductivity.</strong> Let \(\theta=\theta_0+c x_1^2\), with \(c\) in K/m², and \(\mathbf K=k_*\alpha\mathbf A\), \(\alpha=1+x_1/L\). Find \(\operatorname{div}\mathbf q\). Which term would constant-conductivity differentiation miss?</p>
+<details><summary>Solution</summary><p>The gradient is \((2c x_1,0,0)\) and \(\mathbf q=-k_*\alpha(8c x_1,2c x_1,0)\). Only the first flux component contributes to divergence, giving \(-8k_*c(1+2x_1/L)\) W/m³. Holding conductivity constant while differentiating would give \(-8k_*c\alpha=-8k_*c(1+x_1/L)\). The omitted term \(-8k_*c x_1/L\) comes from the conductivity gradient. A physical heat-supply prediction additionally needs an energy balance and storage assumptions.</p></details>
+<p><strong>7. The tutorial surface integral.</strong> For a smooth bounded three-dimensional region evaluate \(\int_{\partial\Omega}\nabla(|\mathbf x|^2)\cdot\mathbf n\,dA\). Generalize to dimension \(d\).</p>
+<details><summary>Solution</summary><p>The gradient is \(2\mathbf x\). Divergence gives \(2x_{i,i}=2\delta_{ii}=6\), so the integral is \(6|\Omega|\). In dimension \(d\), the trace of the identity is \(d\), giving \(2d|\Omega|\) with \(d\)-dimensional volume. Closure and outward orientation of the boundary matter; no spatial symmetry of the region is required.</p></details>
+<p><strong>8. A nonzero tensor-curl trace.</strong> Set \(A_{13}=x_2/L\) and all other components zero. Find the trace of its row-wise curl. Explain the effect of adding \(A_{31}=x_2/L\).</p>
+<details><summary>Solution</summary><p>The first row is \((0,0,x_2/L)\), whose curl is \((1/L,0,0)\); other rows vanish. The curl trace is \(1/L\), allowed because \(\mathbf A\) is nonsymmetric. Adding the matching entry makes the original tensor symmetric. Its third row becomes \((x_2/L,0,0)\), whose curl is \((0,0,-1/L)\). This cancels the first diagonal contribution in the trace, while the full curl remains nonzero.</p></details>
+
+<h2 id="limits">What these tools establish</h2>
+<p>Principal axes reduce a real symmetric map to three scalar responses. Repeated eigenspaces retain freedom in their internal axes. Cartesian tensor calculus differentiates the physical field while retaining the role of each component and derivative index. Integral theorems connect these local derivatives to boundary flux and circulation. These operations do not supply a constitutive law, a failure criterion or a boundary-value solution. They supply the algebra and calculus needed to formulate those problems without losing directional information.</p>
+<h2 id="sources">Sources</h2>
+<ul><li>NPTEL, Prof. Gaurav Bhutani: <a href="https://www.youtube.com/watch?v=c9XGr1tELaA">L16, Principal Values and Directions</a>; <a href="https://www.youtube.com/watch?v=0Pz28dVwB5I">L17, part 2</a>; <a href="https://www.youtube.com/watch?v=HaPy3c2IC1o">L18, Tensor Calculus, part 1</a>; <a href="https://www.youtube.com/watch?v=UQdyGT4Gs0o">L19, part 2</a>; <a href="https://www.youtube.com/watch?v=ljXaTYVt6JQ">L20, Tutorial, Week 4</a>.</li><li>A. F. Bower, <a href="https://solidmechanics.org/Text/AppendixC/AppendixC.php"><em>Applied Mechanics of Solids</em>, Appendix C, §§C.5–C.6</a>: orthonormal basis transformations and coordinate derivatives. The spectral proof, local-increment gradient convention, heat-flow models and numerical checks are developed here.</li></ul>
+<!-- BOOK-CONTENT-END --></article><nav class="page-turn" aria-label="Chapter navigation"><a rel="prev" href="chapter-03-determinants-transformations-isotropy.html">Previous chapter</a><a href="index.html">Chapter index</a><a rel="next" href="chapter-05-traction-cauchy-stress-equilibrium.html">Next chapter</a></nav></main></div><footer class="site-footer">Independent study edition. Prof. Gaurav Bhutani’s NPTEL recordings provide the topic spine. Original exposition, source limitations and verification evidence are separately recorded.</footer></body></html>

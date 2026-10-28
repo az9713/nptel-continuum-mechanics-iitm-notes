@@ -1,0 +1,221 @@
+{
+  "chapter": 6,
+  "title": "Principal stresses, Mohr circles and stress invariants",
+  "status": "reviewed — two independent AI reviews",
+  "authored_body_sha256": "e9616a7d79288a56b50e6ecf7aa05244b4f828179604886ecea4532110c5184c",
+  "recordings": [
+    {
+      "video_id": "NkpFHqMq6bQ",
+      "playlist_position": 28,
+      "lecture_label": "Lecture 26",
+      "duration_seconds": 1391,
+      "decoded_audio_duration_seconds": 1390.92175,
+      "complete_decoded_audio": true,
+      "media_sha256": "a0d5dc4a9e525bc1d4bd4e7567a610a955d345adf5e26c5562b28653b6854281",
+      "transcript_first_start": 11.92,
+      "transcript_last_end": 1382.96,
+      "transcript_provenance": "Local faster-whisper small.en machine ASR; not publisher captions"
+    },
+    {
+      "video_id": "dUm4eugKcQo",
+      "playlist_position": 29,
+      "lecture_label": "Lecture 27",
+      "duration_seconds": 3516,
+      "decoded_audio_duration_seconds": 3515.315375,
+      "complete_decoded_audio": true,
+      "media_sha256": "9b9986e5410287051c968e3aa7fd9511013d855d239b8e233850b419770c217a",
+      "transcript_first_start": 12.05,
+      "transcript_last_end": 3507.73,
+      "transcript_provenance": "Local faster-whisper small.en machine ASR; not publisher captions"
+    },
+    {
+      "video_id": "D2JWvOoeY7U",
+      "playlist_position": 30,
+      "lecture_label": "Lecture 28",
+      "duration_seconds": 1933,
+      "decoded_audio_duration_seconds": 1932.27175,
+      "complete_decoded_audio": true,
+      "media_sha256": "00ef36ff42cc520362f25eb30a348b023b1f65ac097ce6aa026b58465cc5f964",
+      "transcript_first_start": 12.3,
+      "transcript_last_end": 1924.21,
+      "transcript_provenance": "Local faster-whisper small.en machine ASR; not publisher captions"
+    },
+    {
+      "video_id": "zVzPAaiXV2E",
+      "playlist_position": 31,
+      "lecture_label": "Lecture 29",
+      "duration_seconds": 3431,
+      "decoded_audio_duration_seconds": 3430.79475,
+      "complete_decoded_audio": true,
+      "media_sha256": "dff98084c4cbd6dfa465b84ff0874cf2d4e4eac847980a7b90d754873d559606",
+      "transcript_first_start": 12.05,
+      "transcript_last_end": 3423.12,
+      "transcript_provenance": "Local faster-whisper small.en machine ASR; not publisher captions"
+    },
+    {
+      "video_id": "oi3O0-4rn6Q",
+      "playlist_position": 32,
+      "lecture_label": "Lecture 30",
+      "duration_seconds": 2668,
+      "decoded_audio_duration_seconds": 2667.508375,
+      "complete_decoded_audio": true,
+      "media_sha256": "746cf123e441b57b1aaf8f4100a638101bfaaf2ca31029b56f4435c76a293a40",
+      "transcript_first_start": 12.24,
+      "transcript_last_end": 2659.54,
+      "transcript_provenance": "Local faster-whisper small.en machine ASR; not publisher captions"
+    }
+  ],
+  "sections": [
+    {
+      "section": "One stress tensor, many plane tractions",
+      "anchor": "traction",
+      "video_id": "NkpFHqMq6bQ",
+      "start": 12,
+      "end": 600,
+      "lecture_material": "Related lecture topic located by the stated span",
+      "research_extension": "Inspected external support is cited locally in the exposition",
+      "teaching_construction": "Expanded exposition, derivations, numerical checks and exercises are independently authored; an anchor does not attribute every statement to the recording"
+    },
+    {
+      "section": "Stress transformation and principal planes",
+      "anchor": "transformation",
+      "video_id": "NkpFHqMq6bQ",
+      "start": 12,
+      "end": 1390,
+      "lecture_material": "Related lecture topic located by the stated span",
+      "research_extension": "Inspected external support is cited locally in the exposition",
+      "teaching_construction": "Expanded exposition, derivations, numerical checks and exercises are independently authored; an anchor does not attribute every statement to the recording"
+    },
+    {
+      "section": "Normal-stress extrema as a constrained problem",
+      "anchor": "principal",
+      "video_id": "dUm4eugKcQo",
+      "start": 12,
+      "end": 1700,
+      "lecture_material": "Related lecture topic located by the stated span",
+      "research_extension": "Inspected external support is cited locally in the exposition",
+      "teaching_construction": "Expanded exposition, derivations, numerical checks and exercises are independently authored; an anchor does not attribute every statement to the recording"
+    },
+    {
+      "section": "The maximum shear and its planes",
+      "anchor": "maximum-shear",
+      "video_id": "dUm4eugKcQo",
+      "start": 1554,
+      "end": 3507,
+      "lecture_material": "Related lecture topic located by the stated span",
+      "research_extension": "Inspected external support is cited locally in the exposition",
+      "teaching_construction": "Expanded exposition, derivations, numerical checks and exercises are independently authored; an anchor does not attribute every statement to the recording"
+    },
+    {
+      "section": "Mohr's circle from a physical plane rotation",
+      "anchor": "mohr",
+      "video_id": "D2JWvOoeY7U",
+      "start": 12,
+      "end": 1000,
+      "lecture_material": "Related lecture topic located by the stated span",
+      "research_extension": "Inspected external support is cited locally in the exposition",
+      "teaching_construction": "Expanded exposition, derivations, numerical checks and exercises are independently authored; an anchor does not attribute every statement to the recording"
+    },
+    {
+      "section": "The three-dimensional feasible stress region",
+      "anchor": "feasible",
+      "video_id": "D2JWvOoeY7U",
+      "start": 1000,
+      "end": 1932,
+      "lecture_material": "Related lecture topic located by the stated span",
+      "research_extension": "Inspected external support is cited locally in the exposition",
+      "teaching_construction": "Expanded exposition, derivations, numerical checks and exercises are independently authored; an anchor does not attribute every statement to the recording"
+    },
+    {
+      "section": "Plane stress retains a third principal value",
+      "anchor": "plane-stress",
+      "video_id": "zVzPAaiXV2E",
+      "start": 12,
+      "end": 1100,
+      "lecture_material": "Related lecture topic located by the stated span",
+      "research_extension": "Inspected external support is cited locally in the exposition",
+      "teaching_construction": "Expanded exposition, derivations, numerical checks and exercises are independently authored; an anchor does not attribute every statement to the recording"
+    },
+    {
+      "section": "Spherical stress, deviatoric stress and invariants",
+      "anchor": "deviator",
+      "video_id": "zVzPAaiXV2E",
+      "start": 1955,
+      "end": 2829,
+      "lecture_material": "Related lecture topic located by the stated span",
+      "research_extension": "Inspected external support is cited locally in the exposition",
+      "teaching_construction": "Expanded exposition, derivations, numerical checks and exercises are independently authored; an anchor does not attribute every statement to the recording"
+    },
+    {
+      "section": "Octahedral shear measures a particular family of planes",
+      "anchor": "octahedral",
+      "video_id": "zVzPAaiXV2E",
+      "start": 2836,
+      "end": 3423,
+      "lecture_material": "Related lecture topic located by the stated span",
+      "research_extension": "Inspected external support is cited locally in the exposition",
+      "teaching_construction": "Expanded exposition, derivations, numerical checks and exercises are independently authored; an anchor does not attribute every statement to the recording"
+    },
+    {
+      "section": "A reproducible method for tutorial stress calculations",
+      "anchor": "tutorial",
+      "video_id": "oi3O0-4rn6Q",
+      "start": 12,
+      "end": 2667,
+      "lecture_material": "Related lecture topic located by the stated span",
+      "research_extension": "Inspected external support is cited locally in the exposition",
+      "teaching_construction": "Expanded exposition, derivations, numerical checks and exercises are independently authored; an anchor does not attribute every statement to the recording"
+    },
+    {
+      "section": "Executable stress-plane and invariant checks",
+      "anchor": "implementation",
+      "video_id": null,
+      "start": null,
+      "end": null,
+      "lecture_material": "",
+      "research_extension": "Inspected external support is cited locally in the exposition",
+      "teaching_construction": "Expanded exposition, derivations, numerical checks and exercises are independently authored; an anchor does not attribute every statement to the recording"
+    },
+    {
+      "section": "Exercises with fully worked solutions",
+      "anchor": "exercises",
+      "video_id": null,
+      "start": null,
+      "end": null,
+      "lecture_material": "",
+      "research_extension": "Inspected external support is cited locally in the exposition",
+      "teaching_construction": "Expanded exposition, derivations, numerical checks and exercises are independently authored; an anchor does not attribute every statement to the recording"
+    },
+    {
+      "section": "From geometry to a material decision",
+      "anchor": "limits",
+      "video_id": null,
+      "start": null,
+      "end": null,
+      "lecture_material": "",
+      "research_extension": "Inspected external support is cited locally in the exposition",
+      "teaching_construction": "Expanded exposition, derivations, numerical checks and exercises are independently authored; an anchor does not attribute every statement to the recording"
+    },
+    {
+      "section": "Sources and attribution",
+      "anchor": "sources",
+      "video_id": null,
+      "start": null,
+      "end": null,
+      "lecture_material": "",
+      "research_extension": "Inspected external support is cited locally in the exposition",
+      "teaching_construction": "Expanded exposition, derivations, numerical checks and exercises are independently authored; an anchor does not attribute every statement to the recording"
+    }
+  ],
+  "references": [
+    {
+      "url": "https://solidmechanics.org/Text/Chapter2_3/Chapter2_3.php",
+      "title": "Applied Mechanics of Solids , §§2.3.3 and 2.3.6–2.3.8",
+      "supports": "Specific claim and locator are given beside the citation in chapter-06-principal-stresses-mohr-invariants.html"
+    }
+  ],
+  "prose_words_including_math": 3801,
+  "solution_count": 7,
+  "executable_listing_count": 1,
+  "visual_boundary": "No comprehensive visual transcription or full audiovisual review is claimed. ASR cannot recover every board input; uncertain inputs are qualified locally."
+}

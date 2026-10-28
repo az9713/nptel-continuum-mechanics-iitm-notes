@@ -1,0 +1,153 @@
+{
+  "chapter": 13,
+  "title": "Viscous and viscoelastic materials",
+  "status": "reviewed — two independent AI reviews",
+  "authored_body_sha256": "68a8043b6bd4796097beab361b95e578a5f6125fcd75a5472dd2bca1ceeb0b13",
+  "recordings": [
+    {
+      "video_id": "wQtZyxw_g0Y",
+      "playlist_position": 55,
+      "lecture_label": "Lecture 54",
+      "duration_seconds": 2400,
+      "decoded_audio_duration_seconds": 2399.364375,
+      "complete_decoded_audio": true,
+      "media_sha256": "6a7c6d86b52b80082275e00e1d10569c569fc68680c652e9c79f41ec474604a0",
+      "transcript_first_start": 12.24,
+      "transcript_last_end": 2391.02,
+      "transcript_provenance": "Local faster-whisper small.en machine ASR; not publisher captions"
+    }
+  ],
+  "sections": [
+    {
+      "section": "Viscous stress, pressure and mechanical dissipation",
+      "anchor": "viscosity",
+      "video_id": "wQtZyxw_g0Y",
+      "start": 12,
+      "end": 388,
+      "lecture_material": "Related lecture topic located by the stated span",
+      "research_extension": "Inspected external support is cited locally in the exposition",
+      "teaching_construction": "Expanded exposition, derivations, numerical checks and exercises are independently authored; an anchor does not attribute every statement to the recording"
+    },
+    {
+      "section": "Rate dependence, yielding and viscosity plateaus",
+      "anchor": "non-newtonian",
+      "video_id": "wQtZyxw_g0Y",
+      "start": 388,
+      "end": 1263,
+      "lecture_material": "Related lecture topic located by the stated span",
+      "research_extension": "Inspected external support is cited locally in the exposition",
+      "teaching_construction": "Expanded exposition, derivations, numerical checks and exercises are independently authored; an anchor does not attribute every statement to the recording"
+    },
+    {
+      "section": "A structural state can evolve at fixed rate",
+      "anchor": "time-dependence",
+      "video_id": "wQtZyxw_g0Y",
+      "start": 1263,
+      "end": 1355,
+      "lecture_material": "Related lecture topic located by the stated span",
+      "research_extension": "Inspected external support is cited locally in the exposition",
+      "teaching_construction": "Expanded exposition, derivations, numerical checks and exercises are independently authored; an anchor does not attribute every statement to the recording"
+    },
+    {
+      "section": "Creep, relaxation and elementary energy balances",
+      "anchor": "elements",
+      "video_id": "wQtZyxw_g0Y",
+      "start": 1355,
+      "end": 1690,
+      "lecture_material": "Related lecture topic located by the stated span",
+      "research_extension": "Inspected external support is cited locally in the exposition",
+      "teaching_construction": "Expanded exposition, derivations, numerical checks and exercises are independently authored; an anchor does not attribute every statement to the recording"
+    },
+    {
+      "section": "Maxwell: a spring and dashpot in series",
+      "anchor": "maxwell",
+      "video_id": "wQtZyxw_g0Y",
+      "start": 1690,
+      "end": 1785,
+      "lecture_material": "Related lecture topic located by the stated span",
+      "research_extension": "Inspected external support is cited locally in the exposition",
+      "teaching_construction": "Expanded exposition, derivations, numerical checks and exercises are independently authored; an anchor does not attribute every statement to the recording"
+    },
+    {
+      "section": "Kelvin–Voigt and the standard linear solid",
+      "anchor": "kelvin",
+      "video_id": "wQtZyxw_g0Y",
+      "start": 1785,
+      "end": 1975,
+      "lecture_material": "Related lecture topic located by the stated span",
+      "research_extension": "Inspected external support is cited locally in the exposition",
+      "teaching_construction": "Expanded exposition, derivations, numerical checks and exercises are independently authored; an anchor does not attribute every statement to the recording"
+    },
+    {
+      "section": "Storage, loss and work in one loading cycle",
+      "anchor": "oscillations",
+      "video_id": "wQtZyxw_g0Y",
+      "start": 1975,
+      "end": 2159,
+      "lecture_material": "Related lecture topic located by the stated span",
+      "research_extension": "Inspected external support is cited locally in the exposition",
+      "teaching_construction": "Expanded exposition, derivations, numerical checks and exercises are independently authored; an anchor does not attribute every statement to the recording"
+    },
+    {
+      "section": "The integral memory form and its initial jump",
+      "anchor": "memory",
+      "video_id": "wQtZyxw_g0Y",
+      "start": 2159,
+      "end": 2318,
+      "lecture_material": "Related lecture topic located by the stated span",
+      "research_extension": "Inspected external support is cited locally in the exposition",
+      "teaching_construction": "Expanded exposition, derivations, numerical checks and exercises are independently authored; an anchor does not attribute every statement to the recording"
+    },
+    {
+      "section": "Numerical checks of flow curves and one memory mechanism",
+      "anchor": "implementation",
+      "video_id": null,
+      "start": null,
+      "end": null,
+      "lecture_material": "",
+      "research_extension": "Inspected external support is cited locally in the exposition",
+      "teaching_construction": "Expanded exposition, derivations, numerical checks and exercises are independently authored; an anchor does not attribute every statement to the recording"
+    },
+    {
+      "section": "Choosing the missing mechanism",
+      "anchor": "limits",
+      "video_id": null,
+      "start": null,
+      "end": null,
+      "lecture_material": "",
+      "research_extension": "Inspected external support is cited locally in the exposition",
+      "teaching_construction": "Expanded exposition, derivations, numerical checks and exercises are independently authored; an anchor does not attribute every statement to the recording"
+    },
+    {
+      "section": "Exercises with worked solutions",
+      "anchor": "exercises",
+      "video_id": null,
+      "start": null,
+      "end": null,
+      "lecture_material": "",
+      "research_extension": "Inspected external support is cited locally in the exposition",
+      "teaching_construction": "Expanded exposition, derivations, numerical checks and exercises are independently authored; an anchor does not attribute every statement to the recording"
+    },
+    {
+      "section": "Sources and further development",
+      "anchor": "sources",
+      "video_id": null,
+      "start": null,
+      "end": null,
+      "lecture_material": "",
+      "research_extension": "Inspected external support is cited locally in the exposition",
+      "teaching_construction": "Expanded exposition, derivations, numerical checks and exercises are independently authored; an anchor does not attribute every statement to the recording"
+    }
+  ],
+  "references": [
+    {
+      "url": "https://solidmechanics.org/Text/Chapter3_6/Chapter3_6.php",
+      "title": "Applied Mechanics of Solids , §§3.6.1–3.6.3",
+      "supports": "Specific claim and locator are given beside the citation in chapter-13-viscous-and-viscoelastic-materials.html"
+    }
+  ],
+  "prose_words_including_math": 3843,
+  "solution_count": 6,
+  "executable_listing_count": 1,
+  "visual_boundary": "No comprehensive visual transcription or full audiovisual review is claimed. ASR cannot recover every board input; uncertain inputs are qualified locally."
+}

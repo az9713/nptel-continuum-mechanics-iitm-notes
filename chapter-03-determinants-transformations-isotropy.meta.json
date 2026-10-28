@@ -1,0 +1,251 @@
+{
+  "chapter": 3,
+  "title": "Determinants, coordinate transformations and isotropy",
+  "status": "reviewed — two independent AI reviews",
+  "authored_body_sha256": "0a4e16e516398496e59e3921ae020791928168760f2b532ee0fd1a7e8facff00",
+  "recordings": [
+    {
+      "video_id": "iXNFF6nmsvs",
+      "playlist_position": 13,
+      "lecture_label": "Lecture 12",
+      "duration_seconds": 1654,
+      "decoded_audio_duration_seconds": 1653.8135,
+      "complete_decoded_audio": true,
+      "media_sha256": "de6ed62cf15f6e825cd0a7f30a05042e97af9b5b363cbe42df80c076f16f8d5d",
+      "transcript_first_start": 11.89,
+      "transcript_last_end": 1645.42,
+      "transcript_provenance": "Local faster-whisper small.en machine ASR; not publisher captions"
+    },
+    {
+      "video_id": "fnVI2tzJ_aQ",
+      "playlist_position": 14,
+      "lecture_label": "Lecture 13",
+      "duration_seconds": 1910,
+      "decoded_audio_duration_seconds": 1909.5335,
+      "complete_decoded_audio": true,
+      "media_sha256": "341fd72b2fb9dab8c84d0a275b118cf15050b1b6b6d9a44fefa4096ab17962bc",
+      "transcript_first_start": 11.79,
+      "transcript_last_end": 1901.33,
+      "transcript_provenance": "Local faster-whisper small.en machine ASR; not publisher captions"
+    },
+    {
+      "video_id": "NaSPrp6-ZIY",
+      "playlist_position": 15,
+      "lecture_label": "Lecture 14",
+      "duration_seconds": 1859,
+      "decoded_audio_duration_seconds": 1858.3335,
+      "complete_decoded_audio": true,
+      "media_sha256": "802948d086b7d0f747ba2158c26ef913aef8c4a62f5b2435cd73dd675a06649f",
+      "transcript_first_start": 12.34,
+      "transcript_last_end": 1849.97,
+      "transcript_provenance": "Local faster-whisper small.en machine ASR; not publisher captions"
+    },
+    {
+      "video_id": "PG96IUqOgq4",
+      "playlist_position": 16,
+      "lecture_label": "Lecture 15",
+      "duration_seconds": 1909,
+      "decoded_audio_duration_seconds": 1908.6535,
+      "complete_decoded_audio": true,
+      "media_sha256": "82a18f9398ab783ddf39edf293107af7842ca9ed0eeebce1de175a08ee415d17",
+      "transcript_first_start": 12.53,
+      "transcript_last_end": 1901.04,
+      "transcript_provenance": "Local faster-whisper small.en machine ASR; not publisher captions"
+    },
+    {
+      "video_id": "UnB0px3MadU",
+      "playlist_position": 22,
+      "lecture_label": "Lecture 11",
+      "duration_seconds": 1686,
+      "decoded_audio_duration_seconds": 1685.3335,
+      "complete_decoded_audio": true,
+      "media_sha256": "d1abc0fed57ee46d95ac11f6909829c7e1be80182913db5afbe029dd717639d3",
+      "transcript_first_start": 12.05,
+      "transcript_last_end": 1677.01,
+      "transcript_provenance": "Local faster-whisper small.en machine ASR; not publisher captions"
+    }
+  ],
+  "sections": [
+    {
+      "section": "The same material response in two sets of axes",
+      "anchor": "model",
+      "video_id": null,
+      "start": null,
+      "end": null,
+      "lecture_material": "",
+      "research_extension": "Inspected external support is cited locally in the exposition",
+      "teaching_construction": "Expanded exposition, derivations, numerical checks and exercises are independently authored; an anchor does not attribute every statement to the recording"
+    },
+    {
+      "section": "Matrices, products and transposes",
+      "anchor": "matrices",
+      "video_id": "UnB0px3MadU",
+      "start": 44,
+      "end": 958,
+      "lecture_material": "Related lecture topic located by the stated span",
+      "research_extension": "Inspected external support is cited locally in the exposition",
+      "teaching_construction": "Expanded exposition, derivations, numerical checks and exercises are independently authored; an anchor does not attribute every statement to the recording"
+    },
+    {
+      "section": "Determinants measure signed volume scaling",
+      "anchor": "determinant",
+      "video_id": "UnB0px3MadU",
+      "start": 958,
+      "end": 1646,
+      "lecture_material": "Related lecture topic located by the stated span",
+      "research_extension": "Inspected external support is cited locally in the exposition",
+      "teaching_construction": "Expanded exposition, derivations, numerical checks and exercises are independently authored; an anchor does not attribute every statement to the recording"
+    },
+    {
+      "section": "Cofactors, an inverse and a conditioning limit",
+      "anchor": "inverse",
+      "video_id": null,
+      "start": null,
+      "end": null,
+      "lecture_material": "",
+      "research_extension": "Inspected external support is cited locally in the exposition",
+      "teaching_construction": "Expanded exposition, derivations, numerical checks and exercises are independently authored; an anchor does not attribute every statement to the recording"
+    },
+    {
+      "section": "A passive orthonormal change of basis",
+      "anchor": "basis",
+      "video_id": "iXNFF6nmsvs",
+      "start": 72,
+      "end": 1646,
+      "lecture_material": "Related lecture topic located by the stated span",
+      "research_extension": "Inspected external support is cited locally in the exposition",
+      "teaching_construction": "Expanded exposition, derivations, numerical checks and exercises are independently authored; an anchor does not attribute every statement to the recording"
+    },
+    {
+      "section": "Deriving the vector and tensor transformation laws",
+      "anchor": "tensor-transform",
+      "video_id": "fnVI2tzJ_aQ",
+      "start": 221,
+      "end": 1325,
+      "lecture_material": "Related lecture topic located by the stated span",
+      "research_extension": "Inspected external support is cited locally in the exposition",
+      "teaching_construction": "Expanded exposition, derivations, numerical checks and exercises are independently authored; an anchor does not attribute every statement to the recording"
+    },
+    {
+      "section": "The conductivity calculation in the rotated laboratory",
+      "anchor": "conductivity",
+      "video_id": null,
+      "start": null,
+      "end": null,
+      "lecture_material": "",
+      "research_extension": "Inspected external support is cited locally in the exposition",
+      "teaching_construction": "Expanded exposition, derivations, numerical checks and exercises are independently authored; an anchor does not attribute every statement to the recording"
+    },
+    {
+      "section": "Isotropy is a restriction on the whole tensor",
+      "anchor": "isotropy",
+      "video_id": "NaSPrp6-ZIY",
+      "start": 44,
+      "end": 808,
+      "lecture_material": "Related lecture topic located by the stated span",
+      "research_extension": "Inspected external support is cited locally in the exposition",
+      "teaching_construction": "Expanded exposition, derivations, numerical checks and exercises are independently authored; an anchor does not attribute every statement to the recording"
+    },
+    {
+      "section": "Orientation, reflections and third-order isotropy",
+      "anchor": "orientation",
+      "video_id": "NaSPrp6-ZIY",
+      "start": 808,
+      "end": 1074,
+      "lecture_material": "Related lecture topic located by the stated span",
+      "research_extension": "Inspected external support is cited locally in the exposition",
+      "teaching_construction": "Expanded exposition, derivations, numerical checks and exercises are independently authored; an anchor does not attribute every statement to the recording"
+    },
+    {
+      "section": "The three-parameter fourth-order isotropic tensor",
+      "anchor": "higher-order",
+      "video_id": "NaSPrp6-ZIY",
+      "start": 1074,
+      "end": 1178,
+      "lecture_material": "Related lecture topic located by the stated span",
+      "research_extension": "Inspected external support is cited locally in the exposition",
+      "teaching_construction": "Expanded exposition, derivations, numerical checks and exercises are independently authored; an anchor does not attribute every statement to the recording"
+    },
+    {
+      "section": "Scalars that survive a change of axes",
+      "anchor": "invariants",
+      "video_id": "NaSPrp6-ZIY",
+      "start": 1178,
+      "end": 1809,
+      "lecture_material": "Related lecture topic located by the stated span",
+      "research_extension": "Inspected external support is cited locally in the exposition",
+      "teaching_construction": "Expanded exposition, derivations, numerical checks and exercises are independently authored; an anchor does not attribute every statement to the recording"
+    },
+    {
+      "section": "A tutorial strategy for transformations",
+      "anchor": "tutorial",
+      "video_id": "PG96IUqOgq4",
+      "start": 40,
+      "end": 1894,
+      "lecture_material": "Related lecture topic located by the stated span",
+      "research_extension": "Inspected external support is cited locally in the exposition",
+      "teaching_construction": "Expanded exposition, derivations, numerical checks and exercises are independently authored; an anchor does not attribute every statement to the recording"
+    },
+    {
+      "section": "Executable checks of covariance and isotropic response",
+      "anchor": "implementation",
+      "video_id": null,
+      "start": null,
+      "end": null,
+      "lecture_material": "",
+      "research_extension": "Inspected external support is cited locally in the exposition",
+      "teaching_construction": "Expanded exposition, derivations, numerical checks and exercises are independently authored; an anchor does not attribute every statement to the recording"
+    },
+    {
+      "section": "What the coordinate calculation establishes",
+      "anchor": "limits",
+      "video_id": null,
+      "start": null,
+      "end": null,
+      "lecture_material": "",
+      "research_extension": "Inspected external support is cited locally in the exposition",
+      "teaching_construction": "Expanded exposition, derivations, numerical checks and exercises are independently authored; an anchor does not attribute every statement to the recording"
+    },
+    {
+      "section": "Exercises with worked solutions",
+      "anchor": "exercises",
+      "video_id": null,
+      "start": null,
+      "end": null,
+      "lecture_material": "",
+      "research_extension": "Inspected external support is cited locally in the exposition",
+      "teaching_construction": "Expanded exposition, derivations, numerical checks and exercises are independently authored; an anchor does not attribute every statement to the recording"
+    },
+    {
+      "section": "Sources and further development",
+      "anchor": "sources",
+      "video_id": null,
+      "start": null,
+      "end": null,
+      "lecture_material": "",
+      "research_extension": "Inspected external support is cited locally in the exposition",
+      "teaching_construction": "Expanded exposition, derivations, numerical checks and exercises are independently authored; an anchor does not attribute every statement to the recording"
+    }
+  ],
+  "references": [
+    {
+      "url": "https://solidmechanics.org/Text/AppendixA/AppendixA.php",
+      "title": "Appendix A, §§A.3.1–A.3.2",
+      "supports": "Specific claim and locator are given beside the citation in chapter-03-determinants-transformations-isotropy.html"
+    },
+    {
+      "url": "https://solidmechanics.org/Text/AppendixB/AppendixB.php",
+      "title": "Appendix B, §§B.1.3–B.1.4 and B2.9",
+      "supports": "Specific claim and locator are given beside the citation in chapter-03-determinants-transformations-isotropy.html"
+    },
+    {
+      "url": "https://solidmechanics.org/Text/Chapter2_7/Chapter2_7.php",
+      "title": "§2.7",
+      "supports": "Specific claim and locator are given beside the citation in chapter-03-determinants-transformations-isotropy.html"
+    }
+  ],
+  "prose_words_including_math": 5410,
+  "solution_count": 6,
+  "executable_listing_count": 1,
+  "visual_boundary": "No comprehensive visual transcription or full audiovisual review is claimed. ASR cannot recover every board input; uncertain inputs are qualified locally."
+}

@@ -1,0 +1,221 @@
+{
+  "chapter": 8,
+  "title": "Deformation gradients and finite and infinitesimal strain",
+  "status": "reviewed — two independent AI reviews",
+  "authored_body_sha256": "5ebc5e0c2b2068470f18347486eadf7cfafa00288bcedad9d7064406747757df",
+  "recordings": [
+    {
+      "video_id": "P5FFj0nhAb4",
+      "playlist_position": 38,
+      "lecture_label": "Lecture 36",
+      "duration_seconds": 2041,
+      "decoded_audio_duration_seconds": 2040.2445625,
+      "complete_decoded_audio": true,
+      "media_sha256": "338c21528718e9a18d395c7734c8a411913374097e7696a7fa61394801390ba4",
+      "transcript_first_start": 11.86,
+      "transcript_last_end": 2032.75,
+      "transcript_provenance": "Local faster-whisper small.en machine ASR; not publisher captions"
+    },
+    {
+      "video_id": "g_13JHpM1JI",
+      "playlist_position": 39,
+      "lecture_label": "Lecture 37",
+      "duration_seconds": 2700,
+      "decoded_audio_duration_seconds": 2699.598375,
+      "complete_decoded_audio": true,
+      "media_sha256": "0fa6278643157d1a20283f49eb537182ebd53303e43223f5067167ac804826ba",
+      "transcript_first_start": 12.14,
+      "transcript_last_end": 2692.18,
+      "transcript_provenance": "Local faster-whisper small.en machine ASR; not publisher captions"
+    },
+    {
+      "video_id": "4v07R8KrsBM",
+      "playlist_position": 40,
+      "lecture_label": "Lecture 38",
+      "duration_seconds": 2068,
+      "decoded_audio_duration_seconds": 2067.2725625,
+      "complete_decoded_audio": true,
+      "media_sha256": "4a21b6ba7e1b2e140ca646af92db80478f39e3af5e9efcbe01dcefacb6012d48",
+      "transcript_first_start": 12.18,
+      "transcript_last_end": 2059.89,
+      "transcript_provenance": "Local faster-whisper small.en machine ASR; not publisher captions"
+    },
+    {
+      "video_id": "pORdJuMa5zc",
+      "playlist_position": 41,
+      "lecture_label": "Lecture 39",
+      "duration_seconds": 2381,
+      "decoded_audio_duration_seconds": 2380.8348125,
+      "complete_decoded_audio": true,
+      "media_sha256": "40959b5215842e9524bcc280404c54307cca23134b0d12bc4a5da8d2be537755",
+      "transcript_first_start": 11.82,
+      "transcript_last_end": 2373.55,
+      "transcript_provenance": "Local faster-whisper small.en machine ASR; not publisher captions"
+    },
+    {
+      "video_id": "YfNv_4MhXM8",
+      "playlist_position": 42,
+      "lecture_label": "Lecture 40",
+      "duration_seconds": 2462,
+      "decoded_audio_duration_seconds": 2461.0365625,
+      "complete_decoded_audio": true,
+      "media_sha256": "966821324aac8937a02338b7a91ab41a095f39676190f6ce7d0e1f1bd5b8bbfc",
+      "transcript_first_start": 11.89,
+      "transcript_last_end": 2452.72,
+      "transcript_provenance": "Local faster-whisper small.en machine ASR; not publisher captions"
+    }
+  ],
+  "sections": [
+    {
+      "section": "Displacement depends on the particle and the description",
+      "anchor": "displacement",
+      "video_id": "P5FFj0nhAb4",
+      "start": 43,
+      "end": 560,
+      "lecture_material": "Related lecture topic located by the stated span",
+      "research_extension": "Inspected external support is cited locally in the exposition",
+      "teaching_construction": "Expanded exposition, derivations, numerical checks and exercises are independently authored; an anchor does not attribute every statement to the recording"
+    },
+    {
+      "section": "The deformation gradient maps neighboring line elements",
+      "anchor": "gradient",
+      "video_id": "P5FFj0nhAb4",
+      "start": 562,
+      "end": 2033,
+      "lecture_material": "Related lecture topic located by the stated span",
+      "research_extension": "Inspected external support is cited locally in the exposition",
+      "teaching_construction": "Expanded exposition, derivations, numerical checks and exercises are independently authored; an anchor does not attribute every statement to the recording"
+    },
+    {
+      "section": "Squared lengths define Green–Lagrange strain",
+      "anchor": "green",
+      "video_id": "g_13JHpM1JI",
+      "start": 51,
+      "end": 592,
+      "lecture_material": "Related lecture topic located by the stated span",
+      "research_extension": "Inspected external support is cited locally in the exposition",
+      "teaching_construction": "Expanded exposition, derivations, numerical checks and exercises are independently authored; an anchor does not attribute every statement to the recording"
+    },
+    {
+      "section": "The same metric comparison in spatial coordinates",
+      "anchor": "euler",
+      "video_id": "g_13JHpM1JI",
+      "start": 593,
+      "end": 970,
+      "lecture_material": "Related lecture topic located by the stated span",
+      "research_extension": "Inspected external support is cited locally in the exposition",
+      "teaching_construction": "Expanded exposition, derivations, numerical checks and exercises are independently authored; an anchor does not attribute every statement to the recording"
+    },
+    {
+      "section": "Angles, rigid motion and displacement gradients",
+      "anchor": "angles",
+      "video_id": "g_13JHpM1JI",
+      "start": 1009,
+      "end": 2692,
+      "lecture_material": "Related lecture topic located by the stated span",
+      "research_extension": "Inspected external support is cited locally in the exposition",
+      "teaching_construction": "Expanded exposition, derivations, numerical checks and exercises are independently authored; an anchor does not attribute every statement to the recording"
+    },
+    {
+      "section": "Infinitesimal strain is a controlled small-gradient approximation",
+      "anchor": "small",
+      "video_id": "4v07R8KrsBM",
+      "start": 73,
+      "end": 2059,
+      "lecture_material": "Related lecture topic located by the stated span",
+      "research_extension": "Inspected external support is cited locally in the exposition",
+      "teaching_construction": "Expanded exposition, derivations, numerical checks and exercises are independently authored; an anchor does not attribute every statement to the recording"
+    },
+    {
+      "section": "Shear, principal strain and volume change",
+      "anchor": "shear",
+      "video_id": "pORdJuMa5zc",
+      "start": 69,
+      "end": 1285,
+      "lecture_material": "Related lecture topic located by the stated span",
+      "research_extension": "Inspected external support is cited locally in the exposition",
+      "teaching_construction": "Expanded exposition, derivations, numerical checks and exercises are independently authored; an anchor does not attribute every statement to the recording"
+    },
+    {
+      "section": "Spherical strain and the plane-strain idealization",
+      "anchor": "plane",
+      "video_id": "pORdJuMa5zc",
+      "start": 1285,
+      "end": 2041,
+      "lecture_material": "Related lecture topic located by the stated span",
+      "research_extension": "Inspected external support is cited locally in the exposition",
+      "teaching_construction": "Expanded exposition, derivations, numerical checks and exercises are independently authored; an anchor does not attribute every statement to the recording"
+    },
+    {
+      "section": "A strain rosette reconstructs a tensor from directional readings",
+      "anchor": "rosette",
+      "video_id": "pORdJuMa5zc",
+      "start": 2041,
+      "end": 2373,
+      "lecture_material": "Related lecture topic located by the stated span",
+      "research_extension": "Inspected external support is cited locally in the exposition",
+      "teaching_construction": "Expanded exposition, derivations, numerical checks and exercises are independently authored; an anchor does not attribute every statement to the recording"
+    },
+    {
+      "section": "Tutorial constructions and their limits",
+      "anchor": "tutorial",
+      "video_id": "YfNv_4MhXM8",
+      "start": 41,
+      "end": 2452,
+      "lecture_material": "Related lecture topic located by the stated span",
+      "research_extension": "Inspected external support is cited locally in the exposition",
+      "teaching_construction": "Expanded exposition, derivations, numerical checks and exercises are independently authored; an anchor does not attribute every statement to the recording"
+    },
+    {
+      "section": "Executable comparison of exact and linearized geometry",
+      "anchor": "implementation",
+      "video_id": null,
+      "start": null,
+      "end": null,
+      "lecture_material": "",
+      "research_extension": "Inspected external support is cited locally in the exposition",
+      "teaching_construction": "Expanded exposition, derivations, numerical checks and exercises are independently authored; an anchor does not attribute every statement to the recording"
+    },
+    {
+      "section": "Exercises with fully worked solutions",
+      "anchor": "exercises",
+      "video_id": null,
+      "start": null,
+      "end": null,
+      "lecture_material": "",
+      "research_extension": "Inspected external support is cited locally in the exposition",
+      "teaching_construction": "Expanded exposition, derivations, numerical checks and exercises are independently authored; an anchor does not attribute every statement to the recording"
+    },
+    {
+      "section": "What strain identifies and what it leaves open",
+      "anchor": "limits",
+      "video_id": null,
+      "start": null,
+      "end": null,
+      "lecture_material": "",
+      "research_extension": "Inspected external support is cited locally in the exposition",
+      "teaching_construction": "Expanded exposition, derivations, numerical checks and exercises are independently authored; an anchor does not attribute every statement to the recording"
+    },
+    {
+      "section": "Sources and attribution",
+      "anchor": "sources",
+      "video_id": null,
+      "start": null,
+      "end": null,
+      "lecture_material": "",
+      "research_extension": "Inspected external support is cited locally in the exposition",
+      "teaching_construction": "Expanded exposition, derivations, numerical checks and exercises are independently authored; an anchor does not attribute every statement to the recording"
+    }
+  ],
+  "references": [
+    {
+      "url": "https://solidmechanics.org/Text/Chapter2_2/Chapter2_2.php",
+      "title": "Applied Mechanics of Solids , §2.2",
+      "supports": "Specific claim and locator are given beside the citation in chapter-08-deformation-and-strain.html"
+    }
+  ],
+  "prose_words_including_math": 3571,
+  "solution_count": 7,
+  "executable_listing_count": 1,
+  "visual_boundary": "No comprehensive visual transcription or full audiovisual review is claimed. ASR cannot recover every board input; uncertain inputs are qualified locally."
+}

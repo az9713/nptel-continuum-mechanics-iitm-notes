@@ -1,0 +1,38 @@
+{
+  "status": "accepted",
+  "reviewer": "AI course-coherence editor C",
+  "independence_limit": "The coherence editor authored chapters06–08 and17–20. This is a cross-course editorial audit; independent chapter mathematics acceptance is recorded separately.",
+  "checks": {
+    "distinct_recording_ids": 66,
+    "recording_assignment_count": 66,
+    "numbered_lessons": 60,
+    "extra_lesson6_uploads": 1,
+    "introductory_trailers": 1,
+    "live_discussions": 4,
+    "source_sidecar_alignment": "checked against manifest and actual ASR evidence",
+    "conventions": "Force-component-first stress and gradients, F/C/B/E/D, Piola transformations, energy normalization and objectivity checked across chapters"
+  },
+  "release_findings": [
+    {
+      "id": "E1",
+      "description": "Replace stale planned lifecycle labels",
+      "resolution": "Manifest and sidecars regenerated with reviewed status.",
+      "status": "closed"
+    },
+    {
+      "id": "E2",
+      "description": "Sort chapter03 index recording labels numerically",
+      "resolution": "Builder sorts numbered lesson labels; original playlist positions remain in source map.",
+      "status": "closed"
+    },
+    {
+      "id": "E3",
+      "description": "Synchronize final ch20 body, sidecars and README evidence targets",
+      "resolution": "Final body/sidecar/editorial hashes aligned; all README targets exist. Source-free checks pass. The present publication record is explicitly pending deployment.",
+      "status": "closed"
+    }
+  ],
+  "private_audit_sha256": "20dca5c30fa170394abcdb68136de9934393f489ddac42ec3b1d2af52fdad161",
+  "scope": "No comprehensive audiovisual transcription or new full-course independent mathematical proof audit.",
+  "final_repair_verification": "The coherence editor rechecked all three release repairs and matched all25 source-free HTML digests against current files. Deployment is a separately recorded later gate."
+}

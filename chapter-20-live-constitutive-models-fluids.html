@@ -1,0 +1,161 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="color-scheme" content="dark light"><meta name="book-content-sha256" content="e50b7d73f946c18ea8c3774831baf8cedbd5ce1e8f7adfc0ccf8a1785310f68a">
+<title>Live discussion 4: constitutive models and fluids · Foundations of Continuum Mechanics</title><link rel="stylesheet" href="assets/book.css">
+<script>window.MathJax={tex:{inlineMath:[['$','$'],['\\(','\\)']],displayMath:[['$$','$$'],['\\[','\\]']],processEscapes:true},svg:{fontCache:'local'},options:{skipHtmlTags:['script','noscript','style','textarea','pre','code']}};</script>
+<script defer src="assets/mathjax-tex-svg.js"></script><script defer src="assets/book.js"></script></head>
+<body><a class="skip" href="#main">Skip to content</a><header class="site-header"><a class="brand" href="index.html">Foundations of Continuum Mechanics · NPTEL IIT Mandi</a><nav class="course-nav" aria-label="Book"><a href="index.html">Chapters</a><a href="source-map.html">Source map</a><a href="references.html">References</a><a href="numerical-lab.html">Numerical lab</a></nav></header>
+<div class="layout"><aside class="toc" id="chapter-toc" aria-label="On this page"><h2>On this page</h2></aside><main id="main"><div class="reading-tools" aria-label="Reading controls"><button id="theme-toggle" aria-pressed="false">Light theme</button><button id="text-toggle" aria-pressed="false">Larger text</button><button id="solutions-toggle" aria-pressed="false">Expand solutions</button><button id="print-page">Print with solutions</button></div>
+<article id="chapter-content"><!-- BOOK-CONTENT-START --><h1>Live discussion 4: constitutive derivatives and model limits</h1>
+<p class="lead">An energy function can generate a stress law, but only if its derivatives, units and stress–strain pairing are correct. The final live discussion concentrates on three calculations: differentiating a strain trace, differentiating the Jacobian through the Cauchy–Green tensor, and recovering linear elasticity from a finite-strain model. These calculations also expose a broader principle: a valid constitutive law must transform correctly, satisfy its thermodynamic restrictions and match the regime in which it is used.</p>
+<p class="source-note">The spoken introduction identifies WmtCtdHy7Rg as live discussion 4. Its full local ASR was read sequentially; board equations were not independently inspected. The three detailed derivative questions are reconstructed below. The lecturer acknowledges an earlier thermodynamic sign error without changing the vanishing-coefficient conclusion; the complete local sign convention is stated here instead. Rheology, plasticity and fluid applications are concise discussion companions to their core chapters, rather than replacements for them.</p>
+
+<h2 id="models" data-video="WmtCtdHy7Rg" data-start="35" data-end="223">What does constitutive closure add? <a class="timestamp" href="https://www.youtube.com/watch?v=WmtCtdHy7Rg&amp;t=35s">0:35</a></h2>
+<p>Balance laws express mass, momentum and energy accounting. They do not specify how a steel sample, rubber sample or viscous liquid responds to a given deformation. A constitutive law relates stress, deformation, rates, temperature and any required history variables. It supplies material information that the balance laws lack. Counting equations motivates closure, but does not prove that a proposed closed system is stable, well posed or experimentally accurate.</p>
+<p>A model describes a selected response regime. The same polymer can require an elastic approximation at one loading rate and a viscoelastic law at another. An isotropic approximation discards directional dependence supported by material structure; wood or a fiber composite generally requires such dependence. Values of stiffness and viscosity must be calibrated for the specimen and conditions. Bower's <a href="https://solidmechanics.org/Text/Chapter3_1/Chapter3_1.php">§3.1</a> separates universal balance relations from experimentally identified material behavior.</p>
+
+<h2 id="objectivity" data-video="WmtCtdHy7Rg" data-start="223" data-end="557">Does dependence on the deformation gradient violate objectivity? <a class="timestamp" href="https://www.youtube.com/watch?v=WmtCtdHy7Rg&amp;t=223s">3:43</a></h2>
+<p>Let \(\mathbf F\) be the dimensionless deformation gradient and \(\mathbf Q(t)\) a proper orthogonal rotation describing a superposed spatial rigid motion. Translation does not affect the gradient. The transformed gradient is \(\mathbf F^*=\mathbf Q\mathbf F\), while spatial Cauchy stress must transform as \(\boldsymbol\sigma^*=\mathbf Q\boldsymbol\sigma\mathbf Q^T\). Objectivity requires this covariance of the stress response. It does not require identical numerical components in differently oriented observer frames.</p>
+<p>Dependence on \(\mathbf F\) is therefore not itself inadmissible. For example, an energy \(W(\mathbf F)=\widehat W(\mathbf F^T\mathbf F)\) is invariant under left multiplication by \(\mathbf Q\), because \(\mathbf C^*=(\mathbf Q\mathbf F)^T(\mathbf Q\mathbf F)=\mathbf C\). A material stress expressed as a function of \(\mathbf C\) and a spatial stress generated from that energy can satisfy the required transformation. The problem is an arbitrary dependence that fails covariance, not the occurrence of the symbol \(\mathbf F\).</p>
+<p>Material isotropy is another condition. It requires energy invariance under proper rotations of material directions, \(W(\mathbf F\mathbf R)=W(\mathbf F)\). An objective anisotropic energy may depend on a specified unit material direction \(\mathbf A\), for instance through \(\mathbf A\cdot\mathbf C\mathbf A\). This preserves observer independence while retaining fiber-direction effects. <a href="https://solidmechanics.org/Text/Chapter3_1/Chapter3_1.php">Bower, §3.1</a>, and <a href="https://solidmechanics.org/Text/Chapter3_5/Chapter3_5.php">§3.5</a> distinguish observer transformation from material orientation. The complete closure discussion is in <a href="chapter-11-constitutive-closure-and-objectivity.html">chapter 11</a>.</p>
+<p>A linear elastic map from symmetric strain to symmetric stress has a six-dimensional input and output, hence 36 entries in a symmetric-pair representation. If it derives from a twice differentiable energy, its Hessian has major symmetry, leaving 21 independent coefficients. Isotropy reduces the law to two constants. Stress symmetry alone does not establish major symmetry; the energy assumption supplies that additional restriction.</p>
+
+<h2 id="thermodynamics" data-video="WmtCtdHy7Rg" data-start="557" data-end="711">What does the free-energy inequality require? <a class="timestamp" href="https://www.youtube.com/watch?v=WmtCtdHy7Rg&amp;t=557s">9:17</a></h2>
+<p>Let \(\psi(\boldsymbol\varepsilon,T)\) be Helmholtz free energy per unit mass in J/kg, \(T&gt;0\) temperature in kelvins, \(\eta\) entropy per unit mass in J/(kg K), and \(\rho\) density in kg/m³. In a small-strain thermoelastic setting with no extra internal variables, the local dissipation inequality can be written</p>
+\[
+\mathcal D=\boldsymbol\sigma:\dot{\boldsymbol\varepsilon}
+-\rho(\dot\psi+\eta\dot T)-\frac{\mathbf q\cdot\nabla T}{T}\geq0.
+\]
+<p>Heat flux \(\mathbf q\) is in W/m² and positive in the transfer direction; \(\mathcal D\) is in W/m³. Expanding \(\dot\psi\) by the chain rule gives coefficients \(\boldsymbol\sigma-\rho\partial\psi/\partial\boldsymbol\varepsilon\) and \(-\rho(\partial\psi/\partial T+\eta)\) on independent reversible strain and temperature rates. If arbitrary signs of those local rates are admitted, those coefficients must vanish. Thus \(\boldsymbol\sigma=\rho\psi_{,\varepsilon}\) and \(\eta=-\psi_{,T}\). The remaining condition is \(-\mathbf q\cdot\nabla T/T\geq0\).</p>
+<p>For Fourier conduction \(\mathbf q=-\kappa\nabla T\), with conductivity \(\kappa\geq0\) in W/(m K), that term is \(\kappa|\nabla T|^2/T\geq0\). Additional internal variables or viscous stresses add dissipation terms and change the constitutive argument. A vanishing-coefficient proof cannot be imported unchanged while silently adding rate restrictions or history dependence.</p>
+
+<h2 id="trace-derivative" data-video="WmtCtdHy7Rg" data-start="711" data-end="1206">Why is the derivative of strain trace the identity? <a class="timestamp" href="https://www.youtube.com/watch?v=WmtCtdHy7Rg&amp;t=711s">11:51</a></h2>
+<p>In infinitesimal elasticity, strain \(\boldsymbol\varepsilon\) is a dimensionless symmetric tensor. Let the stored energy per reference volume be \(W\), in J/m³, numerically equivalent to Pa. For an isotropic linear elastic solid choose Lamé constants \(\lambda,\mu\), in Pa, and</p>
+\[
+W(\boldsymbol\varepsilon)=\tfrac\lambda2(\operatorname{tr}\boldsymbol\varepsilon)^2
++\mu\boldsymbol\varepsilon:\boldsymbol\varepsilon.
+\]
+<p>The least ambiguous derivative on symmetric tensors is a variation: the stress is the symmetric tensor satisfying \(\delta W=\boldsymbol\sigma:\delta\boldsymbol\varepsilon\) for every symmetric variation. Since \(\delta\operatorname{tr}\boldsymbol\varepsilon=\operatorname{tr}(\delta\boldsymbol\varepsilon)=\mathbf I:\delta\boldsymbol\varepsilon\), the gradient of trace is the identity. Product differentiation then gives</p>
+\[
+\delta W=[\lambda(\operatorname{tr}\boldsymbol\varepsilon)\mathbf I
++2\mu\boldsymbol\varepsilon]:\delta\boldsymbol\varepsilon,
+\qquad \boldsymbol\sigma=\lambda(\operatorname{tr}\boldsymbol\varepsilon)\mathbf I+2\mu\boldsymbol\varepsilon.
+\]
+<p>Componentwise, changing \(\varepsilon_{11}\) changes the trace by the same amount; changing an off-diagonal entry does not change it. Thus the component derivative of trace is \(\delta_{ij}\). The variation also protects the factor of two on off-diagonal strain. In \(\boldsymbol\varepsilon:\boldsymbol\varepsilon\), both \(\varepsilon_{12}\) and \(\varepsilon_{21}\) occur. If a six-entry strain vector is used, its shear convention must be stated before converting energy derivatives into stress components.</p>
+<p>Writing strain as \(\boldsymbol\varepsilon=\boldsymbol\eta+(\operatorname{tr}\boldsymbol\varepsilon)\mathbf I/3\), with traceless \(\boldsymbol\eta\), gives \(W=\mu\boldsymbol\eta:\boldsymbol\eta+\tfrac12K(\operatorname{tr}\boldsymbol\varepsilon)^2\), where \(K=\lambda+2\mu/3\) is the bulk modulus. Strict positive quadratic energy requires \(\mu&gt;0\) and \(K&gt;0\); it does not require \(\lambda&gt;0\) separately.</p>
+
+<h2 id="jacobian-derivative" data-video="WmtCtdHy7Rg" data-start="1416" data-end="2027">Why does differentiating the Jacobian produce half an inverse? <a class="timestamp" href="https://www.youtube.com/watch?v=WmtCtdHy7Rg&amp;t=1416s">23:36</a></h2>
+<p>For an orientation-preserving deformation, \(\mathbf C=\mathbf F^T\mathbf F\) is symmetric positive definite and \(J=\det\mathbf F=\sqrt{\det\mathbf C}&gt;0\). The positive root matters. The determinant variation derived in <a href="chapter-19-live-transport-balance-laws.html#jacobi">live discussion 3</a> is \(\delta\det\mathbf C=(\det\mathbf C)\operatorname{tr}(\mathbf C^{-1}\delta\mathbf C)\). Differentiating the square root therefore gives</p>
+\[
+\delta J=\frac{1}{2\sqrt{\det\mathbf C}}\delta\det\mathbf C
+=\frac J2\mathbf C^{-1}:\delta\mathbf C,
+\qquad
+\delta\ln J=\tfrac12\mathbf C^{-1}:\delta\mathbf C.
+\]
+<p>Symmetry of \(\mathbf C^{-1}\) permits the final Frobenius contraction without a printed transpose. The tensor gradients are \(\partial J/\partial\mathbf C=(J/2)\mathbf C^{-1}\) and \(\partial\ln J/\partial\mathbf C=\mathbf C^{-1}/2\). These are gradients under the tensor inner product. If one scalar off-diagonal coordinate changes both \(C_{12}\) and \(C_{21}\), its scalar partial derivative is the sum of the two tensor-slot contributions.</p>
+<p>For a diagonal check, take \(\mathbf C=\operatorname{diag}(4,1,1)\). Then \(J=2\), and changing \(C_{11}\) by \(h\) gives \(\sqrt{4+h}=2+h/4+O(h^2)\). The tensor formula predicts \((J/2)(C^{-1})_{11}=1/4\), agreeing with direct scalar differentiation. A missing half would double the stress contribution generated by a volumetric energy term.</p>
+
+<h2 id="neo-hookean" data-video="WmtCtdHy7Rg" data-start="1206" data-end="1416">An energy generates its correctly paired finite stress <a class="timestamp" href="https://www.youtube.com/watch?v=WmtCtdHy7Rg&amp;t=1206s">20:06</a></h2>
+<p>The compressible neo-Hookean example consistent with the discussion's stated stress is</p>
+\[
+W(\mathbf C)=\frac\mu2(\operatorname{tr}\mathbf C-3)-\mu\ln J
++\frac\lambda2(\ln J)^2.
+\]
+<p>It is one specified compressible neo-Hookean model, not the unique model carrying that name. Energy is per reference volume and \(\lambda,\mu\) have stress units. For isothermal hyperelasticity the second Piola–Kirchhoff stress is \(\mathbf S=2\partial W/\partial\mathbf C\). This pairing follows because \(\mathbf E=(\mathbf C-\mathbf I)/2\) and reference stress power is \(\mathbf S:\dot{\mathbf E}\). Using the preceding derivatives gives</p>
+\[
+\mathbf S=\mu(\mathbf I-\mathbf C^{-1})+\lambda\ln J\,\mathbf C^{-1},
+\qquad
+\boldsymbol\sigma=\frac1J\mathbf F\mathbf S\mathbf F^T
+=\frac\mu J(\mathbf B-\mathbf I)+\frac{\lambda\ln J}{J}\mathbf I,
+\quad \mathbf B=\mathbf F\mathbf F^T.
+\]
+<p>The identity \(\mathbf F\mathbf C^{-1}\mathbf F^T=\mathbf I\) supplies the hinge in the conversion. At the reference state \(\mathbf F=\mathbf I\), both stresses vanish. Under a rigid rotation, \(J=1\) and \(\mathbf B=\mathbf I\), so they also vanish. The energy-to-stress construction agrees with the general hyperelastic formulas in <a href="https://solidmechanics.org/Text/Chapter3_5/Chapter3_5.php">Bower, §3.5.3</a>; his specific neo-Hookean parameterizations need not coincide with the logarithmic volumetric choice here.</p>
+
+<h2 id="linear-limit" data-video="WmtCtdHy7Rg" data-start="2027" data-end="2709">Why must first-order terms survive until cancellation is complete? <a class="timestamp" href="https://www.youtube.com/watch?v=WmtCtdHy7Rg&amp;t=2027s">33:47</a></h2>
+<p>Let \(\mathbf F=\mathbf I+\mathbf H\), \(\|\mathbf H\|\ll1\), and \(\boldsymbol\varepsilon=\operatorname{sym}\mathbf H\). Then \(\mathbf B-\mathbf I=2\boldsymbol\varepsilon+O(\|\mathbf H\|^2)\), \(J=1+\operatorname{tr}\boldsymbol\varepsilon+O(\|\mathbf H\|^2)\), and \(\ln J=\operatorname{tr}\boldsymbol\varepsilon+O(\|\mathbf H\|^2)\). Insert these into the finite stress before dropping terms:</p>
+\[
+\boldsymbol\sigma=2\mu\boldsymbol\varepsilon
++\lambda(\operatorname{tr}\boldsymbol\varepsilon)\mathbf I
++O(\|\mathbf H\|^2).
+\]
+<p>The factor \(1/J\) can be replaced by one after recognizing that its numerator is already first order. Its first-order correction then contributes only second-order products. In contrast, replacing \(\mathbf B\) by identity or \(J\) by one before forming \(\mathbf B-\mathbf I\) and \(\ln J\) destroys the leading stress. An approximation must retain the first nonzero order of the observable being calculated.</p>
+<p>This limit comes from the compressible law. It is different from imposing exact incompressibility \(J=1\), which introduces a pressure-like Lagrange multiplier determined by constraints and boundary conditions. Substituting \(J=1\) into a compressible energy and expecting it to determine that multiplier loses the constraint reaction. The <a href="chapter-12-linear-and-hyperelasticity.html">elasticity chapter</a> develops these two limits separately.</p>
+
+<h2 id="rheology" data-video="WmtCtdHy7Rg" data-start="2754" data-end="3303">What the rheology and plasticity recap distinguishes <a class="timestamp" href="https://www.youtube.com/watch?v=WmtCtdHy7Rg&amp;t=2754s">45:54</a></h2>
+<p>The discussion surveys Newtonian and non-Newtonian viscosity, yield-stress behavior, time-dependent structure and viscoelastic memory. These are different response axes. In scalar simple shear, a power law \(\tau=K|\dot\gamma|^{n-1}\dot\gamma\) has nonlinear instantaneous response, with \(K\) in Pa sⁿ. It need not have memory. A Bingham idealization adds a threshold \(\tau_y\), while a Herschel–Bulkley law combines a threshold with a power law. Cross-type viscosity models introduce low- and high-rate viscosity plateaus. Thixotropy and rheopexy instead require structural evolution or history; an instantaneous curve alone does not express that dependence.</p>
+<p>For viscoelasticity, creep prescribes stress and observes strain, while relaxation prescribes strain and observes stress. A Maxwell spring–dashpot series model can relax fully, whereas a Kelvin–Voigt parallel model resists an instantaneous strain jump through its dashpot. A standard linear solid retains a nonzero equilibrium modulus and a relaxation time. No one model is universally most realistic. Oscillatory tests resolve storage and loss moduli under a specified sign convention; a linear relaxation kernel encodes memory through superposition. These mechanisms and tests are developed in <a href="chapter-13-viscous-and-viscoelastic-materials.html">chapter 13</a>.</p>
+<p>Plastic strain is an internal history variable that allows residual deformation after unloading. Yield surface, flow rule and hardening law are separate ingredients. Isotropic pressure-independent yield criteria can be represented in principal-stress space, while anisotropic yield laws may also need principal directions relative to material structure. Principal values alone do not encode every anisotropic stress response. Isotropic hardening expands a yield surface; kinematic hardening translates it and can represent reverse-loading asymmetry. The constitutive details belong to <a href="chapter-14-plasticity-and-constitutive-problems.html">chapter 14</a>.</p>
+
+<h2 id="fluid-equations" data-video="WmtCtdHy7Rg" data-start="3399" data-end="3733">Does Newtonian stress make the flow equations linear? <a class="timestamp" href="https://www.youtube.com/watch?v=WmtCtdHy7Rg&amp;t=3399s">56:39</a></h2>
+<p>Use spatial coordinates x (m), time t (s), velocity v (m s⁻¹), density ρ (kg m⁻³), and body force per mass b (m s⁻²). Define Dij=(∂vi/∂xj+∂vj/∂xi)/2 (s⁻¹), so div v=tr D; stress and pressure have units Pa.</p>
+<p>For a compressible isotropic Newtonian fluid, write \(\boldsymbol\sigma=-p_{\mathrm{th}}\mathbf I+2\mu_f\mathbf D+\lambda_f(\nabla\cdot\mathbf v)\mathbf I\), where \(\mu_f,\lambda_f\) have units Pa s. The mechanical mean compression is \(p_m=-\operatorname{tr}\boldsymbol\sigma/3=p_{\mathrm{th}}-(\lambda_f+2\mu_f/3)\nabla\cdot\mathbf v\). Stokes' hypothesis sets the bulk-viscous coefficient \(\lambda_f+2\mu_f/3\) to zero. It is a model assumption, not a consequence of isotropy. In incompressible motion, the divergence vanishes independently, so that bulk term drops out without invoking the hypothesis.</p>
+<p>Even with constant viscosity and \(\nabla\cdot\mathbf v=0\), momentum contains \(\rho[\partial_t\mathbf v+(\mathbf v\cdot\nabla)\mathbf v]=-\nabla p+\mu_f\nabla^2\mathbf v+\rho\mathbf b\). The stress law is linear in \(\mathbf D\), but convective acceleration makes the field equation nonlinear. Steadiness removes only the explicit time derivative. Incompressibility removes only velocity divergence, not every velocity gradient. Irrotationality is another condition and does not follow from low viscosity.</p>
+<p>A fully developed planar channel velocity \(\mathbf v=(u(y),0,0)\) makes convection vanish by geometry, giving \(0=-dp/dx+\mu_f u''\). With no-slip walls at \(y=\pm h\) and constant \(G=-dp/dx&gt;0\), the solution is \(u=G(h^2-y^2)/(2\mu_f)\). Its shear \(\sigma_{12}=\mu_f u'=-Gy\) reverses sign across the channel, although its magnitude is symmetric. This is an independent illustrative boundary-value problem; the recording's final recap refers to a free-surface example developed in the main course. See <a href="chapter-15-linear-fluids-and-navier-stokes.html">chapter 15</a> for the full fluid application.</p>
+
+<h2 id="implementation">Executable derivatives, objectivity and the small-strain limit</h2>
+<p>This NumPy program checks the logarithmic neo-Hookean energy through directional finite differences in \(\mathbf C\), verifies stress covariance under a superposed rotation, and measures convergence to the linear law. The two moduli are constructed stress units. It prints results and reads no files. The deformation must remain orientation preserving; a nonpositive determinant makes the logarithmic model undefined.</p>
+<pre data-run="ch20"><code class="language-python">import numpy as np
+
+mu, lam = 2.0, 3.0
+identity = np.eye(3)
+f = np.array([[1.1, 0.2, 0.0], [0.0, 0.9, 0.0], [0.0, 0.0, 1.0]])
+c = f.T @ f
+j = np.linalg.det(f)
+inverse_c = np.linalg.inv(c)
+s = mu*(identity - inverse_c) + lam*np.log(j)*inverse_c
+direction = np.array([[0.1, 0.2, 0.0], [0.2, -0.1, 0.0], [0., 0., 0.3]])
+
+
+def energy(metric):
+    log_j = 0.5*np.linalg.slogdet(metric)[1]
+    return mu*(np.trace(metric) - 3)/2 - mu*log_j + lam*log_j**2/2
+
+
+step = 1e-6
+finite = (energy(c + step*direction)
+          - energy(c - step*direction))/(2*step)
+assert np.isclose(finite, np.sum(s*direction)/2)
+
+
+def stress(gradient):
+    jacobian = np.linalg.det(gradient)
+    assert jacobian > 0
+    b = gradient @ gradient.T
+    return mu*(b - identity)/jacobian + lam*np.log(jacobian)*identity/jacobian
+
+
+q = np.array([[0., -1., 0.], [1., 0., 0.], [0., 0., 1.]])
+assert np.allclose(stress(q @ f), q @ stress(f) @ q.T)
+h = np.array([[0.3, 0.2, 0.0], [-0.1, -0.2, 0.0], [0., 0., 0.1]])
+epsilon = (h + h.T)/2
+linear = 2*mu*epsilon + lam*np.trace(epsilon)*identity
+errors = []
+for scale in [0.01, 0.005]:
+    errors.append(np.linalg.norm(stress(identity + scale*h) - scale*linear))
+assert 3.8 < errors[0]/errors[1] < 4.2
+energy_agrees = bool(np.isclose(finite, np.sum(s*direction)/2))
+print('energy derivative agrees:', energy_agrees)
+covariant = bool(np.allclose(stress(q @ f), q @ stress(f) @ q.T))
+print('stress covariance:', covariant)
+print('quadratic error ratio:', round(float(errors[0]/errors[1]), 6))
+</code></pre>
+<pre data-output="ch20">energy derivative agrees: True
+stress covariance: True
+quadratic error ratio: 3.99316</pre>
+
+<h2 id="exercises">Problems with worked solutions</h2>
+<p><strong>1. A shear derivative.</strong> For a symmetric strain with \(\varepsilon_{12}=\varepsilon_{21}=s\) and all other components zero, find energy and shear stress from the quadratic energy.</p>
+<details><summary>Solution</summary><p>The trace vanishes and the double contraction is \(2s^2\), so \(W=2\mu s^2\). A scalar variation of \(s\) gives \(dW/ds=4\mu s\). Tensor stress power is \(\sigma_{12}ds+\sigma_{21}ds=2\sigma_{12}ds\), hence \(\sigma_{12}=2\mu s\). Identifying \(dW/ds\) directly with one shear component would double the stress. Engineering shear \(\gamma=2s\) instead gives \(\sigma_{12}=\mu\gamma\).</p></details>
+<p><strong>2. Differentiate the Jacobian.</strong> For \(\mathbf C=\operatorname{diag}(4,9,1)\), calculate \(J\) and its tensor derivative with respect to \(C_{22}\).</p>
+<details><summary>Solution</summary><p>The determinant is 36, so \(J=6\). The inverse entry is \((C^{-1})_{22}=1/9\), giving \(\partial J/\partial C_{22}=6/(2\cdot9)=1/3\). Directly, perturbing that entry gives \(J(h)=2\sqrt{9+h}\), with derivative \(1/\sqrt9=1/3\) at zero. The logarithmic derivative is \(1/18\).</p></details>
+<p><strong>3. Objective but anisotropic.</strong> Consider \(W=\alpha(\mathbf A\cdot\mathbf C\mathbf A-1)^2\), with fixed unit material direction \(\mathbf A\) and \(\alpha&gt;0\). Does it depend on observer rotation? Is it generally isotropic?</p>
+<details><summary>Solution</summary><p>A superposed spatial rotation leaves \(\mathbf C\) unchanged, so it leaves \(W\) unchanged. The model is objective. A rotation of material loading relative to \(\mathbf A\) can change \(\mathbf A\cdot\mathbf C\mathbf A\), so it is generally anisotropic. For \(\mathbf C=\operatorname{diag}(4,1,1)\), choosing the fiber along the first rather than second eigenvector gives energies \(9\alpha\) and zero. Objectivity does not erase material direction.</p></details>
+<p><strong>4. Do not delete the leading term.</strong> For a small uniaxial strain \(\boldsymbol\varepsilon=\operatorname{diag}(e,0,0)\), find the linearized stress of the compressible neo-Hookean model.</p>
+<details><summary>Solution</summary><p>At first order, \(\mathbf B-\mathbf I=2\operatorname{diag}(e,0,0)\) and \(\ln J=e\). Hence stress is \(\operatorname{diag}((\lambda+2\mu)e,\lambda e,\lambda e)+O(e^2)\). Replacing \(J\) by one inside \(\ln J\) too early deletes the volumetric contribution. The transverse stresses are nonzero because this specified deformation restrains transverse strain; it is not a uniaxial-traction test.</p></details>
+<p><strong>5. Stokes' hypothesis versus incompressibility.</strong> Can \(p_m=p_{\mathrm{th}}\) in one incompressible Newtonian flow prove zero bulk viscosity?</p>
+<details><summary>Solution</summary><p>No. Their difference is \(-\zeta\nabla\cdot\mathbf v\), with \(\zeta=\lambda_f+2\mu_f/3\). A zero divergence makes the difference zero for every \(\zeta\). The observation cannot identify that coefficient. A compressive experiment with nonzero volumetric strain rate is needed to probe the bulk-viscous contribution. The logical implication from a vanishing product to a vanishing coefficient fails without varying the other factor.</p></details>
+<p><strong>6. Channel signs and dimensions.</strong> For the channel solution with \(G&gt;0\), find centerline speed, mean speed and upper-wall shear. Check units.</p>
+<details><summary>Solution</summary><p>Centerline speed is \(Gh^2/(2\mu_f)\). Integrating across the gap gives mean speed \((2h)^{-1}\int_{-h}^hG(h^2-y^2)/(2\mu_f)\,dy=Gh^2/(3\mu_f)\). The upper-wall stress component is \(\sigma_{12}(h)=-Gh\), opposite the positive flow on that outward-normal face. Since \(G\) is Pa/m, \(Gh^2/\mu_f\) is m/s and \(Gh\) is Pa. Reversing the pressure gradient reverses both flow and signed wall shear.</p></details>
+<h2 id="sources">Sources and scope</h2>
+<ul><li>Prof. Gaurav Bhutani, NPTEL, <a href="https://www.youtube.com/watch?v=WmtCtdHy7Rg">live discussion 4</a>: constitutive admissibility, three derivative clarifications, and rheology/plasticity/fluid recap.</li><li>A. F. Bower, <a href="https://solidmechanics.org/Text/Chapter3_1/Chapter3_1.php">§3.1</a> and <a href="https://solidmechanics.org/Text/Chapter3_5/Chapter3_5.php">§3.5, particularly §3.5.3</a>: inspected for objectivity versus material symmetry and energy-based hyperelastic stress. This chapter's exact logarithmic energy choice and numerical constants are stated explicitly. Thermodynamic admissibility and algebraic consistency do not establish calibration or predictive accuracy for a real specimen.</li></ul>
+<!-- BOOK-CONTENT-END --></article><nav class="page-turn" aria-label="Chapter navigation"><a rel="prev" href="chapter-19-live-transport-balance-laws.html">Previous chapter</a><a href="index.html">Chapter index</a><span>End of edition</span></nav></main></div><footer class="site-footer">Independent study edition. Prof. Gaurav Bhutani’s NPTEL recordings provide the topic spine. Original exposition, source limitations and verification evidence are separately recorded.</footer></body></html>

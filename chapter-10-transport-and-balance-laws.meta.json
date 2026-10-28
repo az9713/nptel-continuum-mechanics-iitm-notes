@@ -1,0 +1,226 @@
+{
+  "chapter": 10,
+  "title": "Transport, mass, momentum and energy balances",
+  "status": "reviewed — two independent AI reviews",
+  "authored_body_sha256": "e95f0de958bdd7c5e60794137f96618786c40d830856adb371f2a7fde59761a5",
+  "recordings": [
+    {
+      "video_id": "XrYnN-TmyMc",
+      "playlist_position": 48,
+      "lecture_label": "Lecture 46",
+      "duration_seconds": 1655,
+      "decoded_audio_duration_seconds": 1654.2824375,
+      "complete_decoded_audio": true,
+      "media_sha256": "dc2d88d915a163337b8330564902cab047dd6eba541e0f8196d9b825f4736032",
+      "transcript_first_start": 12.05,
+      "transcript_last_end": 1646.74,
+      "transcript_provenance": "Local faster-whisper small.en machine ASR; not publisher captions"
+    },
+    {
+      "video_id": "MLhADOO7Q1g",
+      "playlist_position": 49,
+      "lecture_label": "Lecture 47",
+      "duration_seconds": 2169,
+      "decoded_audio_duration_seconds": 2168.9295625,
+      "complete_decoded_audio": true,
+      "media_sha256": "3e52979cfe3fc65d349d5428c6acf8fcec45d1592ca0c74e521b93c033a8e3f7",
+      "transcript_first_start": 12.02,
+      "transcript_last_end": 2161.42,
+      "transcript_provenance": "Local faster-whisper small.en machine ASR; not publisher captions"
+    },
+    {
+      "video_id": "U08wmKR7cbk",
+      "playlist_position": 50,
+      "lecture_label": "Lecture 48",
+      "duration_seconds": 1657,
+      "decoded_audio_duration_seconds": 1656.3258125,
+      "complete_decoded_audio": true,
+      "media_sha256": "0f398c3d3d55c82e2f7ff02d87e466531dbee134f1c1deadd38bc885a15fae66",
+      "transcript_first_start": 11.98,
+      "transcript_last_end": 1648.59,
+      "transcript_provenance": "Local faster-whisper small.en machine ASR; not publisher captions"
+    },
+    {
+      "video_id": "FWc2--detpM",
+      "playlist_position": 51,
+      "lecture_label": "Lecture 49",
+      "duration_seconds": 2534,
+      "decoded_audio_duration_seconds": 2533.94725,
+      "complete_decoded_audio": true,
+      "media_sha256": "9778ea66b4150791d62f0fd71f57c289151fca3052856cc52f239e27a283a536",
+      "transcript_first_start": 12.11,
+      "transcript_last_end": 2525.71,
+      "transcript_provenance": "Local faster-whisper small.en machine ASR; not publisher captions"
+    },
+    {
+      "video_id": "lAbXNLKvH-I",
+      "playlist_position": 52,
+      "lecture_label": "Lecture 50",
+      "duration_seconds": 1764,
+      "decoded_audio_duration_seconds": 1763.323375,
+      "complete_decoded_audio": true,
+      "media_sha256": "f72dbd40244e8f79b1fd24b56aa69dc82e80281449532faea9ff84512639c9df",
+      "transcript_first_start": 12.5,
+      "transcript_last_end": 1755.54,
+      "transcript_provenance": "Local faster-whisper small.en machine ASR; not publisher captions"
+    }
+  ],
+  "sections": [
+    {
+      "section": "Material lines and the objects being transported",
+      "anchor": "line-elements",
+      "video_id": "XrYnN-TmyMc",
+      "start": 41,
+      "end": 286,
+      "lecture_material": "Related lecture topic located by the stated span",
+      "research_extension": "Inspected external support is cited locally in the exposition",
+      "teaching_construction": "Expanded exposition, derivations, numerical checks and exercises are independently authored; an anchor does not attribute every statement to the recording"
+    },
+    {
+      "section": "Oriented area, Nanson's formula and normal rotation",
+      "anchor": "area-elements",
+      "video_id": "XrYnN-TmyMc",
+      "start": 289,
+      "end": 978,
+      "lecture_material": "Related lecture topic located by the stated span",
+      "research_extension": "Inspected external support is cited locally in the exposition",
+      "teaching_construction": "Expanded exposition, derivations, numerical checks and exercises are independently authored; an anchor does not attribute every statement to the recording"
+    },
+    {
+      "section": "Material volume and the determinant rate",
+      "anchor": "volume-elements",
+      "video_id": "XrYnN-TmyMc",
+      "start": 978,
+      "end": 1646,
+      "lecture_material": "Related lecture topic located by the stated span",
+      "research_extension": "Inspected external support is cited locally in the exposition",
+      "teaching_construction": "Expanded exposition, derivations, numerical checks and exercises are independently authored; an anchor does not attribute every statement to the recording"
+    },
+    {
+      "section": "The transport theorem follows a moving collection of particles",
+      "anchor": "transport",
+      "video_id": "MLhADOO7Q1g",
+      "start": 123,
+      "end": 1109,
+      "lecture_material": "Related lecture topic located by the stated span",
+      "research_extension": "Inspected external support is cited locally in the exposition",
+      "teaching_construction": "Expanded exposition, derivations, numerical checks and exercises are independently authored; an anchor does not attribute every statement to the recording"
+    },
+    {
+      "section": "Mass conservation and density along particle paths",
+      "anchor": "mass",
+      "video_id": "MLhADOO7Q1g",
+      "start": 1110,
+      "end": 2161,
+      "lecture_material": "Related lecture topic located by the stated span",
+      "research_extension": "Inspected external support is cited locally in the exposition",
+      "teaching_construction": "Expanded exposition, derivations, numerical checks and exercises are independently authored; an anchor does not attribute every statement to the recording"
+    },
+    {
+      "section": "Linear and angular momentum in the current configuration",
+      "anchor": "momentum",
+      "video_id": "U08wmKR7cbk",
+      "start": 355,
+      "end": 1648,
+      "lecture_material": "Related lecture topic located by the stated span",
+      "research_extension": "Inspected external support is cited locally in the exposition",
+      "teaching_construction": "Expanded exposition, derivations, numerical checks and exercises are independently authored; an anchor does not attribute every statement to the recording"
+    },
+    {
+      "section": "Reference-area traction and first Piola–Kirchhoff stress",
+      "anchor": "piola",
+      "video_id": "FWc2--detpM",
+      "start": 388,
+      "end": 1641,
+      "lecture_material": "Related lecture topic located by the stated span",
+      "research_extension": "Inspected external support is cited locally in the exposition",
+      "teaching_construction": "Expanded exposition, derivations, numerical checks and exercises are independently authored; an anchor does not attribute every statement to the recording"
+    },
+    {
+      "section": "Material stress, angular momentum and work conjugacy",
+      "anchor": "second-piola",
+      "video_id": "FWc2--detpM",
+      "start": 1641,
+      "end": 2525,
+      "lecture_material": "Related lecture topic located by the stated span",
+      "research_extension": "Inspected external support is cited locally in the exposition",
+      "teaching_construction": "Expanded exposition, derivations, numerical checks and exercises are independently authored; an anchor does not attribute every statement to the recording"
+    },
+    {
+      "section": "Total energy, stress power and the heat-flux sign",
+      "anchor": "energy",
+      "video_id": "lAbXNLKvH-I",
+      "start": 12,
+      "end": 940,
+      "lecture_material": "Related lecture topic located by the stated span",
+      "research_extension": "Inspected external support is cited locally in the exposition",
+      "teaching_construction": "Expanded exposition, derivations, numerical checks and exercises are independently authored; an anchor does not attribute every statement to the recording"
+    },
+    {
+      "section": "The tenth tutorial: density, pressure work and rigid rotation",
+      "anchor": "tutorial",
+      "video_id": "lAbXNLKvH-I",
+      "start": 940,
+      "end": 1755,
+      "lecture_material": "Related lecture topic located by the stated span",
+      "research_extension": "Inspected external support is cited locally in the exposition",
+      "teaching_construction": "Expanded exposition, derivations, numerical checks and exercises are independently authored; an anchor does not attribute every statement to the recording"
+    },
+    {
+      "section": "Executable check: force transformation and stress power",
+      "anchor": "implementation",
+      "video_id": null,
+      "start": null,
+      "end": null,
+      "lecture_material": "",
+      "research_extension": "Inspected external support is cited locally in the exposition",
+      "teaching_construction": "Expanded exposition, derivations, numerical checks and exercises are independently authored; an anchor does not attribute every statement to the recording"
+    },
+    {
+      "section": "Exercises with worked solutions",
+      "anchor": "exercises",
+      "video_id": null,
+      "start": null,
+      "end": null,
+      "lecture_material": "",
+      "research_extension": "Inspected external support is cited locally in the exposition",
+      "teaching_construction": "Expanded exposition, derivations, numerical checks and exercises are independently authored; an anchor does not attribute every statement to the recording"
+    },
+    {
+      "section": "Balances constrain a model without closing it",
+      "anchor": "limits",
+      "video_id": null,
+      "start": null,
+      "end": null,
+      "lecture_material": "",
+      "research_extension": "Inspected external support is cited locally in the exposition",
+      "teaching_construction": "Expanded exposition, derivations, numerical checks and exercises are independently authored; an anchor does not attribute every statement to the recording"
+    },
+    {
+      "section": "Sources",
+      "anchor": "sources",
+      "video_id": null,
+      "start": null,
+      "end": null,
+      "lecture_material": "",
+      "research_extension": "Inspected external support is cited locally in the exposition",
+      "teaching_construction": "Expanded exposition, derivations, numerical checks and exercises are independently authored; an anchor does not attribute every statement to the recording"
+    }
+  ],
+  "references": [
+    {
+      "url": "https://solidmechanics.org/Text/Chapter2_5/Chapter2_5.php",
+      "title": "Applied Mechanics of Solids , §2.5.1–2.5.2",
+      "supports": "Specific claim and locator are given beside the citation in chapter-10-transport-and-balance-laws.html"
+    },
+    {
+      "url": "https://solidmechanics.org/Text/Chapter2_6/Chapter2_6.php",
+      "title": "§2.6",
+      "supports": "Specific claim and locator are given beside the citation in chapter-10-transport-and-balance-laws.html"
+    }
+  ],
+  "prose_words_including_math": 4295,
+  "solution_count": 8,
+  "executable_listing_count": 1,
+  "visual_boundary": "No comprehensive visual transcription or full audiovisual review is claimed. ASR cannot recover every board input; uncertain inputs are qualified locally."
+}

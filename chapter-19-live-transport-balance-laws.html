@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="color-scheme" content="dark light"><meta name="book-content-sha256" content="8aaa75ebdbc163e486d21cc6d66c202ce3ec2b1763e932b584937becae32c206">
+<title>Live discussion 3: transport and balance laws · Foundations of Continuum Mechanics</title><link rel="stylesheet" href="assets/book.css">
+<script>window.MathJax={tex:{inlineMath:[['$','$'],['\\(','\\)']],displayMath:[['$$','$$'],['\\[','\\]']],processEscapes:true},svg:{fontCache:'local'},options:{skipHtmlTags:['script','noscript','style','textarea','pre','code']}};</script>
+<script defer src="assets/mathjax-tex-svg.js"></script><script defer src="assets/book.js"></script></head>
+<body><a class="skip" href="#main">Skip to content</a><header class="site-header"><a class="brand" href="index.html">Foundations of Continuum Mechanics · NPTEL IIT Mandi</a><nav class="course-nav" aria-label="Book"><a href="index.html">Chapters</a><a href="source-map.html">Source map</a><a href="references.html">References</a><a href="numerical-lab.html">Numerical lab</a></nav></header>
+<div class="layout"><aside class="toc" id="chapter-toc" aria-label="On this page"><h2>On this page</h2></aside><main id="main"><div class="reading-tools" aria-label="Reading controls"><button id="theme-toggle" aria-pressed="false">Light theme</button><button id="text-toggle" aria-pressed="false">Larger text</button><button id="solutions-toggle" aria-pressed="false">Expand solutions</button><button id="print-page">Print with solutions</button></div>
+<article id="chapter-content"><!-- BOOK-CONTENT-START --><h1>Live discussion 3: determinant differentiation and balance laws</h1>
+<p class="lead">A moving material volume changes both its contents per unit volume and the volume element used in the integral. The third live discussion focuses on the matrix identity that accounts for the latter change. Deriving it through cofactors shows exactly where invertibility is needed, why a transpose appears, and why a trace can represent a scalar rate of volume change.</p>
+<p class="source-note">The spoken introduction identifies recording ZqjzTTz5nVE as live discussion 3. Its complete local ASR was read sequentially. The extended determinant/cofactor derivation is its central clarification; the remaining discussion recaps transport, mass, momentum, stress transformations and energy. Board formulas were not independently inspected. The examples, alternative determinant proof, numerical checks and solved problems are independent teaching constructions.</p>
+
+<h2 id="elements" data-video="ZqjzTTz5nVE" data-start="85" data-end="270">Why differentiate line, area and volume elements? <a class="timestamp" href="https://www.youtube.com/watch?v=ZqjzTTz5nVE&amp;t=85s">1:25</a></h2>
+<p>Let \(\mathbf x=\boldsymbol\chi(\mathbf X,t)\) be a differentiable orientation-preserving motion, with positions in metres and time in seconds. Its dimensionless gradient is \(\mathbf F=\partial\boldsymbol\chi/\partial\mathbf X\), and \(J=\det\mathbf F&gt;0\). Let \(\mathbf v(\mathbf x,t)\) be spatial velocity in m/s, with gradient \(L_{ij}=\partial_jv_i\) in s⁻¹. A dot denotes differentiation along a fixed material particle.</p>
+<p>Differentiate \(F_{iA}=\partial_A\chi_i\) at fixed \(\mathbf X\), commuting the time and material derivatives under the smoothness assumption. The chain rule gives \(\dot F_{iA}=\partial_Av_i=L_{ij}F_{jA}\), or \(\dot{\mathbf F}=\mathbf L\mathbf F\). Since \(d\mathbf X\) is fixed, the spatial material line \(\boldsymbol\ell=\mathbf Fd\mathbf X\) obeys \(\dot{\boldsymbol\ell}=\mathbf L\boldsymbol\ell\). This vector relation changes both length and orientation. The rate of its squared length is \(2\boldsymbol\ell\cdot\mathbf D\boldsymbol\ell\), where \(\mathbf D=(\mathbf L+\mathbf L^T)/2\), because the skew part has zero quadratic form.</p>
+<p>Area vectors and volumes involve products of several line elements. Their rates therefore require a product rule for oriented geometry. The determinant identity supplies the rate of the three-line triple product and also enters the inverse-transpose area transformation. The full transport development appears in <a href="chapter-10-transport-and-balance-laws.html">chapter 10</a>; here the determinant proof receives the additional detail requested in the discussion.</p>
+
+<h2 id="cofactor" data-video="ZqjzTTz5nVE" data-start="270" data-end="1481">Cofactors turn the determinant's product rule into one contraction <a class="timestamp" href="https://www.youtube.com/watch?v=ZqjzTTz5nVE&amp;t=270s">4:30</a></h2>
+<p>For a three-by-three matrix \(\mathbf F\), let \(C_{iA}\) denote its cofactor: \((-1)^{i+A}\) times the determinant of the two-by-two matrix obtained by deleting row \(i\) and column \(A\). The cofactor is a number, not the minor matrix itself. The cofactor matrix \(\mathbf C\) collects those numbers. It is distinct from the Cauchy–Green tensor denoted \(\mathbf C\) elsewhere; in this section only, \(\mathbf C\) means the explicitly defined cofactor matrix.</p>
+<p>The determinant can be written with the right-handed alternating symbol as \(J=\epsilon_{ijk}F_{i1}F_{j2}F_{k3}\). Fixed column labels 1, 2 and 3 are not summed; repeated \(i,j,k\) are. Differentiate using the three-factor product rule:</p>
+\[
+\dot J=\epsilon_{ijk}\dot F_{i1}F_{j2}F_{k3}
++\epsilon_{ijk}F_{i1}\dot F_{j2}F_{k3}
++\epsilon_{ijk}F_{i1}F_{j2}\dot F_{k3}.
+\]
+<p>The factors multiplying each dotted entry are its cofactors. For example, \(C_{11}=F_{22}F_{33}-F_{32}F_{23}\). Also \(C_{21}=F_{32}F_{13}-F_{12}F_{33}\), where the sign from deleting row 2, column 1 has already been included. Expansion of \(\epsilon_{ijk}F_{j2}F_{k3}\) at fixed \(i\) gives these entries and the corresponding third one. The other two product-rule terms recover the other cofactor columns.</p>
+<p>Renaming each term's dummy row label and summing the three columns gives the compact result</p>
+\[
+\dot J=C_{iA}\dot F_{iA}=\mathbf C:\dot{\mathbf F}.
+\]
+<p>The colon here means the Frobenius double contraction, \(\mathbf A:\mathbf B=\sum_{i,A}A_{iA}B_{iA}\). No free index remains, consistent with a scalar determinant rate. This polynomial identity holds even for singular matrices because it was derived by differentiating the determinant polynomial, without using an inverse.</p>
+<p>A two-by-two check makes the pattern visible. If \(\mathbf F=\left(\begin{smallmatrix}a&b\\c&d\end{smallmatrix}\right)\), then \(J=ad-bc\) and \(\dot J=d\dot a-c\dot b-b\dot c+a\dot d\). The cofactor matrix is \(\left(\begin{smallmatrix}d&-c\\-b&a\end{smallmatrix}\right)\). Its entrywise contraction with \(\dot{\mathbf F}\) gives exactly the four differentiated terms. Contracting an untransposed adjugate instead would generally be wrong.</p>
+
+<h2 id="jacobi" data-video="ZqjzTTz5nVE" data-start="1481" data-end="2086">The adjugate explains the inverse transpose and trace <a class="timestamp" href="https://www.youtube.com/watch?v=ZqjzTTz5nVE&amp;t=1481s">24:41</a></h2>
+<p>The <dfn>adjugate</dfn> is the transpose of the cofactor matrix, \(\operatorname{adj}\mathbf F=\mathbf C^T\). This is the classical adjugate, not the conjugate-transpose operator sometimes called an adjoint. Expanding a determinant along a row proves \(\mathbf F\mathbf C^T=J\mathbf I\). The off-diagonal entries vanish because they are determinants with two equal rows. If \(J\ne0\), multiplication by the inverse yields \(\mathbf C=J\mathbf F^{-T}\).</p>
+<p>Substitution into the cofactor rate gives Jacobi's identity:</p>
+\[
+\dot J=J(F^{-1})_{Ai}\dot F_{iA}
+=J\operatorname{tr}(\mathbf F^{-1}\dot{\mathbf F})
+=J\operatorname{tr}(\dot{\mathbf F}\mathbf F^{-1}).
+\]
+<p>The trace is unchanged under cyclic permutation of two matrix factors, even though the matrices themselves need not commute. In particular, \(\operatorname{tr}(\mathbf F^{-1}\dot{\mathbf F})\) must not be replaced by \(\mathbf F^{-1}:\dot{\mathbf F}\), which omits a transpose under the colon convention just defined. The inverse formula is restricted to nonsingular matrices; the preceding cofactor formula is more general.</p>
+<p>An independent proof considers \(\mathbf F(t+h)=\mathbf F(t)[\mathbf I+h\mathbf F^{-1}\dot{\mathbf F}+o(h)]\). The determinant expansion \(\det(\mathbf I+h\mathbf B)=1+h\operatorname{tr}\mathbf B+O(h^2)\) follows because a linear determinant term selects one diagonal entry of \(\mathbf B\) while all other factors remain identity. Taking the determinant and differentiating reproduces the same identity. This second route checks the transpose and factor order without repeating the cofactor calculation.</p>
+<p>Using \(\dot{\mathbf F}=\mathbf L\mathbf F\) now gives \(\dot J=J\operatorname{tr}\mathbf L=J\nabla\cdot\mathbf v\). Bower, <a href="https://solidmechanics.org/Text/Chapter2_2/Chapter2_2.php">§2.2.6</a>, defines the local volume ratio; §2.2.24 gives its rate of change. For homogeneous dilation \(\mathbf F=a(t)\mathbf I\), it gives \(\dot J=3a^2\dot a\), agreeing with direct differentiation of \(J=a^3\).</p>
+
+<h2 id="area" data-video="ZqjzTTz5nVE" data-start="2014" data-end="2153">Area and volume evolve differently <a class="timestamp" href="https://www.youtube.com/watch?v=ZqjzTTz5nVE&amp;t=2014s">33:34</a></h2>
+<p>Let \(\mathbf A_0=\mathbf N\,dA_0\) be a reference oriented area vector, with unit normal \(\mathbf N\) and area in m². Transforming its two tangent vectors and taking their cross product gives Nanson's relation \(\mathbf A=\mathbf n\,dA=J\mathbf F^{-T}\mathbf A_0\). The cofactor map, rather than a volume factor alone, transforms the area. An area has direction as well as magnitude.</p>
+<p>Differentiate \(\mathbf F^{-T}\mathbf F^T=\mathbf I\) to get \(d\mathbf F^{-T}/dt=-\mathbf L^T\mathbf F^{-T}\). Combined with Jacobi's identity, this gives</p>
+\[
+\dot{\mathbf A}=[(\nabla\cdot\mathbf v)\mathbf I-\mathbf L^T]\mathbf A,
+\qquad
+\dot{dA}=[\operatorname{tr}\mathbf L-\mathbf n\cdot\mathbf D\mathbf n]dA.
+\]
+<p>The scalar area rate is the dot product of the vector rate with its current unit normal. It depends on orientation. By contrast, material volume obeys \(\dot{dV}=(\nabla\cdot\mathbf v)dV\). In an incompressible planar stretch \(\mathbf F=\operatorname{diag}(e^{kt},e^{-kt},1)\), volume stays fixed, but an area normal to \(\mathbf e_1\) shrinks like \(e^{-kt}\). Incompressibility does not preserve every material area.</p>
+
+<h2 id="transport" data-video="ZqjzTTz5nVE" data-start="2153" data-end="2485">The transport theorem is geometry; mass conservation is physics <a class="timestamp" href="https://www.youtube.com/watch?v=ZqjzTTz5nVE&amp;t=2153s">35:53</a></h2>
+<p>For a material region \(\Omega_t\), let \(b(\mathbf x,t)\) be any smooth amount per current volume. Its integral is \(B(t)=\int_{\Omega_t}b\,dV\). Pulling it back to the fixed reference region gives \(\int_{\Omega_0}b(\boldsymbol\chi(\mathbf X,t),t)J\,dV_0\). Differentiate both factors, use \(\dot J=J\nabla\cdot\mathbf v\), and change variables back:</p>
+\[
+\frac{dB}{dt}=\int_{\Omega_t}\left(\frac{Db}{Dt}+b\nabla\cdot\mathbf v\right)dV.
+\]
+<p>The geometric term must remain for a general per-volume field. Saying only that the theorem “moves the derivative inside” omits the changing measure. A different simplification is available for a quantity \(\beta\) per unit mass: with \(b=\rho\beta\) and mass conservation, the result reduces to \(d\int_{\Omega_t}\rho\beta\,dV/dt=\int_{\Omega_t}\rho D\beta/Dt\,dV\). The distinction is the density weighting, not a choice between two inconsistent transport theorems.</p>
+<p>Mass conservation imposes \(d\int_{\Omega_t}\rho\,dV/dt=0\) for every material subregion, where \(\rho&gt;0\) is density in kg/m³. The transport theorem and localization then give \(D\rho/Dt+\rho\nabla\cdot\mathbf v=0\), equivalently \(\rho(\boldsymbol\chi(\mathbf X,t),t)J=\rho_0(\mathbf X)\). These equations require the conservation premise; determinant algebra does not supply it.</p>
+<p>If every material element keeps its volume, \(\nabla\cdot\mathbf v=0\) and \(D\rho/Dt=0\). Density may still vary spatially between particles. Moreover divergence-free motion keeps \(J\) constant along each particle; to conclude \(J=1\), its initial value must be one. Reference choice and initial condition remain part of the statement.</p>
+
+<h2 id="force" data-video="ZqjzTTz5nVE" data-start="2485" data-end="2710">Reference stress preserves force, not matrix entries <a class="timestamp" href="https://www.youtube.com/watch?v=ZqjzTTz5nVE&amp;t=2485s">41:25</a></h2>
+<p>For a classical nonpolar continuum, linear momentum balance gives \(\rho\mathbf a=\nabla\cdot\boldsymbol\sigma+\rho\mathbf b\), with body acceleration \(\mathbf b\) in m/s² and force-component-first stress divergence \((\nabla\cdot\boldsymbol\sigma)_i=\partial_j\sigma_{ij}\). Angular momentum balance gives symmetric Cauchy stress even when acceleration is nonzero. Static equilibrium is not required for that symmetry.</p>
+<p>Current traction force on an oriented material surface is \(\boldsymbol\sigma\mathbf n\,dA\). Using Nanson's relation gives \(\boldsymbol\sigma J\mathbf F^{-T}\mathbf N\,dA_0\). Define first Piola–Kirchhoff stress \(\mathbf P=J\boldsymbol\sigma\mathbf F^{-T}\), so force is \(\mathbf P\mathbf N\,dA_0\). It maps a material normal into a spatial force and need not be symmetric. “Need not” is essential: some motions and stresses happen to give a symmetric matrix.</p>
+<p>The second Piola–Kirchhoff stress is \(\mathbf S=\mathbf F^{-1}\mathbf P=J\mathbf F^{-1}\boldsymbol\sigma\mathbf F^{-T}\). It is symmetric when Cauchy stress is symmetric. With \(\dot{\mathbf F}=\mathbf L\mathbf F\), direct index contraction gives \(\mathbf P:\dot{\mathbf F}=J\boldsymbol\sigma:\mathbf L=J\boldsymbol\sigma:\mathbf D\). The last equality removes the skew velocity-gradient contribution. This is equality of stress power per reference volume, not equality of all stress components. <a href="https://solidmechanics.org/Text/Chapter2_3/Chapter2_3.php">Bower, §2.3.4</a>, discusses these pairings with a transposed nominal-stress convention.</p>
+
+<h2 id="energy" data-video="ZqjzTTz5nVE" data-start="2710" data-end="2805">Energy balances stored energy, motion and flux <a class="timestamp" href="https://www.youtube.com/watch?v=ZqjzTTz5nVE&amp;t=2710s">45:10</a></h2>
+<p>Let \(e\) be specific internal energy in J/kg, \(r\) a heat supply in W/kg, and \(\mathbf q\) heat flux in W/m², positive in the direction of transfer. Subtracting kinetic-energy balance from total-energy balance yields \(\rho De/Dt=\boldsymbol\sigma:\mathbf D-\nabla\cdot\mathbf q+\rho r\). Positive inward boundary heat contributes \(-\mathbf q\cdot\mathbf n\) to the surface integral. Positive stress power can increase stored internal energy or dissipate; the first law alone does not distinguish those outcomes.</p>
+<p>The discussion ends with this brief energy recap rather than a constitutive derivation. Temperature, stored energy and heat flux still require material relations. A mathematical identity for determinant transport, a conservation law and a constitutive law therefore play distinct roles in closing a physical model.</p>
+
+<h2 id="implementation">Executable determinant, area and power checks</h2>
+<p>The following NumPy check uses a nonsymmetric deformation gradient and independent derivative. It compares a determinant finite difference with Jacobi's identity, maps a tangent cross product with Nanson's formula, and compares reference and spatial stress power. It reads no files and prints only residuals. The finite-difference comparison is approximate; the algebraic assertions use floating-point tolerances.</p>
+<pre data-run="ch19"><code class="language-python">import numpy as np
+
+f = np.array([[1.2, 0.3, 0.0], [0.0, 0.8, 0.1], [0.0, 0.0, 1.1]])
+fdot = np.array([[0.2, -0.1, 0.0], [0.1, 0.3, 0.0], [0.0, 0.1, -0.2]])
+j = np.linalg.det(f)
+inverse = np.linalg.inv(f)
+rate = j*np.trace(inverse @ fdot)
+step = 1e-6
+finite = (np.linalg.det(f + step*fdot)
+          - np.linalg.det(f - step*fdot))/(2*step)
+assert np.isclose(rate, finite)
+a, b = np.array([1., 2., 0.]), np.array([0., 1., 1.])
+area_direct = np.cross(f @ a, f @ b)
+area_nanson = j*inverse.T @ np.cross(a, b)
+assert np.allclose(area_direct, area_nanson)
+stress = np.array([[6., 2., 0.], [2., 3., 0.], [0., 0., 1.]])
+p = j*stress @ inverse.T
+velocity_gradient = fdot @ inverse
+reference_power = np.sum(p*fdot)
+spatial_power = j*np.sum(stress*velocity_gradient)
+assert np.isclose(reference_power, spatial_power)
+print('J:', round(float(j), 6))
+print('determinant rate:', round(float(rate), 6))
+print('finite difference agrees:', bool(np.isclose(rate, finite)))
+print('area map agrees:', bool(np.allclose(area_direct, area_nanson)))
+print('power agrees:', bool(np.isclose(reference_power, spatial_power)))
+</code></pre>
+<pre data-output="ch19">J: 1.056
+determinant rate: 0.335
+finite difference agrees: True
+area map agrees: True
+power agrees: True</pre>
+
+<h2 id="exercises">Problems with worked solutions</h2>
+<p><strong>1. Test the transpose.</strong> For \(\mathbf F=\left(\begin{smallmatrix}1&2\\0&3\end{smallmatrix}\right)\), compute the cofactor matrix and verify \(\mathbf C=J\mathbf F^{-T}\).</p>
+<details><summary>Solution</summary><p>The determinant is 3. Deleting rows and columns gives \(\mathbf C=\left(\begin{smallmatrix}3&0\\-2&1\end{smallmatrix}\right)\). The inverse is \(\left(\begin{smallmatrix}1&-2/3\\0&1/3\end{smallmatrix}\right)\). Transposing and multiplying by 3 gives the stated cofactor matrix. Omitting the transpose places the -2 entry in the wrong slot and gives an incorrect general determinant derivative under entrywise contraction.</p></details>
+<p><strong>2. A singular matrix with a determinant rate.</strong> Let \(\mathbf F(t)=\operatorname{diag}(t,1,1)\). Find \(d\det\mathbf F/dt\) at zero. Which formula remains usable?</p>
+<details><summary>Solution</summary><p>The determinant is \(t\), so its rate at zero is 1. The inverse does not exist there. The cofactor matrix at zero is \(\operatorname{diag}(1,0,0)\), and \(\dot{\mathbf F}=\operatorname{diag}(1,0,0)\), giving contraction 1. This is a matrix-calculus example, not an admissible nonsingular continuum motion through \(t=0\).</p></details>
+<p><strong>3. Area in an incompressible stretch.</strong> For \(\mathbf F=\operatorname{diag}(a,a^{-1},1)\), \(a&gt;0\), find the area ratios for surfaces initially normal to each coordinate axis.</p>
+<details><summary>Solution</summary><p>The determinant is one, and the area map is \(\mathbf F^{-T}=\operatorname{diag}(a^{-1},a,1)\). Thus area ratios are \(a^{-1},a,1\) for the three normals. The first surface's tangent directions stretch by \(a^{-1}\) and 1; their product independently confirms its area ratio. A fixed volume does not imply fixed areas.</p></details>
+<p><strong>4. Can incompressible density be nonuniform?</strong> For uniform translation \(v=U\) and density \(\rho(x,t)=\rho_*[1+\alpha\sin(k(x-Ut))]\), with \(|\alpha|&lt;1\), test continuity.</p>
+<details><summary>Solution</summary><p>The divergence is zero. Differentiation gives \(\partial_t\rho=-\rho_*\alpha kU\cos(k(x-Ut))\) and \(U\partial_x\rho=+\rho_*\alpha kU\cos(k(x-Ut))\). Their sum vanishes, so material density stays constant while its spatial pattern translates. Positivity follows from \(|\alpha|&lt;1\). Incompressibility does not require the same density for every particle.</p></details>
+<p><strong>5. A per-volume integral.</strong> A material region expands with \(\nabla\cdot\mathbf v=3k\), and a prescribed uniform field \(b=b_0\) is constant in space and time. Is its integral constant?</p>
+<details><summary>Solution</summary><p>The material derivative of \(b\) is zero, but transport gives \(dB/dt=3k\int b_0\,dV=3kB\). Thus \(B(t)=B(0)e^{3kt}\). It is not a conserved amount unless an independent law and field evolution make it so. If \(b\) is mass density of a closed material region, it cannot remain constant under this expansion; continuity would require density to decrease like \(e^{-3kt}\).</p></details>
+<h2 id="sources">Sources and further use</h2>
+<ul><li>Prof. Gaurav Bhutani, NPTEL, <a href="https://www.youtube.com/watch?v=ZqjzTTz5nVE">live discussion 3</a>. The cofactor calculation follows its requested derivational focus.</li><li>A. F. Bower, <a href="https://solidmechanics.org/Text/Chapter2_2/Chapter2_2.php">§§2.2.6–2.2.7</a> and <a href="https://solidmechanics.org/Text/Chapter2_3/Chapter2_3.php">§2.3.4</a>: inspected for volume, area and stress-power conventions. Complete balance-law derivations and constitutive closure appear in their core course chapters.</li></ul>
+<!-- BOOK-CONTENT-END --></article><nav class="page-turn" aria-label="Chapter navigation"><a rel="prev" href="chapter-18-live-configurations-motion-strain.html">Previous chapter</a><a href="index.html">Chapter index</a><a rel="next" href="chapter-20-live-constitutive-models-fluids.html">Next chapter</a></nav></main></div><footer class="site-footer">Independent study edition. Prof. Gaurav Bhutani’s NPTEL recordings provide the topic spine. Original exposition, source limitations and verification evidence are separately recorded.</footer></body></html>

@@ -1,0 +1,191 @@
+{
+  "chapter": 1,
+  "title": "The continuum model, tensors and index notation",
+  "status": "reviewed — two independent AI reviews",
+  "authored_body_sha256": "b1fef42421670be53e3b4d2ca0eaf279889d1fda7c451bafaf6d34c35fe84025",
+  "recordings": [
+    {
+      "video_id": "zPZd1QkVxC0",
+      "playlist_position": 2,
+      "lecture_label": "Lecture 1",
+      "duration_seconds": 1251,
+      "decoded_audio_duration_seconds": 1250.5803125,
+      "complete_decoded_audio": true,
+      "media_sha256": "78e487f932f576abe5394f949521eb7ed90637e05996f08ecc6f8d998fe7a474",
+      "transcript_first_start": 11.98,
+      "transcript_last_end": 1244.3,
+      "transcript_provenance": "Local faster-whisper small.en machine ASR; not publisher captions"
+    },
+    {
+      "video_id": "SYCpP_jGjbE",
+      "playlist_position": 3,
+      "lecture_label": "Lecture 2",
+      "duration_seconds": 2085,
+      "decoded_audio_duration_seconds": 2084.4935,
+      "complete_decoded_audio": true,
+      "media_sha256": "2003348d3fe0426014bc8d12f60d5ad2d3447ccadc912922d6194f564fd14952",
+      "transcript_first_start": 12.66,
+      "transcript_last_end": 2075.28,
+      "transcript_provenance": "Local faster-whisper small.en machine ASR; not publisher captions"
+    },
+    {
+      "video_id": "zKCcURnUYGQ",
+      "playlist_position": 4,
+      "lecture_label": "Lecture 3",
+      "duration_seconds": 1904,
+      "decoded_audio_duration_seconds": 1903.29325,
+      "complete_decoded_audio": true,
+      "media_sha256": "c2b98855b875e51cabe0f496fadb9875d3886023374cefd5a7eb53145094c50f",
+      "transcript_first_start": 12.85,
+      "transcript_last_end": 1895.66,
+      "transcript_provenance": "Local faster-whisper small.en machine ASR; not publisher captions"
+    },
+    {
+      "video_id": "JUNbTpjFIOU",
+      "playlist_position": 5,
+      "lecture_label": "Lecture 4",
+      "duration_seconds": 1575,
+      "decoded_audio_duration_seconds": 1574.8135,
+      "complete_decoded_audio": true,
+      "media_sha256": "2bf3ae65f159a68bf72cc64bc6899570363a6ef13620eb751723363c4802de4b",
+      "transcript_first_start": 12.59,
+      "transcript_last_end": 1568.21,
+      "transcript_provenance": "Local faster-whisper small.en machine ASR; not publisher captions"
+    },
+    {
+      "video_id": "RWGdCQiT2V4",
+      "playlist_position": 6,
+      "lecture_label": "Lecture 5",
+      "duration_seconds": 1897,
+      "decoded_audio_duration_seconds": 1896.0535,
+      "complete_decoded_audio": true,
+      "media_sha256": "e6735306d060897220744852b45095e1e892611b7cdc4e3ec978aa5ad98a817e",
+      "transcript_first_start": 11.98,
+      "transcript_last_end": 1890.22,
+      "transcript_provenance": "Local faster-whisper small.en machine ASR; not publisher captions"
+    }
+  ],
+  "sections": [
+    {
+      "section": "From particles to continuum fields",
+      "anchor": "continuum",
+      "video_id": "zPZd1QkVxC0",
+      "start": 701,
+      "end": 1245,
+      "lecture_material": "Related lecture topic located by the stated span",
+      "research_extension": "Inspected external support is cited locally in the exposition",
+      "teaching_construction": "Expanded exposition, derivations, numerical checks and exercises are independently authored; an anchor does not attribute every statement to the recording"
+    },
+    {
+      "section": "Scalars, vectors and physical meaning",
+      "anchor": "scalar-vector",
+      "video_id": "SYCpP_jGjbE",
+      "start": 95,
+      "end": 647,
+      "lecture_material": "Related lecture topic located by the stated span",
+      "research_extension": "Inspected external support is cited locally in the exposition",
+      "teaching_construction": "Expanded exposition, derivations, numerical checks and exercises are independently authored; an anchor does not attribute every statement to the recording"
+    },
+    {
+      "section": "What makes a second-order tensor",
+      "anchor": "tensor-model",
+      "video_id": "SYCpP_jGjbE",
+      "start": 681,
+      "end": 1705,
+      "lecture_material": "Related lecture topic located by the stated span",
+      "research_extension": "Inspected external support is cited locally in the exposition",
+      "teaching_construction": "Expanded exposition, derivations, numerical checks and exercises are independently authored; an anchor does not attribute every statement to the recording"
+    },
+    {
+      "section": "Summation is a rule for each term",
+      "anchor": "summation",
+      "video_id": "zKCcURnUYGQ",
+      "start": 117,
+      "end": 1298,
+      "lecture_material": "Related lecture topic located by the stated span",
+      "research_extension": "Inspected external support is cited locally in the exposition",
+      "teaching_construction": "Expanded exposition, derivations, numerical checks and exercises are independently authored; an anchor does not attribute every statement to the recording"
+    },
+    {
+      "section": "Trace, contractions and result type",
+      "anchor": "contraction",
+      "video_id": "zKCcURnUYGQ",
+      "start": 1300,
+      "end": 1735,
+      "lecture_material": "Related lecture topic located by the stated span",
+      "research_extension": "Inspected external support is cited locally in the exposition",
+      "teaching_construction": "Expanded exposition, derivations, numerical checks and exercises are independently authored; an anchor does not attribute every statement to the recording"
+    },
+    {
+      "section": "The Kronecker delta and the identity map",
+      "anchor": "delta",
+      "video_id": "JUNbTpjFIOU",
+      "start": 314,
+      "end": 1415,
+      "lecture_material": "Related lecture topic located by the stated span",
+      "research_extension": "Inspected external support is cited locally in the exposition",
+      "teaching_construction": "Expanded exposition, derivations, numerical checks and exercises are independently authored; an anchor does not attribute every statement to the recording"
+    },
+    {
+      "section": "A systematic method for tutorial calculations",
+      "anchor": "tutorial",
+      "video_id": "RWGdCQiT2V4",
+      "start": 43,
+      "end": 1884,
+      "lecture_material": "Related lecture topic located by the stated span",
+      "research_extension": "Inspected external support is cited locally in the exposition",
+      "teaching_construction": "Expanded exposition, derivations, numerical checks and exercises are independently authored; an anchor does not attribute every statement to the recording"
+    },
+    {
+      "section": "Executable contraction checks",
+      "anchor": "implementation",
+      "video_id": null,
+      "start": null,
+      "end": null,
+      "lecture_material": "",
+      "research_extension": "Inspected external support is cited locally in the exposition",
+      "teaching_construction": "Expanded exposition, derivations, numerical checks and exercises are independently authored; an anchor does not attribute every statement to the recording"
+    },
+    {
+      "section": "What has been established",
+      "anchor": "limits",
+      "video_id": null,
+      "start": null,
+      "end": null,
+      "lecture_material": "",
+      "research_extension": "Inspected external support is cited locally in the exposition",
+      "teaching_construction": "Expanded exposition, derivations, numerical checks and exercises are independently authored; an anchor does not attribute every statement to the recording"
+    },
+    {
+      "section": "Exercises with worked solutions",
+      "anchor": "exercises",
+      "video_id": null,
+      "start": null,
+      "end": null,
+      "lecture_material": "",
+      "research_extension": "Inspected external support is cited locally in the exposition",
+      "teaching_construction": "Expanded exposition, derivations, numerical checks and exercises are independently authored; an anchor does not attribute every statement to the recording"
+    },
+    {
+      "section": "Sources and further development",
+      "anchor": "sources",
+      "video_id": null,
+      "start": null,
+      "end": null,
+      "lecture_material": "",
+      "research_extension": "Inspected external support is cited locally in the exposition",
+      "teaching_construction": "Expanded exposition, derivations, numerical checks and exercises are independently authored; an anchor does not attribute every statement to the recording"
+    }
+  ],
+  "references": [
+    {
+      "url": "https://solidmechanics.org/Text/Chapter2_1/Chapter2_1.php",
+      "title": "Applied Mechanics of Solids , §2.1",
+      "supports": "Specific claim and locator are given beside the citation in chapter-01-continuum-tensors-index-notation.html"
+    }
+  ],
+  "prose_words_including_math": 3594,
+  "solution_count": 6,
+  "executable_listing_count": 1,
+  "visual_boundary": "No comprehensive visual transcription or full audiovisual review is claimed. ASR cannot recover every board input; uncertain inputs are qualified locally."
+}

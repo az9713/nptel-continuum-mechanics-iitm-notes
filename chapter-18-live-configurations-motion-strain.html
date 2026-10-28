@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="color-scheme" content="dark light"><meta name="book-content-sha256" content="dad096eade3c28ab8a3ac7d2b01b32080062acb2436d0a7ad4ef0f209b9d7561">
+<title>Live discussion 2: configurations, motion and strain · Foundations of Continuum Mechanics</title><link rel="stylesheet" href="assets/book.css">
+<script>window.MathJax={tex:{inlineMath:[['$','$'],['\\(','\\)']],displayMath:[['$$','$$'],['\\[','\\]']],processEscapes:true},svg:{fontCache:'local'},options:{skipHtmlTags:['script','noscript','style','textarea','pre','code']}};</script>
+<script defer src="assets/mathjax-tex-svg.js"></script><script defer src="assets/book.js"></script></head>
+<body><a class="skip" href="#main">Skip to content</a><header class="site-header"><a class="brand" href="index.html">Foundations of Continuum Mechanics · NPTEL IIT Mandi</a><nav class="course-nav" aria-label="Book"><a href="index.html">Chapters</a><a href="source-map.html">Source map</a><a href="references.html">References</a><a href="numerical-lab.html">Numerical lab</a></nav></header>
+<div class="layout"><aside class="toc" id="chapter-toc" aria-label="On this page"><h2>On this page</h2></aside><main id="main"><div class="reading-tools" aria-label="Reading controls"><button id="theme-toggle" aria-pressed="false">Light theme</button><button id="text-toggle" aria-pressed="false">Larger text</button><button id="solutions-toggle" aria-pressed="false">Expand solutions</button><button id="print-page">Print with solutions</button></div>
+<article id="chapter-content"><!-- BOOK-CONTENT-START --><h1>Live discussion 2: motion, rotation and compatible strain</h1>
+<p class="lead">A rigidly rotated specimen has zero exact strain, but its displacement gradient is generally neither zero nor skew symmetric. This apparent contradiction disappears when finite rotation is distinguished from its first-order generator. The second live discussion revisits that distinction alongside particle labels, equivalent acceleration calculations, directional stretch and the differential dependencies among compatibility equations.</p>
+<p class="source-note">The spoken introduction identifies recording ri5qTz4uKhI as live discussion 2 on weeks 7–9. Its full local ASR was read; board equations were not independently inspected. Administrative remarks and the acknowledgment of an earlier tutorial acceleration error are separated from the reconstructed mathematics. The specific missing board term cannot be recovered reliably from speech alone. The examples and checks below are original, fully specified demonstrations of the questions raised.</p>
+
+<h2 id="reference" data-video="ri5qTz4uKhI" data-start="158" data-end="665">Why introduce particle IDs before material coordinates? <a class="timestamp" href="https://www.youtube.com/watch?v=ri5qTz4uKhI&amp;t=158s">2:38</a></h2>
+<p>A material particle is an enduring label. Its position is a function of time. A chosen one-to-one reference placement lets that label be represented by a reference position \(\mathbf X\), measured in metres. The motion \(\mathbf x=\boldsymbol\chi(\mathbf X,t)\) then assigns its current position, also in metres, at time \(t\) in seconds. Fixing \(\mathbf X\) fixes the particle, even though \(\mathbf x\) changes.</p>
+<p>The initial configuration is the actual configuration at the selected initial time. A reference configuration is the placement used to define the labels and deformation. They often coincide but need not. A specimen observed after prestretch can be described relative to its start-of-observation configuration or an earlier unloaded configuration. Changing that choice changes the motion function and strain relative to reference; it does not alter the actual sequence of spatial positions.</p>
+<p>For a stretch \(x=a(t)X\), where \(a(t)&gt;0\) is dimensionless, \(X\) is constant along a particle. Thus \(V(X,t)=\dot aX\), while spatial velocity is \(v(x,t)=(\dot a/a)x\). Differentiating \(X\) in place of \(x\) would produce zero because it differentiates the label rather than the trajectory. The full construction is in <a href="chapter-07-motion-material-derivative.html#coordinates">chapter 7</a>.</p>
+
+<h2 id="derivative" data-video="ri5qTz4uKhI" data-start="665" data-end="1201">Must two acceleration calculations agree? <a class="timestamp" href="https://www.youtube.com/watch?v=ri5qTz4uKhI&amp;t=665s">11:05</a></h2>
+<p>For a differentiable spatial scalar field \(f\), define its material representation by \(f_L(\mathbf X,t)=f(\boldsymbol\chi(\mathbf X,t),t)\). The chain rule gives \(\partial_tf_L=\partial_tf+v_i\partial_if\), evaluated at corresponding positions. This is the material derivative \(Df/Dt\). In fixed Cartesian components, applying it to velocity gives \(a_i=\partial_tv_i+v_j\partial_jv_i\). The Lagrangian acceleration \(A_i=\partial_t^2\chi_i\) and the Eulerian acceleration must satisfy \(a_i(\boldsymbol\chi(\mathbf X,t),t)=A_i(\mathbf X,t)\).</p>
+<p>The live question asks whether differentiating first in the material description and transforming afterward gives the same answer as starting spatially. The equality above proves that it does, provided the same motion, inverse map and basis are used. A difference points to an algebraic error, an omitted convective term or inconsistent coordinates. A transport theorem for integrals is not needed for this pointwise check.</p>
+<p>Choose \(a(t)=1+ct\), with constant rate \(c\) in s⁻¹ and \(1+ct&gt;0\). Direct differentiation gives \(A=0\). Spatially, \(v=cx/(1+ct)\), so \(\partial_tv=-c^2x/(1+ct)^2\) and \(v\partial_xv=c^2x/(1+ct)^2\). Their cancellation is exact. Omitting convection produces a false nonzero acceleration. The earlier tutorial error acknowledged in the recording motivates such independent checks; its board-only correction is not asserted here.</p>
+<p>The formula is componentwise in a fixed Cartesian basis. A rotating basis contributes derivatives of its basis vectors. Moreover an ordinary material tensor derivative need not be an objective constitutive stress rate. These are separate questions: following a particle fixes the path of differentiation, while changing the observer changes component transformation laws.</p>
+
+<h2 id="metric" data-video="ri5qTz4uKhI" data-start="1201" data-end="1980">Why remove translation and rigid rotation from strain? <a class="timestamp" href="https://www.youtube.com/watch?v=ri5qTz4uKhI&amp;t=1201s">20:01</a></h2>
+<p>For two neighboring material points, their current differential separation is \(d\mathbf x=\mathbf Fd\mathbf X\), where \(F_{iA}=\partial\chi_i/\partial X_A\) is dimensionless. A uniform translation disappears from this derivative. Rotation remains: a rigid motion \(\mathbf x=\mathbf Q\mathbf X+\mathbf b\) gives \(\mathbf F=\mathbf Q\), with \(\mathbf Q^T\mathbf Q=\mathbf I\).</p>
+<p>Internal geometry is measured by \(\mathbf C=\mathbf F^T\mathbf F\) and Green strain \(\mathbf E=(\mathbf C-\mathbf I)/2\). For two reference fibers, their current dot product is \(d\mathbf X_1\cdot\mathbf C d\mathbf X_2\). Thus \(\mathbf C\) encodes both lengths and mutual angles. A superposed rigid spatial rotation changes \(\mathbf F\) to \(\mathbf Q\mathbf F\) but leaves \(\mathbf C\) unchanged. This is why translation and rigid rotation can be removed from a strain measure without discarding the local stretching information.</p>
+<p>Let \(\mathbf H=\partial\mathbf u/\partial\mathbf X=\mathbf F-\mathbf I\) in coincident Cartesian bases. Then \(\mathbf E=\operatorname{sym}\mathbf H+\mathbf H^T\mathbf H/2\). If \(\|\mathbf H\|\ll1\), the infinitesimal strain \(\boldsymbol\varepsilon=\operatorname{sym}\mathbf H\) neglects a term of quadratic absolute size. A finite rigid rotation can have large \(\mathbf H\) despite zero \(\mathbf E\); small exact strain alone does not justify this approximation. The exact-versus-linear shear study in <a href="chapter-08-deformation-and-strain.html#small">chapter 8</a> quantifies the resulting error.</p>
+
+<h2 id="rotation" data-video="ri5qTz4uKhI" data-start="1980" data-end="2294">How is a skew tensor converted to a rotation vector? <a class="timestamp" href="https://www.youtube.com/watch?v=ri5qTz4uKhI&amp;t=1980s">33:00</a></h2>
+<p>Split the displacement gradient into \(\mathbf H=\boldsymbol\varepsilon+\boldsymbol\Omega\), where \(\boldsymbol\Omega=(\mathbf H-\mathbf H^T)/2\) is skew symmetric. It has three independent entries. Define its axial vector \(\boldsymbol\omega\) by \(\boldsymbol\Omega\mathbf a=\boldsymbol\omega\times\mathbf a\) for every vector \(\mathbf a\). The right-handed Cartesian convention gives</p>
+\[
+\Omega_{ij}=-\epsilon_{ijk}\omega_k,
+\qquad \omega_k=-\tfrac12\epsilon_{kij}\Omega_{ij}.
+\]
+<p>The inverse follows by contracting with \(\epsilon_{kij}\), using \(\epsilon_{kij}\epsilon_{ij\ell}=2\delta_{k\ell}\). The minus sign is tied to the cross-product convention and the input/output order. For \(\boldsymbol\omega=(0,0,\theta)\), the planar block is \(\left(\begin{smallmatrix}0&-\theta\\\theta&0\end{smallmatrix}\right)\), which moves \(\mathbf e_1\) toward positive \(\mathbf e_2\). When \(\mathbf H\) is the gradient of displacement, this vector is \(\boldsymbol\omega=\tfrac12\nabla\times\mathbf u\).</p>
+<p>The vector's direction identifies an infinitesimal rotation axis and its magnitude the small angle in radians. It is not a finite rotation matrix. A planar finite rotation is \(\mathbf R(\theta)=\left(\begin{smallmatrix}\cos\theta&-\sin\theta\\\sin\theta&\cos\theta\end{smallmatrix}\right)\). It is orthogonal, not skew symmetric. Even \(\mathbf R-\mathbf I\) is generally not skew symmetric. Only its first-order approximation has zero diagonal and off-diagonal entries \(\mp\theta\).</p>
+
+<h2 id="polar" data-video="ri5qTz4uKhI" data-start="2294" data-end="3033">How does polar decomposition become an additive split? <a class="timestamp" href="https://www.youtube.com/watch?v=ri5qTz4uKhI&amp;t=2294s">38:14</a></h2>
+<p>For invertible \(\mathbf F\) with positive determinant, define \(\mathbf U=(\mathbf F^T\mathbf F)^{1/2}\), the unique positive-definite symmetric square root, and \(\mathbf R=\mathbf F\mathbf U^{-1}\). Then \(\mathbf R^T\mathbf R=\mathbf I\), \(\det\mathbf R=1\), and \(\mathbf F=\mathbf R\mathbf U\). The left stretch is \(\mathbf V=\mathbf R\mathbf U\mathbf R^T\), giving \(\mathbf F=\mathbf V\mathbf R\). These exact factorizations use different stretch tensors. They do not license exchanging the order of the same rotation and stretch without modification.</p>
+<p>When \(\mathbf F=\mathbf I+\mathbf H\) is close to identity, \(\mathbf C=\mathbf I+2\boldsymbol\varepsilon+O(\|\mathbf H\|^2)\). Writing \(\mathbf U=\mathbf I+\mathbf K\) and squaring shows \(2\mathbf K=2\boldsymbol\varepsilon+O(\|\mathbf H\|^2)\). Thus \(\mathbf U=\mathbf I+\boldsymbol\varepsilon+O(\|\mathbf H\|^2)\), and \(\mathbf R=\mathbf I+\boldsymbol\Omega+O(\|\mathbf H\|^2)\). Multiplying and discarding quadratic products recovers \(\mathbf H=\boldsymbol\varepsilon+\boldsymbol\Omega\) to first order.</p>
+<p>Consequently \(\mathbf U-\mathbf I\) resembles a strain measure, not the entire displacement gradient. Setting it equal to \(\mathbf F-\mathbf I\) would discard rotation. For a pure finite rotation, \(\mathbf U=\mathbf I\) while \(\mathbf F-\mathbf I=\mathbf R-\mathbf I\ne0\). The exact polar construction is developed in <a href="https://solidmechanics.org/Text/Chapter2_2/Chapter2_2.php">Bower, §§2.2.17–2.2.18</a>; the small-gradient expansion here makes the distinction explicit.</p>
+
+<h2 id="stretch" data-video="ri5qTz4uKhI" data-start="2060" data-end="2219">Are stretches defined by initial and final directions different quantities? <a class="timestamp" href="https://www.youtube.com/watch?v=ri5qTz4uKhI&amp;t=2060s">34:20</a></h2>
+<p>The stretch of a material line is its current length divided by reference length. Specifying a unit reference direction \(\mathbf N\) gives \(\lambda_N=|\mathbf F\mathbf N|\). Specifying a unit current direction \(\mathbf n\) instead gives \(\lambda_n=1/|\mathbf F^{-1}\mathbf n|\). These are different directional functions describing the same physical length ratio.</p>
+<p>They agree when their directions correspond: \(\mathbf n=\mathbf F\mathbf N/|\mathbf F\mathbf N|\). Indeed \(\mathbf F^{-1}\mathbf n=\mathbf N/\lambda_N\), so \(\lambda_n=\lambda_N\). Choosing the same numerical component list for \(\mathbf N\) and \(\mathbf n\) generally selects different physical fibers. The inverse map, not a symbol change alone, establishes the correspondence.</p>
+
+<h2 id="compatibility" data-video="ri5qTz4uKhI" data-start="3033" data-end="3416">Why are the compatibility equations differentially dependent? <a class="timestamp" href="https://www.youtube.com/watch?v=ri5qTz4uKhI&amp;t=3033s">50:33</a></h2>
+<p>A symmetric field \(\varepsilon_{ij}\) is not automatically the symmetric gradient of a displacement. For a sufficiently smooth displacement, substituting \(\varepsilon_{ij}=(u_{i,j}+u_{j,i})/2\) and commuting partial derivatives gives the compatibility relations</p>
+\[
+\varepsilon_{ij,kl}+\varepsilon_{kl,ij}
+-\varepsilon_{ik,jl}-\varepsilon_{jl,ik}=0.
+\]
+<p>Commas indicate differentiation in fixed Cartesian coordinates. Each term has units m⁻² because strain is dimensionless. In a planar field, one consequential relation is \(\varepsilon_{11,22}+\varepsilon_{22,11}-2\varepsilon_{12,12}=0\). Its cancellation is visible after substitution: the \(u_1\) third derivatives cancel each other, as do the \(u_2\) derivatives. Compatibility eliminates displacement to test whether strain can be integrated, rather than adding six independent experimental equations to an already determined system.</p>
+<p>A compact three-dimensional version defines \(K_{ij}=\epsilon_{ipq}\epsilon_{jrs}\partial_p\partial_r\varepsilon_{qs}\). Compatibility requires \(\mathbf K=0\). Symmetry of strain and commuting derivatives make \(\mathbf K\) symmetric. Moreover \(\partial_iK_{ij}=0\) identically: the symmetric derivative pair \(\partial_i\partial_p\) contracts the antisymmetric \(\epsilon_{ipq}\). These differential identities explain why the six component equations cannot be counted as six unrelated algebraic conditions.</p>
+<p>They do not justify discarding any arbitrary three component equations throughout an arbitrary domain. Derivative identities, boundary information and topology matter. As discussed in <a href="https://solidmechanics.org/Text/Chapter2_2/Chapter2_2.php">Bower, §2.2.15</a>, local compatibility and global single-valued displacement are distinct on domains with holes. A compatible displacement is also determined only up to an infinitesimal rigid motion unless additional conditions fix translation and rotation.</p>
+
+<h2 id="implementation">Executable rotation and polar-limit checks</h2>
+<p>This NumPy check compares exact and linear strain for a 60-degree rigid rotation and computes polar factors for a small simple shear. It also recovers an axial vector from its matrix. All inputs are dimensionless. The program prints residuals, reads no files and uses no constitutive assumptions. A symmetric eigensolver computes the positive square root; singular or orientation-reversing maps are outside its stated physical contract.</p>
+<pre data-run="ch18"><code class="language-python">import numpy as np
+
+identity = np.eye(3)
+angle = np.pi/3
+rotation = np.array([[np.cos(angle), -np.sin(angle), 0.],
+                     [np.sin(angle), np.cos(angle), 0.],
+                     [0., 0., 1.]])
+h = rotation - identity
+green = (rotation.T @ rotation - identity)/2
+linear = (h + h.T)/2
+assert np.allclose(green, 0.0)
+assert np.allclose(linear + h.T @ h/2, 0.0)
+f = identity.copy()
+f[0, 1] = 0.01
+values, axes = np.linalg.eigh(f.T @ f)
+u = (axes*np.sqrt(values)) @ axes.T
+r = f @ np.linalg.inv(u)
+assert np.allclose(r.T @ r, identity)
+assert np.allclose(r @ u, f)
+spin = np.array([[0., -0.3, 0.2], [0.3, 0., -0.1],
+                 [-0.2, 0.1, 0.]])
+axial = np.array([spin[2, 1], spin[0, 2], spin[1, 0]])
+probe = np.array([2., 3., 4.])
+assert np.allclose(spin @ probe, np.cross(axial, probe))
+print('rigid rotation exact strain norm:', round(np.linalg.norm(green), 9))
+print('rigid rotation linear epsilon11:', round(float(linear[0, 0]), 6))
+print('polar reconstruction:', bool(np.allclose(r @ u, f)))
+print('axial vector:', axial.tolist())
+</code></pre>
+<pre data-output="ch18">rigid rotation exact strain norm: 0.0
+rigid rotation linear epsilon11: -0.5
+polar reconstruction: True
+axial vector: [0.1, 0.2, 0.3]</pre>
+
+<h2 id="exercises">Clarification problems with worked solutions</h2>
+<p><strong>1. Recover the axial vector.</strong> A skew matrix has \(\Omega_{12}=-a\), \(\Omega_{13}=b\), \(\Omega_{23}=-c\). Find its axial vector and test its action on \(\mathbf e_1\).</p>
+<details><summary>Solution</summary><p>Antisymmetry supplies \(\Omega_{21}=a\), \(\Omega_{31}=-b\), \(\Omega_{32}=c\). The convention \(\boldsymbol\Omega\mathbf q=\boldsymbol\omega\times\mathbf q\) gives \(\boldsymbol\omega=(c,b,a)\). Then \(\boldsymbol\omega\times\mathbf e_1=(0,a,-b)\), exactly the first column of \(\boldsymbol\Omega\). This direct test is useful when comparing sign conventions across texts.</p></details>
+<p><strong>2. A finite rotation is not skew.</strong> For a 60-degree planar rotation, calculate the symmetric part of \(\mathbf R-\mathbf I\). Why is exact strain still zero?</p>
+<details><summary>Solution</summary><p>The symmetric part is \((\cos60^\circ-1)\mathbf I=-\mathbf I/2\) in the plane. The quadratic contribution \((\mathbf R-\mathbf I)^T(\mathbf R-\mathbf I)/2\) equals \(\mathbf I/2\). They cancel in Green strain. Neglecting the quadratic term violates the small-gradient hypothesis and falsely predicts compression.</p></details>
+<p><strong>3. Match initial and final directions.</strong> Let the planar gradient be \(\mathbf F=\operatorname{diag}(2,1)\) and \(\mathbf N=(1,1)/\sqrt2\). Find the corresponding current direction and verify both stretch formulas.</p>
+<details><summary>Solution</summary><p>The image is \((2,1)/\sqrt2\), of length \(\sqrt{5/2}\). Its unit direction is \(\mathbf n=(2,1)/\sqrt5\). Applying \(\mathbf F^{-1}\) gives \((1,1)/\sqrt5\), whose length is \(\sqrt{2/5}\). The reciprocal length is \(\sqrt{5/2}\), matching the forward calculation. Using \((1,1)/\sqrt2\) as the current direction instead would refer to another fiber.</p></details>
+<p><strong>4. Test a candidate strain field.</strong> In a plane take \(\varepsilon_{11}=a x_2^2\), \(\varepsilon_{22}=\varepsilon_{12}=0\), where \(a\) has units m⁻². Can it arise from a smooth displacement on an open region for nonzero \(a\)?</p>
+<details><summary>Solution</summary><p>The planar compatibility residual is \(\partial_2^2(ax_2^2)=2a\), while the other two terms vanish. It is nonzero, so no sufficiently smooth displacement generates this field on an open region. Small amplitude cannot repair incompatibility: multiplying by a small nonzero constant reduces the residual but does not make it zero.</p></details>
+<p><strong>5. What strain cannot determine.</strong> If \(\mathbf u\) produces a compatible infinitesimal strain, does \(\widetilde{\mathbf u}=\mathbf u+\mathbf c+\boldsymbol\Omega_0\mathbf X\), with constant vector \(\mathbf c\) and constant skew matrix \(\boldsymbol\Omega_0\), produce the same strain?</p>
+<details><summary>Solution</summary><p>The added translation has zero gradient. The added linear field has gradient \(\boldsymbol\Omega_0\), whose symmetric part vanishes. Therefore both displacements produce the same infinitesimal strain. Boundary or reference conditions must fix this rigid-motion freedom. The statement concerns the infinitesimal theory; the finite map \(\mathbf I+\boldsymbol\Omega_0\) is not generally an exact rotation.</p></details>
+<h2 id="sources">Sources and boundaries</h2>
+<ul><li>NPTEL, Prof. Gaurav Bhutani, <a href="https://www.youtube.com/watch?v=ri5qTz4uKhI">live discussion 2</a>. Its pending promise to locate an axial-vector derivation is replaced here by a complete independent derivation.</li><li>A. F. Bower, <a href="https://solidmechanics.org/Text/Chapter2_2/Chapter2_2.php"><em>Applied Mechanics of Solids</em>, §§2.2.15 and 2.2.17–2.2.18</a>, inspected for compatibility boundaries and polar decomposition. Exact strain, small-gradient strain and constitutive objectivity remain distinct notions.</li></ul>
+<!-- BOOK-CONTENT-END --></article><nav class="page-turn" aria-label="Chapter navigation"><a rel="prev" href="chapter-17-live-tensor-and-stress-foundations.html">Previous chapter</a><a href="index.html">Chapter index</a><a rel="next" href="chapter-19-live-transport-balance-laws.html">Next chapter</a></nav></main></div><footer class="site-footer">Independent study edition. Prof. Gaurav Bhutani’s NPTEL recordings provide the topic spine. Original exposition, source limitations and verification evidence are separately recorded.</footer></body></html>

@@ -1,0 +1,299 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="color-scheme" content="dark light"><meta name="book-content-sha256" content="0a4e16e516398496e59e3921ae020791928168760f2b532ee0fd1a7e8facff00">
+<title>Determinants, coordinate transformations and isotropy · Foundations of Continuum Mechanics</title><link rel="stylesheet" href="assets/book.css">
+<script>window.MathJax={tex:{inlineMath:[['$','$'],['\\(','\\)']],displayMath:[['$$','$$'],['\\[','\\]']],processEscapes:true},svg:{fontCache:'local'},options:{skipHtmlTags:['script','noscript','style','textarea','pre','code']}};</script>
+<script defer src="assets/mathjax-tex-svg.js"></script><script defer src="assets/book.js"></script></head>
+<body><a class="skip" href="#main">Skip to content</a><header class="site-header"><a class="brand" href="index.html">Foundations of Continuum Mechanics · NPTEL IIT Mandi</a><nav class="course-nav" aria-label="Book"><a href="index.html">Chapters</a><a href="source-map.html">Source map</a><a href="references.html">References</a><a href="numerical-lab.html">Numerical lab</a></nav></header>
+<div class="layout"><aside class="toc" id="chapter-toc" aria-label="On this page"><h2>On this page</h2></aside><main id="main"><div class="reading-tools" aria-label="Reading controls"><button id="theme-toggle" aria-pressed="false">Light theme</button><button id="text-toggle" aria-pressed="false">Larger text</button><button id="solutions-toggle" aria-pressed="false">Expand solutions</button><button id="print-page">Print with solutions</button></div>
+<article id="chapter-content"><!-- BOOK-CONTENT-START --><h1>Determinants, coordinate transformations and isotropy</h1>
+<p class="lead">Two laboratories measure the same conducting specimen with their axes turned through forty-five degrees. One reports a diagonal conductivity matrix; the other reports off-diagonal entries. Their matrices differ, but they must predict the same physical heat flux. Keeping the first matrix unchanged in the second coordinate system gives a different prediction. Resolving that failure requires a transformation law, not a new material parameter. The same law also explains why some scalars remain unchanged for every tensor, while only special tensors are isotropic.</p>
+<p class="source-note">Lecture spine: numbered lessons 11–15 of Prof. Gaurav Bhutani’s NPTEL course. Lesson 11 appears later in the playlist but is placed first here to preserve the mathematical sequence. All five available local transcripts reach their explicit closing remarks, within 8–10 seconds of the listed recording ends. They establish the spoken sequence and approximate navigation spans; machine recognition does not establish exact board equations. Bower’s author-hosted textbook supplies the cited mathematical and frame-change reference support. The conductivity/shear calculations, complete representation proofs, program and worked exercises are original constructions. No material data or thermodynamic admissibility is inferred from these algebraic examples.</p>
+
+<h2 id="model">The same material response in two sets of axes</h2>
+<p>Use a right-handed orthonormal Cartesian basis \(\mathbf e_1,\mathbf e_2,\mathbf e_3\). Indices run from 1 to 3 and repeated pairs are summed in each multiplicative term. Vectors are represented by columns; for a linear map \(\mathbf A\), the first component index gives the output direction and the second gives the input direction. The transpose has components \((A^{\mathsf T})_{ij}=A_{ji}\). All transformations considered below are spatially uniform and time independent.</p>
+<p>The material example is the conductivity from chapter 1,</p>
+\[
+\mathbf K=\operatorname{diag}(4,1,1)\ \mathrm{W/(m\,K)},
+\quad \mathbf g=(1,2,0)\ \mathrm{K/m},
+\quad \mathbf q=-\mathbf K\mathbf g=(-4,-2,0)\ \mathrm{W/m^2}. \tag{3.1}
+\]
+<p>Here \(\mathbf g\) is a temperature gradient, with components \(g_i=\partial\theta/\partial x_i\), where temperature \(\theta\) is measured in kelvins and position \(x_i\) in metres. Heat flux \(\mathbf q\) is transferred power per unit area, resolved as a vector. The map is linear and fixed; its different conductivities along the first and second axes describe anisotropy. These are constructed numbers, chosen so that arithmetic does not hide the transformation.</p>
+<p>A second example retains the dimensionless shear \(\mathbf A\) with rows \((1,2,0),(0,1,0),(0,0,1)\). It is useful for testing transposition and volume because it is nonsymmetric. The conductivity and shear have different physical roles and units. Matrix identities apply to both, but a conductivity determinant is not a physical volume change.</p>
+
+<h2 id="matrices" data-video="UnB0px3MadU" data-start="44" data-end="958">Matrices, products and transposes <a class="timestamp" href="https://www.youtube.com/watch?v=UnB0px3MadU&amp;t=44s">L11 0:44</a></h2>
+<p>A matrix is a rectangular array of numbers. A square matrix has the same number of rows and columns. The identity matrix \(\mathbf I\) has entries \(\delta_{ij}\); the null matrix has every entry zero; a diagonal matrix has zero entries when its row and column labels differ. Diagonal entries may themselves vanish. These are descriptions of component arrays. Tensor behavior additionally requires the correct change when the basis changes.</p>
+<p>For compatible square matrices, composition gives \((\mathbf A\mathbf B)_{ij}=A_{ik}B_{kj}\). For example, the first component of \((\mathbf A\mathbf B)\mathbf x\) is obtained by first forming \(B_{kj}x_j\), then applying the first row of \(\mathbf A\). This is why row-by-column multiplication represents successive maps. The scalar factors \(A_{ik}\) and \(B_{kj}\) commute, but commuting their written order does not exchange the contracted slots or reverse the physical maps.</p>
+<p>Transposition reverses the order of composition. For each component,</p>
+\[
+[(\mathbf A\mathbf B)^{\mathsf T}]_{ij}
+=(\mathbf A\mathbf B)_{ji}=A_{jk}B_{ki}
+=(B^{\mathsf T})_{ik}(A^{\mathsf T})_{kj}.
+\quad\text{Thus}\quad
+(\mathbf A\mathbf B)^{\mathsf T}=\mathbf B^{\mathsf T}\mathbf A^{\mathsf T}. \tag{3.2}
+\]
+<p>The free labels remain \(i,j\) throughout. No renaming of a free label inside only one term is allowed. Likewise, \((\mathbf I\mathbf A)_{ij}=\delta_{ik}A_{kj}=A_{ij}\) follows from the delta substitution rule. These component proofs establish identities for every input, not just one test matrix. <a href="https://solidmechanics.org/Text/AppendixA/AppendixA.php">Bower, Appendix A, §§A.3.1–A.3.2</a>, reviews these matrix operations and their determinant counterparts.</p>
+
+<h2 id="determinant" data-video="UnB0px3MadU" data-start="958" data-end="1646">Determinants measure signed volume scaling <a class="timestamp" href="https://www.youtube.com/watch?v=UnB0px3MadU&amp;t=958s">L11 15:58</a></h2>
+<p>For a dimensionless geometric map, take the images of three initially unit orthogonal edges. Write its columns as \(\mathbf a_1=\mathbf A\mathbf e_1\), \(\mathbf a_2=\mathbf A\mathbf e_2\), and \(\mathbf a_3=\mathbf A\mathbf e_3\). Their scalar triple product defines the determinant in three dimensions:</p>
+\[
+J=\det\mathbf A
+=\mathbf a_1\cdot(\mathbf a_2\times\mathbf a_3)
+=\epsilon_{ijk}A_{i1}A_{j2}A_{k3}. \tag{3.3}
+\]
+<p>The nonzero epsilon entries give six terms. Writing them out yields</p>
+\[
+\begin{aligned}
+\det\mathbf A={}&amp;A_{11}A_{22}A_{33}+A_{21}A_{32}A_{13}
++A_{31}A_{12}A_{23}\\
+&amp;-A_{11}A_{32}A_{23}-A_{21}A_{12}A_{33}
+-A_{31}A_{22}A_{13}.
+\end{aligned} \tag{3.4}
+\]
+<p>Regrouping these terms by the first row gives the familiar cofactor expansion. It also shows that the row formula \(\epsilon_{ijk}A_{1i}A_{2j}A_{3k}\) gives the same value: its six scalar products coincide after reordering their factors. In particular, \(\det\mathbf A^{\mathsf T}=\det\mathbf A\). The determinant is linear in each column while the others are held fixed, and alternating under an exchange of two columns. Equal columns give zero. The same statements hold for rows.</p>
+<p>If the three image edges are independent, \(|J|\) is the volume of their parallelepiped. Positive \(J\) preserves their orientation; negative \(J\) reverses it. If \(J=0\), they lie in a plane or a line and enclose zero volume. For the running shear the columns are \((1,0,0),(2,1,0),(0,0,1)\), so \(J=1\). This agrees with chapter 2's triple-product calculation. The angle between the first two edges still changes: volume preservation does not imply rigidity.</p>
+<p>The determinant multiplication rule follows from the same alternating structure. For any column labels \(p,q,r\),</p>
+\[
+\epsilon_{ijk}A_{ip}A_{jq}A_{kr}
+=(\det\mathbf A)\epsilon_{pqr}. \tag{3.5}
+\]
+<p>If two labels coincide, the triple product has equal columns and is zero. If they are distinct, the columns are a permutation of the original three, so its sign is exactly \(\epsilon_{pqr}\). Substituting \((\mathbf A\mathbf B)_{i1}=A_{ip}B_{p1}\), and corresponding formulas for the other columns, gives</p>
+\[
+\det(\mathbf A\mathbf B)
+=\epsilon_{ijk}A_{ip}A_{jq}A_{kr}B_{p1}B_{q2}B_{r3}
+=(\det\mathbf A)(\det\mathbf B). \tag{3.6}
+\]
+<p>This proof includes singular maps. For nonsingular maps the signed volume factors multiply because the second geometric change acts on the already transformed block. For a dimensional map such as \(\mathbf K\), the determinant remains an algebraic quantity with units \([\mathrm{W/(m\,K)}]^3\). The geometric volume interpretation requires a map between length vectors with dimensionless entries.</p>
+<p>An odd-dimensional real skew-symmetric matrix has determinant zero. Indeed, if \(\mathbf W^{\mathsf T}=-\mathbf W\) in dimension three, then \(\det\mathbf W=\det\mathbf W^{\mathsf T}=\det(-\mathbf W)=-\det\mathbf W\). The last sign comes from multiplying each of three columns by −1. Hence the determinant vanishes. The dimension matters: the two-dimensional skew matrix with rows \((0,-1),(1,0)\) has determinant 1.</p>
+
+<h2 id="inverse">Cofactors, an inverse and a conditioning limit</h2>
+<p>The inverse map must recover an input from its output. To construct it, define the cofactor \(C_{ij}=(-1)^{i+j}M_{ij}\), where the minor \(M_{ij}\) is the determinant of the two-by-two array left after deleting row \(i\) and column \(j\). A two-by-two determinant is \(ad-bc\) for rows \((a,b),(c,d)\). Collect the cofactors in \(\operatorname{cof}\mathbf A=[C_{ij}]\); its transpose is the <dfn>adjugate</dfn>.</p>
+<p>In terms of columns, the cofactor matrix has columns \(\mathbf a_2\times\mathbf a_3,\mathbf a_3\times\mathbf a_1,\mathbf a_1\times\mathbf a_2\). For example, the first entry of its first column is \(A_{22}A_{33}-A_{32}A_{23}\), exactly \(C_{11}\). Each original column has zero dot product with the cross products containing itself, and dot product \(J\) with its complementary one. Consequently,</p>
+\[
+\mathbf A^{\mathsf T}\operatorname{cof}\mathbf A=J\mathbf I,
+\qquad
+\mathbf A^{-1}=\frac{(\operatorname{cof}\mathbf A)^{\mathsf T}}{J}
+\quad\text{if }J\ne0. \tag{3.7}
+\]
+<p>For a square matrix, the displayed left inverse is also a right inverse: a map with a left inverse has no nonzero null input, so its independent columns span the full three-dimensional space. Conversely, an inverse would imply \(1=\det(\mathbf A^{-1}\mathbf A)=\det\mathbf A^{-1}\det\mathbf A\); a zero determinant makes that impossible. Thus nonzero determinant is precisely the algebraic condition for invertibility.</p>
+<p>The shear has cofactor matrix with rows \((1,0,0),(-2,1,0),(0,0,1)\). Its inverse therefore has rows \((1,-2,0),(0,1,0),(0,0,1)\): subtract the shear that was added. Multiplying this inverse by the original matrix cancels the off-diagonal entry. The cofactor columns also recover the oriented face vectors calculated in chapter 2, connecting inverse construction to geometry.</p>
+<p>Invertibility does not guarantee numerical stability. The map \(\operatorname{diag}(1,1,\eta)\), with positive dimensionless \(\eta\), is invertible for every \(\eta\ne0\). Yet an absolute output perturbation \(\delta y_3\) becomes an input perturbation \(\delta y_3/\eta\). At \(\eta=10^{-8}\), that amplification is \(10^8\). Even determinant magnitude alone is not a conditioning measure: the shear family \(\mathbf I+\gamma\mathbf e_1\otimes\mathbf e_2\) keeps determinant 1 while its inverse amplifies selected errors as \(|\gamma|\) grows. <a href="https://solidmechanics.org/Text/AppendixB/AppendixB.php">Bower, Appendix B, §B2.9</a>, gives the inverse criterion and notes the practical use of elimination rather than explicit cofactor formulas.</p>
+
+<h2 id="basis" data-video="iXNFF6nmsvs" data-start="72" data-end="1646">A passive orthonormal change of basis <a class="timestamp" href="https://www.youtube.com/watch?v=iXNFF6nmsvs&amp;t=72s">L12 1:12</a></h2>
+<p>A <dfn>passive transformation</dfn> changes the coordinates assigned to the same geometric vectors. It does not move the specimen. Let \(\mathbf e'_1,\mathbf e'_2,\mathbf e'_3\) be another orthonormal basis with the same origin. Define its dimensionless direction-cosine matrix by</p>
+\[
+Q_{ij}=\mathbf e'_i\cdot\mathbf e_j,
+\qquad \mathbf e'_i=Q_{ij}\mathbf e_j,
+\qquad \mathbf e_j=Q_{ij}\mathbf e'_i. \tag{3.8}
+\]
+<p>The row index refers to the new direction and the column index to the old direction. Each entry is the cosine of their angle because both vectors have unit length. The nine entries are constrained, rather than nine independently selectable angles. A row must have length one and different rows must be perpendicular.</p>
+<p>To derive those constraints, insert (3.8) into the new-basis inner products:</p>
+\[
+\delta_{ij}=\mathbf e'_i\cdot\mathbf e'_j
+=Q_{ip}Q_{jq}\delta_{pq}=Q_{ip}Q_{jp},
+\qquad \mathbf Q\mathbf Q^{\mathsf T}=\mathbf I. \tag{3.9}
+\]
+<p>A square matrix satisfying this identity is <dfn>orthogonal</dfn>. Its transpose is its inverse, so \(\mathbf Q^{\mathsf T}\mathbf Q=\mathbf I\) as well. Taking determinants gives \((\det\mathbf Q)^2=1\). A <dfn>proper orthogonal</dfn> transformation has determinant +1 and preserves handedness; an <dfn>improper orthogonal</dfn> transformation has determinant −1 and reverses it. Rotations are proper; reflection through a plane is improper.</p>
+<p>For axes turned counterclockwise by angle \(\phi\) about the third axis, with positive angle defined by the right-hand rule about \(+\mathbf e_3\), the new first axis is \(\cos\phi\,\mathbf e_1+\sin\phi\,\mathbf e_2\). The new second is \(-\sin\phi\,\mathbf e_1+\cos\phi\,\mathbf e_2\). Hence</p>
+\[
+\mathbf Q(\phi)=
+\begin{bmatrix}\cos\phi&amp;\sin\phi&amp;0\\-\sin\phi&amp;\cos\phi&amp;0\\0&amp;0&amp;1\end{bmatrix}. \tag{3.10}
+\]
+<p>At \(\phi=\pi/2\), the new axes are \(\mathbf e'_1=\mathbf e_2\), \(\mathbf e'_2=-\mathbf e_1\), and \(\mathbf e'_3=\mathbf e_3\). A vector originally along \(\mathbf e_1\) must then have new components \((0,-1,0)\). This limiting case determines the signs without relying on a memorized rotation matrix whose active/passive convention may differ.</p>
+
+<h2 id="tensor-transform" data-video="fnVI2tzJ_aQ" data-start="221" data-end="1325">Deriving the vector and tensor transformation laws <a class="timestamp" href="https://www.youtube.com/watch?v=fnVI2tzJ_aQ&amp;t=221s">L13 3:41</a></h2>
+<p>The component of a fixed vector \(\mathbf v=v_j\mathbf e_j\) along a new basis direction is its dot product with that direction. Substituting (3.8) gives</p>
+\[
+v'_i=\mathbf e'_i\cdot\mathbf v=Q_{ij}v_j,
+\qquad \mathbf v'=\mathbf Q\mathbf v,
+\qquad \mathbf v=\mathbf Q^{\mathsf T}\mathbf v'. \tag{3.11}
+\]
+<p>Primes here label component lists. The underlying vector satisfies \(v_i\mathbf e_i=v'_i\mathbf e'_i\). Orthogonality preserves its length: \(v'_iv'_i=Q_{ij}Q_{ik}v_jv_k=\delta_{jk}v_jv_k=v_jv_j\). The same substitution proves preservation of dot products between any two vectors.</p>
+<p>For a second-order map, require that input and output describe the same physical relation in both bases. If \(\mathbf y=\mathbf A\mathbf x\), then \(\mathbf x=\mathbf Q^{\mathsf T}\mathbf x'\) and \(\mathbf y'=\mathbf Q\mathbf y\). Substitution yields</p>
+\[
+\mathbf y'=\mathbf Q\mathbf A\mathbf Q^{\mathsf T}\mathbf x',
+\qquad \mathbf A'=\mathbf Q\mathbf A\mathbf Q^{\mathsf T},
+\qquad A'_{ij}=Q_{ip}Q_{jq}A_{pq}. \tag{3.12}
+\]
+<p>Because this relation holds for every input, it determines the transformed map, not just its action on one chosen loading. The reverse relation is \(\mathbf A=\mathbf Q^{\mathsf T}\mathbf A'\mathbf Q\). Tensor transformation is therefore a constraint on a physical component rule. Recomputing an arbitrary table of nine numbers in another frame need not obey it.</p>
+<p>The dyadic expansion provides another derivation valid beyond rank-one maps. Write \(\mathbf A=A_{pq}\mathbf e_p\otimes\mathbf e_q\) and replace each old basis vector by \(\mathbf e_p=Q_{ip}\mathbf e'_i\). The coefficient of \(\mathbf e'_i\otimes\mathbf e'_j\) is exactly (3.12). Every second-order tensor has a sum of such dyads, although a general tensor is not a single dyad.</p>
+<p>For an order-\(r\) Cartesian tensor, the same argument contributes one factor of \(\mathbf Q\) for each slot:</p>
+\[
+C'_{i_1\cdots i_r}
+=Q_{i_1j_1}\cdots Q_{i_rj_r}C_{j_1\cdots j_r}. \tag{3.13}
+\]
+<p>Each repeated \(j\)-label is summed independently. A fourth-order tensor needs four factors, not a single matrix similarity applied to an unqualified array. These formulas assume orthonormal Cartesian bases. General nonorthogonal coordinate transformations require distinguishing vector and covector slots and transforming the metric. The broader coordinate discussion in <a href="https://solidmechanics.org/Text/AppendixB/AppendixB.php">Bower, Appendix B, §§B.1.3–B.1.4</a>, motivates that boundary; it does not license replacing every inverse by a transpose in arbitrary coordinates.</p>
+
+<h2 id="conductivity">The conductivity calculation in the rotated laboratory</h2>
+<p>Set \(\phi=\pi/4\), so the first two rows of \(\mathbf Q\) are \((1,1,0)/\sqrt2\) and \((-1,1,0)/\sqrt2\). The gradient transforms as a vector. This follows directly from the chain rule as well: with \(\mathbf x=\mathbf Q^{\mathsf T}\mathbf x'\), the same temperature field satisfies \(\theta'(\mathbf x')=\theta(\mathbf Q^{\mathsf T}\mathbf x')\), hence \(\partial\theta'/\partial x'_i=Q_{ij}\partial\theta/\partial x_j\).</p>
+<p>Applying (3.12) to (3.1) gives</p>
+\[
+\mathbf K'=
+\begin{bmatrix}5/2&amp;-3/2&amp;0\\-3/2&amp;5/2&amp;0\\0&amp;0&amp;1\end{bmatrix}\ \mathrm{W/(m\,K)},
+\qquad \mathbf g'=\frac1{\sqrt2}(3,1,0)\ \mathrm{K/m}. \tag{3.14}
+\]
+<p>For example, \(K'_{11}=4(1/2)+1(1/2)=5/2\), while \(K'_{12}=4(-1/2)+1(1/2)=-3/2\). Off-diagonal entries appear because the measuring directions no longer coincide with the selected material axes. They do not indicate a changed material.</p>
+<p>The predicted flux is</p>
+\[
+-\mathbf K'\mathbf g'=(-3\sqrt2,\sqrt2,0)\ \mathrm{W/m^2}
+=\mathbf Q(-4,-2,0)\ \mathrm{W/m^2}=\mathbf q'. \tag{3.15}
+\]
+<p>Returning to the old components with \(\mathbf Q^{\mathsf T}\) gives \((-4,-2,0)\), so both laboratories predict the same physical flux. Keeping \(\operatorname{diag}(4,1,1)\) as the new component matrix would instead give \((-12,-1,0)/\sqrt2\) in the new frame. The disagreement is a tensor-transformation error, not numerical roundoff.</p>
+<p>An <dfn>active rotation</dfn> moves the specimen while retaining the laboratory axes. Let \(\mathbf R\) physically turn every specimen direction counterclockwise by \(\pi/4\); its matrix is \(\mathbf Q^{\mathsf T}\). A laboratory input must first be brought back to specimen coordinates with \(\mathbf R^{\mathsf T}\), acted on by \(\mathbf K\), then rotated to the laboratory with \(\mathbf R\). Thus the rotated specimen has laboratory conductivity \(\mathbf K_{\mathrm{rot}}=\mathbf R\mathbf K\mathbf R^{\mathsf T}\). Its off-diagonal entries are +3/2, and with the original fixed gradient its flux is \((-5.5,-6.5,0)\) W/m².</p>
+<p>The two operations use similar-looking products but answer different questions: passive rotation re-expresses one experiment; active rotation changes its material orientation relative to the imposed gradient. <a href="https://solidmechanics.org/Text/Chapter2_7/Chapter2_7.php">Bower, §2.7</a>, distinguishes coordinate changes from physical deformation when developing frame transformations. Here time is unchanged and the axes are fixed in time; moving-observer dynamics and material frame indifference need additional definitions.</p>
+
+<h2 id="isotropy" data-video="NaSPrp6-ZIY" data-start="44" data-end="808">Isotropy is a restriction on the whole tensor <a class="timestamp" href="https://www.youtube.com/watch?v=NaSPrp6-ZIY&amp;t=44s">L14 0:44</a></h2>
+<p>A second-order tensor is <dfn>isotropic</dfn> under rotations if \(\mathbf Q\mathbf A\mathbf Q^{\mathsf T}=\mathbf A\) for every proper orthogonal \(\mathbf Q\). The complete component array then has the same form in every rotated orthonormal basis. Every tensor represents the same geometric object after a passive change of coordinates; isotropy adds the stronger condition that even its numerical component array is unchanged.</p>
+<p>The identity is isotropic because \(Q_{ip}Q_{jq}\delta_{pq}=Q_{ip}Q_{jp}=\delta_{ij}\). Any scalar multiple \(a\mathbf I\) has the same property. To prove these are the only possibilities, begin with an arbitrary real matrix, without assuming symmetry. Apply the proper half-turn \(\operatorname{diag}(1,-1,-1)\). Its conjugation reverses the signs of entries 12, 13, 21 and 31, forcing those entries to zero if the matrix is unchanged. A half-turn about the second axis similarly eliminates entries 23 and 32.</p>
+<p>The remaining matrix is diagonal. A quarter-turn about the third axis exchanges its first two diagonal entries, so invariance requires \(A_{11}=A_{22}\). A quarter-turn about the first axis then gives \(A_{22}=A_{33}\). Thus \(\mathbf A=a\mathbf I\). The converse was already established, completing both directions of the characterization. No nonsymmetric exception survives the half-turn tests.</p>
+<p>There is no nonzero isotropic vector: a half-turn about an axis perpendicular to a proposed nonzero vector reverses it. A vector unchanged by every such rotation must equal its negative and hence vanish. By contrast, a tensor can be invariant under some rotations without being isotropic. The conductivity is unchanged by rotations about \(\mathbf e_1\), because its second and third conductivities agree, but a quarter-turn about \(\mathbf e_3\) exchanges its unequal first and second entries. One symmetry axis is not isotropy.</p>
+<p>Isotropy and spatial homogeneity are also distinct. A conductivity \(\mathbf K(\mathbf x)=k(\mathbf x)\mathbf I\) can be isotropic at each point while varying with position. Conversely, a constant anisotropic matrix is homogeneous but directional. Neither property follows from coordinate invariance of the predicted flux. The mathematical characterization above concerns a tensor at one point; claims about an entire material require a specified response and scale.</p>
+
+<h2 id="orientation" data-video="NaSPrp6-ZIY" data-start="808" data-end="1074">Orientation, reflections and third-order isotropy <a class="timestamp" href="https://www.youtube.com/watch?v=NaSPrp6-ZIY&amp;t=808s">L14 13:28</a></h2>
+<p>The alternating array has a special status because it encodes the chosen orientation. Applying the ordinary third-order transformation rule to its entries gives</p>
+\[
+Q_{ip}Q_{jq}Q_{kr}\epsilon_{pqr}
+=(\det\mathbf Q)\epsilon_{ijk}. \tag{3.16}
+\]
+<p>This is the determinant identity for the three rows of \(\mathbf Q\): if the row labels repeat it vanishes; otherwise they are a signed permutation of the rows in a determinant. Hence the components of the oriented alternating tensor are unchanged under proper rotations and reversed under improper ones. For reflection \(\mathbf H=\operatorname{diag}(1,1,-1)\), the transformed 123 component is −1.</p>
+<p>It is possible to prove that every rotationally isotropic third-order tensor is a scalar multiple of \(\epsilon_{ijk}\). A half-turn about the first axis multiplies a component by \((-1)^{n_2+n_3}\), where \(n_a\) counts how often numerical label \(a\) occurs in its three slots. Half-turns about the other axes impose the analogous conditions. For a nonzero invariant component, the three counts have the same parity. Since they sum to three, each must be one. Only the six permutations of 123 can survive.</p>
+<p>Proper cyclic permutations of the coordinate axes make the three cyclic components equal. A proper signed permutation exchanging axes 1 and 2 and reversing axis 3 has determinant +1. Every surviving component contains axis 3 once, so that sign reversal forces a minus sign under the exchange of axes 1 and 2. Repeating for other exchanges proves full alternation. Thus the six surviving components have one common magnitude and the epsilon sign pattern. This establishes the characterization without assuming it from a component count.</p>
+<p>If isotropy is required under every orthogonal transformation, an ordinary polar third-order tensor must instead vanish. In particular \(\mathbf Q=-\mathbf I\) contributes three minus signs in (3.13), so an unchanged tensor must equal its negative. The words “isotropic third-order tensor” therefore need an explicit choice between rotations only and rotations plus reflections.</p>
+<p>A related convention explains axial vectors. Polar vectors transform as \(\mathbf a'=\mathbf Q\mathbf a\). If cross-product components are calculated with the same numerical epsilon array in every frame, their transformation is</p>
+\[
+(\mathbf Q\mathbf a)\times(\mathbf Q\mathbf b)
+=(\det\mathbf Q)\mathbf Q(\mathbf a\times\mathbf b). \tag{3.17}
+\]
+<p>Multiplying (3.16) by an inverse orthogonal factor proves this identity. The extra determinant sign defines an <dfn>axial</dfn>, or pseudovector, transformation convention. It agrees with the polar rule under proper rotations and differs under reflections. For the reflected basis, \(\mathbf H\mathbf e_1=\mathbf e_1\) and \(\mathbf H\mathbf e_2=\mathbf e_2\), so their numerical cross product is \(\mathbf e_3\). The polar transformation of their original normal is \(-\mathbf e_3\); the determinant factor restores \(+\mathbf e_3\). Keeping a fixed geometric orientation instead requires transforming the alternating tensor too. Mixing these conventions creates a spurious sign error.</p>
+
+<h2 id="higher-order" data-video="NaSPrp6-ZIY" data-start="1074" data-end="1178">The three-parameter fourth-order isotropic tensor <a class="timestamp" href="https://www.youtube.com/watch?v=NaSPrp6-ZIY&amp;t=1074s">L14 17:54</a></h2>
+<p>A fourth-order tensor can map one second-order tensor to another. For dimensionless real input \(\mathbf B\), define \(T_{ij}=C_{ijkl}B_{kl}\). No symmetry of \(\mathbf B\) or \(\mathbf C\) is assumed yet. The three delta products \(\delta_{ij}\delta_{kl}\), \(\delta_{ik}\delta_{jl}\), and \(\delta_{il}\delta_{jk}\) are isotropic: transforming each slot introduces four Q factors, and each delta contracts a pair of them to another delta.</p>
+<p>The complete representation is</p>
+\[
+C_{ijkl}=a\delta_{ij}\delta_{kl}
++b\delta_{ik}\delta_{jl}+c\delta_{il}\delta_{jk}, \tag{3.18}
+\]
+<p>where \(a,b,c\) are scalars with the units required by the input and output. To prove completeness in three dimensions, apply the same half-turn reasoning as above to a rotationally isotropic fourth-order tensor. The counts of each numerical label must have the same parity and sum to four. All are therefore even. A nonzero component can contain four equal labels, or two copies each of two distinct labels. Every other component vanishes.</p>
+<p>Signed permutations with determinant +1 can move one numerical axis label to another. Since each surviving label occurs an even number of times, the signs cancel. Consequently all components of type 1111 have one value \(d\); components of types 1122, 1212 and 1221 have values \(a,b,c\), respectively. This classification includes their axis permutations, such as 2211 and 2121. It does not permute the tensor's slots or presume minor symmetry.</p>
+<p>Now rotate the first two axes by \(\pi/4\). The transformed 1111 component sums sixteen terms. Only two all-equal terms and six two-pair terms survive, each with coefficient \(1/4\). Thus \(C'_{1111}=(2d+2a+2b+2c)/4\). Isotropy requires this to equal \(d\), giving \(d=a+b+c\). Formula (3.18) reproduces precisely these component values and all the forced zeros. Since each of its three terms is isotropic, the representation is both necessary and sufficient. It remains valid under reflections as well.</p>
+<p>Contracting with \(\mathbf B\) interprets the three parameters:</p>
+\[
+\mathbf T=a\operatorname{tr}(\mathbf B)\mathbf I+b\mathbf B+c\mathbf B^{\mathsf T}. \tag{3.19}
+\]
+<p>The first term responds to the trace, the second copies the input, and the third copies its transpose. For \(a=2,b=c=3\) and symmetric input with rows \((1,2,0),(2,-1,0),(0,0,0)\), the trace vanishes and \(\mathbf T=6\mathbf B\). For \(\mathbf B=\beta\mathbf I\), the response is instead \((3a+b+c)\beta\mathbf I=12\beta\mathbf I\). Isotropy does not require equal responses to a trace-changing and a trace-free input.</p>
+<p>Minor symmetry in the final pair means \(C_{ijkl}=C_{ijlk}\). Comparing \(C_{1212}=b\) and \(C_{1221}=c\) shows that it requires \(b=c\). If the input is symmetric, (3.19) then has the two-parameter form \(\mathbf T=a\operatorname{tr}(\mathbf B)\mathbf I+2b\mathbf B\). This is the algebraic structure later used for isotropic linear elasticity. Units, strain and stress definitions, energy restrictions and admissible parameter ranges remain separate physical requirements. Restricting measurements to symmetric inputs only determines \(b+c\); it cannot establish the value of \(b-c\) without additional assumptions.</p>
+
+<h2 id="invariants" data-video="NaSPrp6-ZIY" data-start="1178" data-end="1809">Scalars that survive a change of axes <a class="timestamp" href="https://www.youtube.com/watch?v=NaSPrp6-ZIY&amp;t=1178s">L14 19:38</a></h2>
+<p>A <dfn>scalar invariant</dfn> is a scalar expression with the same value when its tensor arguments are transformed to another allowed basis. For a real second-order tensor, the trace is invariant because</p>
+\[
+A'_{ii}=Q_{ip}Q_{iq}A_{pq}
+=\delta_{pq}A_{pq}=A_{pp}. \tag{3.20}
+\]
+<p>No symmetry of \(\mathbf A\) is needed. For the Frobenius squared norm, substitution gives four transformation factors:</p>
+\[
+A'_{ij}A'_{ij}
+=Q_{ip}Q_{jq}Q_{ir}Q_{js}A_{pq}A_{rs}
+=\delta_{pr}\delta_{qs}A_{pq}A_{rs}=A_{pq}A_{pq}. \tag{3.21}
+\]
+<p>Similarly, \(\operatorname{tr}((\mathbf A')^2)=\operatorname{tr}(\mathbf A^2)\), since \((\mathbf A')^2=\mathbf Q\mathbf A^2\mathbf Q^{\mathsf T}\) and (3.20) applies to \(\mathbf A^2\). The determinant is invariant by (3.6): \(\det\mathbf A'=(\det\mathbf Q)^2\det\mathbf A=\det\mathbf A\). These statements hold for proper and improper orthogonal transformations.</p>
+<p>The conductivity has trace 6, squared Frobenius norm 18, and determinant 4, with the appropriate first, second and third powers of its units. Its rotated matrix has the same values: the squares of its entries sum to \(2(25/4)+2(9/4)+1=18\). The shear instead has squared Frobenius norm 7 and trace of its square 3, both invariant but different. Invariance does not allow one contraction to replace the other.</p>
+<p>Invariant scalars discard information. The trace cannot distinguish \(\operatorname{diag}(4,1,1)\) from \(2\mathbf I\), although their responses differ. A useful measure of departure from a scalar map is</p>
+\[
+\left\|\mathbf A-\frac{\operatorname{tr}\mathbf A}{3}\mathbf I\right\|_F^2
+=\mathbf A:\mathbf A-\frac{(\operatorname{tr}\mathbf A)^2}{3}. \tag{3.22}
+\]
+<p>Expanding the square proves the formula using \(\mathbf A:\mathbf I=\operatorname{tr}\mathbf A\) and \(\mathbf I:\mathbf I=3\). For real components it vanishes exactly when \(\mathbf A\) is a scalar multiple of the identity. The conductivity gives \(18-36/3=6\), which remains nonzero in every rotated frame. A scalar can therefore diagnose anisotropy while itself being invariant.</p>
+
+<h2 id="tutorial" data-video="PG96IUqOgq4" data-start="40" data-end="1894">A tutorial strategy for transformations <a class="timestamp" href="https://www.youtube.com/watch?v=PG96IUqOgq4&amp;t=40s">L15 0:40</a></h2>
+<p>The week-three tutorial connects determinant signs, tensor transformations, trace invariance and the uniqueness of the second-order isotropic form. A useful calculation order is to specify the actual new basis vectors, form the rows of \(\mathbf Q\), verify orthogonality and handedness, and only then transform a vector or tensor. This makes a clockwise-versus-counterclockwise error visible before it contaminates nine entries.</p>
+<p>For example, a clockwise quarter-turn about the first axis gives new axes \(\mathbf e'_1=\mathbf e_1\), \(\mathbf e'_2=-\mathbf e_3\), and \(\mathbf e'_3=\mathbf e_2\). Its direction-cosine rows are \((1,0,0),(0,0,-1),(0,1,0)\). The vector \((1,2,0)\) then has components \((1,0,2)\). Reflection through the first–second coordinate plane instead has matrix \(\operatorname{diag}(1,1,-1)\), determinant −1, and leaves that particular vector unchanged. One unchanged vector cannot determine whether a transformation is a rotation or a reflection.</p>
+<p>Another tutorial identity permutes both rows and columns of a determinant. For fixed numerical labels \(m,n,p,q,r,s\), the selected array with rows \((A_{mq},A_{mr},A_{ms})\), \((A_{nq},A_{nr},A_{ns})\), \((A_{pq},A_{pr},A_{ps})\) has determinant \(\epsilon_{mnp}\epsilon_{qrs}\det\mathbf A\), with no summation over these six labels in this statement. Distinct row and column labels supply their permutation signs. Repetition selects equal rows or columns, making both sides zero. This contains the determinant-based epsilon identities as special cases, rather than a new rule that must be memorized.</p>
+
+<h2 id="implementation">Executable checks of covariance and isotropic response</h2>
+<p>The program uses the fixed shear, conductivity and forty-five-degree basis rotation. It compares two physical flux calculations, checks scalar invariants, tests the orientation sign under both a rotation and a reflection, and verifies the fourth-order response against its three-term formula. NumPy is required. Inputs are embedded, no files are read or written, and failed relations raise assertions. Rounded print values aid reading; the checks use the unrounded arrays.</p>
+<pre data-run="ch03"><code class="language-python">from itertools import permutations
+import numpy as np
+
+identity = np.eye(3)
+eps = np.zeros((3, 3, 3))
+for p in permutations(range(3)):
+    inversions = sum(p[i] &gt; p[j] for i in range(3) for j in range(i+1, 3))
+    eps[p] = (-1)**inversions
+shear = np.array([[1., 2., 0.], [0., 1., 0.], [0., 0., 1.]])
+columns = [shear[:, j] for j in range(3)]
+cofactor = np.column_stack([np.cross(columns[1], columns[2]),
+                            np.cross(columns[2], columns[0]),
+                            np.cross(columns[0], columns[1])])
+determinant = float(columns[0] @ cofactor[:, 0])
+inverse = cofactor.T/determinant
+assert np.allclose(inverse @ shear, identity)
+conductivity = np.diag([4., 1., 1.])
+gradient = np.array([1., 2., 0.])
+flux = -conductivity @ gradient
+q = np.array([[1., 1., 0.], [-1., 1., 0.], [0., 0., np.sqrt(2)]])
+q /= np.sqrt(2)
+assert np.allclose(q @ q.T, identity)
+primed_k = q @ conductivity @ q.T
+primed_g = q @ gradient
+primed_flux = -primed_k @ primed_g
+assert np.allclose(primed_flux, q @ flux)
+assert np.allclose(q.T @ primed_flux, flux)
+wrong_flux = -conductivity @ primed_g
+assert not np.allclose(wrong_flux, primed_flux)
+assert np.isclose(np.trace(primed_k), np.trace(conductivity))
+assert np.isclose(np.sum(primed_k**2), np.sum(conductivity**2))
+assert np.isclose(np.linalg.det(primed_k), np.linalg.det(conductivity))
+reflection = np.diag([1., 1., -1.])
+for transform in [q, reflection]:
+    transformed_eps = np.einsum('ip,jq,kr,pqr-&gt;ijk',
+                                transform, transform, transform, eps)
+    assert np.allclose(transformed_eps, np.linalg.det(transform)*eps)
+fourth = (2*np.einsum('ij,kl-&gt;ijkl', identity, identity)
+          + 3*np.einsum('ik,jl-&gt;ijkl', identity, identity)
+          + 3*np.einsum('il,jk-&gt;ijkl', identity, identity))
+sample = np.array([[1., 2., 0.], [2., -1., 0.], [0., 0., 0.]])
+response = np.einsum('ijkl,kl-&gt;ij', fourth, sample)
+assert np.allclose(response, 2*np.trace(sample)*identity + 6*sample)
+rotated_fourth = np.einsum('ip,jq,kr,ls,pqrs-&gt;ijkl', q, q, q, q, fourth)
+assert np.allclose(rotated_fourth, fourth)
+assert np.allclose(6*(q @ sample @ q.T), q @ response @ q.T)
+print('shear determinant:', determinant)
+print('shear inverse:', inverse.tolist())
+print('rotated conductivity:', np.round(primed_k, 6).tolist())
+print('rotated flux:', np.round(primed_flux, 6).tolist())
+print('conductivity invariants:', round(np.trace(primed_k), 6),
+      round(np.sum(primed_k**2), 6), round(np.linalg.det(primed_k), 6))
+print('reflection determinant:', float(np.linalg.det(reflection)))
+print('fourth-order response:', response.tolist())
+print('all covariance, orientation and inverse checks passed')</code></pre>
+<pre data-output="ch03">shear determinant: 1.0
+shear inverse: [[1.0, -2.0, 0.0], [0.0, 1.0, 0.0], [0.0, 0.0, 1.0]]
+rotated conductivity: [[2.5, -1.5, 0.0], [-1.5, 2.5, 0.0], [0.0, 0.0, 1.0]]
+rotated flux: [-4.242641, 1.414214, 0.0]
+conductivity invariants: 6.0 18.0 4.0
+reflection determinant: -1.0
+fourth-order response: [[6.0, 12.0, 0.0], [12.0, -6.0, 0.0], [0.0, 0.0, 0.0]]
+all covariance, orientation and inverse checks passed</pre>
+<p>The deliberately wrong flux calculation is asserted to disagree, making the opening failure reproducible. The program tests selected rotations and inputs; finite testing cannot prove isotropy under infinitely many rotations. The component arguments above supply that proof. Conversely, correct tensor algebra does not verify the conductivity values of a real specimen.</p>
+
+<h2 id="limits">What the coordinate calculation establishes</h2>
+<p>The determinant measures signed geometric volume scaling for dimensionless maps and gives the exact condition for an inverse. The transformation law preserves a map's physical predictions when the basis changes. Trace, determinant and complete metric contractions give scalar invariants for anisotropic tensors as well as isotropic ones. Rotational isotropy restricts second-order tensors to scalar identity maps, third-order tensors to multiples of the oriented alternating tensor, and fourth-order tensors to three delta products.</p>
+<p>These results concern fixed orthonormal Cartesian changes. Reflections require attention to polar and axial conventions; general coordinates require a metric and slot distinctions; time-dependent observers require additional kinematics. Isotropic tensor structure also does not supply constitutive parameters or stability conditions. The reader can now distinguish a representation error from a changed experiment, and a scalar invariant from the stronger property of isotropy.</p>
+
+<h2 id="exercises">Exercises with worked solutions</h2>
+<p><strong>1. The dimension in a skew determinant.</strong> Show that a real skew-symmetric matrix in any odd dimension has zero determinant. Explain why the argument fails in even dimension and give a counterexample.</p>
+<details><summary>Solution</summary><p>For a dimension \(d\), transposition preserves determinant and multiplying all columns by −1 contributes \((-1)^d\). Thus \(\det\mathbf W=\det\mathbf W^{\mathsf T}=\det(-\mathbf W)=(-1)^d\det\mathbf W\). When \(d\) is odd, this gives \(2\det\mathbf W=0\). For even \(d\), it gives no restriction. The skew matrix \(\begin{bmatrix}0&amp;-1\\1&amp;0\end{bmatrix}\) has determinant 1. In three dimensions the axial representation supplies another explanation: \(\mathbf W\boldsymbol\omega=\boldsymbol\omega\times\boldsymbol\omega=0\), so a nonzero axial vector is a null input; if the axial vector vanishes, the whole matrix vanishes.</p></details>
+<p><strong>2. Build an inverse from face vectors.</strong> For \(\mathbf A(\gamma)=\mathbf I+\gamma\mathbf e_1\otimes\mathbf e_2\), construct the cofactor columns and inverse. Verify the inverse by multiplication and identify an amplified output error.</p>
+<details><summary>Solution</summary><p>The columns are \((1,0,0),(\gamma,1,0),(0,0,1)\). The cofactor columns are their cyclic cross products: \((1,-\gamma,0),(0,1,0),(0,0,1)\). The determinant is 1. Transposing the cofactor gives \(\mathbf A^{-1}=\mathbf I-\gamma\mathbf e_1\otimes\mathbf e_2\). Since \((\mathbf e_1\otimes\mathbf e_2)^2=(\mathbf e_2\cdot\mathbf e_1)\mathbf e_1\otimes\mathbf e_2=0\), multiplication of the two factors gives exactly \(\mathbf I\). An output error \((0,\delta,0)\) becomes input error \((-\gamma\delta,\delta,0)\), whose length is \(|\delta|\sqrt{1+\gamma^2}\). A fixed unit determinant therefore does not bound error amplification.</p></details>
+<p><strong>3. Transform a vector and a nonsymmetric map.</strong> Use the clockwise quarter-turn about the first axis defined in the tutorial section. Find the new components of \(\mathbf v=(1,2,0)\) and of the shear \(\mathbf A\). Verify that applying the transformed map agrees with transforming the original output.</p>
+<details><summary>Solution</summary><p>The direction-cosine matrix has rows \((1,0,0),(0,0,-1),(0,1,0)\), so \(\mathbf v'=(1,0,2)\). The shear is \(\mathbf I+2\mathbf e_1\otimes\mathbf e_2\). As component columns, \(\mathbf Q\mathbf e_1=\mathbf e_1\) and \(\mathbf Q\mathbf e_2=\mathbf e_3\); hence \(\mathbf A'=\mathbf I+2\mathbf e_1\otimes\mathbf e_3\), with rows \((1,0,2),(0,1,0),(0,0,1)\). It gives \(\mathbf A'\mathbf v'=(5,0,2)\). Independently, \(\mathbf A\mathbf v=(5,2,0)\), whose transformed components are \((5,0,2)\). Transforming only the vector while retaining the old shear matrix would give \((1,0,2)\), failing this check.</p></details>
+<p><strong>4. One symmetry is not isotropy.</strong> For \(\mathbf K=\operatorname{diag}(4,1,1)\), show invariance under rotations about the first axis and failure under a quarter-turn about the third. Evaluate (3.22), and explain why its value is an invariant rather than evidence for isotropy.</p>
+<details><summary>Solution</summary><p>A rotation about the first axis leaves its first component unchanged and acts orthogonally on the second–third block, where \(\mathbf K\) is the identity. Thus \(\mathbf Q\mathbf K\mathbf Q^{\mathsf T}=\mathbf K\) for this family. A quarter-turn about the third axis interchanges the first two diagonal values, giving \(\operatorname{diag}(1,4,1)\), so the all-rotations condition fails. Trace is 6 and squared Frobenius norm is 18; (3.22) gives \(18-36/3=6\). The same nonzero value occurs in every orthonormal basis because both terms are invariant. It measures the departure from a scalar identity map; it does not make the component array unchanged under rotations.</p></details>
+<p><strong>5. A reflected alternating tensor.</strong> Let \(\mathbf H=\operatorname{diag}(1,1,-1)\). Compute the transformed 123 component of an ordinary third-order tensor initially equal to \(\epsilon_{ijk}\). Compare the polar transform of \(\mathbf e_1\times\mathbf e_2\) with the cross product of the transformed inputs using a fixed numerical epsilon array.</p>
+<details><summary>Solution</summary><p>Only \(p=1,q=2,r=3\) survives in \(H_{1p}H_{2q}H_{3r}\epsilon_{pqr}\), giving \(1\times1\times(-1)\times1=-1\). Thus the oriented third-order tensor reverses sign. The original cross product is \(\mathbf e_3\); its polar component transform is \(\mathbf H\mathbf e_3=-\mathbf e_3\). The transformed inputs remain \(\mathbf e_1,\mathbf e_2\), whose cross product with the unchanged numerical epsilon convention is \(+\mathbf e_3\). Equation (3.17) accounts for the difference: \((\det\mathbf H)\mathbf H\mathbf e_3=(-1)(-\mathbf e_3)=\mathbf e_3\). Transforming the oriented epsilon tensor or adopting the axial convention gives consistent results. Keeping the numerical epsilon fixed while demanding polar behavior does not.</p></details>
+<p><strong>6. Which parts of a tensor can an isotropic fourth-order map recover?</strong> For \(\mathbf T=a\operatorname{tr}(\mathbf B)\mathbf I+b\mathbf B+c\mathbf B^{\mathsf T}\), derive conditions for a unique inverse on all real second-order tensors. Then restrict inputs to symmetric tensors and discuss \(b=c\).</p>
+<details><summary>Solution</summary><p>Decompose \(\mathbf B=s\mathbf I+\mathbf E+\mathbf W\), where \(s=\operatorname{tr}\mathbf B/3\), \(\mathbf E\) is symmetric and trace-free, and \(\mathbf W\) is skew. This follows by splitting into symmetric/skew parts, then removing the symmetric trace. Substitution gives \(\mathbf T=(3a+b+c)s\mathbf I+(b+c)\mathbf E+(b-c)\mathbf W\). The same three parts of \(\mathbf T\) are obtained by trace, symmetric trace-free projection, and skew projection. Each can therefore be inverted exactly when its coefficient is nonzero. A unique inverse on all matrices requires \(3a+b+c\ne0\), \(b+c\ne0\), and \(b-c\ne0\). If one coefficient vanishes, every nonzero input in its corresponding subspace is lost.</p><p>On symmetric inputs \(\mathbf W=0\), so only the first two conditions matter. With minor symmetry \(b=c\), the full-space map necessarily discards skew inputs, but the symmetric-space inverse exists if \(b\ne0\) and \(3a+2b\ne0\). For the constructed values \(a=2,b=c=3\), the trace mode is multiplied by 12 and the symmetric trace-free mode by 6. These are algebraic invertibility conditions; positive stored energy would require a separate physical argument and sign restrictions.</p></details>
+
+<h2 id="sources">Sources and further development</h2>
+<ul><li>NPTEL, Prof. Gaurav Bhutani: <a href="https://www.youtube.com/watch?v=UnB0px3MadU">L11, Matrices and Determinants</a>; <a href="https://www.youtube.com/watch?v=iXNFF6nmsvs">L12, Tensor Transformation</a>; <a href="https://www.youtube.com/watch?v=fnVI2tzJ_aQ">L13, Tensor Transformation, Part 2</a>; <a href="https://www.youtube.com/watch?v=NaSPrp6-ZIY">L14, Isotropy and Invariance</a>; <a href="https://www.youtube.com/watch?v=PG96IUqOgq4">L15, Tutorial, Week 3</a>.</li><li>A. F. Bower, <em>Applied Mechanics of Solids</em>: <a href="https://solidmechanics.org/Text/AppendixA/AppendixA.php">Appendix A, §§A.3.1–A.3.2</a> (matrices, transposes, determinants); <a href="https://solidmechanics.org/Text/AppendixB/AppendixB.php">Appendix B, §§B.1.3–B.1.4 and B2.9</a> (tensor interpretation, general-coordinate distinctions, inverses); <a href="https://solidmechanics.org/Text/Chapter2_7/Chapter2_7.php">§2.7</a> (reference-frame transformations). The isotropic classification arguments and numerical examples above are developed explicitly rather than attributed to an uninspected representation theorem.</li></ul>
+<!-- BOOK-CONTENT-END --></article><nav class="page-turn" aria-label="Chapter navigation"><a rel="prev" href="chapter-02-alternating-tensors-and-algebra.html">Previous chapter</a><a href="index.html">Chapter index</a><a rel="next" href="chapter-04-principal-directions-tensor-calculus.html">Next chapter</a></nav></main></div><footer class="site-footer">Independent study edition. Prof. Gaurav Bhutani’s NPTEL recordings provide the topic spine. Original exposition, source limitations and verification evidence are separately recorded.</footer></body></html>

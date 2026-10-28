@@ -1,0 +1,143 @@
+{
+  "chapter": 17,
+  "title": "Live discussion 1: tensor notation and stress geometry",
+  "status": "reviewed — two independent AI reviews",
+  "authored_body_sha256": "7dafcb667e36fa241c5f701d9181f0a7ef3708f7e5915d46df364700a81a5209",
+  "recordings": [
+    {
+      "video_id": "fG60h-8p8Uw",
+      "playlist_position": 66,
+      "lecture_label": "Live discussion 1",
+      "duration_seconds": 3915,
+      "decoded_audio_duration_seconds": 3915.0236875,
+      "complete_decoded_audio": true,
+      "media_sha256": "cfa07bfe76828ce41e10b6bf0b958741efc2acf4ef20d02d5f15cc8ac2f86be5",
+      "transcript_first_start": 0.53,
+      "transcript_last_end": 3889.52,
+      "transcript_provenance": "Local faster-whisper small.en machine ASR; not publisher captions"
+    }
+  ],
+  "sections": [
+    {
+      "section": "Why does a Cartesian basis hide its reciprocal basis?",
+      "anchor": "reciprocal",
+      "video_id": "fG60h-8p8Uw",
+      "start": 302,
+      "end": 451,
+      "lecture_material": "Related lecture topic located by the stated span",
+      "research_extension": "Inspected external support is cited locally in the exposition",
+      "teaching_construction": "Expanded exposition, derivations, numerical checks and exercises are independently authored; an anchor does not attribute every statement to the recording"
+    },
+    {
+      "section": "Can one summation sign cover several terms?",
+      "anchor": "summation",
+      "video_id": "fG60h-8p8Uw",
+      "start": 725,
+      "end": 1010,
+      "lecture_material": "Related lecture topic located by the stated span",
+      "research_extension": "Inspected external support is cited locally in the exposition",
+      "teaching_construction": "Expanded exposition, derivations, numerical checks and exercises are independently authored; an anchor does not attribute every statement to the recording"
+    },
+    {
+      "section": "What is lost when the basis vectors are omitted?",
+      "anchor": "basis",
+      "video_id": "fG60h-8p8Uw",
+      "start": 1095,
+      "end": 1560,
+      "lecture_material": "Related lecture topic located by the stated span",
+      "research_extension": "Inspected external support is cited locally in the exposition",
+      "teaching_construction": "Expanded exposition, derivations, numerical checks and exercises are independently authored; an anchor does not attribute every statement to the recording"
+    },
+    {
+      "section": "Why do commuting numbers produce noncommuting dyads?",
+      "anchor": "dyad",
+      "video_id": "fG60h-8p8Uw",
+      "start": 1597,
+      "end": 2251,
+      "lecture_material": "Related lecture topic located by the stated span",
+      "research_extension": "Inspected external support is cited locally in the exposition",
+      "teaching_construction": "Expanded exposition, derivations, numerical checks and exercises are independently authored; an anchor does not attribute every statement to the recording"
+    },
+    {
+      "section": "Which tensor curl is being used?",
+      "anchor": "curl",
+      "video_id": "fG60h-8p8Uw",
+      "start": 2252,
+      "end": 2679,
+      "lecture_material": "Related lecture topic located by the stated span",
+      "research_extension": "Inspected external support is cited locally in the exposition",
+      "teaching_construction": "Expanded exposition, derivations, numerical checks and exercises are independently authored; an anchor does not attribute every statement to the recording"
+    },
+    {
+      "section": "How should a diagonal tensor be indexed?",
+      "anchor": "diagonal",
+      "video_id": "fG60h-8p8Uw",
+      "start": 2800,
+      "end": 3110,
+      "lecture_material": "Related lecture topic located by the stated span",
+      "research_extension": "Inspected external support is cited locally in the exposition",
+      "teaching_construction": "Expanded exposition, derivations, numerical checks and exercises are independently authored; an anchor does not attribute every statement to the recording"
+    },
+    {
+      "section": "Internal cuts, external surfaces and the sign of shear",
+      "anchor": "stress",
+      "video_id": "fG60h-8p8Uw",
+      "start": 3110,
+      "end": 3835,
+      "lecture_material": "Related lecture topic located by the stated span",
+      "research_extension": "Inspected external support is cited locally in the exposition",
+      "teaching_construction": "Expanded exposition, derivations, numerical checks and exercises are independently authored; an anchor does not attribute every statement to the recording"
+    },
+    {
+      "section": "Executable checks that distinguish the disputed operations",
+      "anchor": "implementation",
+      "video_id": null,
+      "start": null,
+      "end": null,
+      "lecture_material": "",
+      "research_extension": "Inspected external support is cited locally in the exposition",
+      "teaching_construction": "Expanded exposition, derivations, numerical checks and exercises are independently authored; an anchor does not attribute every statement to the recording"
+    },
+    {
+      "section": "Discussion problems with worked solutions",
+      "anchor": "exercises",
+      "video_id": null,
+      "start": null,
+      "end": null,
+      "lecture_material": "",
+      "research_extension": "Inspected external support is cited locally in the exposition",
+      "teaching_construction": "Expanded exposition, derivations, numerical checks and exercises are independently authored; an anchor does not attribute every statement to the recording"
+    },
+    {
+      "section": "What the discussion resolves",
+      "anchor": "limits",
+      "video_id": null,
+      "start": null,
+      "end": null,
+      "lecture_material": "",
+      "research_extension": "Inspected external support is cited locally in the exposition",
+      "teaching_construction": "Expanded exposition, derivations, numerical checks and exercises are independently authored; an anchor does not attribute every statement to the recording"
+    },
+    {
+      "section": "Sources",
+      "anchor": "sources",
+      "video_id": null,
+      "start": null,
+      "end": null,
+      "lecture_material": "",
+      "research_extension": "Inspected external support is cited locally in the exposition",
+      "teaching_construction": "Expanded exposition, derivations, numerical checks and exercises are independently authored; an anchor does not attribute every statement to the recording"
+    }
+  ],
+  "references": [
+    {
+      "url": "https://solidmechanics.org/Text/Chapter2_3/Chapter2_3.php",
+      "title": "Applied Mechanics of Solids , §§2.3.2–2.3.3",
+      "supports": "Specific claim and locator are given beside the citation in chapter-17-live-tensor-and-stress-foundations.html"
+    }
+  ],
+  "prose_words_including_math": 1989,
+  "solution_count": 5,
+  "executable_listing_count": 1,
+  "visual_boundary": "No comprehensive visual transcription or full audiovisual review is claimed. ASR cannot recover every board input; uncertain inputs are qualified locally."
+}

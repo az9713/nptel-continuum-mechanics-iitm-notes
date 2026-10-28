@@ -1,0 +1,169 @@
+{
+  "chapter_count": 20,
+  "chapters": [
+    {
+      "chapter": 1,
+      "file": "chapter-01-continuum-tensors-index-notation.html",
+      "body_sha256": "b1fef42421670be53e3b4d2ca0eaf279889d1fda7c451bafaf6d34c35fe84025",
+      "words": 3594,
+      "solutions": 6,
+      "listings": 1
+    },
+    {
+      "chapter": 2,
+      "file": "chapter-02-alternating-tensors-and-algebra.html",
+      "body_sha256": "6b3abe8a7298a815fe83e250faf397fb7c5351fced48ce6de0fe01628ce39c39",
+      "words": 4650,
+      "solutions": 6,
+      "listings": 1
+    },
+    {
+      "chapter": 3,
+      "file": "chapter-03-determinants-transformations-isotropy.html",
+      "body_sha256": "0a4e16e516398496e59e3921ae020791928168760f2b532ee0fd1a7e8facff00",
+      "words": 5410,
+      "solutions": 6,
+      "listings": 1
+    },
+    {
+      "chapter": 4,
+      "file": "chapter-04-principal-directions-tensor-calculus.html",
+      "body_sha256": "03be9db870c34dabb5049a50ad83e20c67965fc60932b50756d309b39a8611c3",
+      "words": 3885,
+      "solutions": 8,
+      "listings": 1
+    },
+    {
+      "chapter": 5,
+      "file": "chapter-05-traction-cauchy-stress-equilibrium.html",
+      "body_sha256": "44bbf9e203f6f2ec0bb4e43fa789608559d68dfe2924e1e3b7164fac0a0ad9ee",
+      "words": 4778,
+      "solutions": 8,
+      "listings": 1
+    },
+    {
+      "chapter": 6,
+      "file": "chapter-06-principal-stresses-mohr-invariants.html",
+      "body_sha256": "e9616a7d79288a56b50e6ecf7aa05244b4f828179604886ecea4532110c5184c",
+      "words": 3801,
+      "solutions": 7,
+      "listings": 1
+    },
+    {
+      "chapter": 7,
+      "file": "chapter-07-motion-material-derivative.html",
+      "body_sha256": "47be250f716371f9e22057b35dd083ecc4fd6f33256356277e7fedd6133e5403",
+      "words": 3927,
+      "solutions": 7,
+      "listings": 1
+    },
+    {
+      "chapter": 8,
+      "file": "chapter-08-deformation-and-strain.html",
+      "body_sha256": "5ebc5e0c2b2068470f18347486eadf7cfafa00288bcedad9d7064406747757df",
+      "words": 3571,
+      "solutions": 7,
+      "listings": 1
+    },
+    {
+      "chapter": 9,
+      "file": "chapter-09-compatibility-and-velocity-gradients.html",
+      "body_sha256": "111e955917d715ce6c8ce6f9b1a6a092a0deb7ae966a9a737264a855cda8a53d",
+      "words": 3827,
+      "solutions": 8,
+      "listings": 1
+    },
+    {
+      "chapter": 10,
+      "file": "chapter-10-transport-and-balance-laws.html",
+      "body_sha256": "e95f0de958bdd7c5e60794137f96618786c40d830856adb371f2a7fde59761a5",
+      "words": 4295,
+      "solutions": 8,
+      "listings": 1
+    },
+    {
+      "chapter": 11,
+      "file": "chapter-11-constitutive-closure-and-objectivity.html",
+      "body_sha256": "fe115c8af68226e25ec9856d2c8d8cb3849e2a3ade315be114b39d0258d4fcd5",
+      "words": 2681,
+      "solutions": 6,
+      "listings": 1
+    },
+    {
+      "chapter": 12,
+      "file": "chapter-12-linear-and-hyperelasticity.html",
+      "body_sha256": "215f3294255f321f076c6e7f21251efbd143d889bf13b7bbedbbb2155ce7a617",
+      "words": 2468,
+      "solutions": 6,
+      "listings": 1
+    },
+    {
+      "chapter": 13,
+      "file": "chapter-13-viscous-and-viscoelastic-materials.html",
+      "body_sha256": "68a8043b6bd4796097beab361b95e578a5f6125fcd75a5472dd2bca1ceeb0b13",
+      "words": 3843,
+      "solutions": 6,
+      "listings": 1
+    },
+    {
+      "chapter": 14,
+      "file": "chapter-14-plasticity-and-constitutive-problems.html",
+      "body_sha256": "ba507ca63132f1227c4eee2a2fe5b1b4bf35dcd387b3ec076527365e52605a8e",
+      "words": 4090,
+      "solutions": 6,
+      "listings": 1
+    },
+    {
+      "chapter": 15,
+      "file": "chapter-15-linear-fluids-and-navier-stokes.html",
+      "body_sha256": "9215ed29025a7da08ee7ce8ff154c9b96b3ccd0873899cb2b92cbef5195d36e0",
+      "words": 3066,
+      "solutions": 7,
+      "listings": 1
+    },
+    {
+      "chapter": 16,
+      "file": "chapter-16-course-synthesis.html",
+      "body_sha256": "320e56f7487f591354c96194fd7a995ef05de63f4637ba848d012f1920b76e63",
+      "words": 2434,
+      "solutions": 6,
+      "listings": 1
+    },
+    {
+      "chapter": 17,
+      "file": "chapter-17-live-tensor-and-stress-foundations.html",
+      "body_sha256": "7dafcb667e36fa241c5f701d9181f0a7ef3708f7e5915d46df364700a81a5209",
+      "words": 1989,
+      "solutions": 5,
+      "listings": 1
+    },
+    {
+      "chapter": 18,
+      "file": "chapter-18-live-configurations-motion-strain.html",
+      "body_sha256": "dad096eade3c28ab8a3ac7d2b01b32080062acb2436d0a7ad4ef0f209b9d7561",
+      "words": 2039,
+      "solutions": 5,
+      "listings": 1
+    },
+    {
+      "chapter": 19,
+      "file": "chapter-19-live-transport-balance-laws.html",
+      "body_sha256": "8aaa75ebdbc163e486d21cc6d66c202ce3ec2b1763e932b584937becae32c206",
+      "words": 2076,
+      "solutions": 5,
+      "listings": 1
+    },
+    {
+      "chapter": 20,
+      "file": "chapter-20-live-constitutive-models-fluids.html",
+      "body_sha256": "e50b7d73f946c18ea8c3774831baf8cedbd5ce1e8f7adfc0ccf8a1785310f68a",
+      "words": 2671,
+      "solutions": 6,
+      "listings": 1
+    }
+  ],
+  "prose_words_including_math": 69095,
+  "worked_solution_count": 129,
+  "executable_listing_count": 20,
+  "counting_note": "Whitespace tokens include mathematical notation and code; this is a reproducible inventory, not a pure prose estimate."
+}

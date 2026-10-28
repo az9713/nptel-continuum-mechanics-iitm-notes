@@ -1,0 +1,69 @@
+{
+  "passed": true,
+  "public_file_count": 81,
+  "html_count": 25,
+  "byte_identical_html_rebuild": true,
+  "changed_html": [],
+  "raw_source_files_available": false,
+  "browser_checks_requested": true,
+  "scope": "A fresh allowlisted copy inside ignored work/; no acquisition sources or private review reports copied. Existing Python packages and installed Chrome are used; this is not a pristine-machine dependency installation test.",
+  "html_sha256": {
+    "book-overview.html": "b6365eeb53eabc48d9093e704c92dff673a628feef907e702d3ba03cd13e8957",
+    "chapter-01-continuum-tensors-index-notation.html": "9d3748aa1a26ff6c732414f744fa3927c5c060aba11877e4cc8b282826da9612",
+    "chapter-02-alternating-tensors-and-algebra.html": "c4a90b11a4acedf9ef03d43e46146ddd598a5e4e23e006ccee5f8bf9adc158b2",
+    "chapter-03-determinants-transformations-isotropy.html": "c6c2c1b6e0b010a18f1c6871352fc1dc2c54dc5ac66e86d6a5a0e44adea508be",
+    "chapter-04-principal-directions-tensor-calculus.html": "3b44b7775f14b355cd37c8516165f29f4d6e6dd809babaca7921e1af8ae92e6b",
+    "chapter-05-traction-cauchy-stress-equilibrium.html": "d8295b80985ab792a60ed96dced3fdc516cad3b75032e1f90a1669bc18ba2ddc",
+    "chapter-06-principal-stresses-mohr-invariants.html": "69df6d8bc0e124422d8772487c2bd058a1b3e1179aa459ad377ffef693f68033",
+    "chapter-07-motion-material-derivative.html": "f41a54f32181a769fa1f61a688b1872fb5a2b9ac4712ad8c9e60fe6e1bc75a07",
+    "chapter-08-deformation-and-strain.html": "f1519ff86fb2567b06ce1972f490c1a39fa90124a3afa918fd5b9344e52c885c",
+    "chapter-09-compatibility-and-velocity-gradients.html": "cdfeae22549057c4e8b384bc40001dcd7e05180036fdc6ab456f7c83216109d2",
+    "chapter-10-transport-and-balance-laws.html": "e721429b306b3b3d6f173277bfcd7b3cedb5aa7b2a3e49a2afdef829f875a1c1",
+    "chapter-11-constitutive-closure-and-objectivity.html": "20bcd01b45e84b202c0c1407a1ec8ab844e255188e28cf27f389ce1c6f5c8823",
+    "chapter-12-linear-and-hyperelasticity.html": "4662ee71001e13ec92bdf42091fc8e46ca8bc0eb430286cfe48de4890caf9168",
+    "chapter-13-viscous-and-viscoelastic-materials.html": "4f6d342229fe27af85ca10345b62be44b7e4417c4fedd51a6962a77234ab252f",
+    "chapter-14-plasticity-and-constitutive-problems.html": "a911fb29a9c74ab359e30ec4018ef60587b60c31c7ded6bcfd2ee027b44b99e8",
+    "chapter-15-linear-fluids-and-navier-stokes.html": "556e07449f98419ed605b201ee68a2f6681efcfd7b79eaa8aae2001fbe93f47e",
+    "chapter-16-course-synthesis.html": "20a015359c2c0909f0dd0e09db6ee0648cb6146f18654c2022fdf22e630b16be",
+    "chapter-17-live-tensor-and-stress-foundations.html": "97b75b8adca2fbf759a8d54e0bd3a42b655514f651b905157c062934e8423046",
+    "chapter-18-live-configurations-motion-strain.html": "933b19745cb8713d3112eebc965deab10f6cf9043c9cb8ffd877da771ef92521",
+    "chapter-19-live-transport-balance-laws.html": "982afc218a05f5e8078f142c6ca53659eb948a68cba9dec0e949ba8cb878aec8",
+    "chapter-20-live-constitutive-models-fluids.html": "0e0c37014f47a623d509a06fd182818c27b5714a07a83dd941824aa143701bfa",
+    "index.html": "4d656727346a5955059682216cc65fa924038997a84d6dc088bf2c6fc2b30f52",
+    "numerical-lab.html": "82bb3559ed375d3915fd525012162933abc4e75fb7e27f0cd88fd7cc77d44864",
+    "references.html": "f24184fe1f7f98d8b2bcfbfe4c3d55973ee5a503b7f729537350524f4a75f685",
+    "source-map.html": "1d56c8cea844ac7f1e6f08932f74e2d1eb9fb036bd004b5ac35d06b45ee1d156"
+  },
+  "checks": [
+    {
+      "command": "python tools/build_book.py",
+      "returncode": 0,
+      "stdout": "Built 20 chapters and reader navigation\n",
+      "stderr": ""
+    },
+    {
+      "command": "python tools/check_chapter_code.py",
+      "returncode": 0,
+      "stdout": "chapter-01-continuum-tensors-index-notation.html ch01 PASS\nchapter-02-alternating-tensors-and-algebra.html ch02 PASS\nchapter-03-determinants-transformations-isotropy.html ch03 PASS\nchapter-04-principal-directions-tensor-calculus.html ch04 PASS\nchapter-05-traction-cauchy-stress-equilibrium.html ch05 PASS\nchapter-06-principal-stresses-mohr-invariants.html ch06 PASS\nchapter-07-motion-material-derivative.html ch07 PASS\nchapter-08-deformation-and-strain.html ch08 PASS\nchapter-09-compatibility-and-velocity-gradients.html ch09 PASS\nchapter-10-transport-and-balance-laws.html ch10 PASS\nchapter-11-constitutive-closure-and-objectivity.html ch11 PASS\nchapter-12-linear-and-hyperelasticity.html ch12 PASS\nchapter-13-viscous-and-viscoelastic-materials.html ch13 PASS\nchapter-14-plasticity-and-constitutive-problems.html ch14 PASS\nchapter-15-linear-fluids-and-navier-stokes.html ch15 PASS\nchapter-16-course-synthesis.html ch16 PASS\nchapter-17-live-tensor-and-stress-foundations.html ch17 PASS\nchapter-18-live-configurations-motion-strain.html ch18 PASS\nchapter-19-live-transport-balance-laws.html ch19 PASS\nchapter-20-live-constitutive-models-fluids.html ch20 PASS\n",
+      "stderr": ""
+    },
+    {
+      "command": "python numerical_lab.py",
+      "returncode": 0,
+      "stdout": "PASS: 31 rotation-invariant finite-strain states\nPASS: finite rotation exposes small-strain approximation boundary\nPASS: reference/current force conversion on an oblique face\nPASS: falling-film flux and gravity/viscous power closure\n",
+      "stderr": ""
+    },
+    {
+      "command": "python tools/validate_books.py --browser",
+      "returncode": 0,
+      "stdout": "{\n  \"passed\": true,\n  \"html_count\": 25,\n  \"timestamp_count\": 165,\n  \"failures\": []\n}\nBrowser: True 48 page/viewport checks\n",
+      "stderr": ""
+    },
+    {
+      "command": "python tools/audit_public.py",
+      "returncode": 0,
+      "stdout": "Public package: 81 files; privacy inventory passed\n",
+      "stderr": ""
+    }
+  ]
+}

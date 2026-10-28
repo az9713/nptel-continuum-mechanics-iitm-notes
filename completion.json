@@ -1,0 +1,41 @@
+{
+  "status": "content complete; publication pending",
+  "course": "Foundations of Continuum Mechanics",
+  "instructor": "Prof. Gaurav Bhutani, IIT Mandi",
+  "chapter_count": 20,
+  "numbered_lesson_count": 60,
+  "playlist_recording_count": 66,
+  "worked_solution_count": 129,
+  "executable_listing_count": 20,
+  "completed": {
+    "full_decoded_audio_acquisition": 66,
+    "full_machine_ASR": 66,
+    "independent_AI_chapter_acceptances": 40,
+    "supporting_material_review": "accepted",
+    "course_coherence": "accepted",
+    "source_free_html_rebuild_count": 25,
+    "offline_page_viewport_checks": 48,
+    "all_chapter_listings_match_actual_output": true,
+    "numerical_lab_checks": "passed"
+  },
+  "pending": [
+    "Committed Git export validation",
+    "GitHub push and live publication verification"
+  ],
+  "scope_limits": [
+    "Machine ASR is fallible; comprehensive audiovisual or board-equation transcription is not claimed.",
+    "AI review is not external human peer review or formal proof verification.",
+    "Constructed numerical checks do not establish experimental model validity."
+  ],
+  "evidence": [
+    "source-validation-summary.json",
+    "editorial-review-summary.json",
+    "course-review.json",
+    "chapter-code-validation.json",
+    "reader-validation.json",
+    "package-validation.json",
+    "public-package-validation.json",
+    "source-free-validation.json",
+    "publication-validation.json"
+  ]
+}

@@ -1,0 +1,158 @@
+{
+  "chapter": 20,
+  "title": "Live discussion 4: constitutive derivatives and model limits",
+  "status": "reviewed — two independent AI reviews",
+  "authored_body_sha256": "e50b7d73f946c18ea8c3774831baf8cedbd5ce1e8f7adfc0ccf8a1785310f68a",
+  "recordings": [
+    {
+      "video_id": "WmtCtdHy7Rg",
+      "playlist_position": 63,
+      "lecture_label": "Live discussion 4",
+      "duration_seconds": 3961,
+      "decoded_audio_duration_seconds": 3960.0239375,
+      "complete_decoded_audio": true,
+      "media_sha256": "a3373beff22db16cc40ba807e9eabe4f553b4d75837aead569bc0f79302da67b",
+      "transcript_first_start": 3.12,
+      "transcript_last_end": 3773.58,
+      "transcript_provenance": "Local faster-whisper small.en machine ASR; not publisher captions"
+    }
+  ],
+  "sections": [
+    {
+      "section": "What does constitutive closure add?",
+      "anchor": "models",
+      "video_id": "WmtCtdHy7Rg",
+      "start": 35,
+      "end": 223,
+      "lecture_material": "Related lecture topic located by the stated span",
+      "research_extension": "Inspected external support is cited locally in the exposition",
+      "teaching_construction": "Expanded exposition, derivations, numerical checks and exercises are independently authored; an anchor does not attribute every statement to the recording"
+    },
+    {
+      "section": "Does dependence on the deformation gradient violate objectivity?",
+      "anchor": "objectivity",
+      "video_id": "WmtCtdHy7Rg",
+      "start": 223,
+      "end": 557,
+      "lecture_material": "Related lecture topic located by the stated span",
+      "research_extension": "Inspected external support is cited locally in the exposition",
+      "teaching_construction": "Expanded exposition, derivations, numerical checks and exercises are independently authored; an anchor does not attribute every statement to the recording"
+    },
+    {
+      "section": "What does the free-energy inequality require?",
+      "anchor": "thermodynamics",
+      "video_id": "WmtCtdHy7Rg",
+      "start": 557,
+      "end": 711,
+      "lecture_material": "Related lecture topic located by the stated span",
+      "research_extension": "Inspected external support is cited locally in the exposition",
+      "teaching_construction": "Expanded exposition, derivations, numerical checks and exercises are independently authored; an anchor does not attribute every statement to the recording"
+    },
+    {
+      "section": "Why is the derivative of strain trace the identity?",
+      "anchor": "trace-derivative",
+      "video_id": "WmtCtdHy7Rg",
+      "start": 711,
+      "end": 1206,
+      "lecture_material": "Related lecture topic located by the stated span",
+      "research_extension": "Inspected external support is cited locally in the exposition",
+      "teaching_construction": "Expanded exposition, derivations, numerical checks and exercises are independently authored; an anchor does not attribute every statement to the recording"
+    },
+    {
+      "section": "Why does differentiating the Jacobian produce half an inverse?",
+      "anchor": "jacobian-derivative",
+      "video_id": "WmtCtdHy7Rg",
+      "start": 1416,
+      "end": 2027,
+      "lecture_material": "Related lecture topic located by the stated span",
+      "research_extension": "Inspected external support is cited locally in the exposition",
+      "teaching_construction": "Expanded exposition, derivations, numerical checks and exercises are independently authored; an anchor does not attribute every statement to the recording"
+    },
+    {
+      "section": "An energy generates its correctly paired finite stress",
+      "anchor": "neo-hookean",
+      "video_id": "WmtCtdHy7Rg",
+      "start": 1206,
+      "end": 1416,
+      "lecture_material": "Related lecture topic located by the stated span",
+      "research_extension": "Inspected external support is cited locally in the exposition",
+      "teaching_construction": "Expanded exposition, derivations, numerical checks and exercises are independently authored; an anchor does not attribute every statement to the recording"
+    },
+    {
+      "section": "Why must first-order terms survive until cancellation is complete?",
+      "anchor": "linear-limit",
+      "video_id": "WmtCtdHy7Rg",
+      "start": 2027,
+      "end": 2709,
+      "lecture_material": "Related lecture topic located by the stated span",
+      "research_extension": "Inspected external support is cited locally in the exposition",
+      "teaching_construction": "Expanded exposition, derivations, numerical checks and exercises are independently authored; an anchor does not attribute every statement to the recording"
+    },
+    {
+      "section": "What the rheology and plasticity recap distinguishes",
+      "anchor": "rheology",
+      "video_id": "WmtCtdHy7Rg",
+      "start": 2754,
+      "end": 3303,
+      "lecture_material": "Related lecture topic located by the stated span",
+      "research_extension": "Inspected external support is cited locally in the exposition",
+      "teaching_construction": "Expanded exposition, derivations, numerical checks and exercises are independently authored; an anchor does not attribute every statement to the recording"
+    },
+    {
+      "section": "Does Newtonian stress make the flow equations linear?",
+      "anchor": "fluid-equations",
+      "video_id": "WmtCtdHy7Rg",
+      "start": 3399,
+      "end": 3733,
+      "lecture_material": "Related lecture topic located by the stated span",
+      "research_extension": "Inspected external support is cited locally in the exposition",
+      "teaching_construction": "Expanded exposition, derivations, numerical checks and exercises are independently authored; an anchor does not attribute every statement to the recording"
+    },
+    {
+      "section": "Executable derivatives, objectivity and the small-strain limit",
+      "anchor": "implementation",
+      "video_id": null,
+      "start": null,
+      "end": null,
+      "lecture_material": "",
+      "research_extension": "Inspected external support is cited locally in the exposition",
+      "teaching_construction": "Expanded exposition, derivations, numerical checks and exercises are independently authored; an anchor does not attribute every statement to the recording"
+    },
+    {
+      "section": "Problems with worked solutions",
+      "anchor": "exercises",
+      "video_id": null,
+      "start": null,
+      "end": null,
+      "lecture_material": "",
+      "research_extension": "Inspected external support is cited locally in the exposition",
+      "teaching_construction": "Expanded exposition, derivations, numerical checks and exercises are independently authored; an anchor does not attribute every statement to the recording"
+    },
+    {
+      "section": "Sources and scope",
+      "anchor": "sources",
+      "video_id": null,
+      "start": null,
+      "end": null,
+      "lecture_material": "",
+      "research_extension": "Inspected external support is cited locally in the exposition",
+      "teaching_construction": "Expanded exposition, derivations, numerical checks and exercises are independently authored; an anchor does not attribute every statement to the recording"
+    }
+  ],
+  "references": [
+    {
+      "url": "https://solidmechanics.org/Text/Chapter3_1/Chapter3_1.php",
+      "title": "§3.1",
+      "supports": "Specific claim and locator are given beside the citation in chapter-20-live-constitutive-models-fluids.html"
+    },
+    {
+      "url": "https://solidmechanics.org/Text/Chapter3_5/Chapter3_5.php",
+      "title": "§3.5, particularly §3.5.3",
+      "supports": "Specific claim and locator are given beside the citation in chapter-20-live-constitutive-models-fluids.html"
+    }
+  ],
+  "prose_words_including_math": 2671,
+  "solution_count": 6,
+  "executable_listing_count": 1,
+  "visual_boundary": "No comprehensive visual transcription or full audiovisual review is claimed. ASR cannot recover every board input; uncertain inputs are qualified locally."
+}

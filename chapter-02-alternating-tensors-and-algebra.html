@@ -1,0 +1,243 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="color-scheme" content="dark light"><meta name="book-content-sha256" content="6b3abe8a7298a815fe83e250faf397fb7c5351fced48ce6de0fe01628ce39c39">
+<title>Alternating tensors, vector identities and tensor algebra · Foundations of Continuum Mechanics</title><link rel="stylesheet" href="assets/book.css">
+<script>window.MathJax={tex:{inlineMath:[['$','$'],['\\(','\\)']],displayMath:[['$$','$$'],['\\[','\\]']],processEscapes:true},svg:{fontCache:'local'},options:{skipHtmlTags:['script','noscript','style','textarea','pre','code']}};</script>
+<script defer src="assets/mathjax-tex-svg.js"></script><script defer src="assets/book.js"></script></head>
+<body><a class="skip" href="#main">Skip to content</a><header class="site-header"><a class="brand" href="index.html">Foundations of Continuum Mechanics · NPTEL IIT Mandi</a><nav class="course-nav" aria-label="Book"><a href="index.html">Chapters</a><a href="source-map.html">Source map</a><a href="references.html">References</a><a href="numerical-lab.html">Numerical lab</a></nav></header>
+<div class="layout"><aside class="toc" id="chapter-toc" aria-label="On this page"><h2>On this page</h2></aside><main id="main"><div class="reading-tools" aria-label="Reading controls"><button id="theme-toggle" aria-pressed="false">Light theme</button><button id="text-toggle" aria-pressed="false">Larger text</button><button id="solutions-toggle" aria-pressed="false">Expand solutions</button><button id="print-page">Print with solutions</button></div>
+<article id="chapter-content"><!-- BOOK-CONTENT-START --><h1>Alternating tensors, vector identities and tensor algebra</h1>
+<p class="lead">A cube can change shape without changing volume. Its faces can change area by different factors, and a map that moves one edge into another direction need not do the reverse. These distinctions matter when a numerical mechanics calculation transports normals, composes material responses, or evaluates a scalar from two tensors. This chapter develops the products needed to make those operations explicit. A prescribed shear supplies a common test: its edges, oriented faces, transposed action and symmetric parts can all be calculated by hand.</p>
+<p class="source-note">Lecture spine: lessons 6–10 of Prof. Gaurav Bhutani’s NPTEL course, including both listed uploads of lesson 6. Both available lesson-6 transcripts reach the closing remarks at about 31:59 of the listed 32:16 recordings. Their timings and recognized wording differ slightly; both preserve the later epsilon–delta examples. Machine transcripts establish spoken topics and approximate navigation times, not exact board notation or untranscribed closing tails. Reference support comes from A. F. Bower’s author-hosted textbook, cited beside the relevant definitions. The shear, projection data, proofs, program and exercises are original teaching constructions. No experimental material properties are inferred.</p>
+
+<h2 id="model">A prescribed shear and the questions it raises</h2>
+<p>Work in three-dimensional Euclidean space with a fixed right-handed orthonormal basis \(\mathbf e_1,\mathbf e_2,\mathbf e_3\). The inner product is \(\mathbf a\cdot\mathbf b=a_i b_i\), and the length is \(|\mathbf a|=\sqrt{\mathbf a\cdot\mathbf a}\). Indices range from 1 to 3; an index repeated exactly twice is summed in each multiplicative term. All components in the algebraic examples are dimensionless unless units are supplied.</p>
+<p>The prescribed linear map is</p>
+\[
+\mathbf A=\begin{bmatrix}1&amp;2&amp;0\\0&amp;1&amp;0\\0&amp;0&amp;1\end{bmatrix},
+\qquad \mathbf y=\mathbf A\mathbf x,
+\qquad y_i=A_{ij}x_j. \tag{2.1}
+\]
+<p>The first index identifies the output component; the second identifies the input component. Thus the three columns give the images of the three basis vectors. Name these images \(\mathbf a=\mathbf A\mathbf e_1=(1,0,0)\), \(\mathbf b=\mathbf A\mathbf e_2=(2,1,0)\), and \(\mathbf c=\mathbf A\mathbf e_3=(0,0,1)\). The initially perpendicular first two edges now have dot product 2. Since their lengths are 1 and \(\sqrt5\), their angle has cosine \(2/\sqrt5\).</p>
+<p>This map can describe a geometric shear of a small block, but no force law has been assigned. If the original edges have length \(h\) metres, the physical image edges are \(h\mathbf a,h\mathbf b,h\mathbf c\). Dimensionless area and volume factors computed below must then be multiplied by \(h^2\) and \(h^3\). The question is geometric: which tensor operations measure an edge, a face, a volume, or a directional response without confusing these different outputs?</p>
+
+<h2 id="alternating" data-video="1LMs4IHeIRA" data-start="42" data-end="1188">Orientation and the alternating symbol <a class="timestamp" href="https://www.youtube.com/watch?v=1LMs4IHeIRA&amp;t=42s">L6 0:42</a></h2>
+<p>A dot product detects alignment but does not specify an oriented normal. For that task, the order of two directions matters. The <dfn>permutation symbol</dfn>, or Levi-Civita symbol, records that ordering. Define the dimensionless array \(\epsilon_{ijk}\) to be +1 for \((i,j,k)=(1,2,3),(2,3,1),(3,1,2)\), −1 for \((1,3,2),(3,2,1),(2,1,3)\), and zero when any two numerical index values coincide.</p>
+<p>The positive triples follow the cyclic order of the chosen right-handed basis. A cyclic shift moves the first entry to the last position and preserves the sign. Interchanging just two entries reverses the sign. Consequently,</p>
+\[
+\epsilon_{ijk}=\epsilon_{jki}=\epsilon_{kij},
+\qquad \epsilon_{ijk}=-\epsilon_{jik}. \tag{2.2}
+\]
+<p>These are identities for every choice of the free index values. For example, \(\epsilon_{312}=1\) and \(\epsilon_{321}=-1\). When the values repeat, both sides of the sign-changing identity vanish. The phrase “repeated values” in this definition differs from a repeated summation label: \(\epsilon_{121}\) is one zero entry, whereas \(\epsilon_{iji}\) is a sum of entries that are all zero.</p>
+<p>Define the cross product on basis vectors by \(\mathbf e_1\times\mathbf e_2=\mathbf e_3\), its cyclic partners, reversal under exchange, and zero for two equal basis vectors. Extend it linearly in each argument. Its compact basis form is \(\mathbf e_j\times\mathbf e_k=\epsilon_{ijk}\mathbf e_i\). Expanding arbitrary vectors in the basis therefore gives</p>
+\[
+\mathbf a\times\mathbf b
+=a_j b_k(\mathbf e_j\times\mathbf e_k)
+=\epsilon_{ijk}a_j b_k\mathbf e_i,
+\qquad (\mathbf a\times\mathbf b)_i=\epsilon_{ijk}a_jb_k. \tag{2.3}
+\]
+<p>The final component expression has the free label \(i\). The preceding vector expression sums \(i\) as well, because it includes the basis vector. Counting free labels determines tensor order only in a component expression with its basis suppressed. It does not turn a basis expansion such as \(a_i\mathbf e_i\) into a scalar.</p>
+<p>For \(i=1\), only \((j,k)=(2,3),(3,2)\) survive, giving \(a_2b_3-a_3b_2\). The full component list is \((a_2b_3-a_3b_2,a_3b_1-a_1b_3,a_1b_2-a_2b_1)\). Exchanging \(\mathbf a\) and \(\mathbf b\) changes its sign. In the shear example, \(\mathbf a\times\mathbf b=(0,0,1)\), even though the angle between the edges has changed.</p>
+<p>Orthogonality follows from the same sign rule. Write \(r=\epsilon_{ijk}a_i a_j b_k\). Exchanging the summed labels \(i,j\) leaves the sum unchanged, while the alternating symbol changes sign and \(a_i a_j\) does not. Thus \(r=-r\), so \(r=0\). Repeating the argument with the two appearances of \(\mathbf b\) proves that \(\mathbf a\times\mathbf b\) is perpendicular to both inputs.</p>
+<p><a href="https://solidmechanics.org/Text/AppendixC/AppendixC.php">Bower, Appendix C, §§C.2 and C.4</a>, tabulates the permutation symbol and its vector-product use. The derivations here fix the sign convention through the chosen basis. In three dimensions this convention identifies an oriented plane with an axial direction; its behavior under a reflected basis is treated in chapter 3.</p>
+
+<h2 id="epsilon-delta" data-video="1LMs4IHeIRA" data-start="1188" data-end="1857">Deriving and using the epsilon–delta identity <a class="timestamp" href="https://www.youtube.com/watch?v=1LMs4IHeIRA&amp;t=1188s">L6 19:48</a></h2>
+<p>Two cross products introduce two alternating symbols. Their contraction can be replaced by Kronecker deltas, whose substitution property is already known. In the form with the first label contracted, the identity is</p>
+\[
+\epsilon_{ijk}\epsilon_{imn}
+=\delta_{jm}\delta_{kn}-\delta_{jn}\delta_{km}. \tag{2.4}
+\]
+<p>The labels \(j,k,m,n\) are free. To prove the identity, first suppose \(j=k\) or \(m=n\). One alternating symbol is zero. The two products of deltas on the right then agree and cancel. Now suppose both ordered pairs have distinct entries. Each pair has a unique missing direction in a three-dimensional basis. The sum on the left can be nonzero only if those missing directions agree.</p>
+<p>If the pairs are identical, exactly one product on the left survives and equals +1; the first delta product is 1 and the second is zero. If they are reversed, the surviving product is −1; the first delta product vanishes and the second is 1. If the missing directions differ, there is no common surviving value of \(i\), and both delta products are zero. These cases exhaust the possibilities and prove (2.4).</p>
+<p>A cyclic permutation gives the last-slot form \(\epsilon_{ijk}\epsilon_{pqk}=\delta_{ip}\delta_{jq}-\delta_{iq}\delta_{jp}\). The contracted label must occupy the corresponding slots of the chosen identity. Moving a label cyclically introduces no sign; interchanging two slots introduces a minus sign. Relabeling dummy sums alone cannot repair a misplaced slot.</p>
+<p>For example, contract all the labels in (2.4) by putting \(m=j,n=k\), using the summation convention. The result is</p>
+\[
+\epsilon_{ijk}\epsilon_{ijk}
+=\delta_{jj}\delta_{kk}-\delta_{jk}\delta_{kj}
+=3\times3-3=6. \tag{2.5}
+\]
+<p>There is a direct check: six entries of the alternating array are nonzero, and each has square 1. Interchanging the last two slots of one factor instead gives \(\epsilon_{ijk}\epsilon_{ikj}=-6\). This sign is often lost when the contraction pattern is treated as if it depended only on how many symbols are present.</p>
+<p>A partial contraction leaves directional information. Using the last-slot form yields \(\epsilon_{mkq}\epsilon_{jkq}=\delta_{mj}\delta_{kk}-\delta_{mk}\delta_{kj}=2\delta_{mj}\). The two free labels remain. Taking the trace over them recovers 6. This checks the consistency between a second-order result and its scalar contraction.</p>
+
+<h2 id="vector-identities" data-video="yUM2n7ExK4c" data-start="42" data-end="1610">Area, volume and products of three vectors <a class="timestamp" href="https://www.youtube.com/watch?v=yUM2n7ExK4c&amp;t=42s">L7 0:42</a></h2>
+<p>The magnitude of a cross product measures a parallelogram area. To obtain this result algebraically, contract (2.3) with itself and apply (2.4):</p>
+\[
+|\mathbf a\times\mathbf b|^2
+=(\delta_{jm}\delta_{kn}-\delta_{jn}\delta_{km})a_jb_k a_m b_n
+=|\mathbf a|^2|\mathbf b|^2-(\mathbf a\cdot\mathbf b)^2. \tag{2.6}
+\]
+<p>For nonzero inputs, write \(\mathbf a\cdot\mathbf b=|\mathbf a||\mathbf b|\cos\theta\), where \(\theta\in[0,\pi]\) is their angle. Equation (2.6) gives \(|\mathbf a\times\mathbf b|=|\mathbf a||\mathbf b|\sin\theta\), base length times perpendicular height. It also applies when either vector is zero. Two nonzero parallel vectors give zero area, although neither input has vanished.</p>
+<p>The first two image edges have \(|\mathbf a|^2=1\), \(|\mathbf b|^2=5\), and \(\mathbf a\cdot\mathbf b=2\). Their area factor is therefore \(\sqrt{5-4}=1\). For the face spanned by \(\mathbf b,\mathbf c\), the oriented area vector is \((1,-2,0)\), with magnitude \(\sqrt5\). One face preserves area and another does not. A statement about the block's volume cannot determine every face area.</p>
+<p>The <dfn>scalar triple product</dfn> is \([\mathbf a,\mathbf b,\mathbf c]=\mathbf a\cdot(\mathbf b\times\mathbf c)\). Expanding the dot and cross products gives \(\epsilon_{ijk}a_i b_j c_k\). Cyclically permuting the three vectors preserves the value; exchanging two vectors reverses its sign. Its absolute value is the parallelepiped volume: the face area is \(|\mathbf b\times\mathbf c|\), and dotting its unit normal with \(\mathbf a\) supplies the signed perpendicular height. If the face area is zero, the volume is zero as well.</p>
+<p>For the image edges, \([\mathbf a,\mathbf b,\mathbf c]=(1,0,0)\cdot(1,-2,0)=1\). The original triple product is also 1, so the shear preserves volume and orientation. Reversing two edge labels gives −1, but the geometric volume remains 1. This distinction between signed and unsigned volume leads to the determinant in chapter 3.</p>
+<p>The <dfn>vector triple product</dfn> retains a vector output. For arbitrary vectors \(\mathbf u,\mathbf v,\mathbf w\), substituting the inner cross product into the outer one gives</p>
+\[
+\begin{aligned}
+[\mathbf u\times(\mathbf v\times\mathbf w)]_i
+&amp;=\epsilon_{ijk}\epsilon_{klm}u_jv_lw_m\\
+&amp;=(\delta_{il}\delta_{jm}-\delta_{im}\delta_{jl})u_jv_lw_m\\
+&amp;=v_i(\mathbf u\cdot\mathbf w)-w_i(\mathbf u\cdot\mathbf v).
+\end{aligned} \tag{2.7}
+\]
+<p>To use (2.4), cyclically rewrite \(\epsilon_{ijk}\) as \(\epsilon_{kij}\); the contracted label \(k\) is then first in both factors. The result lies in the plane spanned by \(\mathbf v,\mathbf w\), as the two cross products require. The derivation applies to every input, including parallel vectors.</p>
+<p>Parentheses matter. Anticommutativity and (2.7) give \((\mathbf u\times\mathbf v)\times\mathbf w=\mathbf v(\mathbf u\cdot\mathbf w)-\mathbf u(\mathbf v\cdot\mathbf w)\). These formulas generally differ. For \(\mathbf u=\mathbf v=\mathbf e_1\) and \(\mathbf w=\mathbf e_2\), the first bracketing is \(-\mathbf e_2\) and the second is zero. Thus the cross product is not associative. Suppressing parentheses can change the result rather than abbreviate it.</p>
+
+<h2 id="projection" data-video="yUM2n7ExK4c" data-start="1610" data-end="2362">Resolving a vector along and across a direction <a class="timestamp" href="https://www.youtube.com/watch?v=yUM2n7ExK4c&amp;t=1610s">L7 26:50</a></h2>
+<p>To separate normal and tangential responses, choose a unit direction \(\mathbf n\), so \(\mathbf n\cdot\mathbf n=1\). For an arbitrary vector \(\mathbf x\), its component along that direction is the vector \(\mathbf x_{\parallel}=(\mathbf x\cdot\mathbf n)\mathbf n\). The remainder \(\mathbf x_{\perp}=\mathbf x-\mathbf x_{\parallel}\) satisfies \(\mathbf n\cdot\mathbf x_{\perp}=0\). Equation (2.7) gives an equivalent cross-product expression:</p>
+\[
+\mathbf n\times(\mathbf x\times\mathbf n)
+=\mathbf x(\mathbf n\cdot\mathbf n)-\mathbf n(\mathbf n\cdot\mathbf x)
+=\mathbf x_{\perp}. \tag{2.8}
+\]
+<p>Take \(\mathbf n=(1,1,0)/\sqrt2\) and \(\mathbf x=(3,1,2)\). Their dot product is \(4/\sqrt2=2\sqrt2\), so \(\mathbf x_{\parallel}=(2,2,0)\) and \(\mathbf x_{\perp}=(1,-1,2)\). They add to the original vector and have zero mutual dot product. Their squared lengths, 8 and 6, add to \(|\mathbf x|^2=14\).</p>
+<p>The unit-length requirement is essential. For a nonzero direction \(\mathbf m\) that has not been normalized, the projection is \(\mathbf m(\mathbf m\cdot\mathbf x)/(\mathbf m\cdot\mathbf m)\). Omitting the denominator with \(\mathbf m=(1,1,0)\) doubles the intended parallel component. A direction of zero length cannot define a projection. These limits distinguish a geometric formula from a symbol pattern that happens to work on a unit test input.</p>
+
+<h2 id="dyads" data-video="Kv9Tq2U2sqE" data-start="47" data-end="1060">Dyads construct maps from directions <a class="timestamp" href="https://www.youtube.com/watch?v=Kv9Tq2U2sqE&amp;t=47s">L8 0:47</a></h2>
+<p>The projection maps every input to a multiple of one fixed direction. This motivates the <dfn>outer product</dfn>, or dyadic product. For vectors \(\mathbf u,\mathbf v\), define \(\mathbf u\otimes\mathbf v\) by its action on every input \(\mathbf x\):</p>
+\[
+(\mathbf u\otimes\mathbf v)\mathbf x
+=\mathbf u(\mathbf v\cdot\mathbf x),
+\qquad (\mathbf u\otimes\mathbf v)_{ij}=u_i v_j. \tag{2.9}
+\]
+<p>The dot product with \(\mathbf v\) measures the input; multiplication by \(\mathbf u\) sets the output direction. This is a linear map and hence a second-order tensor. The definition and component representation agree with <a href="https://solidmechanics.org/Text/AppendixB/AppendixB.php">Bower, Appendix B, §B.1.5</a>. Writing the tensor-product symbol explicitly avoids confusing a dyad with composition or a scalar product.</p>
+<p>The map \(\mathbf e_1\otimes\mathbf e_2\) sends \(\mathbf e_2\) to \(\mathbf e_1\), and sends \(\mathbf e_1,\mathbf e_3\) to zero. Reversing the two factors sends \(\mathbf e_1\) to \(\mathbf e_2\) instead. The dyadic product is not commutative. Its two free labels are ordered slots, although the numbers \(u_i v_j\) themselves commute under scalar multiplication.</p>
+<p>For the running shear,</p>
+\[
+\mathbf A=\mathbf I+2\mathbf e_1\otimes\mathbf e_2,
+\qquad \mathbf I=\mathbf e_i\otimes\mathbf e_i. \tag{2.10}
+\]
+<p>The identity passes the entire input through. The dyad adds twice its second component to its first output component. This gives \(\mathbf A\mathbf x=(x_1+2x_2,x_2,x_3)\), recovering (2.1). Likewise \(\mathbf P=\mathbf n\otimes\mathbf n\) is the parallel projector, while \(\mathbf I-\mathbf P\) is the perpendicular projector. A <dfn>projector</dfn> satisfies \(\mathbf P^2=\mathbf P\): projecting a second time changes nothing. Indeed, \(\mathbf P^2\mathbf x=\mathbf n(\mathbf n\cdot\mathbf n)(\mathbf n\cdot\mathbf x)=\mathbf P\mathbf x\).</p>
+<p>Every second-order tensor has the expansion \(\mathbf A=A_{ij}\mathbf e_i\otimes\mathbf e_j\). Apply the right side to \(\mathbf x\), use \(\mathbf e_j\cdot\mathbf x=x_j\), and recover \(A_{ij}x_j\mathbf e_i\). A single dyad is more restricted: if both factors are nonzero, all its outputs lie in the one-dimensional span of \(\mathbf u\). Its matrix has rank one, where rank denotes the dimension of the set of possible outputs. The identity has rank three, so it cannot be represented by a single dyad.</p>
+
+<h2 id="composition" data-video="Kv9Tq2U2sqE" data-start="1060" data-end="1913">Which directions does a product contract? <a class="timestamp" href="https://www.youtube.com/watch?v=Kv9Tq2U2sqE&amp;t=1060s">L8 17:40</a></h2>
+<p>A tensor can act on a vector from either side in the lecture's notation. The contracted slot determines the result. Direct use of (2.9) gives \((\mathbf u\otimes\mathbf v)\mathbf x=\mathbf u(\mathbf v\cdot\mathbf x)\). By contrast, define the left contraction as \(\mathbf x\cdot(\mathbf u\otimes\mathbf v)=(\mathbf x\cdot\mathbf u)\mathbf v\). The first has components \(u_i v_jx_j\), while the second has components \(x_i u_i v_j\).</p>
+<p>The <dfn>transpose</dfn> \(\mathbf A^{\mathsf T}\) is characterized by \(\mathbf x\cdot(\mathbf A\mathbf y)=(\mathbf A^{\mathsf T}\mathbf x)\cdot\mathbf y\) for every pair of vectors. Expanding both sides gives \((A^{\mathsf T})_{ij}=A_{ji}\). A left contraction therefore has the component vector of \(\mathbf A^{\mathsf T}\mathbf x\). For the shear, \(\mathbf A\mathbf e_2=(2,1,0)\), but \(\mathbf A^{\mathsf T}\mathbf e_2=(0,1,0)\). A symmetric input map would conceal the difference.</p>
+<p>Composition applies one map after another. If \(\mathbf z=\mathbf B\mathbf x\) and \(\mathbf y=\mathbf A\mathbf z\), substitution gives \(y_i=A_{ik}B_{kj}x_j\). Thus \((\mathbf A\mathbf B)_{ij}=A_{ik}B_{kj}\). The intermediate direction \(k\) is summed; input and output slots \(j,i\) remain. In particular,</p>
+\[
+(\mathbf u\otimes\mathbf v)(\mathbf w\otimes\mathbf p)
+=(\mathbf v\cdot\mathbf w)\mathbf u\otimes\mathbf p. \tag{2.11}
+\]
+<p>Applying the left side to arbitrary \(\mathbf x\) proves this: the second map produces \(\mathbf w(\mathbf p\cdot\mathbf x)\), and the first produces \(\mathbf u(\mathbf v\cdot\mathbf w)(\mathbf p\cdot\mathbf x)\). For \(\mathbf B=\operatorname{diag}(1,2,1)\), composition gives \((\mathbf A\mathbf B)_{12}=4\), whereas \((\mathbf B\mathbf A)_{12}=2\). Scaling the second input before the shear differs from scaling the second output afterward.</p>
+<p>Cross products with dyads also require a slot convention. Define \(\mathbf u\times(\mathbf v\otimes\mathbf w)=(\mathbf u\times\mathbf v)\otimes\mathbf w\), so \((\mathbf u\times\mathbf A)_{ij}=\epsilon_{ikl}u_kA_{lj}\). A right cross product acts on the last slot: \((\mathbf u\otimes\mathbf v)\times\mathbf w=\mathbf u\otimes(\mathbf v\times\mathbf w)\). These are bilinear extensions of cross products between adjacent vectors, not interchangeable multiplication rules.</p>
+<p>With \(\mathbf u=\mathbf e_1,\mathbf v=\mathbf e_2,\mathbf w=\mathbf e_3\), the first bracketing gives \(\mathbf e_3\otimes\mathbf e_3\), while the second gives \(\mathbf e_1\otimes\mathbf e_1\). Both outputs are second-order tensors, but they act differently. Agreement of tensor order is a necessary type check, not a proof of equality.</p>
+
+<h2 id="contractions" data-video="VU9afXvCfcA" data-start="94" data-end="1680">Double contractions and higher-order expressions <a class="timestamp" href="https://www.youtube.com/watch?v=VU9afXvCfcA&amp;t=94s">L9 1:34</a></h2>
+<p>Two second-order tensors admit two different complete contractions. This chapter reserves the colon for the Euclidean, or Frobenius, inner product \(\mathbf A:\mathbf B=A_{ij}B_{ij}\). The lecture calls this the vertical double-dot product. Its horizontal double-dot product instead pairs the slots in reverse order, giving \(A_{ij}B_{ji}\). To keep the distinction visible, write the latter as \(\operatorname{tr}(\mathbf A\mathbf B)\).</p>
+<div class="table-wrap"><table><caption>Three products of second-order tensors. Components determine the operation when symbolic dot conventions differ between texts.</caption><thead><tr><th>Operation</th><th>Components</th><th>Result</th></tr></thead><tbody><tr><td>Composition</td><td>\(A_{ik}B_{kj}\)</td><td>Second-order tensor</td></tr><tr><td>Frobenius inner product</td><td>\(A_{ij}B_{ij}\)</td><td>Scalar \(\operatorname{tr}(\mathbf A^{\mathsf T}\mathbf B)\)</td></tr><tr><td>Reversed-slot double contraction</td><td>\(A_{ij}B_{ji}\)</td><td>Scalar \(\operatorname{tr}(\mathbf A\mathbf B)\)</td></tr></tbody></table></div>
+<p>For the shear, \(\mathbf A:\mathbf A=1+4+1+1=7\). Yet \(\operatorname{tr}(\mathbf A^2)=3\), because \(\mathbf A^2\) has unit diagonal and shear entry 4. In the first expression every component is squared. In the second, off-diagonal components occur as paired products \(A_{12}A_{21}\), which vanish here. Both contractions agree for symmetric tensors, making nonsymmetric examples essential for checking conventions.</p>
+<p>The outer product of order-\(r\) and order-\(s\) tensors has \(r+s\) slots. A contraction identifies a pair of distinct slots and sums their common label, reducing the number of free slots by two. For instance, \(u_i A_{jk}\) has order three. Contracting the first and second slots gives \(u_iA_{ik}\), a vector with free label \(k\). Contracting the first and third gives \(u_iA_{ji}\), generally a different vector. Contracting the second and third gives \(u_i A_{jj}\), the vector \(\mathbf u\) multiplied by the trace.</p>
+<p>Setting labels equal without the corresponding sum only extracts diagonal entries; it is not contraction. Nor may a label already repeated twice be used for another slot. The valid expression \(A_{ij}B_{jk}u_k\) has free label \(i\). Replacing the final \(k\) by \(j\) creates three appearances of \(j\), violating the convention. <a href="https://solidmechanics.org/Text/AppendixC/AppendixC.php">Bower, Appendix C, §C.3</a>, states the free-label matching and dummy-renaming rules used here.</p>
+<p>The notation \(A_{ij}\) can denote one component when \(i,j\) are specified, or the whole component family when they remain free. Meaning follows the surrounding equation. This does not authorize dropping basis vectors inside an otherwise coordinate-free equality. For example, \(A_{ij}u_j\) is the family of output components; \(A_{ij}u_j\mathbf e_i\) is the vector itself.</p>
+
+<h2 id="symmetry" data-video="VU9afXvCfcA" data-start="1680" data-end="2071">Symmetry, skew symmetry and what a scalar misses <a class="timestamp" href="https://www.youtube.com/watch?v=VU9afXvCfcA&amp;t=1680s">L9 28:00</a></h2>
+<p>A real second-order tensor is symmetric if \(A_{ij}=A_{ji}\), and skew-symmetric if \(A_{ij}=-A_{ji}\). Skew symmetry forces each diagonal entry to vanish: for fixed numerical value \(i=1\), for example, \(A_{11}=-A_{11}\). A symmetric tensor has six independent components in three dimensions; a skew tensor has three. Higher-order symmetry must specify the exchanged slots. The condition \(C_{ijk}=C_{jik}\) says nothing by itself about exchanging \(i,k\).</p>
+<p>Every real second-order tensor has a unique additive decomposition</p>
+\[
+\mathbf A=\mathbf S+\mathbf W,
+\qquad \mathbf S=\tfrac12(\mathbf A+\mathbf A^{\mathsf T}),
+\qquad \mathbf W=\tfrac12(\mathbf A-\mathbf A^{\mathsf T}). \tag{2.12}
+\]
+<p>Adding the definitions returns \(\mathbf A\). Transposing them gives \(\mathbf S^{\mathsf T}=\mathbf S\) and \(\mathbf W^{\mathsf T}=-\mathbf W\). For uniqueness, two decompositions would imply that their symmetric parts differ by a tensor which is also skew-symmetric. A tensor equal to both its transpose and minus its transpose is zero. Hence the decompositions coincide.</p>
+<p>For the shear,</p>
+\[
+\mathbf S=\begin{bmatrix}1&amp;1&amp;0\\1&amp;1&amp;0\\0&amp;0&amp;1\end{bmatrix},
+\qquad \mathbf W=\begin{bmatrix}0&amp;1&amp;0\\-1&amp;0&amp;0\\0&amp;0&amp;0\end{bmatrix}. \tag{2.13}
+\]
+<p>The first part changes both off-diagonal entries equally; the second cancels one and doubles the other when they are added. This is an algebraic decomposition of a map. It is not the multiplicative stretch–rotation decomposition of a finite deformation. In particular, a skew matrix is not itself a finite rotation matrix.</p>
+<p>The complete contraction of any symmetric tensor \(\mathbf S\) with any skew tensor \(\mathbf W\) vanishes. Exchange dummy labels and apply their symmetries:</p>
+\[
+r=S_{ij}W_{ij}=S_{ji}W_{ji}=-S_{ij}W_{ij}=-r,
+\qquad r=0. \tag{2.14}
+\]
+<p>A real number equal to its negative must be zero. In particular, \(x_i x_j\) is symmetric, so \(x_iW_{ij}x_j=0\). The quadratic scalar \(\mathbf x\cdot\mathbf A\mathbf x\) therefore depends only on \(\mathbf S\). For (2.13), it equals \((x_1+x_2)^2+x_3^2\). Measuring this scalar in every direction cannot identify \(\mathbf W\), although \(\mathbf W\mathbf e_1=-\mathbf e_2\) is nonzero.</p>
+<p>The orthogonality also gives \(\mathbf A:\mathbf A=\mathbf S:\mathbf S+\mathbf W:\mathbf W\). Here the values are \(7=5+2\). The norm \(\|\mathbf A\|_F=\sqrt{\mathbf A:\mathbf A}\) is nonnegative and is zero only for the zero map. In contrast, \(\operatorname{tr}(\mathbf W^2)=W_{ij}W_{ji}=-W_{ij}W_{ij}=-2\). Confusing double contractions can turn a squared norm into a negative quantity.</p>
+<p>In oriented three-dimensional space, a skew tensor can be represented by an axial vector \(\boldsymbol\omega\) through \(\mathbf W\mathbf x=\boldsymbol\omega\times\mathbf x\). Component comparison gives \(W_{ij}=-\epsilon_{ijk}\omega_k\), or \(\omega_k=-\tfrac12\epsilon_{kij}W_{ij}\), using the partial contraction following (2.5). For the example \(\boldsymbol\omega=(0,0,-1)\). Multiplication gives \((x_2,-x_1,0)\) on both sides. <a href="https://solidmechanics.org/Text/AppendixA/AppendixA.php">Bower, Appendix A, §A.1.2</a>, gives the equivalent skew-matrix representation of a cross product.</p>
+<p>This correspondence uses three-dimensional orientation. It does not imply that adding a finite skew matrix preserves lengths. For example, \((\mathbf I+\mathbf W)\mathbf e_1=(1,-1,0)\) has length \(\sqrt2\). A skew map generates an instantaneous perpendicular change; finite rotations require another construction. This distinction prevents an algebraic split from becoming an unjustified kinematic claim.</p>
+
+<h2 id="tutorial" data-video="XyoxAM5Ikk8" data-start="40" data-end="1923">Contraction can solve a tensor equation <a class="timestamp" href="https://www.youtube.com/watch?v=XyoxAM5Ikk8&amp;t=40s">L10 0:40</a></h2>
+<p>A trace can isolate a scalar hidden inside nine coupled component equations. Consider the dimensionless relation \(A_{ij}=\delta_{ij}B_{kk}+3B_{ij}\), where \(\mathbf A\) is known and \(\mathbf B\) is sought. Set \(j=i\) and sum. Since traces have the same value regardless of their dummy labels,</p>
+\[
+A_{ii}=3B_{kk}+3B_{ii}=6B_{kk},
+\qquad B_{ij}=\frac13 A_{ij}-\frac1{18}\delta_{ij}A_{kk}. \tag{2.15}
+\]
+<p>For the shear, \(A_{kk}=3\). The tensor \(\mathbf B\) has diagonal entries \(1/6\), entry \(B_{12}=2/3\), and other off-diagonal entries zero. Its trace is \(1/2\), so \(\mathbf I\operatorname{tr}\mathbf B+3\mathbf B\) has unit diagonal and shear entry 2. The contraction extracted the trace first, then substitution recovered each remaining component.</p>
+<p>The tutorial also illustrates why symmetry of a contracted expression need not imply symmetry of its coefficient tensor. For arbitrary third-order \(D_{ijk}\), the scalars \(D_{ijk}x_ix_jx_k\), \(D_{jki}x_ix_jx_k\), and \(D_{jik}x_ix_jx_k\) agree. Rename all three dummy labels together in the second expression, then commute the scalar components of \(\mathbf x\). No component symmetry of \(D\) was assumed. Their sum is \(3D_{ijk}x_ix_jx_k\), even when \(D_{ijk}\ne D_{jik}\).</p>
+<p>A constitutive-looking expression \(T_{ij}=\lambda\delta_{ij}E_{kk}+2\mu E_{ij}\) has nine component equations before symmetry is imposed. Here \(\lambda,\mu\) are specified scalar coefficients and \(\mathbf E\) is a second-order input tensor. Expanding \(E_{kk}\) produces three terms plus \(2\mu E_{ij}\). For off-diagonal components the first three vanish because \(\delta_{ij}=0\). Four written terms need not be nonzero or independent. Physical use of this law requires assumptions beyond tensor algebra.</p>
+
+<h2 id="implementation">Executable checks of orientation, slots and symmetry</h2>
+<p>The program uses fixed dimensionless inputs and NumPy. It constructs all 27 alternating-symbol entries from permutation parity, checks (2.4) for all 81 choices of its free labels, and compares indexed calculations with independent array operations. It tests a nonsymmetric map, where transposition errors remain observable. It reads and writes no files. A failed identity raises an assertion error; a missing NumPy installation prevents execution.</p>
+<pre data-run="ch02"><code class="language-python">from itertools import permutations
+import numpy as np
+
+eps = np.zeros((3, 3, 3), dtype=int)
+for p in permutations(range(3)):
+    inversions = sum(p[i] &gt; p[j] for i in range(3) for j in range(i+1, 3))
+    eps[p] = (-1)**inversions
+identity = np.eye(3)
+lhs = np.einsum('ijk,imn-&gt;jkmn', eps, eps)
+rhs = (np.einsum('jm,kn-&gt;jkmn', identity, identity)
+       - np.einsum('jn,km-&gt;jkmn', identity, identity))
+assert np.array_equal(lhs, rhs)
+shear = np.array([[1., 2., 0.], [0., 1., 0.], [0., 0., 1.]])
+a, b, c = shear.T
+normal = np.einsum('ijk,j,k-&gt;i', eps, b, c)
+assert np.array_equal(normal, np.cross(b, c))
+volume = float(a @ normal)
+assert volume == 1.0
+direction = np.array([1., 1., 0.])/np.sqrt(2)
+x = np.array([3., 1., 2.])
+projector = np.outer(direction, direction)
+parallel = projector @ x
+perpendicular = np.cross(direction, np.cross(x, direction))
+assert np.allclose(parallel + perpendicular, x)
+assert np.allclose(projector @ projector, projector)
+assert np.isclose(parallel @ perpendicular, 0)
+symmetric = (shear + shear.T)/2
+skew = (shear - shear.T)/2
+axial = -0.5*np.einsum('kij,ij-&gt;k', eps, skew)
+assert np.allclose(skew @ x, np.cross(axial, x))
+assert np.isclose(np.einsum('ij,ij-&gt;', symmetric, skew), 0)
+assert not np.allclose(shear @ x, shear.T @ x)
+frobenius = float(np.einsum('ij,ij-&gt;', shear, shear))
+reverse = float(np.einsum('ij,ji-&gt;', shear, shear))
+recovered = shear/3 - identity*np.trace(shear)/18
+assert np.allclose(identity*np.trace(recovered) + 3*recovered, shear)
+print('epsilon square sum:', int(np.sum(eps*eps)))
+print('second-third face normal:', normal.tolist())
+print('signed volume factor:', volume)
+print('parallel:', np.round(parallel, 6).tolist())
+print('perpendicular:', np.round(perpendicular, 6).tolist())
+print('Frobenius square and trace of square:', frobenius, reverse)
+print('skew axial vector:', axial.tolist())
+print('all contraction and reconstruction checks passed')</code></pre>
+<pre data-output="ch02">epsilon square sum: 6
+second-third face normal: [1.0, -2.0, 0.0]
+signed volume factor: 1.0
+parallel: [2.0, 2.0, 0.0]
+perpendicular: [1.0, -1.0, 2.0]
+Frobenius square and trace of square: 7.0 3.0
+skew axial vector: [-0.0, -0.0, -1.0]
+all contraction and reconstruction checks passed</pre>
+<p>The test distinguishes 7 from 3 because the shear is nonsymmetric. Replacing both contractions by the same wrong expression would defeat that comparison, so the independently derived numerical values remain part of the check. The finite enumeration checks the implemented epsilon identity over its entire three-dimensional index domain. It does not verify a constitutive law or physical simulation.</p>
+
+<h2 id="limits">What the algebra establishes</h2>
+<p>The shear changes lengths and angles, preserves one face area, changes another, and preserves signed volume. Cross products and scalar triple products measure those different geometric facts. Dyads construct directed maps; composition contracts an intermediate direction; double contractions produce distinct scalars depending on their paired slots. Symmetric and skew parts are orthogonal under the Frobenius inner product, and directional quadratic measurements miss the skew part entirely.</p>
+<p>These statements use real tensors in an oriented orthonormal Cartesian setting. They do not transfer unchanged to arbitrary curvilinear components, and the special axial-vector representation is three-dimensional. No stress balance, strain definition, material symmetry or thermodynamic restriction has been derived. The next step is to show how components change when the axes change, so the geometric conclusions are independent of representation.</p>
+
+<h2 id="exercises">Exercises with worked solutions</h2>
+<p><strong>1. A sign-sensitive contraction.</strong> Evaluate \(\epsilon_{ijk}\epsilon_{kji}\) and \(\epsilon_{mkq}\epsilon_{jkq}\). Explain why the first is a scalar and the second is not.</p>
+<details><summary>Solution</summary><p>Exchanging first and third slots reverses the sign: \(\epsilon_{kji}=-\epsilon_{ijk}\). Thus the first expression is \(-\epsilon_{ijk}\epsilon_{ijk}=-6\); all three labels are summed. In the second, use the identity with \(q\) in the final slot of both factors: \(\delta_{mj}\delta_{kk}-\delta_{mk}\delta_{kj}=3\delta_{mj}-\delta_{mj}=2\delta_{mj}\). Its free labels \(m,j\) specify nine component positions of a second-order tensor. Its trace is 6, agreeing with the sum of the six nonzero squared entries.</p></details>
+<p><strong>2. Areas without a determinant.</strong> For \(\mathbf A(\gamma)=\mathbf I+\gamma\mathbf e_1\otimes\mathbf e_2\), with real dimensionless \(\gamma\), calculate the image edges, three face-area magnitudes, and signed volume factor. Can volume data determine \(\gamma\)?</p>
+<details><summary>Solution</summary><p>The edges are \(\mathbf a=(1,0,0)\), \(\mathbf b=(\gamma,1,0)\), and \(\mathbf c=(0,0,1)\). Their cross products are \(\mathbf a\times\mathbf b=(0,0,1)\), \(\mathbf b\times\mathbf c=(1,-\gamma,0)\), and \(\mathbf c\times\mathbf a=(0,1,0)\). The area magnitudes are 1, \(\sqrt{1+\gamma^2}\), and 1. Dotting \(\mathbf a\) with the second cross product gives signed volume factor 1 for every \(\gamma\). Volume cannot identify the shear. Even the changed face area determines only \(|\gamma|\); its oriented normal retains the sign.</p></details>
+<p><strong>3. A projection with unnormalized data.</strong> Let \(\mathbf m=(2,0,0)\) and \(\mathbf x=(3,4,0)\). Construct the parallel projector and perpendicular vector. Find the result obtained by incorrectly treating \(\mathbf m\) as a unit vector.</p>
+<details><summary>Solution</summary><p>The squared direction length is 4, so \(\mathbf P=(\mathbf m\otimes\mathbf m)/4=\operatorname{diag}(1,0,0)\). It gives \(\mathbf P\mathbf x=(3,0,0)\) and \((\mathbf I-\mathbf P)\mathbf x=(0,4,0)\). Using \(\mathbf m(\mathbf m\cdot\mathbf x)\) without the denominator gives \((12,0,0)\), four times the parallel component. The wrong remainder \((-9,4,0)\) is not perpendicular to \(\mathbf m\). Likewise \(\mathbf m\times(\mathbf x\times\mathbf m)=(0,16,0)\); dividing by 4 restores the perpendicular vector.</p></details>
+<p><strong>4. Two dyads and two double contractions.</strong> Set \(\mathbf U=\mathbf e_1\otimes\mathbf e_2\), \(\mathbf V=\mathbf e_2\otimes\mathbf e_1\). Calculate \(\mathbf U\mathbf V\), \(\mathbf V\mathbf U\), \(\mathbf U:\mathbf V\), and \(\operatorname{tr}(\mathbf U\mathbf V)\).</p>
+<details><summary>Solution</summary><p>Equation (2.11) gives \(\mathbf U\mathbf V=(\mathbf e_2\cdot\mathbf e_2)\mathbf e_1\otimes\mathbf e_1=\mathbf e_1\otimes\mathbf e_1\). Reversing the factors gives \(\mathbf e_2\otimes\mathbf e_2\). Their actions on \(\mathbf e_1\) differ. The only nonzero entry of \(\mathbf U\) is \(U_{12}=1\); that of \(\mathbf V\) is \(V_{21}=1\). Same-slot multiplication gives \(\mathbf U:\mathbf V=0\). Reversed slots give \(U_{12}V_{21}=1\), hence \(\operatorname{tr}(\mathbf U\mathbf V)=1\). The two scalar products agree on some special inputs, but not on these.</p></details>
+<p><strong>5. Recover a tensor from coupled traces.</strong> In dimension three solve \(\mathbf A=\alpha\operatorname{tr}(\mathbf B)\mathbf I+\beta\mathbf B\), where \(\alpha,\beta\) are known dimensionless real numbers. State conditions for a unique solution for every \(\mathbf A\), and give a failure example.</p>
+<details><summary>Solution</summary><p>Taking the trace gives \(\operatorname{tr}\mathbf A=(3\alpha+\beta)\operatorname{tr}\mathbf B\). If \(\beta\ne0\) and \(3\alpha+\beta\ne0\), substitution yields \(\mathbf B=\mathbf A/\beta-\alpha\operatorname{tr}(\mathbf A)\mathbf I/[\beta(3\alpha+\beta)]\). These conditions are necessary: if \(\beta=0\), the map discards every trace-free component of \(\mathbf B\). If \(3\alpha+\beta=0\), it discards scalar multiples of the identity. For example, with \(\alpha=1,\beta=-3\), every \(\mathbf B=c\mathbf I\) produces \(\mathbf A=0\), so uniqueness fails. A nonzero-trace \(\mathbf A\) then has no solution. The trace calculation identifies the obstruction instead of supplying a formal division by zero.</p></details>
+<p><strong>6. What can directional measurements determine?</strong> Suppose an unknown real map \(\mathbf M\) is measured only through \(f(\mathbf x)=\mathbf x\cdot\mathbf M\mathbf x\) for all vectors \(\mathbf x\). Show how to recover its symmetric part and why its skew part remains undetermined.</p>
+<details><summary>Solution</summary><p>Decompose \(\mathbf M=\mathbf S+\mathbf W\). The contraction \(x_iW_{ij}x_j\) is zero, so \(f(\mathbf x)=\mathbf x\cdot\mathbf S\mathbf x\). First, \(S_{ii}=f(\mathbf e_i)\), with no sum in this component identification. For distinct numerical values \(i,j\), expansion gives \(f(\mathbf e_i+\mathbf e_j)=S_{ii}+2S_{ij}+S_{jj}\). Hence \(S_{ij}=[f(\mathbf e_i+\mathbf e_j)-f(\mathbf e_i)-f(\mathbf e_j)]/2\). These six measurements recover all six independent symmetric entries. Adding any skew map leaves every value of \(f\) unchanged. Thus the shear \(\mathbf A\) and its different symmetric part have the same directional quadratic measurements, although their vector outputs differ.</p></details>
+
+<h2 id="sources">Sources and further development</h2>
+<ul><li>NPTEL, Prof. Gaurav Bhutani: <a href="https://www.youtube.com/watch?v=1LMs4IHeIRA">L6, Permutation Symbol, official-linked upload</a>; <a href="https://www.youtube.com/watch?v=rYEOyZWV2GU">alternate L6 upload</a>; <a href="https://www.youtube.com/watch?v=yUM2n7ExK4c">L7, Vector Operations</a>; <a href="https://www.youtube.com/watch?v=Kv9Tq2U2sqE">L8, Tensor Operations</a>; <a href="https://www.youtube.com/watch?v=VU9afXvCfcA">L9, More on Indicial Notation</a>; <a href="https://www.youtube.com/watch?v=XyoxAM5Ikk8">L10, Tutorial, Week 2</a>.</li><li>A. F. Bower, <em>Applied Mechanics of Solids</em>: <a href="https://solidmechanics.org/Text/AppendixA/AppendixA.php">Appendix A, §A.1.2</a> (vector products and cross-product matrices); <a href="https://solidmechanics.org/Text/AppendixB/AppendixB.php">Appendix B, §B.1.5</a> (dyadic maps); <a href="https://solidmechanics.org/Text/AppendixC/AppendixC.php">Appendix C, §§C.2–C.5</a> (Cartesian index operations). These are mathematical references; the examples are not extracted material measurements.</li></ul>
+<!-- BOOK-CONTENT-END --></article><nav class="page-turn" aria-label="Chapter navigation"><a rel="prev" href="chapter-01-continuum-tensors-index-notation.html">Previous chapter</a><a href="index.html">Chapter index</a><a rel="next" href="chapter-03-determinants-transformations-isotropy.html">Next chapter</a></nav></main></div><footer class="site-footer">Independent study edition. Prof. Gaurav Bhutani’s NPTEL recordings provide the topic spine. Original exposition, source limitations and verification evidence are separately recorded.</footer></body></html>

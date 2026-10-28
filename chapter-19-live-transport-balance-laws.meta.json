@@ -1,0 +1,138 @@
+{
+  "chapter": 19,
+  "title": "Live discussion 3: determinant differentiation and balance laws",
+  "status": "reviewed — two independent AI reviews",
+  "authored_body_sha256": "8aaa75ebdbc163e486d21cc6d66c202ce3ec2b1763e932b584937becae32c206",
+  "recordings": [
+    {
+      "video_id": "ZqjzTTz5nVE",
+      "playlist_position": 64,
+      "lecture_label": "Live discussion 3",
+      "duration_seconds": 2890,
+      "decoded_audio_duration_seconds": 2890.002,
+      "complete_decoded_audio": true,
+      "media_sha256": "aa8804ccf0ecc931c9fe51ce044f5787f029edfd3d3443639b23c91541a879f2",
+      "transcript_first_start": 0.05,
+      "transcript_last_end": 2867.86,
+      "transcript_provenance": "Local faster-whisper small.en machine ASR; not publisher captions"
+    }
+  ],
+  "sections": [
+    {
+      "section": "Why differentiate line, area and volume elements?",
+      "anchor": "elements",
+      "video_id": "ZqjzTTz5nVE",
+      "start": 85,
+      "end": 270,
+      "lecture_material": "Related lecture topic located by the stated span",
+      "research_extension": "Inspected external support is cited locally in the exposition",
+      "teaching_construction": "Expanded exposition, derivations, numerical checks and exercises are independently authored; an anchor does not attribute every statement to the recording"
+    },
+    {
+      "section": "Cofactors turn the determinant's product rule into one contraction",
+      "anchor": "cofactor",
+      "video_id": "ZqjzTTz5nVE",
+      "start": 270,
+      "end": 1481,
+      "lecture_material": "Related lecture topic located by the stated span",
+      "research_extension": "Inspected external support is cited locally in the exposition",
+      "teaching_construction": "Expanded exposition, derivations, numerical checks and exercises are independently authored; an anchor does not attribute every statement to the recording"
+    },
+    {
+      "section": "The adjugate explains the inverse transpose and trace",
+      "anchor": "jacobi",
+      "video_id": "ZqjzTTz5nVE",
+      "start": 1481,
+      "end": 2086,
+      "lecture_material": "Related lecture topic located by the stated span",
+      "research_extension": "Inspected external support is cited locally in the exposition",
+      "teaching_construction": "Expanded exposition, derivations, numerical checks and exercises are independently authored; an anchor does not attribute every statement to the recording"
+    },
+    {
+      "section": "Area and volume evolve differently",
+      "anchor": "area",
+      "video_id": "ZqjzTTz5nVE",
+      "start": 2014,
+      "end": 2153,
+      "lecture_material": "Related lecture topic located by the stated span",
+      "research_extension": "Inspected external support is cited locally in the exposition",
+      "teaching_construction": "Expanded exposition, derivations, numerical checks and exercises are independently authored; an anchor does not attribute every statement to the recording"
+    },
+    {
+      "section": "The transport theorem is geometry; mass conservation is physics",
+      "anchor": "transport",
+      "video_id": "ZqjzTTz5nVE",
+      "start": 2153,
+      "end": 2485,
+      "lecture_material": "Related lecture topic located by the stated span",
+      "research_extension": "Inspected external support is cited locally in the exposition",
+      "teaching_construction": "Expanded exposition, derivations, numerical checks and exercises are independently authored; an anchor does not attribute every statement to the recording"
+    },
+    {
+      "section": "Reference stress preserves force, not matrix entries",
+      "anchor": "force",
+      "video_id": "ZqjzTTz5nVE",
+      "start": 2485,
+      "end": 2710,
+      "lecture_material": "Related lecture topic located by the stated span",
+      "research_extension": "Inspected external support is cited locally in the exposition",
+      "teaching_construction": "Expanded exposition, derivations, numerical checks and exercises are independently authored; an anchor does not attribute every statement to the recording"
+    },
+    {
+      "section": "Energy balances stored energy, motion and flux",
+      "anchor": "energy",
+      "video_id": "ZqjzTTz5nVE",
+      "start": 2710,
+      "end": 2805,
+      "lecture_material": "Related lecture topic located by the stated span",
+      "research_extension": "Inspected external support is cited locally in the exposition",
+      "teaching_construction": "Expanded exposition, derivations, numerical checks and exercises are independently authored; an anchor does not attribute every statement to the recording"
+    },
+    {
+      "section": "Executable determinant, area and power checks",
+      "anchor": "implementation",
+      "video_id": null,
+      "start": null,
+      "end": null,
+      "lecture_material": "",
+      "research_extension": "Inspected external support is cited locally in the exposition",
+      "teaching_construction": "Expanded exposition, derivations, numerical checks and exercises are independently authored; an anchor does not attribute every statement to the recording"
+    },
+    {
+      "section": "Problems with worked solutions",
+      "anchor": "exercises",
+      "video_id": null,
+      "start": null,
+      "end": null,
+      "lecture_material": "",
+      "research_extension": "Inspected external support is cited locally in the exposition",
+      "teaching_construction": "Expanded exposition, derivations, numerical checks and exercises are independently authored; an anchor does not attribute every statement to the recording"
+    },
+    {
+      "section": "Sources and further use",
+      "anchor": "sources",
+      "video_id": null,
+      "start": null,
+      "end": null,
+      "lecture_material": "",
+      "research_extension": "Inspected external support is cited locally in the exposition",
+      "teaching_construction": "Expanded exposition, derivations, numerical checks and exercises are independently authored; an anchor does not attribute every statement to the recording"
+    }
+  ],
+  "references": [
+    {
+      "url": "https://solidmechanics.org/Text/Chapter2_2/Chapter2_2.php",
+      "title": "§§2.2.6–2.2.7",
+      "supports": "Specific claim and locator are given beside the citation in chapter-19-live-transport-balance-laws.html"
+    },
+    {
+      "url": "https://solidmechanics.org/Text/Chapter2_3/Chapter2_3.php",
+      "title": "§2.3.4",
+      "supports": "Specific claim and locator are given beside the citation in chapter-19-live-transport-balance-laws.html"
+    }
+  ],
+  "prose_words_including_math": 2076,
+  "solution_count": 5,
+  "executable_listing_count": 1,
+  "visual_boundary": "No comprehensive visual transcription or full audiovisual review is claimed. ASR cannot recover every board input; uncertain inputs are qualified locally."
+}

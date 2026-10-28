@@ -1,0 +1,4 @@
+# Validation binds exact public bytes, including displayed process output.
+# Preserve them across Windows/Linux Git checkouts without newline conversion.
+* -text
+*.png binary

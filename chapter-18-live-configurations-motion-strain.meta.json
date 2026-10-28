@@ -1,0 +1,133 @@
+{
+  "chapter": 18,
+  "title": "Live discussion 2: motion, rotation and compatible strain",
+  "status": "reviewed — two independent AI reviews",
+  "authored_body_sha256": "dad096eade3c28ab8a3ac7d2b01b32080062acb2436d0a7ad4ef0f209b9d7561",
+  "recordings": [
+    {
+      "video_id": "ri5qTz4uKhI",
+      "playlist_position": 65,
+      "lecture_label": "Live discussion 2",
+      "duration_seconds": 3856,
+      "decoded_audio_duration_seconds": 3855.0233125,
+      "complete_decoded_audio": true,
+      "media_sha256": "8e0bfea6762a65f3fe48d1980d2e8c8c7280c2c37755ee3636f43a9a0d49227a",
+      "transcript_first_start": 0.98,
+      "transcript_last_end": 3478.06,
+      "transcript_provenance": "Local faster-whisper small.en machine ASR; not publisher captions"
+    }
+  ],
+  "sections": [
+    {
+      "section": "Why introduce particle IDs before material coordinates?",
+      "anchor": "reference",
+      "video_id": "ri5qTz4uKhI",
+      "start": 158,
+      "end": 665,
+      "lecture_material": "Related lecture topic located by the stated span",
+      "research_extension": "Inspected external support is cited locally in the exposition",
+      "teaching_construction": "Expanded exposition, derivations, numerical checks and exercises are independently authored; an anchor does not attribute every statement to the recording"
+    },
+    {
+      "section": "Must two acceleration calculations agree?",
+      "anchor": "derivative",
+      "video_id": "ri5qTz4uKhI",
+      "start": 665,
+      "end": 1201,
+      "lecture_material": "Related lecture topic located by the stated span",
+      "research_extension": "Inspected external support is cited locally in the exposition",
+      "teaching_construction": "Expanded exposition, derivations, numerical checks and exercises are independently authored; an anchor does not attribute every statement to the recording"
+    },
+    {
+      "section": "Why remove translation and rigid rotation from strain?",
+      "anchor": "metric",
+      "video_id": "ri5qTz4uKhI",
+      "start": 1201,
+      "end": 1980,
+      "lecture_material": "Related lecture topic located by the stated span",
+      "research_extension": "Inspected external support is cited locally in the exposition",
+      "teaching_construction": "Expanded exposition, derivations, numerical checks and exercises are independently authored; an anchor does not attribute every statement to the recording"
+    },
+    {
+      "section": "How is a skew tensor converted to a rotation vector?",
+      "anchor": "rotation",
+      "video_id": "ri5qTz4uKhI",
+      "start": 1980,
+      "end": 2294,
+      "lecture_material": "Related lecture topic located by the stated span",
+      "research_extension": "Inspected external support is cited locally in the exposition",
+      "teaching_construction": "Expanded exposition, derivations, numerical checks and exercises are independently authored; an anchor does not attribute every statement to the recording"
+    },
+    {
+      "section": "How does polar decomposition become an additive split?",
+      "anchor": "polar",
+      "video_id": "ri5qTz4uKhI",
+      "start": 2294,
+      "end": 3033,
+      "lecture_material": "Related lecture topic located by the stated span",
+      "research_extension": "Inspected external support is cited locally in the exposition",
+      "teaching_construction": "Expanded exposition, derivations, numerical checks and exercises are independently authored; an anchor does not attribute every statement to the recording"
+    },
+    {
+      "section": "Are stretches defined by initial and final directions different quantities?",
+      "anchor": "stretch",
+      "video_id": "ri5qTz4uKhI",
+      "start": 2060,
+      "end": 2219,
+      "lecture_material": "Related lecture topic located by the stated span",
+      "research_extension": "Inspected external support is cited locally in the exposition",
+      "teaching_construction": "Expanded exposition, derivations, numerical checks and exercises are independently authored; an anchor does not attribute every statement to the recording"
+    },
+    {
+      "section": "Why are the compatibility equations differentially dependent?",
+      "anchor": "compatibility",
+      "video_id": "ri5qTz4uKhI",
+      "start": 3033,
+      "end": 3416,
+      "lecture_material": "Related lecture topic located by the stated span",
+      "research_extension": "Inspected external support is cited locally in the exposition",
+      "teaching_construction": "Expanded exposition, derivations, numerical checks and exercises are independently authored; an anchor does not attribute every statement to the recording"
+    },
+    {
+      "section": "Executable rotation and polar-limit checks",
+      "anchor": "implementation",
+      "video_id": null,
+      "start": null,
+      "end": null,
+      "lecture_material": "",
+      "research_extension": "Inspected external support is cited locally in the exposition",
+      "teaching_construction": "Expanded exposition, derivations, numerical checks and exercises are independently authored; an anchor does not attribute every statement to the recording"
+    },
+    {
+      "section": "Clarification problems with worked solutions",
+      "anchor": "exercises",
+      "video_id": null,
+      "start": null,
+      "end": null,
+      "lecture_material": "",
+      "research_extension": "Inspected external support is cited locally in the exposition",
+      "teaching_construction": "Expanded exposition, derivations, numerical checks and exercises are independently authored; an anchor does not attribute every statement to the recording"
+    },
+    {
+      "section": "Sources and boundaries",
+      "anchor": "sources",
+      "video_id": null,
+      "start": null,
+      "end": null,
+      "lecture_material": "",
+      "research_extension": "Inspected external support is cited locally in the exposition",
+      "teaching_construction": "Expanded exposition, derivations, numerical checks and exercises are independently authored; an anchor does not attribute every statement to the recording"
+    }
+  ],
+  "references": [
+    {
+      "url": "https://solidmechanics.org/Text/Chapter2_2/Chapter2_2.php",
+      "title": "Applied Mechanics of Solids , §§2.2.15 and 2.2.17–2.2.18",
+      "supports": "Specific claim and locator are given beside the citation in chapter-18-live-configurations-motion-strain.html"
+    }
+  ],
+  "prose_words_including_math": 2039,
+  "solution_count": 5,
+  "executable_listing_count": 1,
+  "visual_boundary": "No comprehensive visual transcription or full audiovisual review is claimed. ASR cannot recover every board input; uncertain inputs are qualified locally."
+}

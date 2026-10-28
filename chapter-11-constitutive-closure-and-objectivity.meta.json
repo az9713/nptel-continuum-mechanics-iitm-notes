@@ -1,0 +1,145 @@
+{
+  "chapter": 11,
+  "title": "Constitutive closure, objectivity and thermodynamic restrictions",
+  "status": "reviewed — two independent AI reviews",
+  "authored_body_sha256": "fe115c8af68226e25ec9856d2c8d8cb3849e2a3ade315be114b39d0258d4fcd5",
+  "recordings": [
+    {
+      "video_id": "JeFcOYaUyZ4",
+      "playlist_position": 53,
+      "lecture_label": "Lecture 51",
+      "duration_seconds": 1936,
+      "decoded_audio_duration_seconds": 1934.96525,
+      "complete_decoded_audio": true,
+      "media_sha256": "02cdc82c59ac9981c6fdcd4dae1f9a4d38a78cd66a89c15c82a844cabc643469",
+      "transcript_first_start": 12.11,
+      "transcript_last_end": 1923.47,
+      "transcript_provenance": "Local faster-whisper small.en machine ASR; not publisher captions"
+    },
+    {
+      "video_id": "5tKqNGvHirg",
+      "playlist_position": 54,
+      "lecture_label": "Lecture 52",
+      "duration_seconds": 2108,
+      "decoded_audio_duration_seconds": 2107.72175,
+      "complete_decoded_audio": true,
+      "media_sha256": "d19426295bd9f94474e83154a8286e482c77818a6ac30109d0e51d89e54dd537",
+      "transcript_first_start": 17.62,
+      "transcript_last_end": 2099.41,
+      "transcript_provenance": "Local faster-whisper small.en machine ASR; not publisher captions"
+    }
+  ],
+  "sections": [
+    {
+      "section": "What the balance equations leave undetermined",
+      "anchor": "closure",
+      "video_id": "JeFcOYaUyZ4",
+      "start": 181,
+      "end": 1669,
+      "lecture_material": "Related lecture topic located by the stated span",
+      "research_extension": "Inspected external support is cited locally in the exposition",
+      "teaching_construction": "Expanded exposition, derivations, numerical checks and exercises are independently authored; an anchor does not attribute every statement to the recording"
+    },
+    {
+      "section": "Objectivity is a transformation requirement",
+      "anchor": "frame",
+      "video_id": "5tKqNGvHirg",
+      "start": 17,
+      "end": 690,
+      "lecture_material": "Related lecture topic located by the stated span",
+      "research_extension": "Inspected external support is cited locally in the exposition",
+      "teaching_construction": "Expanded exposition, derivations, numerical checks and exercises are independently authored; an anchor does not attribute every statement to the recording"
+    },
+    {
+      "section": "Testing a rate law",
+      "anchor": "strain-rate-law",
+      "video_id": "5tKqNGvHirg",
+      "start": 79,
+      "end": 230,
+      "lecture_material": "Related lecture topic located by the stated span",
+      "research_extension": "Inspected external support is cited locally in the exposition",
+      "teaching_construction": "Expanded exposition, derivations, numerical checks and exercises are independently authored; an anchor does not attribute every statement to the recording"
+    },
+    {
+      "section": "Material symmetry acts on reference directions",
+      "anchor": "material-symmetry",
+      "video_id": "5tKqNGvHirg",
+      "start": 690,
+      "end": 1333,
+      "lecture_material": "Related lecture topic located by the stated span",
+      "research_extension": "Inspected external support is cited locally in the exposition",
+      "teaching_construction": "Expanded exposition, derivations, numerical checks and exercises are independently authored; an anchor does not attribute every statement to the recording"
+    },
+    {
+      "section": "From entropy to free energy",
+      "anchor": "second-law",
+      "video_id": "5tKqNGvHirg",
+      "start": 1333,
+      "end": 1488,
+      "lecture_material": "Related lecture topic located by the stated span",
+      "research_extension": "Inspected external support is cited locally in the exposition",
+      "teaching_construction": "Expanded exposition, derivations, numerical checks and exercises are independently authored; an anchor does not attribute every statement to the recording"
+    },
+    {
+      "section": "A small-strain constitutive restriction",
+      "anchor": "small-strain",
+      "video_id": "5tKqNGvHirg",
+      "start": 1488,
+      "end": 1674,
+      "lecture_material": "Related lecture topic located by the stated span",
+      "research_extension": "Inspected external support is cited locally in the exposition",
+      "teaching_construction": "Expanded exposition, derivations, numerical checks and exercises are independently authored; an anchor does not attribute every statement to the recording"
+    },
+    {
+      "section": "Fourier conduction and history",
+      "anchor": "heat",
+      "video_id": "5tKqNGvHirg",
+      "start": 1674,
+      "end": 1984,
+      "lecture_material": "Related lecture topic located by the stated span",
+      "research_extension": "Inspected external support is cited locally in the exposition",
+      "teaching_construction": "Expanded exposition, derivations, numerical checks and exercises are independently authored; an anchor does not attribute every statement to the recording"
+    },
+    {
+      "section": "Executable observer and dissipation checks",
+      "anchor": "code",
+      "video_id": null,
+      "start": null,
+      "end": null,
+      "lecture_material": "",
+      "research_extension": "Inspected external support is cited locally in the exposition",
+      "teaching_construction": "Expanded exposition, derivations, numerical checks and exercises are independently authored; an anchor does not attribute every statement to the recording"
+    },
+    {
+      "section": "Exercises with worked solutions",
+      "anchor": "exercises",
+      "video_id": null,
+      "start": null,
+      "end": null,
+      "lecture_material": "",
+      "research_extension": "Inspected external support is cited locally in the exposition",
+      "teaching_construction": "Expanded exposition, derivations, numerical checks and exercises are independently authored; an anchor does not attribute every statement to the recording"
+    },
+    {
+      "section": "Sources and scope",
+      "anchor": "sources",
+      "video_id": null,
+      "start": null,
+      "end": null,
+      "lecture_material": "",
+      "research_extension": "Inspected external support is cited locally in the exposition",
+      "teaching_construction": "Expanded exposition, derivations, numerical checks and exercises are independently authored; an anchor does not attribute every statement to the recording"
+    }
+  ],
+  "references": [
+    {
+      "url": "https://solidmechanics.org/Text/Chapter3_1/Chapter3_1.htm",
+      "title": "Applied Mechanics of Solids , §3.1",
+      "supports": "Specific claim and locator are given beside the citation in chapter-11-constitutive-closure-and-objectivity.html"
+    }
+  ],
+  "prose_words_including_math": 2681,
+  "solution_count": 6,
+  "executable_listing_count": 1,
+  "visual_boundary": "No comprehensive visual transcription or full audiovisual review is claimed. ASR cannot recover every board input; uncertain inputs are qualified locally."
+}

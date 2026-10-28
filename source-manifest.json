@@ -1,0 +1,1266 @@
+{
+  "course": "Foundations of Continuum Mechanics",
+  "slug": ".",
+  "provider": "NPTEL · IIT Mandi",
+  "instructor": "Prof. Gaurav Bhutani",
+  "term": "Independent study edition · source inventory 28 October 2026",
+  "course_url": "https://nptel.ac.in/courses/112106912",
+  "playlist_url": "https://www.youtube.com/playlist?list=PLyqSpQzTE6M8goni-cNmCqEp3jMFXLgdf",
+  "chapters": [
+    {
+      "order": 1,
+      "title": "The continuum model, tensors and index notation",
+      "chapter_status": "reviewed — two independent AI reviews"
+    },
+    {
+      "order": 2,
+      "title": "Alternating tensors, vector identities and tensor algebra",
+      "chapter_status": "reviewed — two independent AI reviews"
+    },
+    {
+      "order": 3,
+      "title": "Determinants, coordinate transformations and isotropy",
+      "chapter_status": "reviewed — two independent AI reviews"
+    },
+    {
+      "order": 4,
+      "title": "Principal directions and tensor calculus",
+      "chapter_status": "reviewed — two independent AI reviews"
+    },
+    {
+      "order": 5,
+      "title": "Traction, Cauchy stress and local equilibrium",
+      "chapter_status": "reviewed — two independent AI reviews"
+    },
+    {
+      "order": 6,
+      "title": "Principal stresses, Mohr circles and stress invariants",
+      "chapter_status": "reviewed — two independent AI reviews"
+    },
+    {
+      "order": 7,
+      "title": "Motion, descriptions and material differentiation",
+      "chapter_status": "reviewed — two independent AI reviews"
+    },
+    {
+      "order": 8,
+      "title": "Deformation gradients and finite and infinitesimal strain",
+      "chapter_status": "reviewed — two independent AI reviews"
+    },
+    {
+      "order": 9,
+      "title": "Compatibility, finite deformation and velocity gradients",
+      "chapter_status": "reviewed — two independent AI reviews"
+    },
+    {
+      "order": 10,
+      "title": "Transport, mass, momentum and energy balances",
+      "chapter_status": "reviewed — two independent AI reviews"
+    },
+    {
+      "order": 11,
+      "title": "Constitutive closure, objectivity and thermodynamic restrictions",
+      "chapter_status": "reviewed — two independent AI reviews"
+    },
+    {
+      "order": 12,
+      "title": "Linear elasticity and hyperelasticity",
+      "chapter_status": "reviewed — two independent AI reviews"
+    },
+    {
+      "order": 13,
+      "title": "Viscous and viscoelastic materials",
+      "chapter_status": "reviewed — two independent AI reviews"
+    },
+    {
+      "order": 14,
+      "title": "Plasticity and constitutive problem solving",
+      "chapter_status": "reviewed — two independent AI reviews"
+    },
+    {
+      "order": 15,
+      "title": "Linear fluids, Navier–Stokes and a complete flow problem",
+      "chapter_status": "reviewed — two independent AI reviews"
+    },
+    {
+      "order": 16,
+      "title": "The course in perspective: a connected mechanics problem",
+      "chapter_status": "reviewed — two independent AI reviews"
+    },
+    {
+      "order": 17,
+      "title": "Live discussion 1: tensor and stress foundations",
+      "chapter_status": "reviewed — two independent AI reviews"
+    },
+    {
+      "order": 18,
+      "title": "Live discussion 2: configurations, motion and strain",
+      "chapter_status": "reviewed — two independent AI reviews"
+    },
+    {
+      "order": 19,
+      "title": "Live discussion 3: transport and balance laws",
+      "chapter_status": "reviewed — two independent AI reviews"
+    },
+    {
+      "order": 20,
+      "title": "Live discussion 4: constitutive models and fluids",
+      "chapter_status": "reviewed — two independent AI reviews"
+    }
+  ],
+  "lectures": [
+    {
+      "id": "io3znckKdxY",
+      "playlist_position": 1,
+      "title": "Introduction_Foundations of Continuum Mechanics",
+      "url": "https://www.youtube.com/watch?v=io3znckKdxY",
+      "duration": 269,
+      "lecture_number": null,
+      "label": "Course introduction",
+      "chapter_order": 16,
+      "official_lesson": null,
+      "source_status": "Complete decoded audio and machine ASR; scientific chapter review recorded separately"
+    },
+    {
+      "id": "zPZd1QkVxC0",
+      "playlist_position": 2,
+      "title": "1. Introduction",
+      "url": "https://www.youtube.com/watch?v=zPZd1QkVxC0",
+      "duration": 1251,
+      "lecture_number": 1,
+      "label": "Lecture 1",
+      "chapter_order": 1,
+      "official_lesson": {
+        "id": 1,
+        "name": "Introduction",
+        "youtube_id": "zPZd1QkVxC0",
+        "concepts_covered": "Foundations of Continuum Mechanics - Introductory lecture",
+        "week": 1
+      },
+      "source_status": "Complete decoded audio and machine ASR; scientific chapter review recorded separately"
+    },
+    {
+      "id": "SYCpP_jGjbE",
+      "playlist_position": 3,
+      "title": "2. Tensors",
+      "url": "https://www.youtube.com/watch?v=SYCpP_jGjbE",
+      "duration": 2085,
+      "lecture_number": 2,
+      "label": "Lecture 2",
+      "chapter_order": 1,
+      "official_lesson": {
+        "id": 2,
+        "name": "Tensors",
+        "youtube_id": "SYCpP_jGjbE",
+        "concepts_covered": "\"Tensors - definition and notation\nIndicial notation\nSummation convention / Einstein notation\"",
+        "week": 1
+      },
+      "source_status": "Complete decoded audio and machine ASR; scientific chapter review recorded separately"
+    },
+    {
+      "id": "zKCcURnUYGQ",
+      "playlist_position": 4,
+      "title": "3. Summation Convention (Einstein Notation)",
+      "url": "https://www.youtube.com/watch?v=zKCcURnUYGQ",
+      "duration": 1904,
+      "lecture_number": 3,
+      "label": "Lecture 3",
+      "chapter_order": 1,
+      "official_lesson": {
+        "id": 3,
+        "name": "Summation Convention (Einstein Notation)",
+        "youtube_id": "zKCcURnUYGQ",
+        "concepts_covered": "\"Summation Convention / Einstein Notation\nIndicial notation\nExamples\nFree and Dummy indices\"",
+        "week": 1
+      },
+      "source_status": "Complete decoded audio and machine ASR; scientific chapter review recorded separately"
+    },
+    {
+      "id": "JUNbTpjFIOU",
+      "playlist_position": 5,
+      "title": "4. Kronecker Delta",
+      "url": "https://www.youtube.com/watch?v=JUNbTpjFIOU",
+      "duration": 1575,
+      "lecture_number": 4,
+      "label": "Lecture 4",
+      "chapter_order": 1,
+      "official_lesson": {
+        "id": 4,
+        "name": "Kronecker Delta",
+        "youtube_id": "JUNbTpjFIOU",
+        "concepts_covered": "\"Kronecker Delta\nSubstitution propery\nVector dot product\"",
+        "week": 1
+      },
+      "source_status": "Complete decoded audio and machine ASR; scientific chapter review recorded separately"
+    },
+    {
+      "id": "RWGdCQiT2V4",
+      "playlist_position": 6,
+      "title": "5. Tutorial - Week 1",
+      "url": "https://www.youtube.com/watch?v=RWGdCQiT2V4",
+      "duration": 1897,
+      "lecture_number": 5,
+      "label": "Lecture 5",
+      "chapter_order": 1,
+      "official_lesson": {
+        "id": 5,
+        "name": "Tutorial - Week 1",
+        "youtube_id": "RWGdCQiT2V4",
+        "concepts_covered": "\"Problems from the following topics:\nTensors\nIndicial notation\nSummation convention\nKronecker delta and substitution property\"",
+        "week": 1
+      },
+      "source_status": "Complete decoded audio and machine ASR; scientific chapter review recorded separately"
+    },
+    {
+      "id": "rYEOyZWV2GU",
+      "playlist_position": 7,
+      "title": "6. Permutation Symbol",
+      "url": "https://www.youtube.com/watch?v=rYEOyZWV2GU",
+      "duration": 1936,
+      "lecture_number": 6,
+      "label": "Lecture 6",
+      "chapter_order": 2,
+      "official_lesson": null,
+      "source_status": "Complete decoded audio and machine ASR; scientific chapter review recorded separately"
+    },
+    {
+      "id": "1LMs4IHeIRA",
+      "playlist_position": 8,
+      "title": "L6. Permutation Symbol",
+      "url": "https://www.youtube.com/watch?v=1LMs4IHeIRA",
+      "duration": 1936,
+      "lecture_number": 6,
+      "label": "Lecture 6",
+      "chapter_order": 2,
+      "official_lesson": {
+        "id": 6,
+        "name": "Permutation Symbol",
+        "youtube_id": "1LMs4IHeIRA",
+        "concepts_covered": "\"Permutation symbol\nVector cross product\nEpsilon-Delta identity\"",
+        "week": 2
+      },
+      "source_status": "Complete decoded audio and machine ASR; scientific chapter review recorded separately"
+    },
+    {
+      "id": "yUM2n7ExK4c",
+      "playlist_position": 9,
+      "title": "L7. Vector Operations",
+      "url": "https://www.youtube.com/watch?v=yUM2n7ExK4c",
+      "duration": 2436,
+      "lecture_number": 7,
+      "label": "Lecture 7",
+      "chapter_order": 2,
+      "official_lesson": {
+        "id": 7,
+        "name": "Vector Operations",
+        "youtube_id": "yUM2n7ExK4c",
+        "concepts_covered": "\"Vector cross product\nScalar triple product\nVector triple cross product\"",
+        "week": 2
+      },
+      "source_status": "Complete decoded audio and machine ASR; scientific chapter review recorded separately"
+    },
+    {
+      "id": "Kv9Tq2U2sqE",
+      "playlist_position": 10,
+      "title": "L8. Tensor Operations",
+      "url": "https://www.youtube.com/watch?v=Kv9Tq2U2sqE",
+      "duration": 2406,
+      "lecture_number": 8,
+      "label": "Lecture 8",
+      "chapter_order": 2,
+      "official_lesson": {
+        "id": 8,
+        "name": "Tensor Operations",
+        "youtube_id": "Kv9Tq2U2sqE",
+        "concepts_covered": "\"Vector and tensor operations\nIndicial notation\"",
+        "week": 2
+      },
+      "source_status": "Complete decoded audio and machine ASR; scientific chapter review recorded separately"
+    },
+    {
+      "id": "VU9afXvCfcA",
+      "playlist_position": 11,
+      "title": "L9. More on Indcial Notation",
+      "url": "https://www.youtube.com/watch?v=VU9afXvCfcA",
+      "duration": 2158,
+      "lecture_number": 9,
+      "label": "Lecture 9",
+      "chapter_order": 2,
+      "official_lesson": {
+        "id": 9,
+        "name": "More on Indicial notation",
+        "youtube_id": "VU9afXvCfcA",
+        "concepts_covered": "\"Tensor-tensor product\nOrder of tensors\nContraction\nSymmetry\"",
+        "week": 2
+      },
+      "source_status": "Complete decoded audio and machine ASR; scientific chapter review recorded separately"
+    },
+    {
+      "id": "XyoxAM5Ikk8",
+      "playlist_position": 12,
+      "title": "L10. Tutorial - Week 2",
+      "url": "https://www.youtube.com/watch?v=XyoxAM5Ikk8",
+      "duration": 1931,
+      "lecture_number": 10,
+      "label": "Lecture 10",
+      "chapter_order": 2,
+      "official_lesson": {
+        "id": 10,
+        "name": "Tutorial - Week 2",
+        "youtube_id": "XyoxAM5Ikk8",
+        "concepts_covered": "\"Problems from the following topics:\nPermutation symbol and epsilon-delta identity;\nVector and tensor operations;\nindcial notation; \nContraction and symmetry\"",
+        "week": 2
+      },
+      "source_status": "Complete decoded audio and machine ASR; scientific chapter review recorded separately"
+    },
+    {
+      "id": "iXNFF6nmsvs",
+      "playlist_position": 13,
+      "title": "12. Tensor Transformation",
+      "url": "https://www.youtube.com/watch?v=iXNFF6nmsvs",
+      "duration": 1654,
+      "lecture_number": 12,
+      "label": "Lecture 12",
+      "chapter_order": 3,
+      "official_lesson": {
+        "id": 12,
+        "name": "Tensor Transformation",
+        "youtube_id": "iXNFF6nmsvs",
+        "concepts_covered": "\"Transformation matrix corresponding to coordinate transformation;\nProperties of transformation matrix;\nTransformation rule for unit vectors\"",
+        "week": 3
+      },
+      "source_status": "Complete decoded audio and machine ASR; scientific chapter review recorded separately"
+    },
+    {
+      "id": "fnVI2tzJ_aQ",
+      "playlist_position": 14,
+      "title": "13. Tensor Transformation - part 2",
+      "url": "https://www.youtube.com/watch?v=fnVI2tzJ_aQ",
+      "duration": 1910,
+      "lecture_number": 13,
+      "label": "Lecture 13",
+      "chapter_order": 3,
+      "official_lesson": {
+        "id": 13,
+        "name": "Tensor Transformation - part 2",
+        "youtube_id": "fnVI2tzJ_aQ",
+        "concepts_covered": "\"Vector transformations;\nTensor transformation rule;\nProblem\"",
+        "week": 3
+      },
+      "source_status": "Complete decoded audio and machine ASR; scientific chapter review recorded separately"
+    },
+    {
+      "id": "NaSPrp6-ZIY",
+      "playlist_position": 15,
+      "title": "14. Isotropy and Invariance",
+      "url": "https://www.youtube.com/watch?v=NaSPrp6-ZIY",
+      "duration": 1859,
+      "lecture_number": 14,
+      "label": "Lecture 14",
+      "chapter_order": 3,
+      "official_lesson": {
+        "id": 14,
+        "name": "Isotropy and Invariance",
+        "youtube_id": "NaSPrp6-ZIY",
+        "concepts_covered": "Isotropy; Invariance",
+        "week": 3
+      },
+      "source_status": "Complete decoded audio and machine ASR; scientific chapter review recorded separately"
+    },
+    {
+      "id": "PG96IUqOgq4",
+      "playlist_position": 16,
+      "title": "15. Tutorial - Week 3",
+      "url": "https://www.youtube.com/watch?v=PG96IUqOgq4",
+      "duration": 1909,
+      "lecture_number": 15,
+      "label": "Lecture 15",
+      "chapter_order": 3,
+      "official_lesson": {
+        "id": 15,
+        "name": "Tutorial - Week 3",
+        "youtube_id": "PG96IUqOgq4",
+        "concepts_covered": "\"Tutorials for week 3 covering topics:\nMatrices and Determinants,\nTensor transformation,\nIsotropy and Invariance\"",
+        "week": 3
+      },
+      "source_status": "Complete decoded audio and machine ASR; scientific chapter review recorded separately"
+    },
+    {
+      "id": "c9XGr1tELaA",
+      "playlist_position": 17,
+      "title": "16. Principal Values and Directions",
+      "url": "https://www.youtube.com/watch?v=c9XGr1tELaA",
+      "duration": 2110,
+      "lecture_number": 16,
+      "label": "Lecture 16",
+      "chapter_order": 4,
+      "official_lesson": {
+        "id": 16,
+        "name": "Principal Values and Directions",
+        "youtube_id": "c9XGr1tELaA",
+        "concepts_covered": "Linear transformation; Principal directions; Principal values; Characteristic equation",
+        "week": 4
+      },
+      "source_status": "Complete decoded audio and machine ASR; scientific chapter review recorded separately"
+    },
+    {
+      "id": "0Pz28dVwB5I",
+      "playlist_position": 18,
+      "title": "17. Principal Values and Directions - part 2",
+      "url": "https://www.youtube.com/watch?v=0Pz28dVwB5I",
+      "duration": 1639,
+      "lecture_number": 17,
+      "label": "Lecture 17",
+      "chapter_order": 4,
+      "official_lesson": {
+        "id": 17,
+        "name": "Principal Values and Directions - part 2",
+        "youtube_id": "0Pz28dVwB5I",
+        "concepts_covered": "\"Principal coordinate system\n(aka Principal axes)\"",
+        "week": 4
+      },
+      "source_status": "Complete decoded audio and machine ASR; scientific chapter review recorded separately"
+    },
+    {
+      "id": "HaPy3c2IC1o",
+      "playlist_position": 19,
+      "title": "18. Tensor Calculus - part 1",
+      "url": "https://www.youtube.com/watch?v=HaPy3c2IC1o",
+      "duration": 2155,
+      "lecture_number": 18,
+      "label": "Lecture 18",
+      "chapter_order": 4,
+      "official_lesson": {
+        "id": 18,
+        "name": "Tensor Calculus - part 1",
+        "youtube_id": "HaPy3c2IC1o",
+        "concepts_covered": "\"Tensor field and partial derivatives\nComma notation\nVector calculus in Indicial notation\"",
+        "week": 4
+      },
+      "source_status": "Complete decoded audio and machine ASR; scientific chapter review recorded separately"
+    },
+    {
+      "id": "UQdyGT4Gs0o",
+      "playlist_position": 20,
+      "title": "19. Tensor Calculus - part 2",
+      "url": "https://www.youtube.com/watch?v=UQdyGT4Gs0o",
+      "duration": 2269,
+      "lecture_number": 19,
+      "label": "Lecture 19",
+      "chapter_order": 4,
+      "official_lesson": {
+        "id": 19,
+        "name": "Tensor Calculus - part 2",
+        "youtube_id": "UQdyGT4Gs0o",
+        "concepts_covered": "\"Tensor calculus\nIntegral theorems:\nGauss' theorem\nStokes' theorem\"",
+        "week": 4
+      },
+      "source_status": "Complete decoded audio and machine ASR; scientific chapter review recorded separately"
+    },
+    {
+      "id": "ljXaTYVt6JQ",
+      "playlist_position": 21,
+      "title": "20. Tutorial - Week 4",
+      "url": "https://www.youtube.com/watch?v=ljXaTYVt6JQ",
+      "duration": 1940,
+      "lecture_number": 20,
+      "label": "Lecture 20",
+      "chapter_order": 4,
+      "official_lesson": {
+        "id": 20,
+        "name": "Tutorial - Week 4",
+        "youtube_id": "ljXaTYVt6JQ",
+        "concepts_covered": "\"Problems from the following topics:\nPrincipal values and directions\nTensor calculus\"",
+        "week": 4
+      },
+      "source_status": "Complete decoded audio and machine ASR; scientific chapter review recorded separately"
+    },
+    {
+      "id": "UnB0px3MadU",
+      "playlist_position": 22,
+      "title": "11. Matrices and Determinants",
+      "url": "https://www.youtube.com/watch?v=UnB0px3MadU",
+      "duration": 1686,
+      "lecture_number": 11,
+      "label": "Lecture 11",
+      "chapter_order": 3,
+      "official_lesson": {
+        "id": 11,
+        "name": "Matrices and Determinants",
+        "youtube_id": "UnB0px3MadU",
+        "concepts_covered": "\"Special matrices and matrix operations;\nIndicial notation with matrices;\nMatrix multiplication;\nDeterminants and indicial notation;\nProblems\"",
+        "week": 3
+      },
+      "source_status": "Complete decoded audio and machine ASR; scientific chapter review recorded separately"
+    },
+    {
+      "id": "79pT3kqvhcg",
+      "playlist_position": 23,
+      "title": "21. Cauchy Stress Principle",
+      "url": "https://www.youtube.com/watch?v=79pT3kqvhcg",
+      "duration": 2136,
+      "lecture_number": 21,
+      "label": "Lecture 21",
+      "chapter_order": 5,
+      "official_lesson": {
+        "id": 21,
+        "name": "Cauchy Stress Principle",
+        "youtube_id": "79pT3kqvhcg",
+        "concepts_covered": "\"Introduction to stress\nTypes of forces - body and surface\nCauchy stress principle\nState of stress at a point\"",
+        "week": 5
+      },
+      "source_status": "Complete decoded audio and machine ASR; scientific chapter review recorded separately"
+    },
+    {
+      "id": "-tnTls6t2Jo",
+      "playlist_position": 24,
+      "title": "22. Cauchy Stress Formula",
+      "url": "https://www.youtube.com/watch?v=-tnTls6t2Jo",
+      "duration": 2547,
+      "lecture_number": 22,
+      "label": "Lecture 22",
+      "chapter_order": 5,
+      "official_lesson": {
+        "id": 22,
+        "name": "Cauchy Stress Formula",
+        "youtube_id": "-tnTls6t2Jo",
+        "concepts_covered": "Traction vector on opposite planes; Cauchy stress formula; Derivation of Cauchy stress formula; State of stress; Cauchy stress tensor",
+        "week": 5
+      },
+      "source_status": "Complete decoded audio and machine ASR; scientific chapter review recorded separately"
+    },
+    {
+      "id": "5LRiGFDZ6tI",
+      "playlist_position": 25,
+      "title": "23. Cauchy Stress Tensor",
+      "url": "https://www.youtube.com/watch?v=5LRiGFDZ6tI",
+      "duration": 1912,
+      "lecture_number": 23,
+      "label": "Lecture 23",
+      "chapter_order": 5,
+      "official_lesson": {
+        "id": 23,
+        "name": "Cauchy Stress Tensor",
+        "youtube_id": "5LRiGFDZ6tI",
+        "concepts_covered": "Showing Cauchy stress tensor to be a tensor; Cube picture of stress",
+        "week": 5
+      },
+      "source_status": "Complete decoded audio and machine ASR; scientific chapter review recorded separately"
+    },
+    {
+      "id": "_B1TEunvdvU",
+      "playlist_position": 26,
+      "title": "24. Local Equilibrium Equations",
+      "url": "https://www.youtube.com/watch?v=_B1TEunvdvU",
+      "duration": 1978,
+      "lecture_number": 24,
+      "label": "Lecture 24",
+      "chapter_order": 5,
+      "official_lesson": {
+        "id": 24,
+        "name": "Local Equilibrium Equations",
+        "youtube_id": "_B1TEunvdvU",
+        "concepts_covered": "Force equilibrium; Moment equilibrium",
+        "week": 5
+      },
+      "source_status": "Complete decoded audio and machine ASR; scientific chapter review recorded separately"
+    },
+    {
+      "id": "1zc-23thT3Q",
+      "playlist_position": 27,
+      "title": "25. Tutorial - Week 5",
+      "url": "https://www.youtube.com/watch?v=1zc-23thT3Q",
+      "duration": 2158,
+      "lecture_number": 25,
+      "label": "Lecture 25",
+      "chapter_order": 5,
+      "official_lesson": {
+        "id": 25,
+        "name": "Tutorial - Week 5",
+        "youtube_id": "1zc-23thT3Q",
+        "concepts_covered": "Problems from the following topics: Cauchy stress principle; Cauchy stress formula; Local equilibrium equations",
+        "week": 5
+      },
+      "source_status": "Complete decoded audio and machine ASR; scientific chapter review recorded separately"
+    },
+    {
+      "id": "NkpFHqMq6bQ",
+      "playlist_position": 28,
+      "title": "26. Stress Transformation and Principal Values",
+      "url": "https://www.youtube.com/watch?v=NkpFHqMq6bQ",
+      "duration": 1391,
+      "lecture_number": 26,
+      "label": "Lecture 26",
+      "chapter_order": 6,
+      "official_lesson": {
+        "id": 26,
+        "name": "Stress Transformation and Principal Values",
+        "youtube_id": "NkpFHqMq6bQ",
+        "concepts_covered": "Stress transformation; Principal stress values and directions; Principal planes and principal coordinate axes",
+        "week": 6
+      },
+      "source_status": "Complete decoded audio and machine ASR; scientific chapter review recorded separately"
+    },
+    {
+      "id": "dUm4eugKcQo",
+      "playlist_position": 29,
+      "title": "27. Stress Maxima - Lagrange Multiplier Method",
+      "url": "https://www.youtube.com/watch?v=dUm4eugKcQo",
+      "duration": 3516,
+      "lecture_number": 27,
+      "label": "Lecture 27",
+      "chapter_order": 6,
+      "official_lesson": {
+        "id": 27,
+        "name": "Stress Maxima - Lagrange Multiplier Method",
+        "youtube_id": "dUm4eugKcQo",
+        "concepts_covered": "Stres maxima; Lagrange multiplier method",
+        "week": 6
+      },
+      "source_status": "Complete decoded audio and machine ASR; scientific chapter review recorded separately"
+    },
+    {
+      "id": "D2JWvOoeY7U",
+      "playlist_position": 30,
+      "title": "28. Mohr's Circles",
+      "url": "https://www.youtube.com/watch?v=D2JWvOoeY7U",
+      "duration": 1933,
+      "lecture_number": 28,
+      "label": "Lecture 28",
+      "chapter_order": 6,
+      "official_lesson": {
+        "id": 28,
+        "name": "Mohr's Circles",
+        "youtube_id": "D2JWvOoeY7U",
+        "concepts_covered": "Introduction to Mohr's circles and the stress plane; Feasible stress space and derivation of Mohr's circles; Stress maxima using Mohr's circles; Physical and stress planes; More on Mohr's circles",
+        "week": 6
+      },
+      "source_status": "Complete decoded audio and machine ASR; scientific chapter review recorded separately"
+    },
+    {
+      "id": "zVzPAaiXV2E",
+      "playlist_position": 31,
+      "title": "29. Plane Stress, Deviatoric Stress and Octahedral Shear Stress",
+      "url": "https://www.youtube.com/watch?v=zVzPAaiXV2E",
+      "duration": 3431,
+      "lecture_number": 29,
+      "label": "Lecture 29",
+      "chapter_order": 6,
+      "official_lesson": {
+        "id": 29,
+        "name": "Plane Stress, Deviatoric Stress and Octahedral Shear Stress",
+        "youtube_id": "zVzPAaiXV2E",
+        "concepts_covered": "Planes stress; Spherical and Deviatoric stress; Octahedral shear stress",
+        "week": 6
+      },
+      "source_status": "Complete decoded audio and machine ASR; scientific chapter review recorded separately"
+    },
+    {
+      "id": "oi3O0-4rn6Q",
+      "playlist_position": 32,
+      "title": "30. Tutorial - Week 6",
+      "url": "https://www.youtube.com/watch?v=oi3O0-4rn6Q",
+      "duration": 2668,
+      "lecture_number": 30,
+      "label": "Lecture 30",
+      "chapter_order": 6,
+      "official_lesson": {
+        "id": 30,
+        "name": "Tutorial - Week 6",
+        "youtube_id": "oi3O0-4rn6Q",
+        "concepts_covered": "Problems from the following topics: Stress transformations and principal values; Stress maxima; Mohr's circles; Plane stress, Spherical and Deviatoric stress",
+        "week": 6
+      },
+      "source_status": "Complete decoded audio and machine ASR; scientific chapter review recorded separately"
+    },
+    {
+      "id": "itMny5VJFCQ",
+      "playlist_position": 33,
+      "title": "31. Deformation and Configurations",
+      "url": "https://www.youtube.com/watch?v=itMny5VJFCQ",
+      "duration": 2132,
+      "lecture_number": 31,
+      "label": "Lecture 31",
+      "chapter_order": 7,
+      "official_lesson": {
+        "id": 31,
+        "name": "Deformation and Configurations",
+        "youtube_id": "itMny5VJFCQ",
+        "concepts_covered": "Kinematics; Material body and configurations; Initial, reference and current configurations;  Motion and deformation",
+        "week": 7
+      },
+      "source_status": "Complete decoded audio and machine ASR; scientific chapter review recorded separately"
+    },
+    {
+      "id": "hZ52RJDhmT4",
+      "playlist_position": 34,
+      "title": "32. Material and Spatial Coordinates",
+      "url": "https://www.youtube.com/watch?v=hZ52RJDhmT4",
+      "duration": 1851,
+      "lecture_number": 32,
+      "label": "Lecture 32",
+      "chapter_order": 7,
+      "official_lesson": {
+        "id": 32,
+        "name": "Material and Spatial Coordinates",
+        "youtube_id": "hZ52RJDhmT4",
+        "concepts_covered": "Material and spatial coordinates; Trajectory, velocity and acceleration",
+        "week": 7
+      },
+      "source_status": "Complete decoded audio and machine ASR; scientific chapter review recorded separately"
+    },
+    {
+      "id": "Bku9aT4OsgM",
+      "playlist_position": 35,
+      "title": "33. Lagrangian and Eulerian Description",
+      "url": "https://www.youtube.com/watch?v=Bku9aT4OsgM",
+      "duration": 2503,
+      "lecture_number": 33,
+      "label": "Lecture 33",
+      "chapter_order": 7,
+      "official_lesson": {
+        "id": 33,
+        "name": "Lagrangian and Eulerian Description",
+        "youtube_id": "Bku9aT4OsgM",
+        "concepts_covered": "Inverse mapping and Jacobian; Lagrangian and Eulerian description of motion; Problems on these topics",
+        "week": 7
+      },
+      "source_status": "Complete decoded audio and machine ASR; scientific chapter review recorded separately"
+    },
+    {
+      "id": "r3E1fKUIJgU",
+      "playlist_position": 36,
+      "title": "34. Material Derivative",
+      "url": "https://www.youtube.com/watch?v=r3E1fKUIJgU",
+      "duration": 1702,
+      "lecture_number": 34,
+      "label": "Lecture 34",
+      "chapter_order": 7,
+      "official_lesson": {
+        "id": 34,
+        "name": "Material Derivative",
+        "youtube_id": "r3E1fKUIJgU",
+        "concepts_covered": "Material derivative - definition, motivation, explanation and derivation",
+        "week": 7
+      },
+      "source_status": "Complete decoded audio and machine ASR; scientific chapter review recorded separately"
+    },
+    {
+      "id": "FHaA3KbBwoE",
+      "playlist_position": 37,
+      "title": "35. Tutorial - Week 7",
+      "url": "https://www.youtube.com/watch?v=FHaA3KbBwoE",
+      "duration": 1668,
+      "lecture_number": 35,
+      "label": "Lecture 35",
+      "chapter_order": 7,
+      "official_lesson": {
+        "id": 35,
+        "name": "Tutorial - Week 7",
+        "youtube_id": "FHaA3KbBwoE",
+        "concepts_covered": "Tutorial; Problems from the following topics: motion and deformation; Lagrangian and Eulerian description; Material derivative",
+        "week": 7
+      },
+      "source_status": "Complete decoded audio and machine ASR; scientific chapter review recorded separately"
+    },
+    {
+      "id": "P5FFj0nhAb4",
+      "playlist_position": 38,
+      "title": "36. Deformation Gradient Tensor",
+      "url": "https://www.youtube.com/watch?v=P5FFj0nhAb4",
+      "duration": 2041,
+      "lecture_number": 36,
+      "label": "Lecture 36",
+      "chapter_order": 8,
+      "official_lesson": {
+        "id": 36,
+        "name": "Deformation Gradient Tensor",
+        "youtube_id": "P5FFj0nhAb4",
+        "concepts_covered": "Displacement field; Deformation gradient tensor",
+        "week": 8
+      },
+      "source_status": "Complete decoded audio and machine ASR; scientific chapter review recorded separately"
+    },
+    {
+      "id": "g_13JHpM1JI",
+      "playlist_position": 39,
+      "title": "37. Finite Strain Tensors",
+      "url": "https://www.youtube.com/watch?v=g_13JHpM1JI",
+      "duration": 2700,
+      "lecture_number": 37,
+      "label": "Lecture 37",
+      "chapter_order": 8,
+      "official_lesson": {
+        "id": 37,
+        "name": "Finite Strain Tensors",
+        "youtube_id": "g_13JHpM1JI",
+        "concepts_covered": "Scalar measures of deformation; Green's and Cauchy deformation tensors; Lagrangian and Eulerian finite strain tensors; Strains and rotations; Finite strain in terms of displacement gradients",
+        "week": 8
+      },
+      "source_status": "Complete decoded audio and machine ASR; scientific chapter review recorded separately"
+    },
+    {
+      "id": "4v07R8KrsBM",
+      "playlist_position": 40,
+      "title": "38. Infinitesimal Deformation Theory",
+      "url": "https://www.youtube.com/watch?v=4v07R8KrsBM",
+      "duration": 2068,
+      "lecture_number": 38,
+      "label": "Lecture 38",
+      "chapter_order": 8,
+      "official_lesson": {
+        "id": 38,
+        "name": "Infinitesimal Deformation Theory",
+        "youtube_id": "4v07R8KrsBM",
+        "concepts_covered": "Small deformation; Definition of infinitesimal strain tensor; Interpretation of the diagonal terms of the infinitesimal strain tensor",
+        "week": 8
+      },
+      "source_status": "Complete decoded audio and machine ASR; scientific chapter review recorded separately"
+    },
+    {
+      "id": "pORdJuMa5zc",
+      "playlist_position": 41,
+      "title": "39. Strain Tensor and Plane Strain",
+      "url": "https://www.youtube.com/watch?v=pORdJuMa5zc",
+      "duration": 2381,
+      "lecture_number": 39,
+      "label": "Lecture 39",
+      "chapter_order": 8,
+      "official_lesson": {
+        "id": 39,
+        "name": "Strain Tensor and Plane Strain",
+        "youtube_id": "pORdJuMa5zc",
+        "concepts_covered": "Interpretation of the off-diagonal terms of the infinitesimal strain tensor; Principal directions of strain; Volumetric strain; Spherical and Deviatoric parts of strain; Plane strain",
+        "week": 8
+      },
+      "source_status": "Complete decoded audio and machine ASR; scientific chapter review recorded separately"
+    },
+    {
+      "id": "YfNv_4MhXM8",
+      "playlist_position": 42,
+      "title": "40. Tutorial - Week 8",
+      "url": "https://www.youtube.com/watch?v=YfNv_4MhXM8",
+      "duration": 2462,
+      "lecture_number": 40,
+      "label": "Lecture 40",
+      "chapter_order": 8,
+      "official_lesson": {
+        "id": 40,
+        "name": "Tutorial - Week 8",
+        "youtube_id": "YfNv_4MhXM8",
+        "concepts_covered": "Problems from the following topics: Displacement field; Deformation gradient tensor; Finite strain tensors; Infinitesimal strain tensor",
+        "week": 8
+      },
+      "source_status": "Complete decoded audio and machine ASR; scientific chapter review recorded separately"
+    },
+    {
+      "id": "JU-yLeqgq_E",
+      "playlist_position": 43,
+      "title": "41. Rotations and Compatibility",
+      "url": "https://www.youtube.com/watch?v=JU-yLeqgq_E",
+      "duration": 2196,
+      "lecture_number": 41,
+      "label": "Lecture 41",
+      "chapter_order": 9,
+      "official_lesson": {
+        "id": 41,
+        "name": "Rotations and Compatibility",
+        "youtube_id": "JU-yLeqgq_E",
+        "concepts_covered": "Infinitesimal rotation tensor and vector; Derivation of strain compatibility equations",
+        "week": 9
+      },
+      "source_status": "Complete decoded audio and machine ASR; scientific chapter review recorded separately"
+    },
+    {
+      "id": "aoP5P378ca0",
+      "playlist_position": 44,
+      "title": "42. Finite Deformations",
+      "url": "https://www.youtube.com/watch?v=aoP5P378ca0",
+      "duration": 1621,
+      "lecture_number": 42,
+      "label": "Lecture 42",
+      "chapter_order": 9,
+      "official_lesson": {
+        "id": 42,
+        "name": "Finite Deformations",
+        "youtube_id": "aoP5P378ca0",
+        "concepts_covered": "Stretch ratios; Finite rotations and stretch - polar decomposition of the deformation gradient tensor",
+        "week": 9
+      },
+      "source_status": "Complete decoded audio and machine ASR; scientific chapter review recorded separately"
+    },
+    {
+      "id": "vElQk9dhJ2I",
+      "playlist_position": 45,
+      "title": "43. Velocity Gradient",
+      "url": "https://www.youtube.com/watch?v=vElQk9dhJ2I",
+      "duration": 2031,
+      "lecture_number": 43,
+      "label": "Lecture 43",
+      "chapter_order": 9,
+      "official_lesson": {
+        "id": 43,
+        "name": "Velocity Gradient",
+        "youtube_id": "vElQk9dhJ2I",
+        "concepts_covered": "Velocity gradient tensor; Rate of deformation tensor and its interpretation",
+        "week": 9
+      },
+      "source_status": "Complete decoded audio and machine ASR; scientific chapter review recorded separately"
+    },
+    {
+      "id": "2uzJrpP1yRE",
+      "playlist_position": 46,
+      "title": "44. Strain Rate and Rate of Rotation",
+      "url": "https://www.youtube.com/watch?v=2uzJrpP1yRE",
+      "duration": 2242,
+      "lecture_number": 44,
+      "label": "Lecture 44",
+      "chapter_order": 9,
+      "official_lesson": {
+        "id": 44,
+        "name": "Strain Rate and Rate of Rotation",
+        "youtube_id": "2uzJrpP1yRE",
+        "concepts_covered": "Infinitesimal deformations and velocity gradient tensor; strain rate tensor; Rate of rotation and vorticity vector; Stretch-induced rotations",
+        "week": 9
+      },
+      "source_status": "Complete decoded audio and machine ASR; scientific chapter review recorded separately"
+    },
+    {
+      "id": "ylEkEVcAVO8",
+      "playlist_position": 47,
+      "title": "45. Tutorial - Week 9",
+      "url": "https://www.youtube.com/watch?v=ylEkEVcAVO8",
+      "duration": 2590,
+      "lecture_number": 45,
+      "label": "Lecture 45",
+      "chapter_order": 9,
+      "official_lesson": {
+        "id": 45,
+        "name": "Tutorial - Week 9",
+        "youtube_id": "ylEkEVcAVO8",
+        "concepts_covered": "Problems from the following topics: Stretch ratios; Finite deformations; Stretch and rotation tensors; Velocity gradient tensor; Rate of deformation; Spin or Vorticity tensor; Strain compatibility equations",
+        "week": 9
+      },
+      "source_status": "Complete decoded audio and machine ASR; scientific chapter review recorded separately"
+    },
+    {
+      "id": "XrYnN-TmyMc",
+      "playlist_position": 48,
+      "title": "46. Material Derivative of Elements",
+      "url": "https://www.youtube.com/watch?v=XrYnN-TmyMc",
+      "duration": 1655,
+      "lecture_number": 46,
+      "label": "Lecture 46",
+      "chapter_order": 10,
+      "official_lesson": {
+        "id": 46,
+        "name": "Material Derivative of Elements",
+        "youtube_id": "XrYnN-TmyMc",
+        "concepts_covered": "Material derivative of: line elements; area elements; volume elements",
+        "week": 10
+      },
+      "source_status": "Complete decoded audio and machine ASR; scientific chapter review recorded separately"
+    },
+    {
+      "id": "MLhADOO7Q1g",
+      "playlist_position": 49,
+      "title": "47. Reynolds Transport Theorem and Conservation of Mass",
+      "url": "https://www.youtube.com/watch?v=MLhADOO7Q1g",
+      "duration": 2169,
+      "lecture_number": 47,
+      "label": "Lecture 47",
+      "chapter_order": 10,
+      "official_lesson": {
+        "id": 47,
+        "name": "Reynolds Transport Theorem and Conservation of Mass",
+        "youtube_id": "MLhADOO7Q1g",
+        "concepts_covered": "Introduction to balance laws; Transport theorem; Mass balance or continuity equation in Lagrangian and Eulerian forms",
+        "week": 10
+      },
+      "source_status": "Complete decoded audio and machine ASR; scientific chapter review recorded separately"
+    },
+    {
+      "id": "U08wmKR7cbk",
+      "playlist_position": 50,
+      "title": "48. Momentum Equations",
+      "url": "https://www.youtube.com/watch?v=U08wmKR7cbk",
+      "duration": 1657,
+      "lecture_number": 48,
+      "label": "Lecture 48",
+      "chapter_order": 10,
+      "official_lesson": {
+        "id": 48,
+        "name": "Momentum Equations",
+        "youtube_id": "U08wmKR7cbk",
+        "concepts_covered": "Revisiting material derivative of integrals; Linear momentum principle; local equation of motion in Eulerian form; angular momentum principle; symmetry of Cauchy stress tensor",
+        "week": 10
+      },
+      "source_status": "Complete decoded audio and machine ASR; scientific chapter review recorded separately"
+    },
+    {
+      "id": "FWc2--detpM",
+      "playlist_position": 51,
+      "title": "49. Lagrangian Form of Momentum Equations",
+      "url": "https://www.youtube.com/watch?v=FWc2--detpM",
+      "duration": 2534,
+      "lecture_number": 49,
+      "label": "Lecture 49",
+      "chapter_order": 10,
+      "official_lesson": {
+        "id": 49,
+        "name": "Lagrangian Form of Momentum Equations",
+        "youtube_id": "FWc2--detpM",
+        "concepts_covered": "Piola-Kirchhoff stress tensor 1 (PK1); Linear momentum equation in Lagrangian form; Piolla-Kirchhoff stress tensor 2 (PK2); Relation between Cauchy stress tensor and Piolla-Kirchhoff stresses",
+        "week": 10
+      },
+      "source_status": "Complete decoded audio and machine ASR; scientific chapter review recorded separately"
+    },
+    {
+      "id": "lAbXNLKvH-I",
+      "playlist_position": 52,
+      "title": "50. Energy Equation and Tutorial - Week 10",
+      "url": "https://www.youtube.com/watch?v=lAbXNLKvH-I",
+      "duration": 1764,
+      "lecture_number": 50,
+      "label": "Lecture 50",
+      "chapter_order": 10,
+      "official_lesson": {
+        "id": 50,
+        "name": "Energy Equation and Tutorial - Week 10",
+        "youtube_id": "lAbXNLKvH-I",
+        "concepts_covered": "Derivation of the first law of thermodynamics; Problems from the following topics: Conservation of mass or the continuity equation; Linear momentum equation; Angular momentum principle; Energy equation",
+        "week": 10
+      },
+      "source_status": "Complete decoded audio and machine ASR; scientific chapter review recorded separately"
+    },
+    {
+      "id": "JeFcOYaUyZ4",
+      "playlist_position": 53,
+      "title": "51. Introduction to Constitutive Modelling",
+      "url": "https://www.youtube.com/watch?v=JeFcOYaUyZ4",
+      "duration": 1936,
+      "lecture_number": 51,
+      "label": "Lecture 51",
+      "chapter_order": 11,
+      "official_lesson": {
+        "id": 51,
+        "name": "Introduction to Constitutive Modelling",
+        "youtube_id": "JeFcOYaUyZ4",
+        "concepts_covered": "What are constitutive models and why are they needed; mathematical closure; 1-D constitutive laws",
+        "week": 11
+      },
+      "source_status": "Complete decoded audio and machine ASR; scientific chapter review recorded separately"
+    },
+    {
+      "id": "5tKqNGvHirg",
+      "playlist_position": 54,
+      "title": "52. Introduction to Constitutive Modelling - part 2",
+      "url": "https://www.youtube.com/watch?v=5tKqNGvHirg",
+      "duration": 2108,
+      "lecture_number": 52,
+      "label": "Lecture 52",
+      "chapter_order": 11,
+      "official_lesson": {
+        "id": 52,
+        "name": "Introduction to Constitutive Modelling - part 2",
+        "youtube_id": "5tKqNGvHirg",
+        "concepts_covered": "Material frame indifferent (objectivity); Material symmetry; Thermodynamic restrictions on constitutive laws; History dependence in constitutive models",
+        "week": 11
+      },
+      "source_status": "Complete decoded audio and machine ASR; scientific chapter review recorded separately"
+    },
+    {
+      "id": "wQtZyxw_g0Y",
+      "playlist_position": 55,
+      "title": "54. Viscous and Viscoelastic Materials",
+      "url": "https://www.youtube.com/watch?v=wQtZyxw_g0Y",
+      "duration": 2400,
+      "lecture_number": 54,
+      "label": "Lecture 54",
+      "chapter_order": 13,
+      "official_lesson": {
+        "id": 54,
+        "name": "Viscous and Viscoelastic Materials",
+        "youtube_id": "wQtZyxw_g0Y",
+        "concepts_covered": "Newtonian constitutive model for fluid; Non-Newtonian models (Power-law fluids, Bingham fluids; Herschel-Bulkley fluids; Cross model); Invariants in constitutive models; Time-dependent fluids; Viscoelasticity: Creep and Relaxation; Linear viscoelasticity: Spring, Dashpot, Maxwell, Kelvin-Voigt and SLS models; Integral formulation (Boltzmann superposition)",
+        "week": 11
+      },
+      "source_status": "Complete decoded audio and machine ASR; scientific chapter review recorded separately"
+    },
+    {
+      "id": "GcS3DF-YN0M",
+      "playlist_position": 56,
+      "title": "53. Elasticity",
+      "url": "https://www.youtube.com/watch?v=GcS3DF-YN0M",
+      "duration": 2033,
+      "lecture_number": 53,
+      "label": "Lecture 53",
+      "chapter_order": 12,
+      "official_lesson": {
+        "id": 53,
+        "name": "Elasticity",
+        "youtube_id": "GcS3DF-YN0M",
+        "concepts_covered": "What is elasticity; linear elasticity; major and minor symmetries; Linear isotropic constitutive model; Energy viewpoint in elasticity and strain energy; Nonlinear elasticity (Hyperelasticity); Neo-Hookean model",
+        "week": 11
+      },
+      "source_status": "Complete decoded audio and machine ASR; scientific chapter review recorded separately"
+    },
+    {
+      "id": "y34--zLl278",
+      "playlist_position": 57,
+      "title": "55. Plasticity",
+      "url": "https://www.youtube.com/watch?v=y34--zLl278",
+      "duration": 2381,
+      "lecture_number": 55,
+      "label": "Lecture 55",
+      "chapter_order": 14,
+      "official_lesson": {
+        "id": 55,
+        "name": "Plasticity",
+        "youtube_id": "y34--zLl278",
+        "concepts_covered": "Internal / Hardening variables in plasticity; Key ingredients in plasticity modelling; Yield surface; Flow rules; Hardening laws; Yield criteria (Metals and soils); Rate-independent vs rate-dependent plasticity; Viscoplasticity; Advanced ideas (damage and granular flows)",
+        "week": 11
+      },
+      "source_status": "Complete decoded audio and machine ASR; scientific chapter review recorded separately"
+    },
+    {
+      "id": "rcHFRFZ7uSw",
+      "playlist_position": 58,
+      "title": "56. Tutorial - Constitutive Modelling",
+      "url": "https://www.youtube.com/watch?v=rcHFRFZ7uSw",
+      "duration": 1602,
+      "lecture_number": 56,
+      "label": "Lecture 56",
+      "chapter_order": 14,
+      "official_lesson": {
+        "id": 56,
+        "name": "Tutorial - Constitutive Modelling",
+        "youtube_id": "rcHFRFZ7uSw",
+        "concepts_covered": "Problems from constitutive modelling",
+        "week": 12
+      },
+      "source_status": "Complete decoded audio and machine ASR; scientific chapter review recorded separately"
+    },
+    {
+      "id": "Yh15i5rIly4",
+      "playlist_position": 59,
+      "title": "57. Application - Linear Fluids",
+      "url": "https://www.youtube.com/watch?v=Yh15i5rIly4",
+      "duration": 2266,
+      "lecture_number": 57,
+      "label": "Lecture 57",
+      "chapter_order": 15,
+      "official_lesson": {
+        "id": 57,
+        "name": "Application - Linear Fluids",
+        "youtube_id": "Yh15i5rIly4",
+        "concepts_covered": "Fluid statics; Fluid dynamics and constitutive law; Stokes hypothesis and viscosity",
+        "week": 12
+      },
+      "source_status": "Complete decoded audio and machine ASR; scientific chapter review recorded separately"
+    },
+    {
+      "id": "--1uYaj30ls",
+      "playlist_position": 60,
+      "title": "58. Navier-Stokes Equation",
+      "url": "https://www.youtube.com/watch?v=--1uYaj30ls",
+      "duration": 2100,
+      "lecture_number": 58,
+      "label": "Lecture 58",
+      "chapter_order": 15,
+      "official_lesson": {
+        "id": 58,
+        "name": "Navier-Stokes Equation",
+        "youtube_id": "--1uYaj30ls",
+        "concepts_covered": "Closed system of equatins for fluids; Navier-Stokes equations; Special cases (incompressibility, steady flow, irrotational flow)",
+        "week": 12
+      },
+      "source_status": "Complete decoded audio and machine ASR; scientific chapter review recorded separately"
+    },
+    {
+      "id": "-Hj7gTuWh0w",
+      "playlist_position": 61,
+      "title": "59. Fluid Flow Problem",
+      "url": "https://www.youtube.com/watch?v=-Hj7gTuWh0w",
+      "duration": 2184,
+      "lecture_number": 59,
+      "label": "Lecture 59",
+      "chapter_order": 15,
+      "official_lesson": {
+        "id": 59,
+        "name": "Fluid Flow Problem",
+        "youtube_id": "-Hj7gTuWh0w",
+        "concepts_covered": "Solving a problem on fluid flow for velocity and pressure fields; Use of indicial notation in fluids",
+        "week": 12
+      },
+      "source_status": "Complete decoded audio and machine ASR; scientific chapter review recorded separately"
+    },
+    {
+      "id": "Go6OCRFcbk8",
+      "playlist_position": 62,
+      "title": "60. Summary",
+      "url": "https://www.youtube.com/watch?v=Go6OCRFcbk8",
+      "duration": 1284,
+      "lecture_number": 60,
+      "label": "Lecture 60",
+      "chapter_order": 16,
+      "official_lesson": {
+        "id": 60,
+        "name": "Summary",
+        "youtube_id": "Go6OCRFcbk8",
+        "concepts_covered": null,
+        "week": 12
+      },
+      "source_status": "Complete decoded audio and machine ASR; scientific chapter review recorded separately"
+    },
+    {
+      "id": "WmtCtdHy7Rg",
+      "playlist_position": 63,
+      "title": "Foundations of Continuum Mechanics",
+      "url": "https://www.youtube.com/watch?v=WmtCtdHy7Rg",
+      "duration": 3961,
+      "lecture_number": null,
+      "label": "Live discussion 4",
+      "chapter_order": 20,
+      "official_lesson": null,
+      "source_status": "Complete decoded audio and machine ASR; scientific chapter review recorded separately"
+    },
+    {
+      "id": "ZqjzTTz5nVE",
+      "playlist_position": 64,
+      "title": "Foundations of Continuum Mechanics",
+      "url": "https://www.youtube.com/watch?v=ZqjzTTz5nVE",
+      "duration": 2890,
+      "lecture_number": null,
+      "label": "Live discussion 3",
+      "chapter_order": 19,
+      "official_lesson": null,
+      "source_status": "Complete decoded audio and machine ASR; scientific chapter review recorded separately"
+    },
+    {
+      "id": "ri5qTz4uKhI",
+      "playlist_position": 65,
+      "title": "Foundations of Continuum Mechanics",
+      "url": "https://www.youtube.com/watch?v=ri5qTz4uKhI",
+      "duration": 3856,
+      "lecture_number": null,
+      "label": "Live discussion 2",
+      "chapter_order": 18,
+      "official_lesson": null,
+      "source_status": "Complete decoded audio and machine ASR; scientific chapter review recorded separately"
+    },
+    {
+      "id": "fG60h-8p8Uw",
+      "playlist_position": 66,
+      "title": "Foundations of Continuum Mechanics",
+      "url": "https://www.youtube.com/watch?v=fG60h-8p8Uw",
+      "duration": 3915,
+      "lecture_number": null,
+      "label": "Live discussion 1",
+      "chapter_order": 17,
+      "official_lesson": null,
+      "source_status": "Complete decoded audio and machine ASR; scientific chapter review recorded separately"
+    }
+  ],
+  "source_boundary": "Machine ASR is fallible. Titles and official concept metadata are not transcript reading. Exact coverage and visual checks are recorded per chapter."
+}

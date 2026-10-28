@@ -1,0 +1,221 @@
+{
+  "chapter": 7,
+  "title": "Motion, descriptions and material differentiation",
+  "status": "reviewed — two independent AI reviews",
+  "authored_body_sha256": "47be250f716371f9e22057b35dd083ecc4fd6f33256356277e7fedd6133e5403",
+  "recordings": [
+    {
+      "video_id": "itMny5VJFCQ",
+      "playlist_position": 33,
+      "lecture_label": "Lecture 31",
+      "duration_seconds": 2132,
+      "decoded_audio_duration_seconds": 2131.359625,
+      "complete_decoded_audio": true,
+      "media_sha256": "95ac9a990a577fea611bbfa566bc73c5cbdc88f745cf9b985eda1a091e1987c9",
+      "transcript_first_start": 12.37,
+      "transcript_last_end": 2123.82,
+      "transcript_provenance": "Local faster-whisper small.en machine ASR; not publisher captions"
+    },
+    {
+      "video_id": "hZ52RJDhmT4",
+      "playlist_position": 34,
+      "lecture_label": "Lecture 32",
+      "duration_seconds": 1851,
+      "decoded_audio_duration_seconds": 1850.444625,
+      "complete_decoded_audio": true,
+      "media_sha256": "6a139c66c6b42c86cf812d9a46ec47a913bed2331ff5ad975c1a01a444be8599",
+      "transcript_first_start": 12.5,
+      "transcript_last_end": 1842.77,
+      "transcript_provenance": "Local faster-whisper small.en machine ASR; not publisher captions"
+    },
+    {
+      "video_id": "Bku9aT4OsgM",
+      "playlist_position": 35,
+      "lecture_label": "Lecture 33",
+      "duration_seconds": 2503,
+      "decoded_audio_duration_seconds": 2502.0894375,
+      "complete_decoded_audio": true,
+      "media_sha256": "0d8e23f98b52bff66bc2d4cf002ddab15d3cb024caf23e248ab7fed2b9c54505",
+      "transcript_first_start": 12.69,
+      "transcript_last_end": 2494.83,
+      "transcript_provenance": "Local faster-whisper small.en machine ASR; not publisher captions"
+    },
+    {
+      "video_id": "r3E1fKUIJgU",
+      "playlist_position": 36,
+      "lecture_label": "Lecture 34",
+      "duration_seconds": 1702,
+      "decoded_audio_duration_seconds": 1701.511875,
+      "complete_decoded_audio": true,
+      "media_sha256": "afa1f80fab8c42b295e59cf15c684b9fb96f1e5a4082be4364603f0be3372165",
+      "transcript_first_start": 12.37,
+      "transcript_last_end": 1694.1,
+      "transcript_provenance": "Local faster-whisper small.en machine ASR; not publisher captions"
+    },
+    {
+      "video_id": "FHaA3KbBwoE",
+      "playlist_position": 37,
+      "lecture_label": "Lecture 35",
+      "duration_seconds": 1668,
+      "decoded_audio_duration_seconds": 1667.3785,
+      "complete_decoded_audio": true,
+      "media_sha256": "98d401361af9b4b49fe90dc44a660ebf37ff23ad89b1cfb68143775031b796b9",
+      "transcript_first_start": 11.76,
+      "transcript_last_end": 1660.14,
+      "transcript_provenance": "Local faster-whisper small.en machine ASR; not publisher captions"
+    }
+  ],
+  "sections": [
+    {
+      "section": "A material body and its configurations",
+      "anchor": "configurations",
+      "video_id": "itMny5VJFCQ",
+      "start": 140,
+      "end": 2123,
+      "lecture_material": "Related lecture topic located by the stated span",
+      "research_extension": "Inspected external support is cited locally in the exposition",
+      "teaching_construction": "Expanded exposition, derivations, numerical checks and exercises are independently authored; an anchor does not attribute every statement to the recording"
+    },
+    {
+      "section": "Material coordinates label particles; spatial coordinates label places",
+      "anchor": "coordinates",
+      "video_id": "hZ52RJDhmT4",
+      "start": 77,
+      "end": 1354,
+      "lecture_material": "Related lecture topic located by the stated span",
+      "research_extension": "Inspected external support is cited locally in the exposition",
+      "teaching_construction": "Expanded exposition, derivations, numerical checks and exercises are independently authored; an anchor does not attribute every statement to the recording"
+    },
+    {
+      "section": "Trajectories, velocity and acceleration",
+      "anchor": "trajectory",
+      "video_id": "hZ52RJDhmT4",
+      "start": 1355,
+      "end": 1842,
+      "lecture_material": "Related lecture topic located by the stated span",
+      "research_extension": "Inspected external support is cited locally in the exposition",
+      "teaching_construction": "Expanded exposition, derivations, numerical checks and exercises are independently authored; an anchor does not attribute every statement to the recording"
+    },
+    {
+      "section": "The inverse map and the limits of a Jacobian test",
+      "anchor": "inverse",
+      "video_id": "Bku9aT4OsgM",
+      "start": 485,
+      "end": 863,
+      "lecture_material": "Related lecture topic located by the stated span",
+      "research_extension": "Inspected external support is cited locally in the exposition",
+      "teaching_construction": "Expanded exposition, derivations, numerical checks and exercises are independently authored; an anchor does not attribute every statement to the recording"
+    },
+    {
+      "section": "Lagrangian and Eulerian descriptions are compositions",
+      "anchor": "descriptions",
+      "video_id": "Bku9aT4OsgM",
+      "start": 1608,
+      "end": 2494,
+      "lecture_material": "Related lecture topic located by the stated span",
+      "research_extension": "Inspected external support is cited locally in the exposition",
+      "teaching_construction": "Expanded exposition, derivations, numerical checks and exercises are independently authored; an anchor does not attribute every statement to the recording"
+    },
+    {
+      "section": "The material derivative follows matter",
+      "anchor": "chain-rule",
+      "video_id": "r3E1fKUIJgU",
+      "start": 40,
+      "end": 398,
+      "lecture_material": "Related lecture topic located by the stated span",
+      "research_extension": "Inspected external support is cited locally in the exposition",
+      "teaching_construction": "Expanded exposition, derivations, numerical checks and exercises are independently authored; an anchor does not attribute every statement to the recording"
+    },
+    {
+      "section": "A difference quotient exposes the physical meaning",
+      "anchor": "difference-quotient",
+      "video_id": "r3E1fKUIJgU",
+      "start": 1106,
+      "end": 1694,
+      "lecture_material": "Related lecture topic located by the stated span",
+      "research_extension": "Inspected external support is cited locally in the exposition",
+      "teaching_construction": "Expanded exposition, derivations, numerical checks and exercises are independently authored; an anchor does not attribute every statement to the recording"
+    },
+    {
+      "section": "Acceleration can be nonzero in a steady field",
+      "anchor": "acceleration",
+      "video_id": "r3E1fKUIJgU",
+      "start": 768,
+      "end": 1106,
+      "lecture_material": "Related lecture topic located by the stated span",
+      "research_extension": "Inspected external support is cited locally in the exposition",
+      "teaching_construction": "Expanded exposition, derivations, numerical checks and exercises are independently authored; an anchor does not attribute every statement to the recording"
+    },
+    {
+      "section": "A tutorial motion tests physical admissibility",
+      "anchor": "polynomial-example",
+      "video_id": "Bku9aT4OsgM",
+      "start": 863,
+      "end": 1608,
+      "lecture_material": "Related lecture topic located by the stated span",
+      "research_extension": "Inspected external support is cited locally in the exposition",
+      "teaching_construction": "Expanded exposition, derivations, numerical checks and exercises are independently authored; an anchor does not attribute every statement to the recording"
+    },
+    {
+      "section": "Four tutorial mechanisms",
+      "anchor": "tutorial",
+      "video_id": "FHaA3KbBwoE",
+      "start": 40,
+      "end": 1660,
+      "lecture_material": "Related lecture topic located by the stated span",
+      "research_extension": "Inspected external support is cited locally in the exposition",
+      "teaching_construction": "Expanded exposition, derivations, numerical checks and exercises are independently authored; an anchor does not attribute every statement to the recording"
+    },
+    {
+      "section": "Executable comparison of particle and fixed-location rates",
+      "anchor": "implementation",
+      "video_id": null,
+      "start": null,
+      "end": null,
+      "lecture_material": "",
+      "research_extension": "Inspected external support is cited locally in the exposition",
+      "teaching_construction": "Expanded exposition, derivations, numerical checks and exercises are independently authored; an anchor does not attribute every statement to the recording"
+    },
+    {
+      "section": "Exercises with fully worked solutions",
+      "anchor": "exercises",
+      "video_id": null,
+      "start": null,
+      "end": null,
+      "lecture_material": "",
+      "research_extension": "Inspected external support is cited locally in the exposition",
+      "teaching_construction": "Expanded exposition, derivations, numerical checks and exercises are independently authored; an anchor does not attribute every statement to the recording"
+    },
+    {
+      "section": "What the kinematics establishes",
+      "anchor": "limits",
+      "video_id": null,
+      "start": null,
+      "end": null,
+      "lecture_material": "",
+      "research_extension": "Inspected external support is cited locally in the exposition",
+      "teaching_construction": "Expanded exposition, derivations, numerical checks and exercises are independently authored; an anchor does not attribute every statement to the recording"
+    },
+    {
+      "section": "Sources and attribution",
+      "anchor": "sources",
+      "video_id": null,
+      "start": null,
+      "end": null,
+      "lecture_material": "",
+      "research_extension": "Inspected external support is cited locally in the exposition",
+      "teaching_construction": "Expanded exposition, derivations, numerical checks and exercises are independently authored; an anchor does not attribute every statement to the recording"
+    }
+  ],
+  "references": [
+    {
+      "url": "https://solidmechanics.org/Text/Chapter2_2/Chapter2_2.php",
+      "title": "Applied Mechanics of Solids , §§2.2.1–2.2.4",
+      "supports": "Specific claim and locator are given beside the citation in chapter-07-motion-material-derivative.html"
+    }
+  ],
+  "prose_words_including_math": 3927,
+  "solution_count": 7,
+  "executable_listing_count": 1,
+  "visual_boundary": "No comprehensive visual transcription or full audiovisual review is claimed. ASR cannot recover every board input; uncertain inputs are qualified locally."
+}

@@ -1,0 +1,197 @@
+{
+  "chapter": 15,
+  "title": "Linear fluids, Navier–Stokes and a complete flow problem",
+  "status": "reviewed — two independent AI reviews",
+  "authored_body_sha256": "9215ed29025a7da08ee7ce8ff154c9b96b3ccd0873899cb2b92cbef5195d36e0",
+  "recordings": [
+    {
+      "video_id": "Yh15i5rIly4",
+      "playlist_position": 59,
+      "lecture_label": "Lecture 57",
+      "duration_seconds": 2266,
+      "decoded_audio_duration_seconds": 2265.9425,
+      "complete_decoded_audio": true,
+      "media_sha256": "ab99f3fa4853355998097cf05c31c3ef2a10b62b6794801fccd91dbcd4cf472a",
+      "transcript_first_start": 12.3,
+      "transcript_last_end": 2258.1,
+      "transcript_provenance": "Local faster-whisper small.en machine ASR; not publisher captions"
+    },
+    {
+      "video_id": "--1uYaj30ls",
+      "playlist_position": 60,
+      "lecture_label": "Lecture 58",
+      "duration_seconds": 2100,
+      "decoded_audio_duration_seconds": 2099.7340625,
+      "complete_decoded_audio": true,
+      "media_sha256": "0d9b45bd78d3483595efac3f3c4968a6f3b9dc9076d33d42a4b7ba55a7e67f8f",
+      "transcript_first_start": 12.05,
+      "transcript_last_end": 2092.02,
+      "transcript_provenance": "Local faster-whisper small.en machine ASR; not publisher captions"
+    },
+    {
+      "video_id": "-Hj7gTuWh0w",
+      "playlist_position": 61,
+      "lecture_label": "Lecture 59",
+      "duration_seconds": 2184,
+      "decoded_audio_duration_seconds": 2183.1865625,
+      "complete_decoded_audio": true,
+      "media_sha256": "9a3cd55381ad689517565bc608f1f5fa620f9d2ae31e05684d10513c7db77efc",
+      "transcript_first_start": 12.24,
+      "transcript_last_end": 2175.89,
+      "transcript_provenance": "Local faster-whisper small.en machine ASR; not publisher captions"
+    }
+  ],
+  "sections": [
+    {
+      "section": "Fluid at rest and isotropic stress",
+      "anchor": "statics",
+      "video_id": "Yh15i5rIly4",
+      "start": 106,
+      "end": 855,
+      "lecture_material": "Related lecture topic located by the stated span",
+      "research_extension": "Inspected external support is cited locally in the exposition",
+      "teaching_construction": "Expanded exposition, derivations, numerical checks and exercises are independently authored; an anchor does not attribute every statement to the recording"
+    },
+    {
+      "section": "Stress of a linear viscous fluid",
+      "anchor": "newtonian",
+      "video_id": "Yh15i5rIly4",
+      "start": 859,
+      "end": 2258,
+      "lecture_material": "Related lecture topic located by the stated span",
+      "research_extension": "Inspected external support is cited locally in the exposition",
+      "teaching_construction": "Expanded exposition, derivations, numerical checks and exercises are independently authored; an anchor does not attribute every statement to the recording"
+    },
+    {
+      "section": "The differential equations",
+      "anchor": "navier-stokes",
+      "video_id": "--1uYaj30ls",
+      "start": 116,
+      "end": 1413,
+      "lecture_material": "Related lecture topic located by the stated span",
+      "research_extension": "Inspected external support is cited locally in the exposition",
+      "teaching_construction": "Expanded exposition, derivations, numerical checks and exercises are independently authored; an anchor does not attribute every statement to the recording"
+    },
+    {
+      "section": "Special cases retain distinct hypotheses",
+      "anchor": "special-cases",
+      "video_id": "--1uYaj30ls",
+      "start": 1415,
+      "end": 2050,
+      "lecture_material": "Related lecture topic located by the stated span",
+      "research_extension": "Inspected external support is cited locally in the exposition",
+      "teaching_construction": "Expanded exposition, derivations, numerical checks and exercises are independently authored; an anchor does not attribute every statement to the recording"
+    },
+    {
+      "section": "The lecture problem: a uniform falling film",
+      "anchor": "film-setup",
+      "video_id": "-Hj7gTuWh0w",
+      "start": 12,
+      "end": 697,
+      "lecture_material": "Related lecture topic located by the stated span",
+      "research_extension": "Inspected external support is cited locally in the exposition",
+      "teaching_construction": "Expanded exposition, derivations, numerical checks and exercises are independently authored; an anchor does not attribute every statement to the recording"
+    },
+    {
+      "section": "Recover pressure and all stress components",
+      "anchor": "film-pressure",
+      "video_id": "-Hj7gTuWh0w",
+      "start": 697,
+      "end": 1827,
+      "lecture_material": "Related lecture topic located by the stated span",
+      "research_extension": "Inspected external support is cited locally in the exposition",
+      "teaching_construction": "Expanded exposition, derivations, numerical checks and exercises are independently authored; an anchor does not attribute every statement to the recording"
+    },
+    {
+      "section": "The velocity profile and its boundary conditions",
+      "anchor": "film-profile",
+      "video_id": "-Hj7gTuWh0w",
+      "start": 1827,
+      "end": 2175,
+      "lecture_material": "Related lecture topic located by the stated span",
+      "research_extension": "Inspected external support is cited locally in the exposition",
+      "teaching_construction": "Expanded exposition, derivations, numerical checks and exercises are independently authored; an anchor does not attribute every statement to the recording"
+    },
+    {
+      "section": "A complete channel calculation",
+      "anchor": "channel",
+      "video_id": null,
+      "start": null,
+      "end": null,
+      "lecture_material": "",
+      "research_extension": "Inspected external support is cited locally in the exposition",
+      "teaching_construction": "Expanded exposition, derivations, numerical checks and exercises are independently authored; an anchor does not attribute every statement to the recording"
+    },
+    {
+      "section": "Flow rate and shear signs",
+      "anchor": "flow-rate",
+      "video_id": null,
+      "start": null,
+      "end": null,
+      "lecture_material": "",
+      "research_extension": "Inspected external support is cited locally in the exposition",
+      "teaching_construction": "Expanded exposition, derivations, numerical checks and exercises are independently authored; an anchor does not attribute every statement to the recording"
+    },
+    {
+      "section": "Mechanical power and limiting cases",
+      "anchor": "energy-check",
+      "video_id": null,
+      "start": null,
+      "end": null,
+      "lecture_material": "",
+      "research_extension": "Inspected external support is cited locally in the exposition",
+      "teaching_construction": "Expanded exposition, derivations, numerical checks and exercises are independently authored; an anchor does not attribute every statement to the recording"
+    },
+    {
+      "section": "What a fluid problem still needs",
+      "anchor": "closure-limits",
+      "video_id": null,
+      "start": null,
+      "end": null,
+      "lecture_material": "",
+      "research_extension": "Inspected external support is cited locally in the exposition",
+      "teaching_construction": "Expanded exposition, derivations, numerical checks and exercises are independently authored; an anchor does not attribute every statement to the recording"
+    },
+    {
+      "section": "Executable boundary, flux and power checks",
+      "anchor": "code",
+      "video_id": null,
+      "start": null,
+      "end": null,
+      "lecture_material": "",
+      "research_extension": "Inspected external support is cited locally in the exposition",
+      "teaching_construction": "Expanded exposition, derivations, numerical checks and exercises are independently authored; an anchor does not attribute every statement to the recording"
+    },
+    {
+      "section": "Exercises with worked solutions",
+      "anchor": "exercises",
+      "video_id": null,
+      "start": null,
+      "end": null,
+      "lecture_material": "",
+      "research_extension": "Inspected external support is cited locally in the exposition",
+      "teaching_construction": "Expanded exposition, derivations, numerical checks and exercises are independently authored; an anchor does not attribute every statement to the recording"
+    },
+    {
+      "section": "Sources and scope",
+      "anchor": "sources",
+      "video_id": null,
+      "start": null,
+      "end": null,
+      "lecture_material": "",
+      "research_extension": "Inspected external support is cited locally in the exposition",
+      "teaching_construction": "Expanded exposition, derivations, numerical checks and exercises are independently authored; an anchor does not attribute every statement to the recording"
+    }
+  ],
+  "references": [
+    {
+      "url": "https://www.claymath.org/millennium/navier-stokes-equation/",
+      "title": "Clay Mathematics Institute, Navier–Stokes Equation",
+      "supports": "Specific claim and locator are given beside the citation in chapter-15-linear-fluids-and-navier-stokes.html"
+    }
+  ],
+  "prose_words_including_math": 3066,
+  "solution_count": 7,
+  "executable_listing_count": 1,
+  "visual_boundary": "No comprehensive visual transcription or full audiovisual review is claimed. ASR cannot recover every board input; uncertain inputs are qualified locally."
+}

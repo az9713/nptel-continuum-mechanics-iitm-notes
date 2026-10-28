@@ -1,0 +1,143 @@
+{
+  "chapter": 12,
+  "title": "Linear elasticity and hyperelasticity",
+  "status": "reviewed — two independent AI reviews",
+  "authored_body_sha256": "215f3294255f321f076c6e7f21251efbd143d889bf13b7bbedbbb2155ce7a617",
+  "recordings": [
+    {
+      "video_id": "GcS3DF-YN0M",
+      "playlist_position": 56,
+      "lecture_label": "Lecture 53",
+      "duration_seconds": 2033,
+      "decoded_audio_duration_seconds": 2032.5355,
+      "complete_decoded_audio": true,
+      "media_sha256": "aa3c6baebe11d005add64debfdf59bacbb9a8111b0ab5fe146b65ce44a462b2e",
+      "transcript_first_start": 12.43,
+      "transcript_last_end": 2024.85,
+      "transcript_provenance": "Local faster-whisper small.en machine ASR; not publisher captions"
+    }
+  ],
+  "sections": [
+    {
+      "section": "The linear elastic map",
+      "anchor": "linear",
+      "video_id": "GcS3DF-YN0M",
+      "start": 12,
+      "end": 725,
+      "lecture_material": "Related lecture topic located by the stated span",
+      "research_extension": "Inspected external support is cited locally in the exposition",
+      "teaching_construction": "Expanded exposition, derivations, numerical checks and exercises are independently authored; an anchor does not attribute every statement to the recording"
+    },
+    {
+      "section": "Voigt coordinates and shear work",
+      "anchor": "voigt",
+      "video_id": "GcS3DF-YN0M",
+      "start": 725,
+      "end": 987,
+      "lecture_material": "Related lecture topic located by the stated span",
+      "research_extension": "Inspected external support is cited locally in the exposition",
+      "teaching_construction": "Expanded exposition, derivations, numerical checks and exercises are independently authored; an anchor does not attribute every statement to the recording"
+    },
+    {
+      "section": "Isotropic elasticity",
+      "anchor": "isotropic",
+      "video_id": "GcS3DF-YN0M",
+      "start": 987,
+      "end": 1177,
+      "lecture_material": "Related lecture topic located by the stated span",
+      "research_extension": "Inspected external support is cited locally in the exposition",
+      "teaching_construction": "Expanded exposition, derivations, numerical checks and exercises are independently authored; an anchor does not attribute every statement to the recording"
+    },
+    {
+      "section": "Uniaxial response and plane restrictions",
+      "anchor": "uniaxial",
+      "video_id": "GcS3DF-YN0M",
+      "start": 1086,
+      "end": 1115,
+      "lecture_material": "Related lecture topic located by the stated span",
+      "research_extension": "Inspected external support is cited locally in the exposition",
+      "teaching_construction": "Expanded exposition, derivations, numerical checks and exercises are independently authored; an anchor does not attribute every statement to the recording"
+    },
+    {
+      "section": "Energy at finite deformation",
+      "anchor": "finite",
+      "video_id": "GcS3DF-YN0M",
+      "start": 1207,
+      "end": 1587,
+      "lecture_material": "Related lecture topic located by the stated span",
+      "research_extension": "Inspected external support is cited locally in the exposition",
+      "teaching_construction": "Expanded exposition, derivations, numerical checks and exercises are independently authored; an anchor does not attribute every statement to the recording"
+    },
+    {
+      "section": "Stress and checks",
+      "anchor": "stress",
+      "video_id": "GcS3DF-YN0M",
+      "start": 1554,
+      "end": 1778,
+      "lecture_material": "Related lecture topic located by the stated span",
+      "research_extension": "Inspected external support is cited locally in the exposition",
+      "teaching_construction": "Expanded exposition, derivations, numerical checks and exercises are independently authored; an anchor does not attribute every statement to the recording"
+    },
+    {
+      "section": "An incompressible elastic material",
+      "anchor": "incompressible",
+      "video_id": "GcS3DF-YN0M",
+      "start": 1587,
+      "end": 1685,
+      "lecture_material": "Related lecture topic located by the stated span",
+      "research_extension": "Inspected external support is cited locally in the exposition",
+      "teaching_construction": "Expanded exposition, derivations, numerical checks and exercises are independently authored; an anchor does not attribute every statement to the recording"
+    },
+    {
+      "section": "Thermal strain and constitutive limits",
+      "anchor": "thermal",
+      "video_id": "GcS3DF-YN0M",
+      "start": 1778,
+      "end": 1839,
+      "lecture_material": "Related lecture topic located by the stated span",
+      "research_extension": "Inspected external support is cited locally in the exposition",
+      "teaching_construction": "Expanded exposition, derivations, numerical checks and exercises are independently authored; an anchor does not attribute every statement to the recording"
+    },
+    {
+      "section": "Energy derivative and stress checks",
+      "anchor": "code",
+      "video_id": null,
+      "start": null,
+      "end": null,
+      "lecture_material": "",
+      "research_extension": "Inspected external support is cited locally in the exposition",
+      "teaching_construction": "Expanded exposition, derivations, numerical checks and exercises are independently authored; an anchor does not attribute every statement to the recording"
+    },
+    {
+      "section": "Exercises with worked solutions",
+      "anchor": "exercises",
+      "video_id": null,
+      "start": null,
+      "end": null,
+      "lecture_material": "",
+      "research_extension": "Inspected external support is cited locally in the exposition",
+      "teaching_construction": "Expanded exposition, derivations, numerical checks and exercises are independently authored; an anchor does not attribute every statement to the recording"
+    },
+    {
+      "section": "Sources and scope",
+      "anchor": "sources",
+      "video_id": null,
+      "start": null,
+      "end": null,
+      "lecture_material": "",
+      "research_extension": "Inspected external support is cited locally in the exposition",
+      "teaching_construction": "Expanded exposition, derivations, numerical checks and exercises are independently authored; an anchor does not attribute every statement to the recording"
+    }
+  ],
+  "references": [
+    {
+      "url": "https://solidmechanics.org/Text/Chapter3_5/Chapter3_5.php",
+      "title": "Applied Mechanics of Solids , §3.5",
+      "supports": "Specific claim and locator are given beside the citation in chapter-12-linear-and-hyperelasticity.html"
+    }
+  ],
+  "prose_words_including_math": 2468,
+  "solution_count": 6,
+  "executable_listing_count": 1,
+  "visual_boundary": "No comprehensive visual transcription or full audiovisual review is claimed. ASR cannot recover every board input; uncertain inputs are qualified locally."
+}

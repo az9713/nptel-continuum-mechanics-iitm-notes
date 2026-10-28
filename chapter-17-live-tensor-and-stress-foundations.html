@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="color-scheme" content="dark light"><meta name="book-content-sha256" content="7dafcb667e36fa241c5f701d9181f0a7ef3708f7e5915d46df364700a81a5209">
+<title>Live discussion 1: tensor and stress foundations · Foundations of Continuum Mechanics</title><link rel="stylesheet" href="assets/book.css">
+<script>window.MathJax={tex:{inlineMath:[['$','$'],['\\(','\\)']],displayMath:[['$$','$$'],['\\[','\\]']],processEscapes:true},svg:{fontCache:'local'},options:{skipHtmlTags:['script','noscript','style','textarea','pre','code']}};</script>
+<script defer src="assets/mathjax-tex-svg.js"></script><script defer src="assets/book.js"></script></head>
+<body><a class="skip" href="#main">Skip to content</a><header class="site-header"><a class="brand" href="index.html">Foundations of Continuum Mechanics · NPTEL IIT Mandi</a><nav class="course-nav" aria-label="Book"><a href="index.html">Chapters</a><a href="source-map.html">Source map</a><a href="references.html">References</a><a href="numerical-lab.html">Numerical lab</a></nav></header>
+<div class="layout"><aside class="toc" id="chapter-toc" aria-label="On this page"><h2>On this page</h2></aside><main id="main"><div class="reading-tools" aria-label="Reading controls"><button id="theme-toggle" aria-pressed="false">Light theme</button><button id="text-toggle" aria-pressed="false">Larger text</button><button id="solutions-toggle" aria-pressed="false">Expand solutions</button><button id="print-page">Print with solutions</button></div>
+<article id="chapter-content"><!-- BOOK-CONTENT-START --><h1>Live discussion 1: tensor notation and stress geometry</h1>
+<p class="lead">A calculation can contain correct scalar arithmetic and still represent the wrong tensor operation. Exchanging two numerical factors is harmless; exchanging the input and output slots of a dyad changes the map. The first live discussion concentrates on such distinctions: reciprocal bases, omitted basis vectors, dummy indices, matrix orientation, tensor curl and the sign convention in Mohr's circle. This companion turns those questions into checks that can be applied to longer calculations.</p>
+<p class="source-note">This is the first live discussion by its spoken introduction, recording fG60h-8p8Uw, despite the playlist's reversed ordering of the four live sessions. The complete local ASR was read sequentially. Board images were not independently checked. Opening discussion about problem books, access to the forum and screen sharing is administrative; the scientific questions below preserve the discussion's sequence. Numerical examples and proofs are independent teaching constructions. Chapters 1–6 supply the full lecture development.</p>
+
+<h2 id="reciprocal" data-video="fG60h-8p8Uw" data-start="302" data-end="451">Why does a Cartesian basis hide its reciprocal basis? <a class="timestamp" href="https://www.youtube.com/watch?v=fG60h-8p8Uw&amp;t=302s">5:02</a></h2>
+<p>Choose three linearly independent vectors \(\mathbf b_1,\mathbf b_2,\mathbf b_3\) in Euclidean space. Their <dfn>reciprocal basis</dfn> is the unique set \(\mathbf b^1,\mathbf b^2,\mathbf b^3\) satisfying \(\mathbf b^i\cdot\mathbf b_j=\delta^i_j\). Here the upper and lower marks distinguish the two bases; they are not powers. If the original basis is orthonormal, it already satisfies this condition, so \(\mathbf b^i=\mathbf b_i\). That special coincidence explains the course's use of lower component indices throughout Cartesian calculations.</p>
+<p>To see what changes outside that setting, place the original basis vectors in the columns of an invertible matrix \(\mathbf B\). The reciprocal vectors are columns of \(\mathbf B^{-T}\), because \((\mathbf B^{-T})^T\mathbf B=\mathbf I\). A vector \(\mathbf a=a^i\mathbf b_i\) has coefficients \(a^i=\mathbf a\cdot\mathbf b^i\). Dotting with \(\mathbf b_j\) instead gives different numbers in a nonorthogonal basis.</p>
+<p>For a two-dimensional illustration embedded in three dimensions, take \(\mathbf b_1=(1,0,0)\), \(\mathbf b_2=(1,1,0)\), \(\mathbf b_3=(0,0,1)\). Their reciprocals are \((1,-1,0)\), \((0,1,0)\), and \((0,0,1)\). The vector \(\mathbf a=(2,1,0)\) expands as \(\mathbf b_1+\mathbf b_2\), so its basis coefficients are \((1,1,0)\). Its dot products with the original basis are \((2,3,0)\). Conflating these lists would reconstruct the wrong vector.</p>
+<p>This extension answers the scope question without requiring curvilinear-coordinate calculus. A position-dependent basis adds derivatives of the basis itself. Cartesian derivative formulas cannot be transferred to it merely by changing index placement. The <a href="chapter-01-continuum-tensors-index-notation.html#delta">Cartesian contractions in chapter 1</a> explicitly rely on orthonormality.</p>
+
+<h2 id="summation" data-video="fG60h-8p8Uw" data-start="725" data-end="1010">Can one summation sign cover several terms? <a class="timestamp" href="https://www.youtube.com/watch?v=fG60h-8p8Uw&amp;t=725s">12:05</a></h2>
+<p>The summation convention acts on each multiplicative term. In \(u_i v_i+w_i v_i\), each pair of repeated indices is a separate contraction. For finite sums, linearity permits combining them as \(\sum_i(u_iv_i+w_iv_i)\). The numerical equality is exact. A blanket prohibition on combining sums would be incorrect; the danger arises when independent sums in products are accidentally merged.</p>
+<p>For example, \((u_i v_i)(w_j z_j)\) means \(\sum_i\sum_j u_iv_iw_jz_j\). It generally differs from \(\sum_i u_iv_iw_iz_i\). Take all four two-component vectors equal to \((1,1)\). The product of contractions is \(2\times2=4\); the merged sum is 2. Renaming a dummy index is allowed only while preserving the independence of contractions and avoiding capture of a free label.</p>
+<p>A practical check is to identify the output first. A scalar has no free index; a vector expression has one. Each side of an equation must retain the same free labels. These checks organize a calculation but do not prove physical tensor behavior for an arbitrary array formula. Coordinate transformation still supplies that geometric test.</p>
+
+<h2 id="basis" data-video="fG60h-8p8Uw" data-start="1095" data-end="1560">What is lost when the basis vectors are omitted? <a class="timestamp" href="https://www.youtube.com/watch?v=fG60h-8p8Uw&amp;t=1095s">18:15</a></h2>
+<p>The discussion calls component-only writing “misuse notation.” A precise interpretation is that the chosen basis is understood. The vector is \(\mathbf u=u_i\mathbf e_i\), while \(u_i\) denotes its component family. The dyad is \(\mathbf u\otimes\mathbf v=u_iv_j\mathbf e_i\otimes\mathbf e_j\). Omitting the bases is economical when the component family and tensor slots remain explicit. It is misleading when a component is treated as the basis-independent physical vector itself.</p>
+<p>With a right-handed orthonormal basis and alternating symbol \(\epsilon_{ijk}\), the cross product follows from \(\mathbf e_i\times\mathbf e_j=\epsilon_{ijk}\mathbf e_k\):</p>
+\[
+\mathbf u\times\mathbf v=u_iv_j\epsilon_{ijk}\mathbf e_k.
+\]
+<p>Restoring the final \(\mathbf e_k\) identifies the free output slot. In a fixed Cartesian basis, replacing one vector by the gradient operator gives \((\nabla\times\mathbf v)_k=\epsilon_{kij}\partial_i v_j\), using a cyclic permutation of the alternating symbol. This operation requires differentiability; the original cross product is an algebraic operation. The similar notation does not erase that distinction.</p>
+
+<h2 id="dyad" data-video="fG60h-8p8Uw" data-start="1597" data-end="2251">Why do commuting numbers produce noncommuting dyads? <a class="timestamp" href="https://www.youtube.com/watch?v=fG60h-8p8Uw&amp;t=1597s">26:37</a></h2>
+<p>Define the dyad by its action \((\mathbf u\otimes\mathbf v)\mathbf a=\mathbf u(\mathbf v\cdot\mathbf a)\). Its components are \(u_iv_j\), whereas those of \(\mathbf v\otimes\mathbf u\) are \(v_i u_j\). Scalar commutativity says \(u_iv_j=v_ju_i\) for fixed \(i,j\). It does not say \(u_iv_j=v_iu_j\), which exchanges the slots as well as the factors.</p>
+<p>Let \(\mathbf u=\mathbf e_1\) and \(\mathbf v=\mathbf e_2\). The first dyad maps \(\mathbf e_2\) to \(\mathbf e_1\) and maps \(\mathbf e_1\) to zero. The reversed dyad does the opposite. Their matrices are transposes, and they are unequal. This example also answers the row-versus-column question. The contraction \(A_{ij}a_j\) is \(\mathbf A\mathbf a\) with a column representation. The component family \(a_jA_{ji}\) is the transposed-map output \(\mathbf A^T\mathbf a\), or equivalently a row-vector product before transposing its result.</p>
+<p>Higher-order tensors do not require imagining a literal multidimensional matrix. Their slots and contractions determine the output. For instance, \(C_{ijkl}\varepsilon_{kl}\) contracts two slots and retains \(i,j\), producing a second-order tensor. A matrix representation can flatten paired indices for computation, but the contraction identifies the operation before any storage layout is chosen.</p>
+
+<h2 id="curl" data-video="fG60h-8p8Uw" data-start="2252" data-end="2679">Which tensor curl is being used? <a class="timestamp" href="https://www.youtube.com/watch?v=fG60h-8p8Uw&amp;t=2252s">37:32</a></h2>
+<p>A tensor field has more than one vector-like slot, so “the curl of a tensor” needs a definition. For a differentiable second-order field \(A_{ij}(\mathbf x)\), define a rowwise curl by \(R_{pi}=\epsilon_{ijk}\partial_jA_{pk}\). For fixed \(p\), it is the ordinary curl of the vector formed from row \(p\). A different convention can apply curl to columns, \(S_{ip}=\epsilon_{ijk}\partial_jA_{kp}\). They are generally different operators. Names such as left or right curl vary across references; the component equation settles the convention.</p>
+<p>Cyclic permutation of the alternating symbol preserves sign: \(\epsilon_{ijk}=\epsilon_{jki}=\epsilon_{kij}\). Exchanging just two labels reverses sign. For example, \(\epsilon_{ijk}\partial_i A_{pj}\), with free indices \(p,k\), equals \(R_{pk}\), because \(\epsilon_{ijk}=\epsilon_{kij}\). That equality follows from a cyclic permutation, not from changing derivative order or freely exchanging tensor slots. The <a href="chapter-09-compatibility-and-velocity-gradients.html">compatibility chapter</a> applies an explicitly chosen curl convention to displacement and strain.</p>
+
+<h2 id="diagonal" data-video="fG60h-8p8Uw" data-start="2800" data-end="3110">How should a diagonal tensor be indexed? <a class="timestamp" href="https://www.youtube.com/watch?v=fG60h-8p8Uw&amp;t=2800s">46:40</a></h2>
+<p>Writing \(A_{ij}=\lambda_i\delta_{ij}\) can collide with a strict summation convention: the right side appears to contract \(i\) although the left retains it. One repair is to write “no sum on \(i\)” for that component definition. A less ambiguous tensor expression uses the principal unit vectors \(\mathbf p_\alpha\) and an explicit sum:</p>
+\[
+\mathbf A=\sum_{\alpha=1}^3\lambda_\alpha\mathbf p_\alpha\otimes\mathbf p_\alpha.
+\]
+<p>Taking the trace gives \(\sum_\alpha\lambda_\alpha(\mathbf p_\alpha\cdot\mathbf p_\alpha)=\sum_\alpha\lambda_\alpha\). Squaring the tensor gives eigenvalues \(\lambda_\alpha^2\), because the cross terms contain \(\mathbf p_\alpha\cdot\mathbf p_\beta=0\) for different directions. The spectral representation exposes the mechanism and avoids a label that is simultaneously a component selector and a dummy index.</p>
+
+<h2 id="stress" data-video="fG60h-8p8Uw" data-start="3110" data-end="3835">Internal cuts, external surfaces and the sign of shear <a class="timestamp" href="https://www.youtube.com/watch?v=fG60h-8p8Uw&amp;t=3110s">51:50</a></h2>
+<p>Traction on an internal cut and prescribed traction on an external boundary use the same local Cauchy relation \(\mathbf t=\boldsymbol\sigma\mathbf n\). The normal specifies the oriented surface and the body side under consideration. Opposite normals give opposite tractions. At a smooth external boundary, \(\boldsymbol\sigma\mathbf n=\overline{\mathbf t}\) becomes a boundary condition. This agrees with the surface-force construction in <a href="https://solidmechanics.org/Text/Chapter2_3/Chapter2_3.php">Bower, §§2.3.2–2.3.3</a>, after translating his normal-first indices to the convention used here.</p>
+<p>The discussion emphasizes shear magnitude because many isotropic yield models depend on it. That restricted purpose does not make shear direction physically irrelevant. For a fixed tangent \(\mathbf m\), signed shear \(r=\mathbf m\cdot\boldsymbol\sigma\mathbf n\) determines tangential force direction. Reversing the physical shear can reverse sliding or torque even when its square is unchanged.</p>
+<p>In a principal plane choose \(\mathbf n=\cos\theta\mathbf p_1+\sin\theta\mathbf p_2\), \(\mathbf m=-\sin\theta\mathbf p_1+\cos\theta\mathbf p_2\). Then \(q=c+R\cos2\theta\), \(r=-R\sin2\theta\), with \(c=(\sigma_1+\sigma_2)/2\) and \(R=(\sigma_1-\sigma_2)/2\). A positive physical rotation is clockwise on the signed stress circle under this convention. Plotting \(|r|\) folds its lower half upward and loses directional information. That is legitimate when only magnitude is needed; it cannot reconstruct signed traction or plane rotation. The complete derivation is in <a href="chapter-06-principal-stresses-mohr-invariants.html#mohr">chapter 6</a>.</p>
+
+<h2 id="implementation">Executable checks that distinguish the disputed operations</h2>
+<p>The program reconstructs an oblique-basis vector, distinguishes a dyad from its transpose and verifies both the signed and magnitude-only shear quantities. Inputs are dimensionless teaching arrays except principal stresses in MPa. It reads no files and prints checks. Using nonsymmetric arrays is deliberate: symmetric inputs cannot expose a transpose error.</p>
+<pre data-run="ch17"><code class="language-python">import numpy as np
+
+basis = np.array([[1., 1., 0.], [0., 1., 0.], [0., 0., 1.]])
+reciprocal = np.linalg.inv(basis).T
+assert np.allclose(reciprocal.T @ basis, np.eye(3))
+vector = np.array([2., 1., 0.])
+coefficients = reciprocal.T @ vector
+assert np.allclose(basis @ coefficients, vector)
+u, v = np.eye(3)[:2]
+dyad = np.outer(u, v)
+reverse = np.outer(v, u)
+assert np.allclose(dyad @ v, u)
+assert np.allclose(reverse @ v, np.zeros(3))
+theta = np.pi/4
+normal = np.array([np.cos(theta), np.sin(theta)])
+tangent = np.array([-np.sin(theta), np.cos(theta)])
+stress = np.diag([7., 2.])
+q = float(normal @ stress @ normal)
+r = float(tangent @ stress @ normal)
+assert np.isclose((q - 4.5)**2 + r*r, 2.5**2)
+print('oblique coefficients:', coefficients.tolist())
+print('dyads equal:', bool(np.allclose(dyad, reverse)))
+print('normal MPa:', round(q, 6))
+print('signed shear MPa:', round(r, 6))
+print('shear magnitude MPa:', round(abs(r), 6))
+</code></pre>
+<pre data-output="ch17">oblique coefficients: [1.0, 1.0, 0.0]
+dyads equal: False
+normal MPa: 4.5
+signed shear MPa: -2.5
+shear magnitude MPa: 2.5</pre>
+
+<h2 id="exercises">Discussion problems with worked solutions</h2>
+<p><strong>1. Restore the basis.</strong> What geometric objects do \(u_iv_i\), \(u_iv_j\), and \(\epsilon_{ijk}u_iv_j\) represent?</p>
+<details><summary>Solution</summary><p>The first expression has no free index and is the scalar dot product in an orthonormal basis. The second has free indices \(i,j\); restoring \(\mathbf e_i\otimes\mathbf e_j\) gives the dyad \(\mathbf u\otimes\mathbf v\). The third has free index \(k\); restoring \(\mathbf e_k\) gives the cross product. The same number of numerical factors can therefore produce different tensor orders because the contractions differ.</p></details>
+<p><strong>2. A transpose detector.</strong> Let \(A_{12}=3\) and all other entries vanish. Compare \(A_{ij}b_j\) and \(b_jA_{ji}\) for \(\mathbf b=\mathbf e_2\).</p>
+<details><summary>Solution</summary><p>The first selects column 2 and equals \((3,0,0)\). The second is \(\mathbf A^T\mathbf e_2\), which selects column 2 of the transpose and is zero. Component multiplication remains commutative; the contracted tensor slot changes. Replacing this test matrix by a symmetric one would conceal the error.</p></details>
+<p><strong>3. Curl and cyclic permutation.</strong> For the rowwise curl convention, let the only nonzero field component be \(A_{12}=x_1\). Find the nonzero curl component.</p>
+<details><summary>Solution</summary><p>Row 1 is the vector \((0,x_1,0)\). Its curl is \((0,0,1)\), so \(R_{13}=1\). Componentwise, the surviving term is \(\epsilon_{312}\partial_1A_{12}=1\). Writing \(\epsilon_{123}\partial_1A_{12}\) gives the same sign by cyclicity. An expression with \(\epsilon_{321}\) would reverse the sign and correspond to exchanging two labels, not merely rotating them.</p></details>
+<p><strong>4. A diagonal matrix is not necessarily isotropic.</strong> Take \(\mathbf A=\operatorname{diag}(4,1)\) and rotate the basis by 45 degrees with first basis vector \((1,1)/\sqrt2\). Calculate \(A'_{12}\).</p>
+<details><summary>Solution</summary><p>Choose second basis vector \((-1,1)/\sqrt2\). Then \(A'_{12}=\mathbf e'_1\cdot\mathbf A\mathbf e'_2=(-4+1)/2=-1.5\). The matrix is diagonal only in its principal basis. An isotropic tensor \(a\mathbf I\) would remain diagonal with equal entries under every orthogonal rotation. Distinct principal values establish a directional difference.</p></details>
+<p><strong>5. What information does magnitude lose?</strong> Compare simple-shear stresses with \(\sigma_{12}=T\) and \(\sigma_{12}=-T\), all diagonal entries zero.</p>
+<details><summary>Solution</summary><p>On a plane with normal \(\mathbf e_2\), traction is \(T\mathbf e_1\) in the first case and \(-T\mathbf e_1\) in the second. Both have shear magnitude \(|T|\), the same principal-value set \((|T|,0,-|T|)\), and the same von Mises stress. Their force directions differ on the specified oriented plane. A scalar yield check can discard that direction, but a boundary-force or sliding calculation cannot.</p></details>
+<h2 id="limits">What the discussion resolves</h2>
+<p>Component notation is reliable when the basis, free slots, contraction rules and derivative convention remain explicit. Reciprocal bases explain why Cartesian coordinates simplify these issues. A tensor operation should be identified before choosing a matrix layout. Signed stress geometry and magnitude-based yield quantities answer different questions. These distinctions prevent algebraic shortcuts from silently changing the physical problem.</p>
+<h2 id="sources">Sources</h2>
+<ul><li>Prof. Gaurav Bhutani, NPTEL, <a href="https://www.youtube.com/watch?v=fG60h-8p8Uw">first live discussion</a>, identified by spoken introduction; full local ASR read.</li><li>A. F. Bower, <a href="https://solidmechanics.org/Text/Chapter2_3/Chapter2_3.php"><em>Applied Mechanics of Solids</em>, §§2.3.2–2.3.3</a>, inspected for internal traction, boundary traction and stress-index conventions.</li></ul>
+<!-- BOOK-CONTENT-END --></article><nav class="page-turn" aria-label="Chapter navigation"><a rel="prev" href="chapter-16-course-synthesis.html">Previous chapter</a><a href="index.html">Chapter index</a><a rel="next" href="chapter-18-live-configurations-motion-strain.html">Next chapter</a></nav></main></div><footer class="site-footer">Independent study edition. Prof. Gaurav Bhutani’s NPTEL recordings provide the topic spine. Original exposition, source limitations and verification evidence are separately recorded.</footer></body></html>

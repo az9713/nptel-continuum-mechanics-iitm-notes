@@ -1,0 +1,222 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="color-scheme" content="dark light"><meta name="book-content-sha256" content="ba507ca63132f1227c4eee2a2fe5b1b4bf35dcd387b3ec076527365e52605a8e">
+<title>Plasticity and constitutive problem solving · Foundations of Continuum Mechanics</title><link rel="stylesheet" href="assets/book.css">
+<script>window.MathJax={tex:{inlineMath:[['$','$'],['\\(','\\)']],displayMath:[['$$','$$'],['\\[','\\]']],processEscapes:true},svg:{fontCache:'local'},options:{skipHtmlTags:['script','noscript','style','textarea','pre','code']}};</script>
+<script defer src="assets/mathjax-tex-svg.js"></script><script defer src="assets/book.js"></script></head>
+<body><a class="skip" href="#main">Skip to content</a><header class="site-header"><a class="brand" href="index.html">Foundations of Continuum Mechanics · NPTEL IIT Mandi</a><nav class="course-nav" aria-label="Book"><a href="index.html">Chapters</a><a href="source-map.html">Source map</a><a href="references.html">References</a><a href="numerical-lab.html">Numerical lab</a></nav></header>
+<div class="layout"><aside class="toc" id="chapter-toc" aria-label="On this page"><h2>On this page</h2></aside><main id="main"><div class="reading-tools" aria-label="Reading controls"><button id="theme-toggle" aria-pressed="false">Light theme</button><button id="text-toggle" aria-pressed="false">Larger text</button><button id="solutions-toggle" aria-pressed="false">Expand solutions</button><button id="print-page">Print with solutions</button></div>
+<article id="chapter-content"><!-- BOOK-CONTENT-START --><h1>Plasticity and constitutive problem solving</h1>
+<p class="lead">A bar is stretched to half a percent strain and unloaded until its stress vanishes. It remains longer than it was initially. The strain left behind does not tell us how much plastic deformation occurred if the bar has already been stretched and compressed several times. A constitutive calculation must retain internal history, decide when plastic flow is active, and distinguish recoverable energy from irreversible loss. This chapter develops those requirements in a complete one-dimensional loading calculation, then relates them to multiaxial yield criteria and the course's constitutive tutorial.</p>
+<p class="source-note">Lecture spine: lessons 55 and 56 of Prof. Gaurav Bhutani’s NPTEL course, covering plasticity and constitutive problem solving. Both available local machine transcripts were read through their closing statements; they end within about nine seconds of the listed recording ends. Source timing supports navigation, while equations are reconstructed mathematically rather than accepted from ASR. Bower supplies the cited plasticity framework. Jop, Forterre and Pouliquen supply the inspected primary granular-flow law. The loading specimen, return calculation, energy audit, small-gradient check, program and exercises are original constructions. They are not fitted metal or granular-material measurements.</p>
+
+<h2 id="split" data-video="y34--zLl278" data-start="12" data-end="369">Elastic strain, plastic strain and accumulated history <a class="timestamp" href="https://www.youtube.com/watch?v=y34--zLl278&amp;t=12s">L55 0:12</a></h2>
+<p>Work first with a uniform bar under one-dimensional quasistatic tension and compression. Tensile stress \(\sigma\) is positive and measured in Pa; total axial strain \(\varepsilon\) is dimensionless. Assume small strains, constant temperature, a fixed positive Young's modulus \(E\), and no damage. Split strain additively into elastic and plastic parts:</p>
+\[
+\varepsilon=\varepsilon^e+\varepsilon^p,
+\qquad \sigma=E\varepsilon^e=E(\varepsilon-\varepsilon^p). \tag{14.1}
+\]
+<p>The elastic part changes stress and is recovered during elastic unloading. The plastic part is an internal variable that remains when the stress returns to zero. It can change sign under reverse plastic flow. Therefore “plastic strain accumulates” must not be read as monotonic growth of every signed plastic-strain component.</p>
+<p>Introduce accumulated plastic strain \(\alpha\), initialized at zero, with \(\dot\alpha=|\dot\varepsilon^p|\). It records the length of the plastic-strain path and cannot decrease. A tensile plastic increment of 0.005 followed by a compressive plastic increment of −0.002 leaves \(\varepsilon^p=0.003\), but gives \(\alpha=0.007\). Equal residual strains can conceal different histories.</p>
+<p>For incompressible J₂ plastic flow in three dimensions, the corresponding accumulated measure is \(\alpha(t)=\int_0^t\sqrt{(2/3)\dot{\boldsymbol\varepsilon}^p:\dot{\boldsymbol\varepsilon}^p}\,\mathrm ds\). Here \(\boldsymbol\varepsilon^p\) is a symmetric plastic strain tensor, and the double contraction sums matching components. In uniaxial plastic flow its principal rates have proportions \((1,-1/2,-1/2)\), so the integrand equals the magnitude of the axial plastic-strain rate. <a href="https://solidmechanics.org/Text/Chapter3_7/Chapter3_7.php">Bower, §§3.7.2 and 3.7.5</a>, develops the additive split and accumulated measure. The present scalar model uses that uniaxial specialization.</p>
+<p>The recurring specimen has constructed parameters \(E=200\) GPa, initial yield stress \(\sigma_0=250\) MPa and isotropic hardening modulus \(H=2\) GPa. These scales permit small strains while making elastic recovery visible. They are not assigned to a particular alloy. A constitutive law still needs a yield criterion, a flow rule and a hardening rule before its loading curve can be calculated.</p>
+
+<h2 id="multiaxial" data-video="y34--zLl278" data-start="369" data-end="1546">Yield surfaces: stress magnitude is not enough <a class="timestamp" href="https://www.youtube.com/watch?v=y34--zLl278&amp;t=369s">L55 6:09</a></h2>
+<p>A symmetric Cauchy stress \(\boldsymbol\sigma\) has six independent entries. They form a point in six-dimensional stress space, which is a space of tensor values rather than physical positions. For an isotropic criterion it is often enough to work with its three real principal stresses \(\sigma_1,\sigma_2,\sigma_3\). These are the diagonal values in an orthonormal basis of principal directions. A yield function \(f(\boldsymbol\sigma,\alpha)\) defines the admissible elastic region \(f\le0\), with boundary \(f=0\).</p>
+<p>Separate hydrostatic and deviatoric stress by defining positive compressive pressure \(p=-\operatorname{tr}\boldsymbol\sigma/3\) and \(\mathbf s=\boldsymbol\sigma+p\mathbf I\). Then \(\operatorname{tr}\mathbf s=0\). Define \(J_2=\mathbf s:\mathbf s/2\), with units Pa², and the von Mises equivalent stress \(q=\sqrt{3J_2}\), with units Pa. It is the equivalent stress, not \(J_2\) itself, that can be compared directly with a uniaxial yield stress.</p>
+<p>The von Mises criterion is</p>
+\[
+f_M=q-\sigma_y(\alpha),\qquad
+q^2=\frac12\left[(\sigma_1-\sigma_2)^2+(\sigma_2-\sigma_3)^2
++(\sigma_3-\sigma_1)^2\right]. \tag{14.2}
+\]
+<p>The principal-stress expression follows by substituting \(s_i=\sigma_i-(\sigma_1+\sigma_2+\sigma_3)/3\) into \((3/2)\sum_i s_i^2\) and collecting the pairwise differences. A hydrostatic addition changes every principal stress equally and cancels from those differences. This criterion is pressure insensitive by assumption. It is useful for some ductile-metal yield responses, not a claim that pressure cannot affect fracture or any real-material failure process.</p>
+<p>For uniaxial stress \((\sigma,0,0)\), \(q=|\sigma|\). For pure shear with \(\sigma_{12}=\sigma_{21}=\tau\), the principal stresses are \((\tau,0,-\tau)\), so \(q=\sqrt3|\tau|\). The same uniaxial yield level \(\sigma_y\) therefore gives a pure-shear yield magnitude \(\sigma_y/\sqrt3\). In the plane \(s_1+s_2+s_3=0\), the norm \(\sqrt{s_1^2+s_2^2+s_3^2}\) at yield is \(\sqrt{2/3}\,\sigma_y\). Extending this circle along the hydrostatic axis gives the cylinder in principal-stress space.</p>
+<p>The Tresca criterion instead compares \(\max_{a,b}|\sigma_a-\sigma_b|\) with \(\sigma_y\). Half that maximum difference is the maximum shear stress. Tresca agrees with von Mises in uniaxial loading but predicts pure-shear yielding at \(\sigma_y/2\), earlier than \(\sigma_y/\sqrt3\). Its deviatoric-plane section is hexagonal. <a href="https://solidmechanics.org/Text/Chapter3_7/Chapter3_7.php">Bower, §3.7.3</a>, gives both criteria. A yield surface alone specifies admissible stresses, not the plastic-strain direction or loading history.</p>
+<p>Pressure-sensitive granular or soil models need another variable. One Drucker–Prager convention is \(f_{DP}=q-Mp-k\), with dimensionless \(M\ge0\) and cohesion parameter \(k\ge0\) in Pa. Increasing compressive pressure raises the admissible equivalent stress to \(Mp+k\). For the constructed values \(M=0.6,k=10\) kPa, pressure 100 kPa gives a threshold 70 kPa, while pressure 200 kPa gives 130 kPa. This pressure dependence is absent from (14.2). Parameter conventions vary, so the exact definition of \(q,p\) belongs beside any quoted coefficients.</p>
+
+<h2 id="flow" data-video="y34--zLl278" data-start="1546" data-end="1699">Flow, loading and consistency are separate rules <a class="timestamp" href="https://www.youtube.com/watch?v=y34--zLl278&amp;t=1546s">L55 25:46</a></h2>
+<p>A plastic potential \(g\) defines the flow direction through \(\dot\varepsilon^p_{ij}=\dot\gamma\,\partial g/\partial\sigma_{ij}\), where the multiplier \(\dot\gamma\ge0\) sets the rate magnitude. Associated flow means \(g=f\), up to terms independent of stress. Nonassociated flow chooses a different potential. Association is not synonymous with plastic incompressibility: volume change depends on the trace of the potential gradient.</p>
+<p>For von Mises flow, differentiation gives \(\partial q/\partial\boldsymbol\sigma=3\mathbf s/(2q)\) for \(q&gt;0\). To see this, vary \(q^2=(3/2)\mathbf s:\mathbf s\): its variation is \(3\mathbf s:\delta\mathbf s=3\mathbf s:\delta\boldsymbol\sigma\), since \(\mathbf s:\mathbf I=0\). Divide by \(2q\). The gradient is trace free, so associated J₂ flow is plastically incompressible.</p>
+<p>By contrast, take \(g=q-M_g p\) for a pressure-sensitive material. Since \(\partial p/\partial\boldsymbol\sigma=-\mathbf I/3\), its flow direction is \(3\mathbf s/(2q)+(M_g/3)\mathbf I\). The plastic volume-strain rate is \(M_g\dot\gamma\). Associated Drucker–Prager chooses \(M_g=M\) and generally dilates. A different \(M_g\) permits an independently chosen dilation response. A complete nonassociated model still needs its own dissipation check.</p>
+<p>For the uniaxial specimen, choose isotropic hardening \(\sigma_y=\sigma_0+H\alpha\) and associated flow</p>
+\[
+f=|\sigma|-\sigma_0-H\alpha\le0,
+\quad \dot\varepsilon^p=\dot\gamma\operatorname{sign}\sigma,
+\quad \dot\alpha=\dot\gamma,
+\quad \dot\gamma\ge0,\quad \dot\gamma f=0. \tag{14.3}
+\]
+<p>These are complementarity conditions: inside the yield interval \(f&lt;0\), plastic flow vanishes. At its boundary \(f=0\), plastic flow may occur, but elastic unloading with \(\dot\gamma=0\) is also possible. During active plastic loading, consistency requires \(\dot f=0\); it does not impose that derivative on every unloading state.</p>
+<p>On an active branch with fixed stress sign \(s=\operatorname{sign}\sigma\), (14.1) gives \(\dot\sigma=E(\dot\varepsilon-s\dot\gamma)\). Consistency gives \(s\dot\sigma-H\dot\gamma=0\), so \(\dot\gamma=Es\dot\varepsilon/(E+H)\) when this is nonnegative. The resulting loading tangent is \(E_t=EH/(E+H)\). A reversal that would make the multiplier negative instead requires elastic unloading. The branch decision is as important as the algebraic tangent.</p>
+
+<h2 id="hardening" data-video="y34--zLl278" data-start="1699" data-end="1821">Expansion, translation and reverse yielding <a class="timestamp" href="https://www.youtube.com/watch?v=y34--zLl278&amp;t=1699s">L55 28:19</a></h2>
+<p>Isotropic hardening expands the yield interval symmetrically from \([-\sigma_0,\sigma_0]\) to \([-\sigma_y,\sigma_y]\). Its adjective refers to the evolution of this surface, not to the choice of a von Mises versus another yield criterion. Perfect plasticity is the case \(H=0\), where the interval does not grow. Softening would shrink a surface and can introduce localization and additional numerical difficulties; it is excluded from the present \(H\ge0\) model.</p>
+<p>Kinematic hardening translates a yield surface. In one dimension introduce a backstress \(X\) in Pa and use \(f=|\sigma-X|-\sigma_0\). A simple linear rule is \(X=C\varepsilon^p\), with \(C&gt;0\) in Pa. After tensile plastic straining the interval center moves toward positive stress. For \(C=4\) GPa and \(\varepsilon^p=0.005\), the center is 20 MPa. With \(\sigma_0=250\) MPa, the current tensile and compressive boundaries are +270 and −230 MPa.</p>
+<p>An isotropic model with the same hardening increment instead has boundaries ±270 MPa. Its reverse-yield prediction differs even though the two tensile boundaries agree. This is the mechanism used to represent the Bauschinger effect: prior loading changes reverse yielding asymmetrically. <a href="https://solidmechanics.org/Text/Chapter3_7/Chapter3_7.php">Bower, §3.7.5</a>, distinguishes surface expansion from translation. A scalar accumulated strain alone cannot encode every directional loading-history effect.</p>
+
+<h2 id="return">A complete load–unload calculation and a return update</h2>
+<p>For initial \(\varepsilon^p=\alpha=0\), first yield occurs at \(\varepsilon_y=\sigma_0/E=0.00125\). On continued monotone tension, \(\alpha=\varepsilon^p\) and consistency gives \(E(\varepsilon-\varepsilon^p)=\sigma_0+H\varepsilon^p\). At total strain 0.005,</p>
+\[
+\varepsilon^p=\frac{E(0.005)-\sigma_0}{E+H}
+=\frac{750}{202000}\approx0.003712871,
+\qquad \sigma\approx257.425743\ \mathrm{MPa}. \tag{14.4}
+\]
+<p>The ratio uses MPa in numerator and denominator. Unloading elastically to zero stress recovers \(\sigma/E\approx0.001287129\), leaving total residual strain 0.003712871. Hardening does not change during that unloading segment. Continuing to smaller imposed strain eventually reaches the negative yield boundary and starts reverse plastic flow; the residual strain is not a permanent lower bound on future total strain.</p>
+<p>A strain-driven program needs the same logic as an incremental update. Given old admissible internal variables and a new imposed strain, first freeze the internal variables and calculate the elastic trial stress \(\sigma_{\mathrm{tr}}=E(\varepsilon_{\mathrm{new}}-\varepsilon^p_{\mathrm{old}})\). If \(|\sigma_{\mathrm{tr}}|\le\sigma_0+H\alpha_{\mathrm{old}}\), accept the elastic trial. Otherwise set \(s=\operatorname{sign}\sigma_{\mathrm{tr}}\) and impose the updated yield equality:</p>
+\[
+\begin{aligned}
+\Delta\gamma&amp;=\frac{|\sigma_{\mathrm{tr}}|-\sigma_0-H\alpha_{\mathrm{old}}}{E+H},\\
+\varepsilon^p_{\mathrm{new}}&amp;=\varepsilon^p_{\mathrm{old}}+s\Delta\gamma,
+\qquad \alpha_{\mathrm{new}}=\alpha_{\mathrm{old}}+\Delta\gamma,\\
+\sigma_{\mathrm{new}}&amp;=\sigma_{\mathrm{tr}}-Es\Delta\gamma.
+\end{aligned} \tag{14.5}
+\]
+<p>The correction reduces the trial stress magnitude by \(E\Delta\gamma\), while hardening increases the boundary magnitude by \(H\Delta\gamma\). Equating them derives the denominator \(E+H\). The formula is an exact endpoint update for this piecewise-linear one-dimensional model over a monotone strain increment, with no reversal hidden inside that increment. An increment may contain elastic unloading through zero before an active reverse branch; the plastic correction itself has the trial stress's sign.</p>
+<p>For example, a virgin jump to 0.005 gives trial stress 1000 MPa. Its excess over initial yield is 750 MPa, so (14.5) reproduces (14.4). The plastic-strain increment is positive, accumulated strain grows, and the updated stress lies exactly at its expanded boundary. A general multiaxial model, nonlinear hardening or nonmonotone unresolved path requires a different integration analysis.</p>
+
+<h2 id="dissipation">Plastic work, stored hardening and irreversible loss</h2>
+<p>Specify the stored energy before interpreting a plastic-work calculation. For the present isotropic-hardening model choose energy per reference volume</p>
+\[
+\psi=\frac E2(\varepsilon-\varepsilon^p)^2+\frac H2\alpha^2,
+\qquad
+\mathcal D=\sigma\dot\varepsilon-\dot\psi
+=\sigma\dot\varepsilon^p-H\alpha\dot\alpha. \tag{14.6}
+\]
+<p>During elastic evolution both internal-variable rates vanish. During plastic flow, (14.3) gives \(\mathcal D=(|\sigma|-H\alpha)\dot\gamma=\sigma_0\dot\gamma\ge0\). This establishes nonnegative mechanical dissipation for the specified stored-energy choice. It does not assert that every real hardening mechanism has the same energetic partition.</p>
+<p>For monotone tensile plastic strain \(a\), plastic work is \(\int_0^a(\sigma_0+H\alpha)\,\mathrm d\alpha=\sigma_0a+Ha^2/2\). The first term is irrecoverably dissipated; the second is stored hardening energy in this model. At the end of (14.4), \(a\approx0.003712871\), so dissipation is about 0.928218 MJ/m³ and hardening storage is about 0.013785 MJ/m³. The elastic energy can be recovered by unloading to zero stress; hardening storage remains even at zero stress.</p>
+<p>Mechanical dissipation is not automatically identical to heat released at every instant. A temperature equation, thermal storage and a conversion assumption would be needed for that prediction. Treating all plastic work as immediate heat would erase the explicitly included hardening storage. Conversely, reporting only spring energy would miss the irreversible loss.</p>
+
+<h2 id="extensions" data-video="y34--zLl278" data-start="1821" data-end="2342">Rate effects, damage and pressure-dependent granular flow <a class="timestamp" href="https://www.youtube.com/watch?v=y34--zLl278&amp;t=1821s">L55 30:21</a></h2>
+<p>Rate-independent plasticity depends on the loading path but has no intrinsic clock in (14.3). Traversing the same quasistatic strain path more slowly changes the parameterization, not its stress–strain curve. Viscoplasticity introduces a time scale and can permit overstress. One illustrative scalar law is \(\dot\gamma=\gamma_0\langle f/\sigma_*\rangle^m\), where \(\langle x\rangle=\max(x,0)\), \(\gamma_0&gt;0\) is in s⁻¹, \(\sigma_*&gt;0\) in Pa, and \(m&gt;0\). It sets a flow rate rather than enforcing \(f\le0\) exactly.</p>
+<p>For perfect plasticity under a constant stress above \(\sigma_0\), that law gives a positive constant plastic-strain rate. Under held total strain, elastic stress can relax as plastic strain evolves. These creep and relaxation mechanisms are distinct from a linear viscoelastic network. Adding rate dependence does not by itself guarantee a smooth threshold, numerical stability or a valid finite-deformation law.</p>
+<p>A scalar damage variable \(d\in[0,1]\) can reduce elastic stiffness through \(\sigma=(1-d)E\varepsilon^e\). Here zero means undamaged and increasing \(d\) means increasing degradation. For fixed plastic variables, choose \(\psi_e=(1-d)E(\varepsilon^e)^2/2\). Differentiation gives an additional dissipation contribution \(Y_d\dot d\), where \(Y_d=E(\varepsilon^e)^2/2\ge0\). The choice \(\dot d\ge0\) makes this contribution nonnegative, but a complete coupled damage–plasticity model still needs its damage evolution and yield rules.</p>
+<p>Dense frictional granular flow can be represented by a pressure-dependent rate law rather than the metal model. <a href="https://arxiv.org/abs/cond-mat/0612110">Jop, Forterre and Pouliquen, author preprint, pp. 2–3, Eqs. (1)–(4)</a>, introduce an incompressible dense-flow model. With effective rate \(r=\sqrt{2\mathbf D:\mathbf D}\), particle diameter \(d_g\), particle density \(\rho_s\), and confining pressure \(p&gt;0\), its inertial number is \(I=r d_g/\sqrt{p/\rho_s}\). The pressure-to-density square root is a speed, so \(I\) is dimensionless.</p>
+\[
+\mu(I)=\mu_s+(\mu_2-\mu_s)\frac{I}{I_0+I},
+\qquad \boldsymbol\tau=2\frac{\mu(I)p}{r}\mathbf D,
+\qquad r&gt;0. \tag{14.7}
+\]
+<p>The parameters \(\mu_s,\mu_2,I_0\) are dimensionless, with \(\mu_2&gt;\mu_s&gt;0\). Here \(\mu\) is friction, not a viscosity in Pa s; the effective viscosity is \(\mu(I)p/r\). At small \(I\), the shear threshold is pressure proportional. The law assumes a dense regime and small volume-fraction variation; zero pressure, dilute flow and zero rate require separate treatment. The cited work tests a particular rough-wall granular setup, not every soil or avalanche.</p>
+<p>For a constructed calculation, take \(r=10\) s⁻¹, \(d_g=10^{-3}\) m, \(\rho_s=2500\) kg/m³, \(p=10^4\) Pa, \(\mu_s=0.4,\mu_2=0.7,I_0=0.3\). Then \(\sqrt{p/\rho_s}=2\) m/s and \(I=0.005\). The friction is approximately 0.404918 and simple-shear stress approximately 4049.18 Pa. These are synthetic inputs; they do not reproduce the cited experiment.</p>
+<p>At finite deformation, the small-strain additive split cannot be transferred by adding arbitrary finite strain tensors. Many models instead use \(\mathbf F=\mathbf F^e\mathbf F^p\), a multiplicative split of the deformation gradient. That introduces an intermediate configuration and requires compatible stress, rate, rotation and work definitions. Equation (14.5) remains a one-dimensional infinitesimal-strain update, even if its code can be run at arbitrarily large input values.</p>
+
+<h2 id="tutorial-tensor" data-video="rcHFRFZ7uSw" data-start="16" data-end="603">Tutorial: an elastic stiffness is a map on symmetric strains <a class="timestamp" href="https://www.youtube.com/watch?v=rcHFRFZ7uSw&amp;t=16s">L56 0:16</a></h2>
+<p>The first constitutive tutorial problem returns to linear elasticity. Let symmetric infinitesimal strain \(\boldsymbol\varepsilon\) and symmetric stress be related by \(\sigma_{ij}=C_{ijkl}\varepsilon_{kl}\). Stiffness entries have units Pa. A Cartesian basis change with orthogonal direction-cosine matrix \(\mathbf Q\) gives \(\sigma'_{ij}=Q_{ip}Q_{jq}\sigma_{pq}\) and \(\varepsilon_{rs}=Q_{kr}Q_{ls}\varepsilon'_{kl}\). Substitution produces</p>
+\[
+\sigma'_{ij}=Q_{ip}Q_{jq}Q_{kr}Q_{ls}C_{pqrs}\varepsilon'_{kl}. \tag{14.8}
+\]
+<p>Requiring the relation for every symmetric strain determines the transformed linear map on the six-dimensional symmetric-strain space. To give it a unique four-index representation, choose the conventional minor symmetry \(C_{ijkl}=C_{ijlk}\). Under this convention its components obey the fourth-order transformation rule \(C'_{ijkl}=Q_{ip}Q_{jq}Q_{kr}Q_{ls}C_{pqrs}\). Without that convention, an arbitrary part antisymmetric in \(k,l\) is invisible to every symmetric input, so coefficient equality cannot be inferred for that invisible part.</p>
+<p>For an isotropic fourth-order map, chapter 3 gives the three-delta form \(a\delta_{ij}\delta_{kl}+b\delta_{ik}\delta_{jl}+c\delta_{il}\delta_{jk}\). Minor symmetry requires \(b=c\); write \(a=\lambda\), \(b=c=\mu\). Contracting explicitly yields \(\sigma_{ij}=\lambda\delta_{ij}\varepsilon_{kk}+\mu\varepsilon_{ij}+\mu\varepsilon_{ji}=\lambda\operatorname{tr}(\boldsymbol\varepsilon)\delta_{ij}+2\mu\varepsilon_{ij}\). This derives the isotropic law while stating which tensor symmetries were imposed and why.</p>
+
+<h2 id="tutorial-limit" data-video="rcHFRFZ7uSw" data-start="603" data-end="1014">Tutorial: the small-gradient limit of a finite elastic law <a class="timestamp" href="https://www.youtube.com/watch?v=rcHFRFZ7uSw&amp;t=603s">L56 10:03</a></h2>
+<p>Let the motion be \(\mathbf x=\mathbf X+\mathbf u(\mathbf X)\), with reference position \(\mathbf X\) and displacement \(\mathbf u\). The deformation gradient is \(\mathbf F=\partial\mathbf x/\partial\mathbf X=\mathbf I+\mathbf L\), where \(\mathbf L=\partial\mathbf u/\partial\mathbf X\) is dimensionless. Define \(J=\det\mathbf F&gt;0\) and \(\mathbf B=\mathbf F\mathbf F^{\mathsf T}\). Consider the compressible neo-Hookean Cauchy stress</p>
+\[
+\boldsymbol\sigma=\frac\mu J(\mathbf B-\mathbf I)
++\frac{\lambda\ln J}{J}\mathbf I. \tag{14.9}
+\]
+<p>For \(\|\mathbf L\|=O(\delta)\), with \(\delta\ll1\), determinant expansion gives \(J=1+\operatorname{tr}\mathbf L+O(\delta^2)\). Direct multiplication gives \(\mathbf B=\mathbf I+\mathbf L+\mathbf L^{\mathsf T}+\mathbf L\mathbf L^{\mathsf T}\). Hence \(\mathbf B-\mathbf I=2\boldsymbol\varepsilon+O(\delta^2)\), where \(\boldsymbol\varepsilon=(\mathbf L+\mathbf L^{\mathsf T})/2\). Also \(\ln J=\operatorname{tr}\boldsymbol\varepsilon+O(\delta^2)\) and \(1/J=1-\operatorname{tr}\boldsymbol\varepsilon+O(\delta^2)\).</p>
+<p>The factors multiplying \(1/J\) in (14.9) are already first order. Their products with the first-order correction of \(1/J\) are therefore second order. Keeping only first order gives \(\boldsymbol\sigma=2\mu\boldsymbol\varepsilon+\lambda\operatorname{tr}(\boldsymbol\varepsilon)\mathbf I+O(\delta^2)\), recovering the linear isotropic law. “Small” must apply to the displacement gradient here, not only to a selected component or a scalar volume change.</p>
+<p>A finite rigid rotation has \(\mathbf B=\mathbf I,J=1\), so (14.9) gives zero stress exactly. Its infinitesimal strain computed from \(\mathbf R-\mathbf I\) need not vanish for a large rotation. That does not contradict the limit; it violates its small-gradient hypothesis. <a href="https://solidmechanics.org/Text/Chapter3_5/Chapter3_5.php">Bower, §3.5</a>, treats finite hyperelastic constitutive models; the particular small-gradient reduction is shown explicitly here.</p>
+
+<h2 id="tutorial-network" data-video="rcHFRFZ7uSw" data-start="1014" data-end="1593">Tutorial: deriving the standard-linear-solid equation <a class="timestamp" href="https://www.youtube.com/watch?v=rcHFRFZ7uSw&amp;t=1014s">L56 16:54</a></h2>
+<p>The final tutorial problem places a Maxwell branch with spring \(E_1\) and dashpot \(\eta\) in parallel with a spring \(E_2\). Shared total strain is \(\varepsilon\), branch stress is \(\sigma_1\), and equilibrium-spring stress is \(\sigma_2=E_2\varepsilon\). The Maxwell branch has \(\varepsilon=\varepsilon_s+\varepsilon_d\), \(\sigma_1=E_1\varepsilon_s\) and \(\sigma_1=\eta\dot\varepsilon_d\). These give \(\dot\varepsilon=\dot\sigma_1/E_1+\sigma_1/\eta\).</p>
+<p>Substitute \(\sigma_1=\sigma-E_2\varepsilon\), multiply by \(E_1\), and collect terms:</p>
+\[
+\dot\sigma+\frac{E_1}{\eta}\sigma
+=(E_1+E_2)\dot\varepsilon+\frac{E_1E_2}{\eta}\varepsilon. \tag{14.10}
+\]
+<p>For a held strain step, the dashpot strain initially cannot jump under bounded branch stress, so initial modulus is \(E_1+E_2\). The branch then relaxes with time \(\eta/E_1\), leaving equilibrium modulus \(E_2\). This matches chapter 13 with \(E_2=E_\infty\). It is a memory mechanism with recoverable equilibrium strain, distinct from the permanently accumulated plastic variables in (14.3).</p>
+
+<h2 id="implementation">Executable plastic loading and finite-law checks</h2>
+<p>The program implements (14.5), traverses a resolved strain path with reversals, and checks stress admissibility and nondecreasing accumulated plastic strain. It independently checks the known monotone endpoint and elastic zero-stress residual. A fine-grid work integral is compared with elastic/hardening storage plus \(\sigma_0\Delta\alpha\). The separate neo-Hookean test verifies quadratic convergence toward the linear limit as the displacement gradient is halved. NumPy is required; no files are read or written; failed checks raise assertions.</p>
+<pre data-run="ch14"><code class="language-python">import numpy as np
+
+young, yield_stress, hardening = 200e9, 250e6, 2e9
+
+
+def update(strain, plastic, accumulated):
+    trial = young*(strain-plastic)
+    excess = abs(trial)-yield_stress-hardening*accumulated
+    if excess &lt;= 0:
+        return trial, plastic, accumulated
+    increment = excess/(young+hardening)
+    plastic += increment*np.sign(trial)
+    accumulated += increment
+    return young*(strain-plastic), plastic, accumulated
+
+
+peak_stress, peak_plastic, peak_alpha = update(0.005, 0., 0.)
+expected_plastic = (young*0.005-yield_stress)/(young+hardening)
+assert np.isclose(peak_plastic, expected_plastic)
+zero_stress, residual, unchanged_alpha = update(
+    peak_plastic, peak_plastic, peak_alpha)
+assert abs(zero_stress) &lt; 1e-6
+assert residual == peak_plastic and unchanged_alpha == peak_alpha
+turns = [0., 0.005, 0., -0.003, 0.]
+path = np.concatenate([np.linspace(a, b, 4001)[:-1]
+                       for a, b in zip(turns[:-1], turns[1:])]
+                      + [np.array([turns[-1]])])
+stress_history = np.zeros_like(path)
+energy = np.zeros_like(path)
+plastic = accumulated = 0.
+for j, strain in enumerate(path):
+    old_alpha = accumulated
+    stress, plastic, accumulated = update(strain, plastic, accumulated)
+    assert accumulated &gt;= old_alpha
+    assert abs(stress) &lt;= yield_stress+hardening*accumulated+1e-4
+    stress_history[j] = stress
+    energy[j] = stress**2/(2*young)+hardening*accumulated**2/2
+work = np.trapezoid(stress_history, path)
+irreversible = yield_stress*accumulated
+assert abs(work-(energy[-1]-energy[0])-irreversible) &lt; 1.0
+assert accumulated &gt; abs(plastic)
+identity = np.eye(3)
+shape = np.array([[1., 0.5, 0.], [0.2, -0.3, 0.], [0., 0., 0.1]])
+mu, lame = 3e6, 2e6
+errors = []
+for scale in [0.002, 0.001]:
+    gradient = scale*shape
+    deformation = identity+gradient
+    jacobian = np.linalg.det(deformation)
+    left_cauchy = deformation @ deformation.T
+    finite = (mu*(left_cauchy-identity)
+              + lame*np.log(jacobian)*identity)/jacobian
+    strain_tensor = (gradient+gradient.T)/2
+    linear = 2*mu*strain_tensor+lame*np.trace(strain_tensor)*identity
+    errors.append(np.linalg.norm(finite-linear))
+assert 3.9 &lt; errors[0]/errors[1] &lt; 4.1
+print('peak stress (MPa):', round(peak_stress/1e6, 6))
+print('zero-stress residual strain:', round(residual, 9))
+print('peak hardening storage (J/m3):', round(hardening*peak_alpha**2/2, 3))
+print('peak irreversible loss (J/m3):', round(yield_stress*peak_alpha, 3))
+print('resolved reversed-path energy balance: passed')
+print('small-gradient error scales quadratically: passed')</code></pre>
+<pre data-output="ch14">peak stress (MPa): 257.425743
+zero-stress residual strain: 0.003712871
+peak hardening storage (J/m3): 13785.413
+peak irreversible loss (J/m3): 928217.822
+resolved reversed-path energy balance: passed
+small-gradient error scales quadratically: passed</pre>
+<p>The work integral has a finite grid error at changes of elastic/plastic branch; its stated 1 J/m³ tolerance is a numerical criterion. The constitutive dissipation formula is analytical. Endpoint agreement does not verify unresolved within-step reversals, a three-dimensional return algorithm, thermal conversion, or a particular alloy. The finite-law test checks the local asymptotic relation for one prescribed gradient family, not global material stability.</p>
+
+<h2 id="limits">What a constitutive solution must contain</h2>
+<p>A yield criterion identifies a boundary, a flow potential determines a direction, a loading rule decides whether flow is active, and hardening evolves the boundary. The worked specimen requires both signed plastic strain and accumulated history. Its response can be advanced incrementally, checked for admissibility, and audited through stored elastic energy, stored hardening energy and irreversible loss. Those checks answer different questions and cannot substitute for each other.</p>
+<p>Pressure dependence, cyclic translation, time-dependent flow, damage and granular friction add different state or rate mechanisms. The constitutive tutorial also shows why a symmetric-input stiffness needs an explicit representation convention, why a finite law must recover the correct small-gradient limit, and why a spring–dashpot network follows from branch compatibility. None of these models becomes a universal failure or material law by having a compact tensor expression.</p>
+
+<h2 id="exercises">Exercises with worked solutions</h2>
+<p><strong>1. Residual strain and the hardening energy.</strong> Use the recurring specimen to load monotonically to strain 0.003, then unload to zero stress. Find maximum plastic strain, maximum stress, residual strain, accumulated strain, hardening storage and irreversible loss.</p>
+<details><summary>Solution</summary><p>The elastic trial at peak strain is 600 MPa, exceeding 250 MPa. Plastic increment is \((600-250)/(200000+2000)=0.001732673\). Thus \(\varepsilon^p=\alpha\approx0.001732673\), maximum stress is \(250+2000(0.001732673)\approx253.465347\) MPa, and elastic unloading recovers \(\sigma/E\approx0.001267327\). The residual total strain is the plastic strain. Accumulated strain remains unchanged during unloading. Hardening storage is \(H\alpha^2/2\), approximately 3002.157 J/m³, and irreversible loss is \(\sigma_0\alpha\), approximately 433168.317 J/m³. The recoverable elastic energy is separate and is returned during unloading.</p></details>
+<p><strong>2. Reverse history and backstress.</strong> Starting from virgin material, impose plastic strain increments +0.004, −0.003 and +0.001. Find final signed and accumulated plastic strains. For a kinematic law \(X=C\varepsilon^p\), \(C=4\) GPa and initial yield stress 250 MPa, find the final yield interval. Compare isotropic hardening with \(H=4\) GPa.</p>
+<details><summary>Solution</summary><p>The signed sum is \(0.004-0.003+0.001=0.002\), while the accumulated sum of magnitudes is \(0.004+0.003+0.001=0.008\). The backstress is \(4\times10^9(0.002)=8\) MPa. Kinematic boundaries are therefore \(8-250=-242\) MPa and \(8+250=258\) MPa. Isotropic hardening instead uses the accumulated value, giving yield magnitude \(250+4000(0.008)=282\) MPa and boundaries ±282 MPa. Current signed plastic strain alone is insufficient to reproduce the isotropic history variable.</p></details>
+<p><strong>3. Pressure sensitivity and associated dilation.</strong> A state has pure-shear magnitude 100 MPa. Compare von Mises and Tresca equivalent stresses. Then consider the pressure-sensitive criterion \(f=q-0.6p-10\) kPa at \(p=100\) kPa, \(q=60\) kPa. Is it admissible, and does its associated potential imply zero plastic volume change if it later flows?</p>
+<details><summary>Solution</summary><p>Pure-shear principal values are \((100,0,-100)\) MPa. Von Mises gives \(q=100\sqrt3\approx173.205\) MPa; Tresca's uniaxially normalized equivalent is the largest difference, 200 MPa. A common uniaxial yield level between those values would classify the state differently. For the separate pressure-sensitive example, \(f=60-0.6(100)-10=-10\) kPa, so it lies inside the elastic region and has no active plastic flow. At a later active boundary, the associated potential has trace gradient 0.6, giving plastic volume-strain rate \(0.6\dot\gamma\). Association therefore permits dilation here; it does not mean incompressibility.</p></details>
+<p><strong>4. An invisible stiffness component.</strong> Why does \(\sigma_{ij}=C_{ijkl}\varepsilon_{kl}\) for every symmetric strain not determine an unrestricted 81-component array? Give an invisible perturbation and explain the usual remedy.</p>
+<details><summary>Solution</summary><p>Choose \(N_{1212}=a\), \(N_{1221}=-a\) for a nonzero scalar \(a\), with all other N entries zero. Then \(N_{12kl}\varepsilon_{kl}=a\varepsilon_{12}-a\varepsilon_{21}=0\); every other output is zero. Thus C and C+N produce identical stresses for all symmetric strains. More generally only \(C_{ij(kl)}=(C_{ijkl}+C_{ijlk})/2\) is observable on this domain. Choose the minor-symmetric representative \(C_{ijkl}=C_{ijlk}\), then use six independent symmetric strain inputs to identify the map and its transformed components. Symmetric stress similarly constrains the output pair of that representative. Coefficient matching must respect the actual input space.</p></details>
+<p><strong>5. A finite rotation is not a small displacement gradient.</strong> Insert a rigid quarter-turn about the third axis into (14.9). Compare its exact stress with the stress predicted by applying the infinitesimal isotropic law to \(\boldsymbol\varepsilon=\operatorname{sym}(\mathbf R-\mathbf I)\).</p>
+<details><summary>Solution</summary><p>A proper rotation has \(\mathbf R\mathbf R^{\mathsf T}=\mathbf I\) and determinant 1. Equation (14.9) therefore gives zero stress. For the quarter-turn, the upper two diagonal entries of \(\mathbf R-\mathbf I\) are −1, its off-diagonal entries cancel under symmetrization, and the third diagonal is zero. Thus the infinitesimal strain would be \(\operatorname{diag}(-1,-1,0)\), with trace −2. The linear law would predict diagonal stresses \((-2\mu-2\lambda,-2\mu-2\lambda,-2\lambda)\), generally nonzero. The displacement gradient is order one, so this use of the small-gradient approximation is outside its domain. Zero exact strain under a rigid rotation is retained by the finite law.</p></details>
+<p><strong>6. The tutorial network's two clocks.</strong> A standard linear solid has Maxwell spring \(E_1=6\) MPa, parallel spring \(E_2=2\) MPa and dashpot \(\eta=18\) MPa s. Derive its relaxation and creep times, initial and final stress for a held strain 0.005, and initial and final strain for a held stress 0.08 MPa.</p>
+<details><summary>Solution</summary><p>The branch time is \(\tau_r=\eta/E_1=3\) s. Under held strain, branch stress decays while the parallel spring remains loaded; initial modulus is \(E_1+E_2=8\) MPa and final modulus 2 MPa. Thus stresses are 0.04 and 0.01 MPa. Under held stress, (14.10) gives \((E_1+E_2)\dot\varepsilon+(E_1E_2/\eta)\varepsilon=(E_1/\eta)\sigma_0\), so \(\tau_c=\eta(E_1+E_2)/(E_1E_2)=12\) s. Initial strain is \(0.08/8=0.01\); final strain is \(0.08/2=0.04\). The different time constants arise from different imposed variables, not different material parameters. These ideal network predictions do not establish a measured material's small-strain range.</p></details>
+
+<h2 id="sources">Sources and further development</h2>
+<ul><li>NPTEL, Prof. Gaurav Bhutani: <a href="https://www.youtube.com/watch?v=y34--zLl278">L55, Plasticity</a>; <a href="https://www.youtube.com/watch?v=rcHFRFZ7uSw">L56, constitutive tutorial</a>.</li><li>A. F. Bower, <a href="https://solidmechanics.org/Text/Chapter3_7/Chapter3_7.php"><em>Applied Mechanics of Solids</em>, §§3.7.2–3.7.6</a>: elastic/plastic decomposition, yield criteria, hardening and flow rules; <a href="https://solidmechanics.org/Text/Chapter3_5/Chapter3_5.php">§3.5</a>: hyperelastic models; <a href="https://solidmechanics.org/Text/Chapter3_6/Chapter3_6.php">§3.6</a>: linear viscoelastic response. The synthetic return and energy calculations are developed directly.</li><li>P. Jop, Y. Forterre and O. Pouliquen, <a href="https://arxiv.org/abs/cond-mat/0612110">“A constitutive law for dense granular flows,” author preprint</a>, pp. 2–3, Eqs. (1)–(4); published in <a href="https://doi.org/10.1038/nature04801"><em>Nature</em> 441, 727–730 (2006)</a>. The rate tensor there is twice \(\mathbf D\) under this edition's convention.</li></ul>
+<!-- BOOK-CONTENT-END --></article><nav class="page-turn" aria-label="Chapter navigation"><a rel="prev" href="chapter-13-viscous-and-viscoelastic-materials.html">Previous chapter</a><a href="index.html">Chapter index</a><a rel="next" href="chapter-15-linear-fluids-and-navier-stokes.html">Next chapter</a></nav></main></div><footer class="site-footer">Independent study edition. Prof. Gaurav Bhutani’s NPTEL recordings provide the topic spine. Original exposition, source limitations and verification evidence are separately recorded.</footer></body></html>

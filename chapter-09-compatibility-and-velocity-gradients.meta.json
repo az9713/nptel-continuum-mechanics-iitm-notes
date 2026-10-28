@@ -1,0 +1,201 @@
+{
+  "chapter": 9,
+  "title": "Compatibility, finite deformation and velocity gradients",
+  "status": "reviewed — two independent AI reviews",
+  "authored_body_sha256": "111e955917d715ce6c8ce6f9b1a6a092a0deb7ae966a9a737264a855cda8a53d",
+  "recordings": [
+    {
+      "video_id": "JU-yLeqgq_E",
+      "playlist_position": 43,
+      "lecture_label": "Lecture 41",
+      "duration_seconds": 2196,
+      "decoded_audio_duration_seconds": 2195.02875,
+      "complete_decoded_audio": true,
+      "media_sha256": "7fa97f3bfe893a35f5ddc5a2f2d253a275761295cd82678d4ddffdf70be3ec0e",
+      "transcript_first_start": 12.14,
+      "transcript_last_end": 2186.77,
+      "transcript_provenance": "Local faster-whisper small.en machine ASR; not publisher captions"
+    },
+    {
+      "video_id": "aoP5P378ca0",
+      "playlist_position": 44,
+      "lecture_label": "Lecture 42",
+      "duration_seconds": 1621,
+      "decoded_audio_duration_seconds": 1620.334875,
+      "complete_decoded_audio": true,
+      "media_sha256": "af45ba9518b8e0f94a91cd3c8f46ccdb306ab9557eb1602e4d5b2246d6c19107",
+      "transcript_first_start": 11.73,
+      "transcript_last_end": 1612.82,
+      "transcript_provenance": "Local faster-whisper small.en machine ASR; not publisher captions"
+    },
+    {
+      "video_id": "vElQk9dhJ2I",
+      "playlist_position": 45,
+      "lecture_label": "Lecture 43",
+      "duration_seconds": 2031,
+      "decoded_audio_duration_seconds": 2030.910125,
+      "complete_decoded_audio": true,
+      "media_sha256": "84ea9814a7bc3f34c9a5f473e8df66392a028893238f50e431031115a9162866",
+      "transcript_first_start": 11.82,
+      "transcript_last_end": 2023.54,
+      "transcript_provenance": "Local faster-whisper small.en machine ASR; not publisher captions"
+    },
+    {
+      "video_id": "2uzJrpP1yRE",
+      "playlist_position": 46,
+      "lecture_label": "Lecture 44",
+      "duration_seconds": 2242,
+      "decoded_audio_duration_seconds": 2241.329375,
+      "complete_decoded_audio": true,
+      "media_sha256": "07a2f89d7ff0d7fdf734074cb0479511ce0ac6e5d5f2d0f706946d84963b5dd2",
+      "transcript_first_start": 12.21,
+      "transcript_last_end": 2233.97,
+      "transcript_provenance": "Local faster-whisper small.en machine ASR; not publisher captions"
+    },
+    {
+      "video_id": "ylEkEVcAVO8",
+      "playlist_position": 47,
+      "lecture_label": "Lecture 45",
+      "duration_seconds": 2590,
+      "decoded_audio_duration_seconds": 2589.58225,
+      "complete_decoded_audio": true,
+      "media_sha256": "a95b528f588a94db7e7d038acbd180e9736aa63169828be693ed8aa803971feb",
+      "transcript_first_start": 12.05,
+      "transcript_last_end": 2582.38,
+      "transcript_provenance": "Local faster-whisper small.en machine ASR; not publisher captions"
+    }
+  ],
+  "sections": [
+    {
+      "section": "Relative displacement and infinitesimal rotation",
+      "anchor": "rotation",
+      "video_id": "JU-yLeqgq_E",
+      "start": 42,
+      "end": 1157,
+      "lecture_material": "Related lecture topic located by the stated span",
+      "research_extension": "Inspected external support is cited locally in the exposition",
+      "teaching_construction": "Expanded exposition, derivations, numerical checks and exercises are independently authored; an anchor does not attribute every statement to the recording"
+    },
+    {
+      "section": "When prescribed strains come from a displacement",
+      "anchor": "compatibility",
+      "video_id": "JU-yLeqgq_E",
+      "start": 1157,
+      "end": 2186,
+      "lecture_material": "Related lecture topic located by the stated span",
+      "research_extension": "Inspected external support is cited locally in the exposition",
+      "teaching_construction": "Expanded exposition, derivations, numerical checks and exercises are independently authored; an anchor does not attribute every statement to the recording"
+    },
+    {
+      "section": "Finite line stretch, angle and volume",
+      "anchor": "finite-stretch",
+      "video_id": "aoP5P378ca0",
+      "start": 70,
+      "end": 854,
+      "lecture_material": "Related lecture topic located by the stated span",
+      "research_extension": "Inspected external support is cited locally in the exposition",
+      "teaching_construction": "Expanded exposition, derivations, numerical checks and exercises are independently authored; an anchor does not attribute every statement to the recording"
+    },
+    {
+      "section": "Polar decomposition separates finite stretch and rotation",
+      "anchor": "polar",
+      "video_id": "aoP5P378ca0",
+      "start": 860,
+      "end": 1567,
+      "lecture_material": "Related lecture topic located by the stated span",
+      "research_extension": "Inspected external support is cited locally in the exposition",
+      "teaching_construction": "Expanded exposition, derivations, numerical checks and exercises are independently authored; an anchor does not attribute every statement to the recording"
+    },
+    {
+      "section": "Velocity gradient and instantaneous stretching",
+      "anchor": "velocity",
+      "video_id": "vElQk9dhJ2I",
+      "start": 108,
+      "end": 1299,
+      "lecture_material": "Related lecture topic located by the stated span",
+      "research_extension": "Inspected external support is cited locally in the exposition",
+      "teaching_construction": "Expanded exposition, derivations, numerical checks and exercises are independently authored; an anchor does not attribute every statement to the recording"
+    },
+    {
+      "section": "Angle rates and the factor two in shear",
+      "anchor": "angle-rate",
+      "video_id": "vElQk9dhJ2I",
+      "start": 1300,
+      "end": 2023,
+      "lecture_material": "Related lecture topic located by the stated span",
+      "research_extension": "Inspected external support is cited locally in the exposition",
+      "teaching_construction": "Expanded exposition, derivations, numerical checks and exercises are independently authored; an anchor does not attribute every statement to the recording"
+    },
+    {
+      "section": "Spin, vorticity and polar rotation are distinct",
+      "anchor": "spin",
+      "video_id": "2uzJrpP1yRE",
+      "start": 73,
+      "end": 2234,
+      "lecture_material": "Related lecture topic located by the stated span",
+      "research_extension": "Inspected external support is cited locally in the exposition",
+      "teaching_construction": "Expanded exposition, derivations, numerical checks and exercises are independently authored; an anchor does not attribute every statement to the recording"
+    },
+    {
+      "section": "The ninth tutorial: six mechanisms in one sequence",
+      "anchor": "tutorial",
+      "video_id": "ylEkEVcAVO8",
+      "start": 38,
+      "end": 2582,
+      "lecture_material": "Related lecture topic located by the stated span",
+      "research_extension": "Inspected external support is cited locally in the exposition",
+      "teaching_construction": "Expanded exposition, derivations, numerical checks and exercises are independently authored; an anchor does not attribute every statement to the recording"
+    },
+    {
+      "section": "Executable model: finite shear and three rotation rates",
+      "anchor": "implementation",
+      "video_id": null,
+      "start": null,
+      "end": null,
+      "lecture_material": "",
+      "research_extension": "Inspected external support is cited locally in the exposition",
+      "teaching_construction": "Expanded exposition, derivations, numerical checks and exercises are independently authored; an anchor does not attribute every statement to the recording"
+    },
+    {
+      "section": "Exercises with worked solutions",
+      "anchor": "exercises",
+      "video_id": null,
+      "start": null,
+      "end": null,
+      "lecture_material": "",
+      "research_extension": "Inspected external support is cited locally in the exposition",
+      "teaching_construction": "Expanded exposition, derivations, numerical checks and exercises are independently authored; an anchor does not attribute every statement to the recording"
+    },
+    {
+      "section": "What the distinctions prevent",
+      "anchor": "limits",
+      "video_id": null,
+      "start": null,
+      "end": null,
+      "lecture_material": "",
+      "research_extension": "Inspected external support is cited locally in the exposition",
+      "teaching_construction": "Expanded exposition, derivations, numerical checks and exercises are independently authored; an anchor does not attribute every statement to the recording"
+    },
+    {
+      "section": "Sources",
+      "anchor": "sources",
+      "video_id": null,
+      "start": null,
+      "end": null,
+      "lecture_material": "",
+      "research_extension": "Inspected external support is cited locally in the exposition",
+      "teaching_construction": "Expanded exposition, derivations, numerical checks and exercises are independently authored; an anchor does not attribute every statement to the recording"
+    }
+  ],
+  "references": [
+    {
+      "url": "https://solidmechanics.org/Text/Chapter2_2/Chapter2_2.php",
+      "title": "Applied Mechanics of Solids , §§2.2.13–2.2.18",
+      "supports": "Specific claim and locator are given beside the citation in chapter-09-compatibility-and-velocity-gradients.html"
+    }
+  ],
+  "prose_words_including_math": 3827,
+  "solution_count": 8,
+  "executable_listing_count": 1,
+  "visual_boundary": "No comprehensive visual transcription or full audiovisual review is claimed. ASR cannot recover every board input; uncertain inputs are qualified locally."
+}

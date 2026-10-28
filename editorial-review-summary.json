@@ -1,0 +1,507 @@
+{
+  "status": "accepted",
+  "chapter_count": 20,
+  "accepted_review_count": 40,
+  "independence": "For each chapter, two separately assigned AI reviewers differ from its author and from one another. This is AI manuscript review, not external human peer review or formal proof verification.",
+  "scope": "Complete manuscripts and solutions read; targeted ASR and primary sources checked; embedded code independently executed. First authors report sequential full assigned-transcript reading. Reviewers did not each repeat full audiovisual source review.",
+  "resolved_findings": [
+    {
+      "chapter": 9,
+      "repair": "Correct dilation wording for F=2I."
+    },
+    {
+      "chapter": 11,
+      "repair": "Correct specific-energy rate versus density units."
+    },
+    {
+      "chapter": 12,
+      "repair": "Clarify equality of elastic operator and stored-energy derivative; retain verified code output."
+    },
+    {
+      "chapter": 15,
+      "repair": "Define fluid stress/rate/body-force notation and units locally."
+    },
+    {
+      "chapter": 19,
+      "repair": "Correct Bower volume-rate locator from section2.2.6 to2.2.24."
+    },
+    {
+      "chapter": 20,
+      "repair": "Add local fluid notation and units in discussion recap."
+    }
+  ],
+  "chapters": [
+    {
+      "chapter": 1,
+      "file": "chapter-01-continuum-tensors-index-notation.html",
+      "author": "Primary author",
+      "authored_body_sha256": "b1fef42421670be53e3b4d2ca0eaf279889d1fda7c451bafaf6d34c35fe84025",
+      "reviews": [
+        {
+          "round": 1,
+          "reviewer": "AI scientific reviewer C",
+          "verdict": "accepted",
+          "authored_body_sha256": "b1fef42421670be53e3b4d2ca0eaf279889d1fda7c451bafaf6d34c35fe84025",
+          "private_review_record_sha256": "c2dccdf261ca726ca53874dc41ee2747b279e60438e10d84820dbb26bafa3223"
+        },
+        {
+          "round": 2,
+          "reviewer": "AI scientific reviewer A",
+          "verdict": "accepted",
+          "authored_body_sha256": "b1fef42421670be53e3b4d2ca0eaf279889d1fda7c451bafaf6d34c35fe84025",
+          "private_review_record_sha256": "9e57ec014bb08b276c1f912b8c7aed8bcd49c902023ef4dd1fec1fc870b8bae3"
+        }
+      ],
+      "unresolved_blocking_findings": 0
+    },
+    {
+      "chapter": 2,
+      "file": "chapter-02-alternating-tensors-and-algebra.html",
+      "author": "Scientific rewriter A",
+      "authored_body_sha256": "6b3abe8a7298a815fe83e250faf397fb7c5351fced48ce6de0fe01628ce39c39",
+      "reviews": [
+        {
+          "round": 1,
+          "reviewer": "AI scientific reviewer B",
+          "verdict": "accepted",
+          "authored_body_sha256": "6b3abe8a7298a815fe83e250faf397fb7c5351fced48ce6de0fe01628ce39c39",
+          "private_review_record_sha256": "ffe14334347ee67d0c80ee74325aa75eb77a5dd26a3d0f5ed6db9f1cb1316fd6"
+        },
+        {
+          "round": 2,
+          "reviewer": "AI scientific reviewer C",
+          "verdict": "accepted",
+          "authored_body_sha256": "6b3abe8a7298a815fe83e250faf397fb7c5351fced48ce6de0fe01628ce39c39",
+          "private_review_record_sha256": "8ac9ffdf91b445941a1c238005ded9263079ecf4ce26dd4c9815ead0c0dd689d"
+        }
+      ],
+      "unresolved_blocking_findings": 0
+    },
+    {
+      "chapter": 3,
+      "file": "chapter-03-determinants-transformations-isotropy.html",
+      "author": "Scientific rewriter A",
+      "authored_body_sha256": "0a4e16e516398496e59e3921ae020791928168760f2b532ee0fd1a7e8facff00",
+      "reviews": [
+        {
+          "round": 1,
+          "reviewer": "AI scientific reviewer B",
+          "verdict": "accepted",
+          "authored_body_sha256": "0a4e16e516398496e59e3921ae020791928168760f2b532ee0fd1a7e8facff00",
+          "private_review_record_sha256": "f5f0613bc64d2bebb2b51e3cb30c87ef6d4e81b30a74df69a04a3b751b1d4bed"
+        },
+        {
+          "round": 2,
+          "reviewer": "AI scientific reviewer C",
+          "verdict": "accepted",
+          "authored_body_sha256": "0a4e16e516398496e59e3921ae020791928168760f2b532ee0fd1a7e8facff00",
+          "private_review_record_sha256": "12fd57296dae079929e545ea1ab3e00927d19d32aa165b52ca3b712695f771b5"
+        }
+      ],
+      "unresolved_blocking_findings": 0
+    },
+    {
+      "chapter": 4,
+      "file": "chapter-04-principal-directions-tensor-calculus.html",
+      "author": "Scientific rewriter B",
+      "authored_body_sha256": "03be9db870c34dabb5049a50ad83e20c67965fc60932b50756d309b39a8611c3",
+      "reviews": [
+        {
+          "round": 1,
+          "reviewer": "AI scientific reviewer A",
+          "verdict": "accepted",
+          "authored_body_sha256": "03be9db870c34dabb5049a50ad83e20c67965fc60932b50756d309b39a8611c3",
+          "private_review_record_sha256": "5fa6a710ba5893bc67ef7116f29e940336a2740a0997b905765befc7cff22671"
+        },
+        {
+          "round": 2,
+          "reviewer": "AI scientific reviewer C",
+          "verdict": "accepted",
+          "authored_body_sha256": "03be9db870c34dabb5049a50ad83e20c67965fc60932b50756d309b39a8611c3",
+          "private_review_record_sha256": "d9c706740d5336275ab0e22821162be25d22cc4e3dd73222b2b5d59652ac0df5"
+        }
+      ],
+      "unresolved_blocking_findings": 0
+    },
+    {
+      "chapter": 5,
+      "file": "chapter-05-traction-cauchy-stress-equilibrium.html",
+      "author": "Scientific rewriter B",
+      "authored_body_sha256": "44bbf9e203f6f2ec0bb4e43fa789608559d68dfe2924e1e3b7164fac0a0ad9ee",
+      "reviews": [
+        {
+          "round": 1,
+          "reviewer": "AI scientific reviewer A",
+          "verdict": "accepted",
+          "authored_body_sha256": "44bbf9e203f6f2ec0bb4e43fa789608559d68dfe2924e1e3b7164fac0a0ad9ee",
+          "private_review_record_sha256": "71596fa4803d482867c0e0ef54f5762012990762c69a8c3fac66e7ff9e92644e"
+        },
+        {
+          "round": 2,
+          "reviewer": "AI scientific reviewer C",
+          "verdict": "accepted",
+          "authored_body_sha256": "44bbf9e203f6f2ec0bb4e43fa789608559d68dfe2924e1e3b7164fac0a0ad9ee",
+          "private_review_record_sha256": "4e761de52f1d0dff3ac7d10c2fe18bd0d58824db8e669a40978ed1efa9869747"
+        }
+      ],
+      "unresolved_blocking_findings": 0
+    },
+    {
+      "chapter": 6,
+      "file": "chapter-06-principal-stresses-mohr-invariants.html",
+      "author": "Scientific rewriter C",
+      "authored_body_sha256": "e9616a7d79288a56b50e6ecf7aa05244b4f828179604886ecea4532110c5184c",
+      "reviews": [
+        {
+          "round": 1,
+          "reviewer": "AI scientific reviewer A",
+          "verdict": "accepted",
+          "authored_body_sha256": "e9616a7d79288a56b50e6ecf7aa05244b4f828179604886ecea4532110c5184c",
+          "private_review_record_sha256": "4c3a304c241f0c723dd96a8885a6f5c1115ae8ff6756b4a75d27f5a7b06c6966"
+        },
+        {
+          "round": 2,
+          "reviewer": "AI scientific reviewer B",
+          "verdict": "accepted",
+          "authored_body_sha256": "e9616a7d79288a56b50e6ecf7aa05244b4f828179604886ecea4532110c5184c",
+          "private_review_record_sha256": "3f5520e4131dc24e2a5ca9145185b9fbb4b6ab75844b9ef3c597bbde4e6e6536"
+        }
+      ],
+      "unresolved_blocking_findings": 0
+    },
+    {
+      "chapter": 7,
+      "file": "chapter-07-motion-material-derivative.html",
+      "author": "Scientific rewriter C",
+      "authored_body_sha256": "47be250f716371f9e22057b35dd083ecc4fd6f33256356277e7fedd6133e5403",
+      "reviews": [
+        {
+          "round": 1,
+          "reviewer": "AI scientific reviewer B",
+          "verdict": "accepted",
+          "authored_body_sha256": "47be250f716371f9e22057b35dd083ecc4fd6f33256356277e7fedd6133e5403",
+          "private_review_record_sha256": "05c41986feb6ae78f3bb68fcad6bd83e4fab2656d325a7b560347890d1bb760f"
+        },
+        {
+          "round": 2,
+          "reviewer": "AI scientific reviewer A",
+          "verdict": "accepted",
+          "authored_body_sha256": "47be250f716371f9e22057b35dd083ecc4fd6f33256356277e7fedd6133e5403",
+          "private_review_record_sha256": "7f10774869da7f677bea2d7c572aeffc637318284f50fe4ed1ec297c6a909393"
+        }
+      ],
+      "unresolved_blocking_findings": 0
+    },
+    {
+      "chapter": 8,
+      "file": "chapter-08-deformation-and-strain.html",
+      "author": "Scientific rewriter C",
+      "authored_body_sha256": "5ebc5e0c2b2068470f18347486eadf7cfafa00288bcedad9d7064406747757df",
+      "reviews": [
+        {
+          "round": 1,
+          "reviewer": "AI scientific reviewer B",
+          "verdict": "accepted",
+          "authored_body_sha256": "5ebc5e0c2b2068470f18347486eadf7cfafa00288bcedad9d7064406747757df",
+          "private_review_record_sha256": "0dab65bf2a9f78a090349774d8c9756e01d000b4c2a7e7ad822a42d7c00b4f8a"
+        },
+        {
+          "round": 2,
+          "reviewer": "AI scientific reviewer A",
+          "verdict": "accepted",
+          "authored_body_sha256": "5ebc5e0c2b2068470f18347486eadf7cfafa00288bcedad9d7064406747757df",
+          "private_review_record_sha256": "eb9738983533cc083775989535034066556625a6bd59ef1dace0ce4ec246c907"
+        }
+      ],
+      "unresolved_blocking_findings": 0
+    },
+    {
+      "chapter": 9,
+      "file": "chapter-09-compatibility-and-velocity-gradients.html",
+      "author": "Scientific rewriter B",
+      "authored_body_sha256": "111e955917d715ce6c8ce6f9b1a6a092a0deb7ae966a9a737264a855cda8a53d",
+      "reviews": [
+        {
+          "round": 1,
+          "reviewer": "AI scientific reviewer A",
+          "verdict": "accepted",
+          "authored_body_sha256": "111e955917d715ce6c8ce6f9b1a6a092a0deb7ae966a9a737264a855cda8a53d",
+          "private_review_record_sha256": "41d3c4a9500a50fc54d36dd521109aab62273c4731ad70941c300ea2036a82ee"
+        },
+        {
+          "round": 2,
+          "reviewer": "AI scientific reviewer C",
+          "verdict": "accepted",
+          "authored_body_sha256": "111e955917d715ce6c8ce6f9b1a6a092a0deb7ae966a9a737264a855cda8a53d",
+          "private_review_record_sha256": "ad8576d16a529a61c176dc044c3e4f763e5cc50b379f905661c3adc04a41e564"
+        }
+      ],
+      "unresolved_blocking_findings": 0
+    },
+    {
+      "chapter": 10,
+      "file": "chapter-10-transport-and-balance-laws.html",
+      "author": "Scientific rewriter B",
+      "authored_body_sha256": "e95f0de958bdd7c5e60794137f96618786c40d830856adb371f2a7fde59761a5",
+      "reviews": [
+        {
+          "round": 1,
+          "reviewer": "AI scientific reviewer C",
+          "verdict": "accepted",
+          "authored_body_sha256": "e95f0de958bdd7c5e60794137f96618786c40d830856adb371f2a7fde59761a5",
+          "private_review_record_sha256": "ff1b644ca3be0259ff9e35c99686ddfe0d01dce7dfe91d4b53f7ff32a83f3332"
+        },
+        {
+          "round": 2,
+          "reviewer": "AI scientific reviewer A",
+          "verdict": "accepted",
+          "authored_body_sha256": "e95f0de958bdd7c5e60794137f96618786c40d830856adb371f2a7fde59761a5",
+          "private_review_record_sha256": "5a95e1f7f5536f5a12dabe29da801154eb1b1f9f69e969ec412aa9f5e3aa5aa0"
+        }
+      ],
+      "unresolved_blocking_findings": 0
+    },
+    {
+      "chapter": 11,
+      "file": "chapter-11-constitutive-closure-and-objectivity.html",
+      "author": "Primary author",
+      "authored_body_sha256": "fe115c8af68226e25ec9856d2c8d8cb3849e2a3ade315be114b39d0258d4fcd5",
+      "reviews": [
+        {
+          "round": 1,
+          "reviewer": "AI scientific reviewer A",
+          "verdict": "accepted",
+          "authored_body_sha256": "fe115c8af68226e25ec9856d2c8d8cb3849e2a3ade315be114b39d0258d4fcd5",
+          "private_review_record_sha256": "68bf4aa2a0aec759514671903ecc9e224cfda7d0076c8e3e96cfdc6d05aa3fa3"
+        },
+        {
+          "round": 2,
+          "reviewer": "AI scientific reviewer C",
+          "verdict": "accepted",
+          "authored_body_sha256": "fe115c8af68226e25ec9856d2c8d8cb3849e2a3ade315be114b39d0258d4fcd5",
+          "private_review_record_sha256": "cd25d7029026f6bc08475ad38b93982d97c358318a1673db57dcb3a3718a6ca8"
+        }
+      ],
+      "unresolved_blocking_findings": 0
+    },
+    {
+      "chapter": 12,
+      "file": "chapter-12-linear-and-hyperelasticity.html",
+      "author": "Primary author",
+      "authored_body_sha256": "215f3294255f321f076c6e7f21251efbd143d889bf13b7bbedbbb2155ce7a617",
+      "reviews": [
+        {
+          "round": 1,
+          "reviewer": "AI scientific reviewer B",
+          "verdict": "accepted",
+          "authored_body_sha256": "215f3294255f321f076c6e7f21251efbd143d889bf13b7bbedbbb2155ce7a617",
+          "private_review_record_sha256": "2c8a2867da02b77b5c3bd9e87885be887a5519b5193eb0a84db3705a80d623c6"
+        },
+        {
+          "round": 2,
+          "reviewer": "AI scientific reviewer A",
+          "verdict": "accepted",
+          "authored_body_sha256": "215f3294255f321f076c6e7f21251efbd143d889bf13b7bbedbbb2155ce7a617",
+          "private_review_record_sha256": "bd69ed5fcb7d80c2dc723039d9b9fb4029e0bec3b796cf6d5654c97d2afbc226"
+        }
+      ],
+      "unresolved_blocking_findings": 0
+    },
+    {
+      "chapter": 13,
+      "file": "chapter-13-viscous-and-viscoelastic-materials.html",
+      "author": "Scientific rewriter A",
+      "authored_body_sha256": "68a8043b6bd4796097beab361b95e578a5f6125fcd75a5472dd2bca1ceeb0b13",
+      "reviews": [
+        {
+          "round": 1,
+          "reviewer": "AI scientific reviewer C",
+          "verdict": "accepted",
+          "authored_body_sha256": "68a8043b6bd4796097beab361b95e578a5f6125fcd75a5472dd2bca1ceeb0b13",
+          "private_review_record_sha256": "d720ad4b109d3f29d7224db6995e755c20fe951fc52865571a09acfc6d6a9fda"
+        },
+        {
+          "round": 2,
+          "reviewer": "AI scientific reviewer B",
+          "verdict": "accepted",
+          "authored_body_sha256": "68a8043b6bd4796097beab361b95e578a5f6125fcd75a5472dd2bca1ceeb0b13",
+          "private_review_record_sha256": "20bc8fae909592394d9e7e101ac5a2e234bb2e12e8a52217cff9fec897f31d20"
+        }
+      ],
+      "unresolved_blocking_findings": 0
+    },
+    {
+      "chapter": 14,
+      "file": "chapter-14-plasticity-and-constitutive-problems.html",
+      "author": "Scientific rewriter A",
+      "authored_body_sha256": "ba507ca63132f1227c4eee2a2fe5b1b4bf35dcd387b3ec076527365e52605a8e",
+      "reviews": [
+        {
+          "round": 1,
+          "reviewer": "AI scientific reviewer C",
+          "verdict": "accepted",
+          "authored_body_sha256": "ba507ca63132f1227c4eee2a2fe5b1b4bf35dcd387b3ec076527365e52605a8e",
+          "private_review_record_sha256": "8d51ce5f57b73f871681968380b40f9d0bcad3e76b3c1ca3e2b23ad1c46a81ea"
+        },
+        {
+          "round": 2,
+          "reviewer": "AI scientific reviewer B",
+          "verdict": "accepted",
+          "authored_body_sha256": "ba507ca63132f1227c4eee2a2fe5b1b4bf35dcd387b3ec076527365e52605a8e",
+          "private_review_record_sha256": "3ac105352e5ca3371f091e9e00141b355c087d068f6cd823ad36f141f4ad37f7"
+        }
+      ],
+      "unresolved_blocking_findings": 0
+    },
+    {
+      "chapter": 15,
+      "file": "chapter-15-linear-fluids-and-navier-stokes.html",
+      "author": "Primary author",
+      "authored_body_sha256": "9215ed29025a7da08ee7ce8ff154c9b96b3ccd0873899cb2b92cbef5195d36e0",
+      "reviews": [
+        {
+          "round": 1,
+          "reviewer": "AI scientific reviewer C",
+          "verdict": "accepted",
+          "authored_body_sha256": "9215ed29025a7da08ee7ce8ff154c9b96b3ccd0873899cb2b92cbef5195d36e0",
+          "private_review_record_sha256": "ecc29efb2648e437120a4aa168e645320f8c675068d48af81249ca520d117f73"
+        },
+        {
+          "round": 2,
+          "reviewer": "AI scientific reviewer A",
+          "verdict": "accepted",
+          "authored_body_sha256": "9215ed29025a7da08ee7ce8ff154c9b96b3ccd0873899cb2b92cbef5195d36e0",
+          "private_review_record_sha256": "bcf789e6aebd453c3e2a5b160266983ddd29e08f2be25eb280df94e4d2c9c5fd"
+        }
+      ],
+      "unresolved_blocking_findings": 0
+    },
+    {
+      "chapter": 16,
+      "file": "chapter-16-course-synthesis.html",
+      "author": "Primary author",
+      "authored_body_sha256": "320e56f7487f591354c96194fd7a995ef05de63f4637ba848d012f1920b76e63",
+      "reviews": [
+        {
+          "round": 1,
+          "reviewer": "AI scientific reviewer A",
+          "verdict": "accepted",
+          "authored_body_sha256": "320e56f7487f591354c96194fd7a995ef05de63f4637ba848d012f1920b76e63",
+          "private_review_record_sha256": "0e19dc7bd0d6025223dfb692af5eddad3fcdcb36a5b554ffa196800dd2f3c6f4"
+        },
+        {
+          "round": 2,
+          "reviewer": "AI scientific reviewer C",
+          "verdict": "accepted",
+          "authored_body_sha256": "320e56f7487f591354c96194fd7a995ef05de63f4637ba848d012f1920b76e63",
+          "private_review_record_sha256": "e1d2be0a560548f7b149ab424a8056b1f773808bd8d34f1afce6c98a13542d69"
+        }
+      ],
+      "unresolved_blocking_findings": 0
+    },
+    {
+      "chapter": 17,
+      "file": "chapter-17-live-tensor-and-stress-foundations.html",
+      "author": "Scientific rewriter C",
+      "authored_body_sha256": "7dafcb667e36fa241c5f701d9181f0a7ef3708f7e5915d46df364700a81a5209",
+      "reviews": [
+        {
+          "round": 1,
+          "reviewer": "AI scientific reviewer B",
+          "verdict": "accepted",
+          "authored_body_sha256": "7dafcb667e36fa241c5f701d9181f0a7ef3708f7e5915d46df364700a81a5209",
+          "private_review_record_sha256": "e5d4980cfd75169547206f8d00f64c1323926169ff12a5a7680230a7db3901a8"
+        },
+        {
+          "round": 2,
+          "reviewer": "AI scientific reviewer A",
+          "verdict": "accepted",
+          "authored_body_sha256": "7dafcb667e36fa241c5f701d9181f0a7ef3708f7e5915d46df364700a81a5209",
+          "private_review_record_sha256": "f1a89b05ba5685c303e54e4c70990650bea0801c2401f7f5381d06dcfc3855c8"
+        }
+      ],
+      "unresolved_blocking_findings": 0
+    },
+    {
+      "chapter": 18,
+      "file": "chapter-18-live-configurations-motion-strain.html",
+      "author": "Scientific rewriter C",
+      "authored_body_sha256": "dad096eade3c28ab8a3ac7d2b01b32080062acb2436d0a7ad4ef0f209b9d7561",
+      "reviews": [
+        {
+          "round": 1,
+          "reviewer": "AI scientific reviewer A",
+          "verdict": "accepted",
+          "authored_body_sha256": "dad096eade3c28ab8a3ac7d2b01b32080062acb2436d0a7ad4ef0f209b9d7561",
+          "private_review_record_sha256": "3b6b4f03949932661f4b34bd9ba106f81726411c7a9b12a449cc11462957261e"
+        },
+        {
+          "round": 2,
+          "reviewer": "AI scientific reviewer B",
+          "verdict": "accepted",
+          "authored_body_sha256": "dad096eade3c28ab8a3ac7d2b01b32080062acb2436d0a7ad4ef0f209b9d7561",
+          "private_review_record_sha256": "4f9f137458bb0e7ef1dc5469a95c1791528add40a8b1d02afee77f9b0646ed69"
+        }
+      ],
+      "unresolved_blocking_findings": 0
+    },
+    {
+      "chapter": 19,
+      "file": "chapter-19-live-transport-balance-laws.html",
+      "author": "Scientific rewriter C",
+      "authored_body_sha256": "8aaa75ebdbc163e486d21cc6d66c202ce3ec2b1763e932b584937becae32c206",
+      "reviews": [
+        {
+          "round": 1,
+          "reviewer": "AI scientific reviewer A",
+          "verdict": "accepted",
+          "authored_body_sha256": "8aaa75ebdbc163e486d21cc6d66c202ce3ec2b1763e932b584937becae32c206",
+          "private_review_record_sha256": "bc07ee0e62fd62e60315b272326dd926b3c5d2ddf3b48993577c17b12fe5de1c"
+        },
+        {
+          "round": 2,
+          "reviewer": "AI scientific reviewer B",
+          "verdict": "accepted",
+          "authored_body_sha256": "8aaa75ebdbc163e486d21cc6d66c202ce3ec2b1763e932b584937becae32c206",
+          "private_review_record_sha256": "e33b647e675f559d4f6c95c5e24b7d64247fcf3d91349880e0d18378baac0a67"
+        }
+      ],
+      "unresolved_blocking_findings": 0
+    },
+    {
+      "chapter": 20,
+      "file": "chapter-20-live-constitutive-models-fluids.html",
+      "author": "Scientific rewriter C",
+      "authored_body_sha256": "e50b7d73f946c18ea8c3774831baf8cedbd5ce1e8f7adfc0ccf8a1785310f68a",
+      "reviews": [
+        {
+          "round": 1,
+          "reviewer": "AI scientific reviewer B",
+          "verdict": "accepted",
+          "authored_body_sha256": "e50b7d73f946c18ea8c3774831baf8cedbd5ce1e8f7adfc0ccf8a1785310f68a",
+          "private_review_record_sha256": "630c0c137b1d5b59821b509e6d2d0034cdb1e362fa4e6d42250b618ebabfddc4"
+        },
+        {
+          "round": 2,
+          "reviewer": "AI scientific reviewer A",
+          "verdict": "accepted",
+          "authored_body_sha256": "e50b7d73f946c18ea8c3774831baf8cedbd5ce1e8f7adfc0ccf8a1785310f68a",
+          "private_review_record_sha256": "845f82a461ae02cdc04a6f16e8a9fbddd9fff37eb6a2c7b4ffb08394912cc362"
+        }
+      ],
+      "unresolved_blocking_findings": 0
+    }
+  ],
+  "supporting_material": {
+    "verdict": "accepted",
+    "reviewer": "AI scientific reviewer B",
+    "scope": "Book route, prescribed-kinematics lab, JavaScript formulas/48 constructed states, and Python model checks; separate UI verification.",
+    "private_review_record_sha256": "6e11d15d70eb1beda08f6f2dcc87bd6df8b29fbff13b35a08373c686056a9758",
+    "authored_files": {
+      "book-overview.html": "b6365eeb53eabc48d9093e704c92dff673a628feef907e702d3ba03cd13e8957",
+      "numerical-lab.html BOOK-CONTENT": "351e74d04cb5c77dd39889d27453bddd1dca748fafad5897a53ea5bea1cd3590",
+      "assets/lab.js": "be8d1c4d2946ff6e4ce55b1fcbbdc15da137fe7e9849a3db783d022c7b2a529d",
+      "numerical_lab.py": "24ad0c3de2513b0095bbcaeb01c92cf87d442732b996d8ff97c7d5d8c0b377ec"
+    }
+  }
+}

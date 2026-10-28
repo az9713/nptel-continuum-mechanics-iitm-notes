@@ -1,0 +1,169 @@
+{
+  "chapter": 16,
+  "title": "The course in perspective: a connected mechanics problem",
+  "status": "reviewed — two independent AI reviews",
+  "authored_body_sha256": "320e56f7487f591354c96194fd7a995ef05de63f4637ba848d012f1920b76e63",
+  "recordings": [
+    {
+      "video_id": "io3znckKdxY",
+      "playlist_position": 1,
+      "lecture_label": "Course introduction",
+      "duration_seconds": 269,
+      "decoded_audio_duration_seconds": 268.562,
+      "complete_decoded_audio": true,
+      "media_sha256": "51da65fb29729e5d84ea864fe2b4db57761718e193e1f8122ce525563684b287",
+      "transcript_first_start": 19.6,
+      "transcript_last_end": 262.93,
+      "transcript_provenance": "Local faster-whisper small.en machine ASR; not publisher captions"
+    },
+    {
+      "video_id": "Go6OCRFcbk8",
+      "playlist_position": 62,
+      "lecture_label": "Lecture 60",
+      "duration_seconds": 1284,
+      "decoded_audio_duration_seconds": 1283.6455625,
+      "complete_decoded_audio": true,
+      "media_sha256": "128e34768f5b2f379a8e784a428e04648c6517315612f538d8b8712ad9f763d6",
+      "transcript_first_start": 12.46,
+      "transcript_last_end": 1275.82,
+      "transcript_provenance": "Local faster-whisper small.en machine ASR; not publisher captions"
+    }
+  ],
+  "sections": [
+    {
+      "section": "Mathematical foundations and what they enable",
+      "anchor": "course-route",
+      "video_id": "Go6OCRFcbk8",
+      "start": 66,
+      "end": 404,
+      "lecture_material": "Related lecture topic located by the stated span",
+      "research_extension": "Inspected external support is cited locally in the exposition",
+      "teaching_construction": "Expanded exposition, derivations, numerical checks and exercises are independently authored; an anchor does not attribute every statement to the recording"
+    },
+    {
+      "section": "Stress is a local map with boundary consequences",
+      "anchor": "stress-route",
+      "video_id": "Go6OCRFcbk8",
+      "start": 404,
+      "end": 557,
+      "lecture_material": "Related lecture topic located by the stated span",
+      "research_extension": "Inspected external support is cited locally in the exposition",
+      "teaching_construction": "Expanded exposition, derivations, numerical checks and exercises are independently authored; an anchor does not attribute every statement to the recording"
+    },
+    {
+      "section": "Kinematics separates motion from metric change",
+      "anchor": "kinematic-route",
+      "video_id": "Go6OCRFcbk8",
+      "start": 557,
+      "end": 777,
+      "lecture_material": "Related lecture topic located by the stated span",
+      "research_extension": "Inspected external support is cited locally in the exposition",
+      "teaching_construction": "Expanded exposition, derivations, numerical checks and exercises are independently authored; an anchor does not attribute every statement to the recording"
+    },
+    {
+      "section": "Transport makes the balance laws usable",
+      "anchor": "balance-route",
+      "video_id": "Go6OCRFcbk8",
+      "start": 777,
+      "end": 873,
+      "lecture_material": "Related lecture topic located by the stated span",
+      "research_extension": "Inspected external support is cited locally in the exposition",
+      "teaching_construction": "Expanded exposition, derivations, numerical checks and exercises are independently authored; an anchor does not attribute every statement to the recording"
+    },
+    {
+      "section": "Constitutive laws complete a specified model",
+      "anchor": "closure-route",
+      "video_id": "Go6OCRFcbk8",
+      "start": 873,
+      "end": 1056,
+      "lecture_material": "Related lecture topic located by the stated span",
+      "research_extension": "Inspected external support is cited locally in the exposition",
+      "teaching_construction": "Expanded exposition, derivations, numerical checks and exercises are independently authored; an anchor does not attribute every statement to the recording"
+    },
+    {
+      "section": "Prescribe an admissible motion",
+      "anchor": "kinematics",
+      "video_id": null,
+      "start": null,
+      "end": null,
+      "lecture_material": "",
+      "research_extension": "Inspected external support is cited locally in the exposition",
+      "teaching_construction": "Expanded exposition, derivations, numerical checks and exercises are independently authored; an anchor does not attribute every statement to the recording"
+    },
+    {
+      "section": "Choose a material law",
+      "anchor": "material",
+      "video_id": null,
+      "start": null,
+      "end": null,
+      "lecture_material": "",
+      "research_extension": "Inspected external support is cited locally in the exposition",
+      "teaching_construction": "Expanded exposition, derivations, numerical checks and exercises are independently authored; an anchor does not attribute every statement to the recording"
+    },
+    {
+      "section": "Enforce balance and boundary data",
+      "anchor": "balance",
+      "video_id": null,
+      "start": null,
+      "end": null,
+      "lecture_material": "",
+      "research_extension": "Inspected external support is cited locally in the exposition",
+      "teaching_construction": "Expanded exposition, derivations, numerical checks and exercises are independently authored; an anchor does not attribute every statement to the recording"
+    },
+    {
+      "section": "Separate checks by their purpose",
+      "anchor": "verification",
+      "video_id": null,
+      "start": null,
+      "end": null,
+      "lecture_material": "",
+      "research_extension": "Inspected external support is cited locally in the exposition",
+      "teaching_construction": "Expanded exposition, derivations, numerical checks and exercises are independently authored; an anchor does not attribute every statement to the recording"
+    },
+    {
+      "section": "A route into advanced mechanics",
+      "anchor": "route",
+      "video_id": null,
+      "start": null,
+      "end": null,
+      "lecture_material": "",
+      "research_extension": "Inspected external support is cited locally in the exposition",
+      "teaching_construction": "Expanded exposition, derivations, numerical checks and exercises are independently authored; an anchor does not attribute every statement to the recording"
+    },
+    {
+      "section": "One connected executable check",
+      "anchor": "code",
+      "video_id": null,
+      "start": null,
+      "end": null,
+      "lecture_material": "",
+      "research_extension": "Inspected external support is cited locally in the exposition",
+      "teaching_construction": "Expanded exposition, derivations, numerical checks and exercises are independently authored; an anchor does not attribute every statement to the recording"
+    },
+    {
+      "section": "Exercises with worked solutions",
+      "anchor": "exercises",
+      "video_id": null,
+      "start": null,
+      "end": null,
+      "lecture_material": "",
+      "research_extension": "Inspected external support is cited locally in the exposition",
+      "teaching_construction": "Expanded exposition, derivations, numerical checks and exercises are independently authored; an anchor does not attribute every statement to the recording"
+    },
+    {
+      "section": "Sources and synthesis boundary",
+      "anchor": "sources",
+      "video_id": null,
+      "start": null,
+      "end": null,
+      "lecture_material": "",
+      "research_extension": "Inspected external support is cited locally in the exposition",
+      "teaching_construction": "Expanded exposition, derivations, numerical checks and exercises are independently authored; an anchor does not attribute every statement to the recording"
+    }
+  ],
+  "references": [],
+  "prose_words_including_math": 2434,
+  "solution_count": 6,
+  "executable_listing_count": 1,
+  "visual_boundary": "No comprehensive visual transcription or full audiovisual review is claimed. ASR cannot recover every board input; uncertain inputs are qualified locally."
+}

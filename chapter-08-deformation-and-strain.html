@@ -1,0 +1,200 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="color-scheme" content="dark light"><meta name="book-content-sha256" content="5ebc5e0c2b2068470f18347486eadf7cfafa00288bcedad9d7064406747757df">
+<title>Deformation gradients and finite and infinitesimal strain · Foundations of Continuum Mechanics</title><link rel="stylesheet" href="assets/book.css">
+<script>window.MathJax={tex:{inlineMath:[['$','$'],['\\(','\\)']],displayMath:[['$$','$$'],['\\[','\\]']],processEscapes:true},svg:{fontCache:'local'},options:{skipHtmlTags:['script','noscript','style','textarea','pre','code']}};</script>
+<script defer src="assets/mathjax-tex-svg.js"></script><script defer src="assets/book.js"></script></head>
+<body><a class="skip" href="#main">Skip to content</a><header class="site-header"><a class="brand" href="index.html">Foundations of Continuum Mechanics · NPTEL IIT Mandi</a><nav class="course-nav" aria-label="Book"><a href="index.html">Chapters</a><a href="source-map.html">Source map</a><a href="references.html">References</a><a href="numerical-lab.html">Numerical lab</a></nav></header>
+<div class="layout"><aside class="toc" id="chapter-toc" aria-label="On this page"><h2>On this page</h2></aside><main id="main"><div class="reading-tools" aria-label="Reading controls"><button id="theme-toggle" aria-pressed="false">Light theme</button><button id="text-toggle" aria-pressed="false">Larger text</button><button id="solutions-toggle" aria-pressed="false">Expand solutions</button><button id="print-page">Print with solutions</button></div>
+<article id="chapter-content"><!-- BOOK-CONTENT-START --><h1>Deformation gradients and finite and infinitesimal strain</h1>
+<p class="lead">A square marked on a soft specimen becomes a parallelogram under simple shear. The upper edge moves, vertical fibers lengthen, and right angles change. A camera also records translation and rotation of the specimen. Which part of that motion is strain? The answer requires comparing neighboring material points, then separating changes of their lengths and angles from rigid motion. A single displacement magnitude cannot make that distinction.</p>
+<p class="source-note">Lecture spine: NPTEL lessons 36–40, including all five week-8 tutorial problems. Complete local machine transcripts were read sequentially; board equations and diagrams were not independently inspected. Mathematics below reconstructs the spoken arguments and corrects their approximation boundaries. The simple-shear parameter study and program are original teaching constructions. Tutorial formulas are identified where reconstructed from speech.</p>
+
+<h2 id="displacement" data-video="P5FFj0nhAb4" data-start="43" data-end="560">Displacement depends on the particle and the description <a class="timestamp" href="https://www.youtube.com/watch?v=P5FFj0nhAb4&amp;t=43s">L36 0:43</a></h2>
+<p>Let a material point have reference position \(\mathbf X\in\mathbb R^3\), in metres, and current position \(\mathbf x=\boldsymbol\chi(\mathbf X,t)\), also in metres. Time \(t\) is in seconds. Assume a differentiable, one-to-one motion with a differentiable local inverse. The reference and spatial Cartesian axes coincide for component subtraction. Capital indices \(A,B\) label reference components; lowercase indices \(i,j\) label spatial components. Each ranges from 1 to 3, and repeated indices are summed.</p>
+<p>The material displacement field is \(\mathbf u_L(\mathbf X,t)=\boldsymbol\chi(\mathbf X,t)-\mathbf X\). The spatial displacement field is \(\mathbf u_E(\mathbf x,t)=\mathbf x-\boldsymbol\chi^{-1}(\mathbf x,t)\). These fields give the same displacement for the same particle, because \(\mathbf u_E(\boldsymbol\chi(\mathbf X,t),t)=\mathbf u_L(\mathbf X,t)\). They are different functions of different arguments. Spatial description does not reverse the direction of displacement.</p>
+<p>For the simple-shear specimen at a fixed time, choose the dimensionless shear parameter \(\gamma\) and the mapping</p>
+\[
+x_1=X_1+\gamma X_2,\qquad x_2=X_2,\qquad x_3=X_3.
+\]
+<p>Thus \(\mathbf u_L=(\gamma X_2,0,0)\). Inverting gives \(X_1=x_1-\gamma x_2\), so \(\mathbf u_E=(\gamma x_2,0,0)\). Their component formulas happen to match here. For a stretch \(x_1=\lambda X_1\), with dimensionless \(\lambda>0\), the formulas instead become \(u_{L1}=(\lambda-1)X_1\) and \(u_{E1}=(1-\lambda^{-1})x_1\). Substituting \(x_1=\lambda X_1\) proves that they describe the same displacement.</p>
+<p>At fixed material coordinate, velocity is \(\partial_t\mathbf u_L\) and acceleration is \(\partial_t^2\mathbf u_L\). Spatial time derivatives require the material derivative developed in chapter 7. A displaced specimen can have no strain at all: \(\mathbf u_L=\mathbf c\), with constant translation vector \(\mathbf c\), moves every point equally and preserves every separation.</p>
+
+<h2 id="gradient" data-video="P5FFj0nhAb4" data-start="562" data-end="2033">The deformation gradient maps neighboring line elements <a class="timestamp" href="https://www.youtube.com/watch?v=P5FFj0nhAb4&amp;t=562s">L36 9:22</a></h2>
+<p>Take two nearby reference points \(\mathbf X\) and \(\mathbf X+\Delta\mathbf X\). Differentiability means that their current separation satisfies</p>
+\[
+\boldsymbol\chi(\mathbf X+\Delta\mathbf X)-\boldsymbol\chi(\mathbf X)
+=\mathbf F(\mathbf X)\Delta\mathbf X+o(\|\Delta\mathbf X\|),
+\qquad F_{iA}=\frac{\partial\chi_i}{\partial X_A}.
+\]
+<p>The remainder divided by \(\|\Delta\mathbf X\|\) tends to zero as the points approach one another. The differential relation is \(d\mathbf x=\mathbf F\,d\mathbf X\). The dimensionless tensor \(\mathbf F\) is the <dfn>deformation gradient</dfn>. Its input is a material line vector and its output a spatial line vector, so it is a two-point tensor. A finite segment obeys the same linear relation exactly only for an affine motion, or approximately when variation of \(\mathbf F\) across that segment is negligible.</p>
+<p>Differentiating \(\boldsymbol\chi^{-1}(\boldsymbol\chi(\mathbf X))=\mathbf X\) by the chain rule gives \((\partial X_A/\partial x_i)F_{iB}=\delta_{AB}\). Therefore \((F^{-1})_{Ai}=\partial X_A/\partial x_i\), and \(d\mathbf X=\mathbf F^{-1}d\mathbf x\). This is a chain-rule identity; cancelling printed differentials is unnecessary. Nonsingularity provides a local inverse. It does not independently prove that distant parts of the body never overlap.</p>
+<p>For simple shear,</p>
+\[
+\mathbf F=\begin{pmatrix}1&\gamma&0\\0&1&0\\0&0&1\end{pmatrix},
+\qquad
+\mathbf F^{-1}=\begin{pmatrix}1&-\gamma&0\\0&1&0\\0&0&1\end{pmatrix}.
+\]
+<p>A horizontal fiber remains horizontal. A unit vertical fiber maps to \((\gamma,1,0)\), which both rotates and changes length. Translation disappears under differentiation, but rotation remains in \(\mathbf F\). If \(\mathbf F\) is independent of \(\mathbf X\), deformation is called homogeneous. It can still vary in time. The nonlinear map \(x_1=X_1+kX_2^2\), with \(k\) in m⁻¹, has \(F_{12}=2kX_2\), so different neighborhoods experience different shears.</p>
+<p>Two successive maps have gradients \(\mathbf F_1\) and \(\mathbf F_2\) relative to their respective input configurations. Applying the chain rule gives \(\mathbf F=\mathbf F_2\mathbf F_1\), evaluated at corresponding points. This multiplication rule, discussed in <a href="https://solidmechanics.org/Text/Chapter2_2/Chapter2_2.php">Bower, §2.2.5</a>, explains why finite deformations generally depend on order. If \(\mathbf F_r=\mathbf I+\mathbf A_r\) with both gradients small, their product is \(\mathbf I+\mathbf A_1+\mathbf A_2+\mathbf A_2\mathbf A_1\). Discarding the quadratic term makes order irrelevant only to first order.</p>
+
+<h2 id="green" data-video="g_13JHpM1JI" data-start="51" data-end="592">Squared lengths define Green–Lagrange strain <a class="timestamp" href="https://www.youtube.com/watch?v=g_13JHpM1JI&amp;t=51s">L37 0:51</a></h2>
+<p>The deformation gradient contains rotation, whereas a strain measure should quantify changes in geometry internal to the body. Start from the squared length of an arbitrary differential fiber. With the Euclidean inner product denoted by a dot,</p>
+\[
+|d\mathbf x|^2=d\mathbf X\cdot\mathbf F^T\mathbf Fd\mathbf X,
+\qquad
+|d\mathbf x|^2-|d\mathbf X|^2
+=2d\mathbf X\cdot\mathbf E d\mathbf X,
+\qquad
+\mathbf E=\tfrac12(\mathbf C-\mathbf I),\quad\mathbf C=\mathbf F^T\mathbf F.
+\]
+<p>The dimensionless symmetric tensor \(\mathbf C\) is the right Cauchy–Green deformation tensor, called Green's deformation tensor in the lectures. The dimensionless symmetric tensor \(\mathbf E\) is Green–Lagrange strain. Both input slots refer to material directions. For every nonzero vector \(\mathbf N\), \(\mathbf N\cdot\mathbf C\mathbf N=|\mathbf F\mathbf N|^2>0\) when \(\mathbf F\) is invertible. Thus \(\mathbf C\) is positive definite, although \(\mathbf E\) can have negative eigenvalues under compression.</p>
+<p>For a unit material direction \(\mathbf N\), define stretch \(\lambda(\mathbf N)=|\mathbf F\mathbf N|\), the current length divided by reference length. Then \(\lambda^2=1+2\mathbf N\cdot\mathbf E\mathbf N\). The directional Green strain is \((\lambda^2-1)/2\), which differs from engineering extension \(\lambda-1\) by \((\lambda-1)^2/2\). At stretch 1.2 the two values are 0.22 and 0.20. Their difference is geometrical, not a discrepancy between measurements.</p>
+<p>For the shear specimen, explicit multiplication gives</p>
+\[
+\mathbf C=\begin{pmatrix}1&\gamma&0\\\gamma&1+\gamma^2&0\\0&0&1\end{pmatrix},
+\qquad
+\mathbf E=\begin{pmatrix}0&\gamma/2&0\\\gamma/2&\gamma^2/2&0\\0&0&0\end{pmatrix}.
+\]
+<p>The vertical fiber has stretch \(\sqrt{1+\gamma^2}\), agreeing with its directly calculated length. At \(\gamma=0.4\), its engineering extension is approximately 0.077033, and \(E_{22}=0.08\). A formula retaining only the off-diagonal term would miss this finite stretching. The exact metric definitions agree with <a href="https://solidmechanics.org/Text/Chapter2_2/Chapter2_2.php">Bower, §2.2.8</a>; all shear numbers here are constructed checks.</p>
+
+<h2 id="euler" data-video="g_13JHpM1JI" data-start="593" data-end="970">The same metric comparison in spatial coordinates <a class="timestamp" href="https://www.youtube.com/watch?v=g_13JHpM1JI&amp;t=593s">L37 9:53</a></h2>
+<p>A current fiber can instead be traced backward. Inserting \(d\mathbf X=\mathbf F^{-1}d\mathbf x\) into its reference squared length gives</p>
+\[
+|d\mathbf x|^2-|d\mathbf X|^2=2d\mathbf x\cdot\mathbf e\,d\mathbf x,
+\qquad
+\mathbf e=\tfrac12(\mathbf I-\mathbf c),
+\qquad \mathbf c=\mathbf F^{-T}\mathbf F^{-1}=\mathbf B^{-1},
+\quad \mathbf B=\mathbf F\mathbf F^T.
+\]
+<p>The symmetric tensor \(\mathbf e\) is Euler–Almansi strain. The lecture calls \(\mathbf c\) the Cauchy deformation tensor; defining it explicitly prevents confusion with \(\mathbf C\) or \(\mathbf B\). Both slots of \(\mathbf e\) refer to spatial directions. Substitution proves \(\mathbf e=\mathbf F^{-T}\mathbf E\mathbf F^{-1}\). This is a transformation between different tangent spaces, rather than an ordinary orthogonal change of basis.</p>
+<p>For simple shear, \(\mathbf c\) has in-plane block \(\left(\begin{smallmatrix}1&-\gamma\\-\gamma&1+\gamma^2\end{smallmatrix}\right)\), hence \(\mathbf e\) has block \(\left(\begin{smallmatrix}0&\gamma/2\\\gamma/2&-\gamma^2/2\end{smallmatrix}\right)\). Its negative diagonal term does not contradict positive \(E_{22}\). The coordinate directions and the length normalizing the metric comparison differ. Indeed the current image \((\gamma,1)\) of the reference vertical unit fiber gives \(2(\gamma,1)\mathbf e(\gamma,1)^T=\gamma^2\), exactly the same squared-length change.</p>
+
+<h2 id="angles" data-video="g_13JHpM1JI" data-start="1009" data-end="2692">Angles, rigid motion and displacement gradients <a class="timestamp" href="https://www.youtube.com/watch?v=g_13JHpM1JI&amp;t=1009s">L37 16:49</a></h2>
+<p>Let \(\mathbf N,\mathbf M\) be unit reference directions at the same point. The cosine of the angle \(\theta\in[0,\pi]\) between their current images is</p>
+\[
+\cos\theta=\frac{\mathbf N\cdot\mathbf C\mathbf M}
+{\sqrt{\mathbf N\cdot\mathbf C\mathbf N}\sqrt{\mathbf M\cdot\mathbf C\mathbf M}}.
+\]
+<p>This follows by dividing the dot product \((\mathbf F\mathbf N)\cdot(\mathbf F\mathbf M)\) by both image lengths. Length changes and angle changes therefore derive from one metric tensor. For initially horizontal and vertical fibers in simple shear, \(\cos\theta=\gamma/\sqrt{1+\gamma^2}\). Their decrease from a right angle is \(\arctan\gamma\) for positive \(\gamma\). At \(\gamma=0.4\), this is approximately 0.380506 rad, rather than 0.4 rad.</p>
+<p>A rigid motion has \(\mathbf x=\mathbf Q\mathbf X+\mathbf b\), where \(\mathbf b\) is a translation and \(\mathbf Q^T\mathbf Q=\mathbf I\), \(\det\mathbf Q=1\). Then \(\mathbf F=\mathbf Q\), \(\mathbf C=\mathbf I\) and \(\mathbf E=\mathbf e=\mathbf0\), regardless of the rotation angle. Conversely, \(\mathbf E=0\) at a point means its differential map preserves all inner products. It establishes local rotation when orientation is preserved. A claim of a single global rigid motion additionally uses smooth compatibility across a connected body; pointwise matrix algebra alone is not that proof.</p>
+<p>In coincident Cartesian bases, define material displacement gradient \(\mathbf H=\partial\mathbf u_L/\partial\mathbf X\) and spatial displacement gradient \(\mathbf h=\partial\mathbf u_E/\partial\mathbf x\). They are dimensionless, with \(\mathbf F=\mathbf I+\mathbf H\), \(\mathbf F^{-1}=\mathbf I-\mathbf h\), and \(\mathbf h=\mathbf H\mathbf F^{-1}\). Expanding both exact metric definitions gives</p>
+\[
+\mathbf E=\tfrac12(\mathbf H+\mathbf H^T+\mathbf H^T\mathbf H),
+\qquad
+\mathbf e=\tfrac12(\mathbf h+\mathbf h^T-\mathbf h^T\mathbf h).
+\]
+<p>The opposite quadratic signs arise because one construction uses the forward map and the other its inverse. Replacing material by spatial gradients without the chain rule loses these terms. These expressions also show why a large translation does not invalidate strain linearization: its displacement gradient is zero.</p>
+
+<h2 id="small" data-video="4v07R8KrsBM" data-start="73" data-end="2059">Infinitesimal strain is a controlled small-gradient approximation <a class="timestamp" href="https://www.youtube.com/watch?v=4v07R8KrsBM&amp;t=73s">L38 1:13</a></h2>
+<p>Suppose \(\|\mathbf H\|\) is much smaller than one in a fixed matrix norm. Define the infinitesimal strain tensor \(\boldsymbol\varepsilon=\tfrac12(\mathbf H+\mathbf H^T)\). The exact omitted term is \(\tfrac12\mathbf H^T\mathbf H\). In the spectral norm, \(\|\mathbf E-\boldsymbol\varepsilon\|\leq\tfrac12\|\mathbf H\|^2\). This is an absolute error bound. When the symmetric first-order term vanishes, the quadratic term can be the leading strain, so a small relative error is not guaranteed.</p>
+<p>The inverse expansion \((\mathbf I+\mathbf H)^{-1}=\mathbf I-\mathbf H+O(\|\mathbf H\|^2)\) gives \(\mathbf h=\mathbf H+O(\|\mathbf H\|^2)\). Thus the material and spatial linearized tensors agree to first order when their bases are identified. Using \(\varepsilon_{ij}=\tfrac12(u_{i,j}+u_{j,i})\) is then legitimate, provided the chosen derivative coordinates are stated. It is not an exact identity for finite deformation.</p>
+<p>To interpret its diagonal terms, write \(\lambda^2=1+2\mathbf N\cdot\mathbf E\mathbf N\) and use \(\sqrt{1+z}=1+z/2+O(z^2)\). Then</p>
+\[
+\lambda(\mathbf N)-1=\mathbf N\cdot\boldsymbol\varepsilon\mathbf N+O(\|\mathbf H\|^2).
+\]
+<p>Consequently \(\varepsilon_{11}\), \(\varepsilon_{22}\) and \(\varepsilon_{33}\) are first-order longitudinal strains along the reference axes. For simple shear they all vanish, although the vertical fiber has a second-order extension. This is the expected truncation, rather than a failure of the exact geometry.</p>
+<p>A small displacement is insufficient for this approximation. The one-dimensional field \(u_1=a\sin(kX_1)\), where \(a\) is a length and \(k\) an inverse length, has gradient \(ak\cos(kX_1)\). A tiny amplitude with large wave number can give order-one gradients. A finite ninety-degree rotation is another decisive check: its planar displacement gradient is \(\mathbf Q-\mathbf I\), whose symmetric part is \(-\mathbf I\). The exact Green strain is zero because the quadratic term cancels it. Small exact strain therefore does not imply small displacement gradient.</p>
+
+<h2 id="shear" data-video="pORdJuMa5zc" data-start="69" data-end="1285">Shear, principal strain and volume change <a class="timestamp" href="https://www.youtube.com/watch?v=pORdJuMa5zc&amp;t=69s">L39 1:09</a></h2>
+<p>Choose perpendicular unit reference directions \(\mathbf N,\mathbf M\). The numerator of the angle formula is \(2\mathbf N\cdot\boldsymbol\varepsilon\mathbf M+O(\|\mathbf H\|^2)\), and its denominator is \(1+O(\|\mathbf H\|)\). Writing \(\theta=\pi/2-\gamma_{NM}\) and expanding \(\cos\theta=\sin\gamma_{NM}\) gives \(\gamma_{NM}=2\mathbf N\cdot\boldsymbol\varepsilon\mathbf M+O(\|\mathbf H\|^2)\). The <dfn>engineering shear strain</dfn> is the first-order decrease of their right angle, measured in radians. Thus \(\gamma_{12}=2\varepsilon_{12}\), with a positive sign for an angle decrease.</p>
+<p>A real symmetric strain tensor has orthonormal eigenvectors, its principal directions, and real eigenvalues, its principal strains. If \(\boldsymbol\varepsilon\mathbf N_2=\varepsilon_2\mathbf N_2\) and \(\mathbf N_1\cdot\mathbf N_2=0\), then \(\mathbf N_1\cdot\boldsymbol\varepsilon\mathbf N_2=0\). Principal fibers remain perpendicular to first order. For exact orthogonality at finite deformation, choose eigenvectors of \(\mathbf C\), not merely of its first-order approximation. For simple shear, the in-plane infinitesimal principal strains are \(\gamma/2\) and \(-\gamma/2\), along directions at 45 degrees to the axes.</p>
+<p>Volume change supplies a separate scalar measure. Three material edges form a parallelepiped; after applying \(\mathbf F\), its oriented triple product is multiplied by \(J=\det\mathbf F\). Therefore \(dV=JdV_0\), where volumes are in m³. An orientation-preserving deformation has \(J>0\), and exact local volume preservation means \(J=1\). Expanding the determinant of \(\mathbf I+\mathbf H\) by permutations, the constant term is 1 and the only terms linear in \(\mathbf H\) are its diagonal entries. Hence</p>
+\[
+\frac{dV-dV_0}{dV_0}=J-1=\operatorname{tr}\mathbf H+O(\|\mathbf H\|^2)
+=\operatorname{tr}\boldsymbol\varepsilon+O(\|\mathbf H\|^2).
+\]
+<p>The trace is the first-order volumetric strain, also called dilatation. Simple shear has \(J=1\) exactly, not just at first order. In contrast, \(\mathbf H=\operatorname{diag}(a,-a,0)\) has zero trace but \(J=1-a^2\). A zero trace alone establishes only first-order volume preservation. The determinant interpretation is also developed in <a href="https://solidmechanics.org/Text/Chapter2_2/Chapter2_2.php">Bower, §2.2.6</a>.</p>
+
+<h2 id="plane" data-video="pORdJuMa5zc" data-start="1285" data-end="2041">Spherical strain and the plane-strain idealization <a class="timestamp" href="https://www.youtube.com/watch?v=pORdJuMa5zc&amp;t=1285s">L39 21:25</a></h2>
+<p>Split \(\boldsymbol\varepsilon\) into its spherical part \(\bar\varepsilon\mathbf I\), where \(\bar\varepsilon=\operatorname{tr}\boldsymbol\varepsilon/3\), and deviatoric part \(\boldsymbol\eta=\boldsymbol\varepsilon-\bar\varepsilon\mathbf I\). The latter has zero trace by construction. The spherical part gives the same first-order extension \(\bar\varepsilon\) in every unit direction, and zero angle change between perpendicular directions. The deviator gives zero first-order volume change, while allowing different extensions and contractions. Calling it purely angular deformation would obscure those longitudinal changes.</p>
+<p>For plane strain in the 1–2 plane, impose \(u_1=u_1(X_1,X_2)\), \(u_2=u_2(X_1,X_2)\), and \(u_3=0\), after removing an irrelevant constant translation. These conditions give \(\varepsilon_{13}=\varepsilon_{23}=\varepsilon_{33}=0\). They also give the corresponding exact out-of-plane Green-strain components zero. At least one principal strain is therefore zero; additional zero eigenvalues are allowed. The zero tensor is a valid limiting plane-strain state.</p>
+<p>Suppressing \(u_3\) alone is not enough. If \(u_1=aX_3\), \(u_2=u_3=0\), then \(\varepsilon_{13}=a/2\). Likewise a long bar does not automatically have zero axial strain. Uniform axial extension is compatible with a long geometry. Plane strain becomes an appropriate idealization when loading, constraints and position far from end effects support the stated displacement conditions. Generalized plane strain permits a uniform axial strain and is a different approximation.</p>
+<p>Plane stress instead imposes vanishing out-of-plane stress components. It is a force condition, whereas plane strain is kinematic. Translating between them requires a material law. A surface rosette can measure in-plane strain without proving either condition through the thickness.</p>
+
+<h2 id="rosette" data-video="pORdJuMa5zc" data-start="2041" data-end="2373">A strain rosette reconstructs a tensor from directional readings <a class="timestamp" href="https://www.youtube.com/watch?v=pORdJuMa5zc&amp;t=2041s">L39 34:01</a></h2>
+<p>A strain gauge aligned with \(\mathbf n=(\cos\theta,\sin\theta,0)\) measures the longitudinal strain along that direction. In the small-gradient approximation its reading is</p>
+\[
+r(\theta)=\varepsilon_{11}\cos^2\theta+\varepsilon_{22}\sin^2\theta
++2\varepsilon_{12}\sin\theta\cos\theta.
+\]
+<p>This is the quadratic form \(\mathbf n\cdot\boldsymbol\varepsilon\mathbf n\), expanded component by component. A delta rosette uses angles 0, 60 and 120 degrees, giving readings \(r_0,r_{60},r_{120}\). Their difference eliminates both normal strains, while their sum eliminates shear:</p>
+\[
+\varepsilon_{11}=r_0,\qquad
+\varepsilon_{22}=\frac{2(r_{60}+r_{120})-r_0}{3},\qquad
+\varepsilon_{12}=\frac{r_{60}-r_{120}}{\sqrt3}.
+\]
+<p>The week-8 tutorial readings reconstructed from its stated solution are \((-3,4,2)\times10^{-4}\). They give \(\varepsilon_{22}=5\times10^{-4}\), \(\varepsilon_{12}=2\times10^{-4}/\sqrt3\), and engineering shear \(4\times10^{-4}/\sqrt3\). The direction perpendicular to the 60-degree gauge lies at 150 degrees and has reading \(-2\times10^{-4}\). Thus the in-plane trace is \((-3+5)\times10^{-4}=(4-2)\times10^{-4}\) in the two bases, as invariance requires.</p>
+<p>Gauges have finite footprints, calibration errors and alignment errors. Treating the readings as one pointwise tensor assumes strain varies little across the rosette. Three readings determine three in-plane components; they do not determine out-of-plane strain. Exact finite extensions cannot be inserted into these linear equations at large strain without changing the measurement model.</p>
+
+<h2 id="tutorial" data-video="YfNv_4MhXM8" data-start="41" data-end="2452">Tutorial constructions and their limits <a class="timestamp" href="https://www.youtube.com/watch?v=YfNv_4MhXM8&amp;t=41s">L40 0:41</a></h2>
+<p>The first tutorial motion has \(x_1=X_3+(X_1-X_3)e^{at}\), \(x_2=X_3+(X_2-X_3)e^{-at}\), and \(x_3=X_3\). A rate \(a\), in s⁻¹, makes the exponential argument dimensionless; the recording uses a unit-rate time variable. Direct subtraction gives material displacements \(((X_1-X_3)(e^{at}-1),(X_3-X_2)(1-e^{-at}),0)\). Inversion gives \(X_1=x_3+(x_1-x_3)e^{-at}\), \(X_2=x_3+(x_2-x_3)e^{at}\). Thus spatial displacement is \(((x_1-x_3)(1-e^{-at}),(x_3-x_2)(e^{at}-1),0)\).</p>
+<p>The next tutorial uses affine displacement \(\mathbf u_L=\mathbf A\mathbf X\). Its gradient is the constant matrix \(\mathbf A\), so deformation is homogeneous. Two such infinitesimal maps add at first order, as the gradient product above proves. Keeping the product term restores their possible order dependence.</p>
+<p>The third map, \(x_1=X_1+\alpha X_2\), \(x_2=X_2-\alpha X_1\), \(x_3=X_3\), has dimensionless constant \(\alpha\). Its planar \(\mathbf C\) is \((1+\alpha^2)\mathbf I\). Therefore \(\mathbf E\) has planar block \(\alpha^2\mathbf I/2\), and \(\mathbf e\) has block \(\alpha^2\mathbf I/[2(1+\alpha^2)]\). A reference circle of radius \(R\) maps to a circle of radius \(R\sqrt{1+\alpha^2}\). The off-diagonal displacement gradient is skew, but the finite map includes stretching. It approximates rotation only to first order.</p>
+<p>The fourth map is \(x_1=X_1+kX_2^2\), \(x_2=X_2-kX_1^2\), \(x_3=X_3\). Here \(k\) is in m⁻¹. Its exact in-plane strain entries are \(E_{11}=2k^2X_1^2\), \(E_{22}=2k^2X_2^2\), and \(E_{12}=k(X_2-X_1)\). Dropping quadratic terms gives zero diagonal infinitesimal strains and the same shear entry. Validity requires small \(|kX_1|\) and \(|kX_2|\) over the region, not the dimensionally meaningless statement that dimensional \(k\) is small. The fifth tutorial is the rosette inversion above.</p>
+
+<h2 id="implementation">Executable comparison of exact and linearized geometry</h2>
+<p>The NumPy program implements simple shear, verifies both metric representations on the same fiber, and recovers the tutorial rosette tensor. Inputs are dimensionless constants and directions. It reads no files and prints its calculations. Assertions test algebraic identities and one exact rigid rotation; they do not validate a material law or instrument. A singular deformation would make the inverse calculation fail, as the model requires.</p>
+<pre data-run="ch08"><code class="language-python">import numpy as np
+
+identity = np.eye(3)
+gamma = 0.4
+f = identity.copy()
+f[0, 1] = gamma
+h = f - identity
+green = (f.T @ f - identity)/2
+inverse = np.linalg.inv(f)
+almansi = (identity - inverse.T @ inverse)/2
+linear = (h + h.T)/2
+reference = np.array([0.0, 1.0, 0.0])
+current = f @ reference
+change = current @ current - reference @ reference
+assert np.allclose(change, 2*reference @ green @ reference)
+assert np.allclose(change, 2*current @ almansi @ current)
+assert np.allclose(green - linear, h.T @ h/2)
+rotation = np.array([[0., -1., 0.], [1., 0., 0.], [0., 0., 1.]])
+assert np.allclose(rotation.T @ rotation, identity)
+readings = np.array([-3.0, 4.0, 2.0])*1e-4
+angles = np.deg2rad([0.0, 60.0, 120.0])
+c, s = np.cos(angles), np.sin(angles)
+design = np.column_stack((c*c, s*s, 2*c*s))
+recovered = np.linalg.solve(design, readings)
+assert np.allclose(design @ recovered, readings)
+print('J:', round(float(np.linalg.det(f)), 6))
+print('vertical extension:', round(float(np.linalg.norm(current)-1), 6))
+print('exact angle decrease:', round(float(np.arctan(gamma)), 6))
+print('Green E22:', round(float(green[1, 1]), 6))
+print('linear epsilon22:', round(float(linear[1, 1]), 6))
+print('rosette [epsilon11, epsilon22, epsilon12]:')
+print(np.round(recovered, 9).tolist())
+</code></pre>
+<pre data-output="ch08">J: 1.0
+vertical extension: 0.077033
+exact angle decrease: 0.380506
+Green E22: 0.08
+linear epsilon22: 0.0
+rosette [epsilon11, epsilon22, epsilon12]:
+[-0.0003, 0.0005, 0.00011547]</pre>
+<p>At this shear, the linear tensor misses a finite vertical extension and overestimates the angular change. Reducing \(\gamma\) reduces the omitted diagonal term quadratically. Exact volume preservation survives at every shear because the determinant remains one. These are different observables with different approximation errors.</p>
+
+<h2 id="exercises">Exercises with fully worked solutions</h2>
+<p><strong>1. Material and spatial gradients.</strong> For \(x_1=1.2X_1\), \(x_2=X_2\), \(x_3=X_3\), calculate the two displacement gradients and both finite strains.</p>
+<details><summary>Solution</summary><p>The material displacement is \(u_{L1}=0.2X_1\), so \(H_{11}=0.2\). Inversion gives \(X_1=x_1/1.2\), hence \(h_{11}=1-1/1.2=1/6\). The exact Green strain is \(E_{11}=(1.2^2-1)/2=0.22\). Euler–Almansi strain is \(e_{11}=(1-1/1.2^2)/2=11/72\). All other entries vanish. The identity \(e_{11}=E_{11}/1.2^2\) checks the change between reference and current descriptions. Neither value should be silently identified with engineering extension 0.2.</p></details>
+<p><strong>2. Quantify a discarded term.</strong> For simple shear \(\gamma=0.02\), calculate the exact vertical-fiber extension, its linear prediction and the norm of the Green-strain truncation error.</p>
+<details><summary>Solution</summary><p>The image fiber is \((0.02,1,0)\), so extension is \(\sqrt{1.0004}-1\approx0.000199980\). The linear longitudinal strain is \(\varepsilon_{22}=0\). The difference \(\mathbf E-\boldsymbol\varepsilon\) has only entry \((2,2)=\gamma^2/2=0.0002\), which is also its spectral norm. The absolute error is quadratic, yet the relative error in this particular extension is 100 percent because its first-order prediction is zero. A truncation claim must specify which observable and which error measure matter.</p></details>
+<p><strong>3. A map that resembles rotation.</strong> For the tutorial's skew-gradient map with \(\alpha=0.5\), determine its planar stretch, area ratio, and finite strains. Explain why its linear strain vanishes.</p>
+<details><summary>Solution</summary><p>The planar gradient is \(\left(\begin{smallmatrix}1&0.5\\-0.5&1\end{smallmatrix}\right)\). Multiplying its transpose by itself gives \(1.25\mathbf I\), so every planar line stretches by \(\sqrt{1.25}\). Its determinant is 1.25, the area ratio. Thus the planar Green strain is \(0.125\mathbf I\), while Euler–Almansi strain is \((1-1/1.25)\mathbf I/2=0.1\mathbf I\). Since \(\mathbf H^T=-\mathbf H\), \(\operatorname{sym}\mathbf H=0\). The surviving strain is quadratic; the map is a rotated dilation, not an exact rigid rotation.</p></details>
+<p><strong>4. Does composition commute?</strong> Take two planar shear gradients \(\mathbf F_1=\left(\begin{smallmatrix}1&a\\0&1\end{smallmatrix}\right)\) and \(\mathbf F_2=\left(\begin{smallmatrix}1&0\\b&1\end{smallmatrix}\right)\). Compare both orders.</p>
+<details><summary>Solution</summary><p>Matrix multiplication gives \(\mathbf F_2\mathbf F_1=\left(\begin{smallmatrix}1&a\\b&1+ab\end{smallmatrix}\right)\) and \(\mathbf F_1\mathbf F_2=\left(\begin{smallmatrix}1+ab&a\\b&1\end{smallmatrix}\right)\). Their difference is \(\operatorname{diag}(-ab,ab)\). Both determinants are one, so equal volume ratios do not imply equal deformation. When \(a,b\) are of a common small order, the difference is second order and disappears from the first-order approximation. With \(a=b=0.1\), the difference is 0.01 on the affected diagonal entries.</p></details>
+<p><strong>5. A nonlinear displacement field.</strong> Derive \(\mathbf E\) for the quadratic tutorial map and evaluate it at \((X_1,X_2)=(1,2)\) m with \(k=0.01\) m⁻¹.</p>
+<details><summary>Solution</summary><p>The planar gradient is \(\mathbf F=\left(\begin{smallmatrix}1&2kX_2\\-2kX_1&1\end{smallmatrix}\right)\). Consequently \(\mathbf F^T\mathbf F\) has diagonal entries \(1+4k^2X_1^2\), \(1+4k^2X_2^2\), and off-diagonal entry \(2k(X_2-X_1)\). Subtracting identity and halving gives \(\mathbf E=\left(\begin{smallmatrix}0.0002&0.01\\0.01&0.0008\end{smallmatrix}\right)\). Linear strain retains 0.01 off diagonal and drops the diagonal entries. The relevant gradient entries are 0.04 and -0.02, so their magnitudes, rather than dimensional \(k\) alone, control truncation.</p></details>
+<p><strong>6. Diagnose plane strain.</strong> Is \(\mathbf u=(aX_3,0,0)\) plane strain in the 1–2 plane? Does \(\boldsymbol\varepsilon=\operatorname{diag}(a,0,0)\) violate plane strain because it has two zero principal strains?</p>
+<details><summary>Solution</summary><p>The first field has \(u_3=0\) but \(\varepsilon_{13}=a/2\), so for nonzero \(a\) it fails the required out-of-plane shear condition. The second tensor can arise from \(u_1=aX_1\), \(u_2=u_3=0\), independent of \(X_3\), and does satisfy plane strain. The number of zero eigenvalues can exceed one. A local eigenvalue statement alone also does not establish the full spatial displacement ansatz across the body.</p></details>
+<p><strong>7. Reconstruct and test a rosette.</strong> Use readings \((-3,4,2)\times10^{-4}\) at 0, 60 and 120 degrees. Find in-plane strain and the reading at 150 degrees.</p>
+<details><summary>Solution</summary><p>The zero-degree reading is \(\varepsilon_{11}=-3\times10^{-4}\). Adding the other two readings gives \(6\times10^{-4}=\varepsilon_{11}/2+3\varepsilon_{22}/2\), hence \(\varepsilon_{22}=5\times10^{-4}\). Subtracting them gives \(2\times10^{-4}=\sqrt3\varepsilon_{12}\), hence \(\varepsilon_{12}=2\times10^{-4}/\sqrt3\). At 150 degrees, \(\cos^2\theta=3/4\), \(\sin^2\theta=1/4\), and \(2\sin\theta\cos\theta=-\sqrt3/2\). Substitution gives \((-9/4+5/4-1)\times10^{-4}=-2\times10^{-4}\). The trace check provides a useful independent consistency condition.</p></details>
+
+<h2 id="limits">What strain identifies and what it leaves open</h2>
+<p>The deformation gradient resolves the local forward map. Finite strain compares lengths and angles without confusing them with rigid rotation. Infinitesimal strain is its small-gradient approximation, and its trace and shear entries have first-order experimental interpretations. None of these kinematic identities predicts stress or material failure without constitutive and balance equations. Surface gauges also cannot reconstruct an arbitrary three-dimensional field. The next questions are whether a proposed field is compatible with a displacement and how deformation evolves in time.</p>
+<h2 id="sources">Sources and attribution</h2>
+<ul><li>Prof. Gaurav Bhutani, NPTEL, <a href="https://www.youtube.com/watch?v=P5FFj0nhAb4">L36</a>, <a href="https://www.youtube.com/watch?v=g_13JHpM1JI">L37</a>, <a href="https://www.youtube.com/watch?v=4v07R8KrsBM">L38</a>, <a href="https://www.youtube.com/watch?v=pORdJuMa5zc">L39</a>, and <a href="https://www.youtube.com/watch?v=YfNv_4MhXM8">L40 tutorial</a>. The chapter follows their displacement-to-strain sequence and retains all five tutorial mechanisms.</li><li>A. F. Bower, <a href="https://solidmechanics.org/Text/Chapter2_2/Chapter2_2.php"><em>Applied Mechanics of Solids</em>, §2.2</a>, especially §§2.2.4–2.2.6 and 2.2.8: inspected for gradient conventions, composition, Jacobian and finite strain. Equations are derived independently here; numerical shear checks are teaching constructions.</li></ul>
+<!-- BOOK-CONTENT-END --></article><nav class="page-turn" aria-label="Chapter navigation"><a rel="prev" href="chapter-07-motion-material-derivative.html">Previous chapter</a><a href="index.html">Chapter index</a><a rel="next" href="chapter-09-compatibility-and-velocity-gradients.html">Next chapter</a></nav></main></div><footer class="site-footer">Independent study edition. Prof. Gaurav Bhutani’s NPTEL recordings provide the topic spine. Original exposition, source limitations and verification evidence are separately recorded.</footer></body></html>

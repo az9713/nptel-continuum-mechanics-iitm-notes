@@ -1,0 +1,194 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="color-scheme" content="dark light"><meta name="book-content-sha256" content="111e955917d715ce6c8ce6f9b1a6a092a0deb7ae966a9a737264a855cda8a53d">
+<title>Compatibility, finite deformation and velocity gradients · Foundations of Continuum Mechanics</title><link rel="stylesheet" href="assets/book.css">
+<script>window.MathJax={tex:{inlineMath:[['$','$'],['\\(','\\)']],displayMath:[['$$','$$'],['\\[','\\]']],processEscapes:true},svg:{fontCache:'local'},options:{skipHtmlTags:['script','noscript','style','textarea','pre','code']}};</script>
+<script defer src="assets/mathjax-tex-svg.js"></script><script defer src="assets/book.js"></script></head>
+<body><a class="skip" href="#main">Skip to content</a><header class="site-header"><a class="brand" href="index.html">Foundations of Continuum Mechanics · NPTEL IIT Mandi</a><nav class="course-nav" aria-label="Book"><a href="index.html">Chapters</a><a href="source-map.html">Source map</a><a href="references.html">References</a><a href="numerical-lab.html">Numerical lab</a></nav></header>
+<div class="layout"><aside class="toc" id="chapter-toc" aria-label="On this page"><h2>On this page</h2></aside><main id="main"><div class="reading-tools" aria-label="Reading controls"><button id="theme-toggle" aria-pressed="false">Light theme</button><button id="text-toggle" aria-pressed="false">Larger text</button><button id="solutions-toggle" aria-pressed="false">Expand solutions</button><button id="print-page">Print with solutions</button></div>
+<article id="chapter-content"><!-- BOOK-CONTENT-START --><h1>Compatibility, finite deformation and velocity gradients</h1>
+<p class="lead">A displacement reconstructed from strain measurements must bring neighboring pieces of a body together without gaps. A finite shear must also be separated into stretch and rotation without confusing either with instantaneous spin. These are different questions: compatibility asks whether a field can arise from one motion, polar decomposition describes that motion at an instant, and the velocity gradient describes how it changes. A simple shear provides a running case in which all three distinctions can be calculated exactly.</p>
+<p class="source-note">Lecture spine: L41–45, including all six tutorial mechanisms. The complete local ASR transcripts were read, ending with closing remarks about eight or nine seconds before the listed durations. Spoken equations are reconstructed rather than accepted as exact board transcriptions. Numerical shear examples are teaching constructions. Where tutorial input matrices are not recoverable from speech, equivalent fully specified examples replace them; no guessed input is attributed to the recording.</p>
+
+<h2 id="rotation" data-video="JU-yLeqgq_E" data-start="42" data-end="1157">Relative displacement and infinitesimal rotation <a class="timestamp" href="https://www.youtube.com/watch?v=JU-yLeqgq_E&amp;t=42s">L41 0:42</a></h2>
+<p>Let material position \(\mathbf X\) and current position \(\mathbf x=\boldsymbol\chi(\mathbf X,t)\) be measured in metres. The deformation gradient has components \(F_{iA}=\partial x_i/\partial X_A\), with lowercase indices referring to current Cartesian axes and uppercase indices to reference axes. Both run from 1 to 3. An infinitesimal material line maps as \(d\mathbf x=\mathbf F\,d\mathbf X\). The displacement is \(\mathbf u=\mathbf x-\mathbf X\), using aligned reference and current coordinate frames when subtracting their components. Its reference gradient is \(\mathbf H=\mathbf F-\mathbf I\).</p>
+<p>The relative displacement of neighboring particles is \(d\mathbf u=\mathbf H\,d\mathbf X\). Uniform translation disappears from this relation, since its gradient is zero. When \(\|\mathbf H\|\ll1\), split</p>
+\[
+\mathbf H=\boldsymbol\varepsilon+\boldsymbol\Omega,
+\quad \varepsilon_{ij}=\tfrac12(u_{i,j}+u_{j,i}),\quad
+\Omega_{ij}=\tfrac12(u_{i,j}-u_{j,i}). \tag{9.1}
+\]
+<p>Here the comma denotes a reference Cartesian derivative in the linearized theory. To first order the reference and current gradients agree; this does not authorize their interchange at finite deformation. The symmetric tensor \(\boldsymbol\varepsilon\) is infinitesimal strain, and the skew tensor \(\boldsymbol\Omega\) is infinitesimal rotation. Both are dimensionless. A skew tensor has three independent components in three dimensions. Define its axial vector by \(\phi_i=\frac12\epsilon_{ijk}\Omega_{kj}\), where \(\epsilon_{ijk}\) is the alternating symbol. Then \(\Omega_{ij}=-\epsilon_{ijk}\phi_k\), or \(\boldsymbol\Omega\mathbf a=\boldsymbol\phi\times\mathbf a\). Substituting (9.1) gives \(\boldsymbol\phi=\frac12\nabla_X\times\mathbf u\).</p>
+<p>The inverse axial relation follows by contracting two epsilon symbols: \(-\frac12\epsilon_{ijk}\epsilon_{klm}\Omega_{ml}=\frac12(\Omega_{ij}-\Omega_{ji})=\Omega_{ij}\). This proves the sign and the factor two, rather than inferring them from a component count. For \(\mathbf u=(-\alpha X_2,\alpha X_1,0)\), \(\boldsymbol\phi=\alpha\mathbf e_3\). The map \(\mathbf I+\boldsymbol\Omega\) approximates a rotation through small angle \(\alpha\). It is not exactly orthogonal: \((\mathbf I+\boldsymbol\Omega)^{\mathsf T}(\mathbf I+\boldsymbol\Omega)=\mathbf I-\boldsymbol\Omega^2\). Length errors are second order in \(\alpha\).</p>
+<p>The running motion is simple shear, \(x_1=X_1+\kappa(t)X_2\), \(x_2=X_2\), \(x_3=X_3\), with dimensionless shear amount \(\kappa\). Its displacement gradient has only \(H_{12}=\kappa\). The linearized strain has \(\varepsilon_{12}=\varepsilon_{21}=\kappa/2\), and infinitesimal rotation has \(\Omega_{12}=\kappa/2=-\Omega_{21}\). Its axial vector is \(-\kappa\mathbf e_3/2\). The exact motion is well defined for large \(\kappa\), but this additive strain/rotation interpretation is then no longer a finite rotation decomposition.</p>
+
+<h2 id="compatibility" data-video="JU-yLeqgq_E" data-start="1157" data-end="2186">When prescribed strains come from a displacement <a class="timestamp" href="https://www.youtube.com/watch?v=JU-yLeqgq_E&amp;t=1157s">L41 19:17</a></h2>
+<p>A symmetric strain field has six component functions, while displacement has only three. Compatibility expresses the differential restrictions that connect those functions. In a planar region, use reference coordinates \(X,Y\) and displacement \((u_1,u_2)\). The equations are \(u_{1,X}=\varepsilon_{11}\), \(u_{2,Y}=\varepsilon_{22}\), and \(u_{1,Y}+u_{2,X}=2\varepsilon_{12}\). Differentiating twice and commuting third derivatives of a smooth displacement gives</p>
+\[
+\varepsilon_{11,YY}+\varepsilon_{22,XX}
+-2\varepsilon_{12,XY}=0. \tag{9.2}
+\]
+<p>For example, the displacement \(u_1=aXY,u_2=0\), with \(a\) in m⁻¹, produces \(\varepsilon_{11}=aY\), \(\varepsilon_{22}=0\), and \(\varepsilon_{12}=aX/2\). Each term in (9.2) vanishes. By contrast, prescribing \(\varepsilon_{11}=(Y/\ell)^2\), \(\varepsilon_{22}=\varepsilon_{12}=0\), with fixed length \(\ell\), gives residual \(2/\ell^2\). No smooth planar displacement can generate that field, however small its values are on a small specimen. Small amplitude does not repair an integrability defect.</p>
+<p>In a simply connected planar region, a twice continuously differentiable symmetric field satisfying (9.2) can be reconstructed. Introduce the scalar infinitesimal rotation \(\omega=(u_{2,X}-u_{1,Y})/2\). Its required derivatives are</p>
+\[
+\omega_{,X}=\varepsilon_{12,X}-\varepsilon_{11,Y},
+\qquad
+\omega_{,Y}=\varepsilon_{22,X}-\varepsilon_{12,Y}. \tag{9.3}
+\]
+<p>Equation (9.2) is exactly the condition that the right sides have commuting mixed derivatives. A curl-free continuously differentiable vector field on a simply connected open region has a path-independent potential: integrating around any closed loop gives zero by Stokes' theorem and subdivision. Thus (9.3) determines \(\omega\) up to a constant. Then reconstruct</p>
+\[
+\nabla u_1=(\varepsilon_{11},\varepsilon_{12}-\omega),
+\qquad
+\nabla u_2=(\varepsilon_{12}+\omega,\varepsilon_{22}). \tag{9.4}
+\]
+<p>Each row is curl-free by (9.3), so each integrates to a single-valued displacement component. The two integration constants are translations; the constant in \(\omega\) adds \((-\omega Y,\omega X)\), an infinitesimal rigid rotation. This proves planar sufficiency under explicit domain and smoothness hypotheses. If two displacements have the same strain, their difference has constant \(\omega\) by (9.3), so they differ only by those rigid motions. Boundary measurements fix this freedom.</p>
+<p>In three dimensions a convention-safe compatibility operator is</p>
+\[
+\mathcal C_{pl}=\epsilon_{pqr}\epsilon_{ljk}\varepsilon_{rk,jq}=0.
+\tag{9.5}
+\]
+<p>The indices after the comma are reference derivatives. Substituting \(\varepsilon_{rk}=(u_{r,k}+u_{k,r})/2\) gives two terms. The first has derivatives symmetric in \(j,k\), annihilated by \(\epsilon_{ljk}\); the second has derivatives symmetric in \(q,r\), annihilated by \(\epsilon_{pqr}\). Also \(\mathcal C_{lp}=\mathcal C_{pl}\): exchange the dummy pairs \((q,r)\leftrightarrow(j,k)\), use strain symmetry and commute mixed derivatives. Hence there are six distinct component equations. Setting \(p=l=3\) gives (9.2).</p>
+<p>The phrase “curl of curl” needs this component definition. With the row-wise convention \((\operatorname{Curl}\mathbf A)_{ip}=\epsilon_{pjk}A_{ik,j}\), the operator in (9.5) is \(\operatorname{Curl}[(\operatorname{Curl}\boldsymbol\varepsilon)^{\mathsf T}]\), with indices arranged as above, rather than two unqualified row curls. <a href="https://solidmechanics.org/Text/Chapter2_2/Chapter2_2.php">Bower, §2.2.15</a>, states the same double-epsilon condition and describes the rigid-motion ambiguity. The planar construction above supplies its explicit integrability mechanism.</p>
+<p>Local compatibility does not eliminate global topological conditions. On an annulus, a locally defined displacement \(u_1=c\arg(X+iY),u_2=0\), with \(c\) a length, has single-valued smooth strains away from the hole but changes by \(2\pi c\) after one circuit. The strain field satisfies local compatibility, yet no single-valued global displacement with that local gradient exists without addressing the nonzero loop period. For finite deformation, the analogous local condition is \(F_{iA,B}=F_{iB,A}\), or zero reference row curl. On a simply connected domain it recovers a map componentwise. Positive determinant gives local invertibility; global injectivity still requires a separate check against overlapping images.</p>
+
+<h2 id="finite-stretch" data-video="aoP5P378ca0" data-start="70" data-end="854">Finite line stretch, angle and volume <a class="timestamp" href="https://www.youtube.com/watch?v=aoP5P378ca0&amp;t=70s">L42 1:10</a></h2>
+<p>For a reference unit direction \(\mathbf N\), let \(d\mathbf X=dS\,\mathbf N\), where \(dS\) is reference length. Current length is \(ds=|\mathbf F\mathbf N|dS\). Define the stretch \(\lambda(\mathbf N)=ds/dS\) and the right Cauchy–Green tensor \(\mathbf C=\mathbf F^{\mathsf T}\mathbf F\). Then</p>
+\[
+\lambda(\mathbf N)^2=\mathbf N\cdot\mathbf C\mathbf N,
+\qquad
+\cos\theta=\frac{\mathbf N\cdot\mathbf C\mathbf M}
+{\lambda(\mathbf N)\lambda(\mathbf M)}. \tag{9.6}
+\]
+<p>The second relation gives the angle between the images of two reference unit vectors \(\mathbf N,\mathbf M\), by taking the dot product of their mapped lines and dividing by their lengths. For identical directions it gives cosine 1, meaning angle zero. For perpendicular eigenvectors of \(\mathbf C\), the numerator vanishes and the images remain perpendicular. These statements concern selected material lines, rather than the orientation of the coordinate axes alone.</p>
+<p>For shear, the planar block of \(\mathbf C\) is \(\begin{bmatrix}1&amp;\kappa\\\kappa&amp;1+\kappa^2\end{bmatrix}\). Reference \(\mathbf e_1\) has stretch 1; \(\mathbf e_2\) has stretch \(\sqrt{1+\kappa^2}\). Their current angle has cosine \(\kappa/\sqrt{1+\kappa^2}\). At \(\kappa=1\), they meet at 45 degrees although their original angle was 90 degrees. The Green–Lagrange strain is \(\mathbf E=(\mathbf C-\mathbf I)/2\), so \(E_{22}=1/2\). The engineering extension of the second line is instead \(\sqrt2-1\). In general \(E_{NN}=(\lambda^2-1)/2=e_N+e_N^2/2\), where \(e_N=\lambda-1\). They agree only to first order in small extension.</p>
+<p>For an orientation-preserving deformation, \(J=\det\mathbf F\gt0\) is the local current/reference volume ratio. Since \(\det\mathbf C=(\det\mathbf F)^2\),</p>
+\[
+J=\sqrt{\det\mathbf C}=\lambda_1\lambda_2\lambda_3. \tag{9.7}
+\]
+<p>The \(\lambda_a\) are the positive principal stretches, the square roots of the eigenvalues of \(\mathbf C\). Omitting the square root changes volume ratio into its square. Shear has \(J=1\), even though some directions lengthen and their mutual angles change. Volume preservation does not imply zero deformation. For a dilation with \(\mathbf F=2\mathbf I\), each length doubles and volume increases by 8, whereas \(\det\mathbf C=64\); this checks the root in (9.7).</p>
+
+<h2 id="polar" data-video="aoP5P378ca0" data-start="860" data-end="1567">Polar decomposition separates finite stretch and rotation <a class="timestamp" href="https://www.youtube.com/watch?v=aoP5P378ca0&amp;t=860s">L42 14:20</a></h2>
+<p>Assume \(\mathbf F\) is invertible and \(J\gt0\). For nonzero \(\mathbf N\), \(\mathbf N\cdot\mathbf C\mathbf N=|\mathbf F\mathbf N|^2\gt0\). Thus \(\mathbf C\) has a unique symmetric positive-definite square root \(\mathbf U\), formed by taking the positive square roots in its spectral decomposition. Define \(\mathbf R=\mathbf F\mathbf U^{-1}\). Then \(\mathbf R^{\mathsf T}\mathbf R=\mathbf U^{-1}\mathbf C\mathbf U^{-1}=\mathbf I\), and \(\det\mathbf R=J/\det\mathbf U=1\). Therefore</p>
+\[
+\mathbf F=\mathbf R\mathbf U=\mathbf V\mathbf R,
+\qquad \mathbf V=\mathbf R\mathbf U\mathbf R^{\mathsf T}. \tag{9.8}
+\]
+<p>The right stretch \(\mathbf U\) acts on reference directions before rotation; the left stretch \(\mathbf V\) acts on current directions after rotation. Both share the same positive principal stretches. If \(\mathbf U\mathbf N_a=\lambda_a\mathbf N_a\), then \(\mathbf V(\mathbf R\mathbf N_a)=\lambda_a\mathbf R\mathbf N_a\), showing how their principal directions correspond. Uniqueness follows because any factorization into proper orthogonal \(\mathbf R\) and positive symmetric \(\mathbf U\) must satisfy \(\mathbf C=\mathbf U^2\). <a href="https://solidmechanics.org/Text/Chapter2_2/Chapter2_2.php">Bower, §§2.2.17–2.2.18</a>, uses these same polar definitions. Here current position is \(\mathbf x\), whereas that source uses \(\mathbf y\).</p>
+<p>For planar shear, put \(s=\sqrt{4+\kappa^2}\). Direct multiplication verifies</p>
+\[
+\mathbf R=\frac1s\begin{bmatrix}2&amp;\kappa\\-\kappa&amp;2\end{bmatrix},
+\qquad
+\mathbf U=\frac1s\begin{bmatrix}2&amp;\kappa\\\kappa&amp;2+\kappa^2\end{bmatrix}.
+\tag{9.9}
+\]
+<p>The third direction is unchanged, with \(R_{33}=U_{33}=1\). The planar rotation angle is \(\theta_R=-\arctan(\kappa/2)\). At unit shear it is about −26.565 degrees, while principal stretches are \((\sqrt5+1)/2\) and \((\sqrt5-1)/2\), approximately 1.618 and 0.618. Their product is 1. The right stretch is not diagonal in the original axes; a symmetric stretch can rotate individual lines that are not along its eigenvectors.</p>
+<p>For \(\mathbf F=\mathbf I+\mathbf H\) with small \(\mathbf H\), \(\mathbf C=\mathbf I+\mathbf H+\mathbf H^{\mathsf T}+O(\|\mathbf H\|^2)\). Expanding the square root gives \(\mathbf U=\mathbf I+\boldsymbol\varepsilon+O(\|\mathbf H\|^2)\), and multiplying \(\mathbf F\mathbf U^{-1}\) gives \(\mathbf R=\mathbf I+\boldsymbol\Omega+O(\|\mathbf H\|^2)\). It is \(\mathbf U-\mathbf I\) and \(\mathbf R-\mathbf I\) that approach the infinitesimal tensors. A skew infinitesimal rotation tensor is not itself a finite orthogonal rotation.</p>
+
+<h2 id="velocity" data-video="vElQk9dhJ2I" data-start="108" data-end="1299">Velocity gradient and instantaneous stretching <a class="timestamp" href="https://www.youtube.com/watch?v=vElQk9dhJ2I&amp;t=108s">L43 1:48</a></h2>
+<p>Define the spatial velocity gradient \(L_{ij}=\partial v_i/\partial x_j\), with units s⁻¹. The velocity is \(\mathbf v(\boldsymbol\chi(\mathbf X,t),t)=\partial_t\boldsymbol\chi(\mathbf X,t)\). A dot now means time derivative following a fixed particle. Differentiating \(F_{iA}\) in time and applying the chain rule gives \(\dot F_{iA}=\partial_A v_i=v_{i,j}F_{jA}\). Hence</p>
+\[
+\dot{\mathbf F}=\mathbf L\mathbf F,\qquad
+\mathbf L=\dot{\mathbf F}\mathbf F^{-1},\qquad
+\mathbf D=\tfrac12(\mathbf L+\mathbf L^{\mathsf T}),\quad
+\mathbf W=\tfrac12(\mathbf L-\mathbf L^{\mathsf T}). \tag{9.10}
+\]
+<p>The symmetric \(\mathbf D\) is the stretching-rate or rate-of-deformation tensor; the skew \(\mathbf W\) is spin. Their decomposition is exact at finite deformation, with no smallness assumption. In particular, \(\mathbf D\) is not \(\dot{\mathbf F}\). The latter has one spatial and one material direction, whereas \(\mathbf D\) acts entirely in current space.</p>
+<p>For a material line \(\boldsymbol\ell=\mathbf F\,d\mathbf X\), its evolution is \(\dot{\boldsymbol\ell}=\mathbf L\boldsymbol\ell\). Write \(\boldsymbol\ell=l\mathbf n\), with \(l\) its positive current length and \(\mathbf n\) unit direction. Dotting its derivative with \(\mathbf n\) gives</p>
+\[
+\frac{\dot l}{l}=\mathbf n\cdot\mathbf D\mathbf n,
+\qquad
+\dot{\mathbf n}=\mathbf W\mathbf n+\mathbf D\mathbf n
+-(\mathbf n\cdot\mathbf D\mathbf n)\mathbf n. \tag{9.11}
+\]
+<p>The skew part contributes no length rate because \(\mathbf n\cdot\mathbf W\mathbf n=0\). The last two terms are perpendicular to \(\mathbf n\), so they can change its direction without changing its unit length. A diagonal \(\mathbf D\) can therefore rotate an oblique line. For \(\mathbf D=\operatorname{diag}(a,-b,0)\), \(a,b\gt0\), and initial line \((1,1,0)\), the exact line is proportional to \((e^{at},e^{-bt},0)\). Its angle obeys \(\tan\theta=e^{-(a+b)t}\), approaching the extensional axis even though \(\mathbf W=0\).</p>
+<p>The largest instantaneous fractional length rate is the largest eigenvalue of \(\mathbf D\): expand a unit vector in its orthonormal eigenbasis, making \(\mathbf n\cdot\mathbf D\mathbf n\) a weighted average of the eigenvalues with nonnegative weights summing to one. This is an instantaneous statement at a specified point. A material line's direction and the tensor itself can change along the particle, so the largest rate at one time does not identify a globally maximizing finite-time stretch history.</p>
+
+<h2 id="angle-rate" data-video="vElQk9dhJ2I" data-start="1300" data-end="2023">Angle rates and the factor two in shear <a class="timestamp" href="https://www.youtube.com/watch?v=vElQk9dhJ2I&amp;t=1300s">L43 21:40</a></h2>
+<p>For two unit material-line directions \(\mathbf n,\mathbf m\), their cosine is \(c=\mathbf n\cdot\mathbf m\). Differentiate with (9.11); the spin contributions cancel because \(\mathbf W\) is skew. The remaining relation is</p>
+\[
+\dot c=2\mathbf n\cdot\mathbf D\mathbf m
+-c(\mathbf n\cdot\mathbf D\mathbf n+\mathbf m\cdot\mathbf D\mathbf m).
+\tag{9.12}
+\]
+<p>At an instant when the lines are perpendicular, \(c=0\) and \(\dot c=-\dot\theta\), so \(-\dot\theta=2\mathbf n\cdot\mathbf D\mathbf m\). Consequently \(D_{12}\) is half the instantaneous rate of decrease of the angle between lines currently aligned with axes 1 and 2. It is not a statement that a pair stays perpendicular forever merely because one off-diagonal component vanishes at one instant. Their later directions and the local tensor can differ.</p>
+<p>For orthonormal \(\mathbf n,\mathbf m\), define \(\mathbf a=(\mathbf n+\mathbf m)/\sqrt2\), \(\mathbf b=(\mathbf n-\mathbf m)/\sqrt2\). Then \(2\mathbf n\cdot\mathbf D\mathbf m=\mathbf a\cdot\mathbf D\mathbf a-\mathbf b\cdot\mathbf D\mathbf b\). Each quadratic form lies between the smallest and largest eigenvalues, so \(|\mathbf n\cdot\mathbf D\mathbf m|\le(d_{\max}-d_{\min})/2\). Equality is attained by choosing \(\mathbf a,\mathbf b\) along the extreme eigenvectors. The maximum engineering angle-decrease rate is therefore \(d_{\max}-d_{\min}\); its tensorial half is half that value.</p>
+<p>The tutorial's Mohr-circle analogy concerns this same bound. For a fixed \(\mathbf n\), the perpendicular vector \(\mathbf m\) remains selectable in a plane. The largest \(|\mathbf m\cdot\mathbf D\mathbf n|\) at fixed \(\mathbf n\) is the magnitude of the perpendicular projection of \(\mathbf D\mathbf n\). Other choices can give smaller values, including zero, without changing \(\mathbf n\cdot\mathbf D\mathbf n\). Confusing an arbitrary transverse component with that magnitude would impose an incorrect restriction on possible angle rates.</p>
+
+<h2 id="spin" data-video="2uzJrpP1yRE" data-start="73" data-end="2234">Spin, vorticity and polar rotation are distinct <a class="timestamp" href="https://www.youtube.com/watch?v=2uzJrpP1yRE&amp;t=73s">L44 1:13</a></h2>
+<p>The Green–Lagrange strain rate follows by differentiating \(\mathbf E=(\mathbf F^{\mathsf T}\mathbf F-\mathbf I)/2\): \(\dot{\mathbf E}=\frac12\mathbf F^{\mathsf T}(\mathbf L^{\mathsf T}+\mathbf L)\mathbf F=\mathbf F^{\mathsf T}\mathbf D\mathbf F\). Thus \(\mathbf D\) is the spatial representative of that strain rate, rather than its identical component array. For small displacement gradients, \(\mathbf F\approx\mathbf I\), and \(\dot{\boldsymbol\varepsilon}\approx\mathbf D\). At finite deformation the omitted factors matter.</p>
+<p>Define vorticity \(\boldsymbol\zeta=\nabla\times\mathbf v\), in s⁻¹. The axial vector of \(\mathbf W\) is \(\mathbf w=\boldsymbol\zeta/2\), so \(\mathbf W\mathbf a=\mathbf w\times\mathbf a\). For rigid rotation \(\mathbf v=\mathbf w\times\mathbf x\), \(\mathbf D=0\), and every material line rotates with angular velocity \(\mathbf w\). In general (9.11) includes stretching-induced reorientation as well. A line initially aligned with a principal direction of \(\mathbf D\) has \(\dot{\mathbf n}=\mathbf W\mathbf n\) at that instant. This does not imply that the evolving eigenvectors of \(\mathbf D\) themselves rotate at that rate; the tensor's time derivative determines their evolution.</p>
+<p>Simple shear gives a quantitative distinction. Its velocity is \(\mathbf v=(\dot\kappa x_2,0,0)\), so \(L_{12}=\dot\kappa\), \(D_{12}=D_{21}=\dot\kappa/2\), and \(W_{12}=-W_{21}=\dot\kappa/2\). The spin axial component is \(w_3=-\dot\kappa/2\). But differentiating the polar angle in (9.9) gives</p>
+\[
+\dot\theta_R=-\frac{2\dot\kappa}{4+\kappa^2}. \tag{9.13}
+\]
+<p>At \(\kappa=1\), \(\dot\kappa=1\) s⁻¹, polar rotation rate is −0.4 s⁻¹ while spin is −0.5 s⁻¹. A horizontal material line does not rotate at all: its stretching-induced term cancels its spin contribution. A vertical line rotates at −1 s⁻¹ at that instant. These different numbers describe different objects, not inconsistent measurements of one rotation.</p>
+<p>A rotating-observer extension clarifies the distinction further. For a superposed motion \(\mathbf x^*=\mathbf Q(t)\mathbf x+\mathbf c(t)\), with proper orthogonal \(\mathbf Q\), differentiating velocity in space gives \(\mathbf L^*=\mathbf Q\mathbf L\mathbf Q^{\mathsf T}+\dot{\mathbf Q}\mathbf Q^{\mathsf T}\). Orthogonality makes the added term skew. Hence \(\mathbf D^*=\mathbf Q\mathbf D\mathbf Q^{\mathsf T}\), whereas \(\mathbf W\) acquires observer spin. This is the kinematic origin of the objectivity test used in later material laws. It does not remove inertial forces from acceleration balance in a rotating frame.</p>
+
+<h2 id="tutorial" data-video="ylEkEVcAVO8" data-start="38" data-end="2582">The ninth tutorial: six mechanisms in one sequence <a class="timestamp" href="https://www.youtube.com/watch?v=ylEkEVcAVO8&amp;t=38s">L45 0:38</a></h2>
+<p>The first task finds directional stretch, angle and volume from a homogeneous motion. Equations (9.6)–(9.7) provide all three, and simple shear supplies a fully specified worked case. The second asks for principal stretches, polar rotation and its axis. For a separate constructed family, take \(\mathbf F=\mathbf R_3(\pi/4)\operatorname{diag}(\sqrt2\alpha,\sqrt2\beta,\mu)\), with positive constants \(\alpha,\beta,\mu\). Then \(\mathbf C=\operatorname{diag}(2\alpha^2,2\beta^2,\mu^2)\), \(\mathbf U\) is the displayed diagonal factor and \(\mathbf R=\mathbf R_3(\pi/4)\). Its axis solves \((\mathbf R-\mathbf I)\mathbf a=0\), giving \(\mathbf a=\pm\mathbf e_3\). Positivity matters: principal stretches are never signed lengths.</p>
+<p>The third task compares directional and maximum stretching with maximum shear rate. The recorded eigenvalues are −1, 1 and 2 s⁻¹, giving largest fractional stretching rate 2 s⁻¹ and maximum tensorial half-shear rate 1.5 s⁻¹. As an independent fully specified realization, \(\mathbf D=\operatorname{diag}(-1,2,1)\) s⁻¹ has those values and a largest-rate direction \(\mathbf e_2\). It is not a reconstruction of the unspoken input velocity. The fourth task extracts spin from rigid rotational velocity. For the recoverable axial vector \(\mathbf w=(1,1.5,3)\) s⁻¹, the spin matrix has rows \((0,-3,1.5),(3,0,-1),(-1.5,1,0)\), and vorticity is \((2,3,6)\) s⁻¹.</p>
+<p>The last two tasks prove the symmetry of the double-epsilon compatibility tensor and zero reference curl of a deformation gradient. Those arguments appear in (9.5): dummy-index exchange proves symmetry, and \(\epsilon_{ABC}F_{iC,B}=\epsilon_{ABC}\chi_{i,CB}=0\) follows from commuting derivatives. They are differential identities for gradients. Turning them into a global motion still requires the domain and injectivity qualifications already stated.</p>
+
+<h2 id="implementation">Executable model: finite shear and three rotation rates</h2>
+<p>The code computes the positive square root of \(\mathbf C\) spectrally, reconstructs the polar factors, and compares polar rotation rate, spin and material-line rotation in unit shear. Inputs are dimensionless \(\kappa=1\) and rate \(\dot\kappa=1\) s⁻¹. NumPy is the only dependency; there are no file or network effects. Assertions check reconstruction, orthogonality and unit volume. The finite-difference angle derivative checks an analytic rate; it is a numerical consistency check rather than a proof for every motion.</p>
+<div class="codewrap"><button class="copybtn" type="button" onclick="copyCode(this)">Copy</button><pre data-run="ch09"><code class="language-python">import numpy as np
+
+kappa = 1.0
+rate = 1.0
+deformation = np.array([[1., kappa, 0.], [0., 1., 0.], [0., 0., 1.]])
+metric = deformation.T @ deformation
+eigenvalues, axes = np.linalg.eigh(metric)
+stretch = (axes * np.sqrt(eigenvalues)) @ axes.T
+rotation = deformation @ np.linalg.inv(stretch)
+velocity_gradient = np.zeros((3, 3))
+velocity_gradient[0, 1] = rate
+stretch_rate = (velocity_gradient + velocity_gradient.T) / 2
+spin = (velocity_gradient - velocity_gradient.T) / 2
+assert np.allclose(rotation @ stretch, deformation)
+assert np.allclose(rotation.T @ rotation, np.eye(3))
+assert np.isclose(np.linalg.det(deformation), 1.)
+step = 1.e-5
+polar_rate = (-np.arctan((kappa + step * rate) / 2)
+              + np.arctan((kappa - step * rate) / 2)) / (2 * step)
+assert np.isclose(polar_rate, -2 * rate / (4 + kappa**2))
+line = np.array([1., 0., 0.])
+line_rate = (velocity_gradient @ line
+             - (line @ stretch_rate @ line) * line)
+assert np.allclose(line_rate, np.zeros(3))
+print('principal stretches:', np.round(np.sqrt(eigenvalues), 6).tolist())
+print('volume ratio:', float(np.linalg.det(deformation)))
+print('polar angle degrees:', round(float(np.degrees(
+    np.arctan2(rotation[1, 0], rotation[0, 0]))), 6))
+print('polar rate per second:', round(float(polar_rate), 6))
+print('spin axial z per second:', float(spin[1, 0]))
+print('horizontal line rate:', line_rate.tolist())</code></pre></div>
+<pre data-output="ch09">principal stretches: [0.618034, 1.0, 1.618034]
+volume ratio: 1.0
+polar angle degrees: -26.565051
+polar rate per second: -0.4
+spin axial z per second: -0.5
+horizontal line rate: [0.0, 0.0, 0.0]</pre>
+
+<h2 id="exercises">Exercises with worked solutions</h2>
+<p><strong>1. Reconstruct compatible strain.</strong> For \(\varepsilon_{11}=aY\), \(\varepsilon_{22}=0\), \(\varepsilon_{12}=aX/2\), reconstruct planar displacement including its rigid freedom.</p>
+<details><summary>Solution</summary><p>Integrate \(u_{1,X}=aY\) to obtain \(u_1=aXY+f(Y)\); integrate \(u_{2,Y}=0\) to obtain \(u_2=g(X)\). The shear equation gives \(aX+f'(Y)+g'(X)=aX\), so \(f'=-\omega_0\), \(g'=\omega_0\) for a constant. Thus \(u_1=aXY-\omega_0Y+c_1\), \(u_2=\omega_0X+c_2\). The constants are two translations and one infinitesimal rigid rotation. Displacement boundary data are needed to select them.</p></details>
+<p><strong>2. Diagnose incompatibility.</strong> For \(\varepsilon_{11}=(Y/\ell)^2\), \(\varepsilon_{22}=0\), determine a shear-strain field that makes planar compatibility possible.</p>
+<details><summary>Solution</summary><p>Equation (9.2) requires \(2/\ell^2-2\varepsilon_{12,XY}=0\), hence one choice is \(\varepsilon_{12}=XY/\ell^2\). The displacement \(u_1=XY^2/\ell^2,u_2=0\) generates exactly these strains. Additional functions of only \(X\) or only \(Y\) can be added to the shear component without changing its mixed derivative, but they change the reconstructed displacement. A compatibility residual identifies a constraint, not a unique correction to noisy measurements.</p></details>
+<p><strong>3. Finite stretch is not infinitesimal strain.</strong> In unit shear find stretches of reference coordinate lines, their current angle, and the volume ratio.</p>
+<details><summary>Solution</summary><p>The images are \(\mathbf F\mathbf e_1=(1,0,0)\) and \(\mathbf F\mathbf e_2=(1,1,0)\). Their lengths are 1 and \(\sqrt2\), and their normalized dot product is \(1/\sqrt2\), giving 45 degrees. The determinant is 1. Thus one reference line lengthens while the other stays unchanged and the angle decreases. Volume remains unchanged because it depends on the scalar triple product, not on any single stretch.</p></details>
+<p><strong>4. Check a proposed polar decomposition.</strong> Verify (9.9) and show why an arbitrary symmetric square root is insufficient.</p>
+<details><summary>Solution</summary><p>Multiply the planar factors: the upper-left entry is \((4+\kappa^2)/s^2=1\); the upper-right is \((4\kappa+\kappa^3)/s^2=\kappa\); the lower-left is zero; the lower-right is 1. Orthogonality of \(\mathbf R\) follows because its columns have squared length \((4+\kappa^2)/s^2\) and zero dot product. The eigenvalues of \(\mathbf U\) are positive. Taking negative square roots of selected eigenvalues of \(\mathbf C\) could also square to \(\mathbf C\), but would not give the unique positive stretch required in polar decomposition.</p></details>
+<p><strong>5. Stretch-induced orientation.</strong> For \(\mathbf L=\operatorname{diag}(a,-b,0)\), with \(a,b\gt0\), find the direction of a material line initially \((1,1,0)\). Does it reach the extensional axis at finite time?</p>
+<details><summary>Solution</summary><p>The line solves \(\dot{\boldsymbol\ell}=\mathbf L\boldsymbol\ell\), giving \((e^{at},e^{-bt},0)\) up to its original scale. Its slope is \(e^{-(a+b)t}\), positive for every finite time. It approaches zero only asymptotically. Thus the line aligns with the extensional principal direction in the long-time limit without any spin, and the statement that it “reaches and stops at” that direction needs a limiting interpretation.</p></details>
+<p><strong>6. Maximum rate and shear convention.</strong> Let \(\mathbf D=\operatorname{diag}(-1,2,1)\) s⁻¹. Find the largest fractional line-stretch rate and the maximum rate of decrease of a right angle.</p>
+<details><summary>Solution</summary><p>The largest quadratic form is 2 s⁻¹ on \(\mathbf e_2\). The extreme eigenvalue difference is 3 s⁻¹. Choose \(\mathbf n=(\mathbf e_2+\mathbf e_1)/\sqrt2\) and \(\mathbf m=(\mathbf e_2-\mathbf e_1)/\sqrt2\), giving \(\mathbf n\cdot\mathbf D\mathbf m=3/2\) s⁻¹. Therefore \(-\dot\theta=3\) s⁻¹, while the tensorial half-shear rate is 1.5 s⁻¹. Stating only “maximum shear rate” without its convention leaves a factor-two ambiguity.</p></details>
+<p><strong>7. A changing principal basis.</strong> Can a symmetric velocity gradient with \(\mathbf W=0\) have principal axes of \(\mathbf D\) that vary with time?</p>
+<details><summary>Solution</summary><p>Yes. Prescribe \(\mathbf L(t)=\mathbf Q(t)\operatorname{diag}(a,b,0)\mathbf Q(t)^{\mathsf T}\), with \(a\ne b\) and a rotating proper orthogonal \(\mathbf Q(t)\). This is symmetric at every time, so \(\mathbf W=0\), while its eigenvectors are the columns of \(\mathbf Q(t)\) and rotate. The homogeneous velocity \(\mathbf v=\mathbf L(t)\mathbf x\) realizes this gradient. A material line coincident with an eigenvector has zero instantaneous direction rate, but the eigenvector field can move away from it immediately afterward.</p></details>
+<p><strong>8. Curl-free does not guarantee global injectivity.</strong> Explain the missing condition if a proposed finite \(\mathbf F\) has zero reference curl and positive determinant everywhere.</p>
+<details><summary>Solution</summary><p>Zero curl on a simply connected domain permits integration to a single-valued map, up to translation. Positive determinant gives local invertibility by the inverse-function theorem. It does not prevent two distant material points from mapping to the same location. For example \((X,Y,Z)\mapsto(e^X\cos Y,e^X\sin Y,Z)\) on a rectangular domain containing a \(Y\)-interval longer than \(2\pi\) has positive determinant \(e^{2X}\) and is an exact gradient, yet points whose \(Y\) values differ by \(2\pi\) overlap. Global admissibility requires a separate injectivity restriction.</p></details>
+
+<h2 id="limits">What the distinctions prevent</h2>
+<p>Compatibility prevents arbitrary strain data from being mistaken for one realizable displacement. Polar decomposition separates a local finite map into positive stretch and proper rotation, while the velocity gradient measures its instantaneous evolution. Spin, vorticity, polar rotation rate and material-line rotation generally differ. None of these kinematic results determines stress or guarantees that a prescribed motion satisfies momentum balance. The next chapter supplies those balance laws and the transport of changing material elements.</p>
+<h2 id="sources">Sources</h2>
+<ul><li>NPTEL, Prof. Gaurav Bhutani: <a href="https://www.youtube.com/watch?v=JU-yLeqgq_E">L41, Rotations and Compatibility</a>; <a href="https://www.youtube.com/watch?v=aoP5P378ca0">L42, Finite Deformations</a>; <a href="https://www.youtube.com/watch?v=vElQk9dhJ2I">L43, Velocity Gradient</a>; <a href="https://www.youtube.com/watch?v=2uzJrpP1yRE">L44, Strain Rate and Rate of Rotation</a>; <a href="https://www.youtube.com/watch?v=ylEkEVcAVO8">L45, Tutorial, Week 9</a>.</li><li>A. F. Bower, <a href="https://solidmechanics.org/Text/Chapter2_2/Chapter2_2.php"><em>Applied Mechanics of Solids</em>, §§2.2.13–2.2.18</a>: infinitesimal rotations, compatibility and polar stretch. Additional examples, reconstruction proof, observer transformation and executable shear comparison are developed here.</li></ul>
+<!-- BOOK-CONTENT-END --></article><nav class="page-turn" aria-label="Chapter navigation"><a rel="prev" href="chapter-08-deformation-and-strain.html">Previous chapter</a><a href="index.html">Chapter index</a><a rel="next" href="chapter-10-transport-and-balance-laws.html">Next chapter</a></nav></main></div><footer class="site-footer">Independent study edition. Prof. Gaurav Bhutani’s NPTEL recordings provide the topic spine. Original exposition, source limitations and verification evidence are separately recorded.</footer></body></html>
