@@ -28,7 +28,7 @@
     {
       "id": "E3",
       "description": "Synchronize final ch20 body, sidecars and README evidence targets",
-      "resolution": "Final body/sidecar/editorial hashes aligned; all README targets exist. Source-free checks pass. The present publication record is explicitly pending deployment.",
+      "resolution": "Final body/sidecar/editorial hashes aligned; all README targets exist. Source-free checks pass. At the local prepublication audit, the publication record was explicitly pending; live verification is a separately recorded gate.",
       "status": "closed"
     }
   ],

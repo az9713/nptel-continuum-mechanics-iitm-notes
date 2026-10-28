@@ -6,7 +6,9 @@
   "changed_html": [],
   "raw_source_files_available": false,
   "browser_checks_requested": true,
-  "scope": "A fresh allowlisted copy inside ignored work/; no acquisition sources or private review reports copied. Existing Python packages and installed Chrome are used; this is not a pristine-machine dependency installation test.",
+  "git_archive_commit": "99556f443f5f32ce21c37efe03293e9e7d1ccc6b",
+  "export_method": "git archive HEAD",
+  "scope": "A source-free export inside ignored work/; no acquisition sources or private review reports copied. Existing Python packages and installed Chrome are used; this is not a pristine-machine dependency installation test.",
   "html_sha256": {
     "book-overview.html": "b6365eeb53eabc48d9093e704c92dff673a628feef907e702d3ba03cd13e8957",
     "chapter-01-continuum-tensors-index-notation.html": "9d3748aa1a26ff6c732414f744fa3927c5c060aba11877e4cc8b282826da9612",

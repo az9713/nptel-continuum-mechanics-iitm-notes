@@ -16,10 +16,10 @@
     "source_free_html_rebuild_count": 25,
     "offline_page_viewport_checks": 48,
     "all_chapter_listings_match_actual_output": true,
-    "numerical_lab_checks": "passed"
+    "numerical_lab_checks": "passed",
+    "source_free_git_export": "passed; all25 HTML pages byte-identical and all executable/offline reader checks passed"
   },
   "pending": [
-    "Committed Git export validation",
     "GitHub push and live publication verification"
   ],
   "scope_limits": [
